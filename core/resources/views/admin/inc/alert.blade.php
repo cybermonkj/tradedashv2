@@ -49,7 +49,7 @@
           <a id="succ_close" href="javascript:void(0)" class="btn btn-danger">X</a>        
         </span> -->
         <div class="panel-heading" style="">
-          <h3>Message</h3>               
+          <h3>Notice</h3>               
           <hr>
         </div>
         <div id="" style="margin-top: -30px; padding: 15px">
@@ -95,7 +95,7 @@
           <div class="sparkline8-list shadow-reset mg-tb-30" style="margin: 0px; border-radius: 7px; ">
               <div class="sparkline8-hd" >
                   <div class="main-sparkline8-hd">
-                      <h1>Read Messages</h1>
+                      <h1>Read Notification</h1>
                       <!-- <div class="sparkline8-outline-icon">
                           <span class="sparkline8-collapse-link"><i class="fa fa-chevron-up"></i></span>
                           <span><i class="fa fa-wrench"></i></span>

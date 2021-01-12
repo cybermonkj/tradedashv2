@@ -18,10 +18,12 @@
         	   Hi, <b>{{$md['username']}}</b> your deposit on {{env('APP_URL')}} was successful.
         	   <br>
                Your wallet balance will be updated shortly.
+				<br>
+				Thinking about what you can do next? With your balance you can activate investments, Transfer funds to friends and even Trade our ICO (Beta)
         	   
         	</p>
         	<p>
-        		<i class="fa fa-certificate">{{env('APP_NAME')}} Investment.
+        		<i class="fa fa-certificate">{{env('APP_NAME')}} LLC.
         	</p>
         </div>
     </div>

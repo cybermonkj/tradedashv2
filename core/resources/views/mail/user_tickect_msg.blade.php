@@ -13,14 +13,14 @@
             <div align="">
                 <img src="{{env('APP_URL')}}/img/{{$st->site_logo}}" style="height:100px; width:100px;" align="center">
             </div>
-            <h3 align="">Tickect Message</h3>
+            <h3 align="">New Tickect</h3>
             <p>
-               Hi Admin, <b>{{$md['username']}}</b> has left a message on {{env('APP_URL')}}.
+               Hi Support, <b>{{$md['username']}}</b> has left a new message on {{env('APP_URL')}}.
                <br>
-               Kindly attend to this message.               
+               Kindly attend to this message as soon as possible.               
             </p>
             <p>
-                <i class="fa fa-certificate">{{env('APP_NAME')}} Investment.
+                <i class="fa fa-certificate">{{env('APP_NAME')}}.
             </p>
         </div>
     </div>

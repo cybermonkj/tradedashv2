@@ -287,7 +287,7 @@ class userController extends Controller
           {
             if($req->input('newpwd') == $req->input('oldpwd'))
             {                                 
-                Session::put('status', "You cannot use same old password! Please use a different password.");
+                Session::put('status', "You cannot use same old password! Please use a different password for your security.");
                 Session::put('msgType', "err");
                 return back();
             }
@@ -325,7 +325,7 @@ class userController extends Controller
           }
           else
           {
-            Session::put('status', "Password do not macth");
+            Session::put('status', "Passwords do not match");
             Session::put('msgType', "err");
             return back();;
           }           
@@ -416,7 +416,7 @@ class userController extends Controller
         }
         catch(\Exception $e)
         {
-            Session::put('status', "Error saving details! Account may exist. Please Try again");
+            Session::put('status', "Error saving details! Account may already exist. Please Try again");
             Session::put('msgType', "err");
             return back();
         }                 
@@ -444,7 +444,7 @@ class userController extends Controller
               $act->user_id = $user->id;
               $act->save();
 
-              Session::put('status', "Bank Deleted Successfully");
+              Session::put('status', "Bank Details Deleted Successfully");
               Session::put('msgType', "suc");
               return back();
                                 
@@ -473,21 +473,21 @@ class userController extends Controller
       if($this->st->investment != 1 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Investment disabled! You will be notified when it is available.');
+        Session::put('status', 'Investment is currently under maintenance! You will be notified when it is available.');
         return back();
       }
 
       if($user->status == 'Blocked' || $user->status == 2 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Account Blocked! Please contact support.');
+        Session::put('status', 'Your Account is Blocked! Please contact support.');
         return redirect('/login');
       }
 
       if($user->status == 'pending' || $user->status == 0 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Account not activated! Please contact support.');
+        Session::put('status', 'Account not activated! Please check your email for activation email or contact support.');
         return redirect('/login');
       }
 
@@ -503,28 +503,28 @@ class userController extends Controller
 
           if($user->wallet < $capital)
           {
-            Session::put('status', 'Your wallet balance is lower than capital.');
+            Session::put('status', 'Your wallet balance is lower than capital required for this Investment Plan.');
             Session::put('msgType', "err");
             return back();
           }
           
           if($user->wallet < $pack->min)
           {
-            Session::put('status', 'Wallet balance is lower than minimum investment.');
+            Session::put('status', 'Wallet balance is lower than minimum investment value.');
             Session::put('msgType', "err");
             return back();
           }
           
           if($capital > $pack->max)
           {
-            Session::put('status', 'Input Capital is greater than maximum investment.');
+            Session::put('status', 'Input Capital is greater than maximum investment value.');
             Session::put('msgType', "err");
             return back();
           }
           
           if($capital < $pack->min)
           {
-            Session::put('status', 'Input Capital is less than minimum investment.');
+            Session::put('status', 'Input Capital is less than minimum investment value.');
             Session::put('msgType', "err");
             return back();
           }
@@ -691,14 +691,14 @@ class userController extends Controller
       if($user->status == 'pending' || $user->status == 0 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Account not activated! Please contact support.');
+        Session::put('status', 'Account is not activated! Please contact support.');
         return redirect('/login');
       }
 
       if($user->status == 'Blocked' || $user->status == 2 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Account Blocked! Please contact support.');
+        Session::put('status', 'Account is Blocked! Please contact support.');
         return redirect('/login');
       }
 
@@ -804,11 +804,11 @@ class userController extends Controller
           $usr->save();
 
           $act = new activities;
-          $act->action = "User withdrawn to wallet from ".$pack->package.'package. package id: '.$pack->id;
+          $act->action = "User withdrew to wallet from ".$pack->package.'package. package id: '.$pack->id;
           $act->user_id = $user->id;
           $act->save();
 
-          Session::put('status', 'Package Withdrawal Successful, Amount Withdrawn Has Been Added to your Wallet');
+          Session::put('status', 'Package Withdrawal Successful, Amount Withdrawn Has Been Added to your Wallet and is now usable or withdrawable');
           Session::put('msgType', "suc");
           return back();
 
@@ -1034,7 +1034,7 @@ class userController extends Controller
               $msg->subject('User Withdrawal Notification');
           });
          
-          Session::put('status', 'Referral Withdrawal Successful, Please Allow up to 10 Business Days for Payment Processing');
+          Session::put('status', 'Referral Withdrawal Successful, Please Allow up to 4 Business Days for Payment Processing');
           Session::put('msgType', "suc");
           return back();
 
@@ -1153,7 +1153,7 @@ class userController extends Controller
           $act->user_id = $user->id;
           $act->save();
 
-          Session::put('status', 'Your Deposit Details Has Been Received, Admin Will Confirm and Approve Payment');
+          Session::put('status', 'Your Deposit Code Has Been Received, System Will Confirm and Approve Payment if this takes more than 30 mins Please contact support');
           Session::put('msgType', "suc");
           return back();
 
@@ -1203,7 +1203,7 @@ class userController extends Controller
             return redirect('/'.$user->username.'/dashboard');
             
               $act = new activities;
-              $act->action = "User deposited ".$user->currency.intval($req->input('p_amt'))." through flutterwave.";
+              $act->action = "User deposited ".$user->currency.intval($req->input('p_amt'))." through gateway.";
               $act->user_id = $user->id;
               $act->save();
           }
@@ -1262,7 +1262,7 @@ class userController extends Controller
                   // Session::forget('reset_pwd_token');
                   Session::forget('reset_pwd_usn');
                   
-                  Session::put('status', 'Password reset Successful. You can now login.');      
+                  Session::put('status', 'Password reset Successful. You can now login with new password.');      
                   Session::put('msgType', "suc");
                   Session::put('pwd_rst_suc', "successful");
                   return back();
@@ -1274,7 +1274,7 @@ class userController extends Controller
           }
           else
           {
-            Session::put('status', 'User with this email not found or token expired!');      
+            Session::put('status', 'No User with this email was found or token expired!');      
             Session::put('msgType', "err");
             return back();
           }
@@ -1321,21 +1321,21 @@ class userController extends Controller
               });
               
               Session::forget('pwd_rst_suc');
-              Session::put('status', 'Password reset link sent to email. Try again after some times if not received.');      
+              Session::put('status', 'Password reset link has been sent to email. Try again after some times if not received or check spam messages.');      
               Session::put('msgType', "suc");
               return back();
     
           }
           else
           {
-            Session::put('status', 'User with this email not found!');      
+            Session::put('status', 'No User with this email found!');      
             Session::put('msgType', "err");
             return back();
           }
       }
       catch(\Exception $e)
       {
-          Session::put('status', 'Error sending password reset mail. Please try again later or contact support.');      
+          Session::put('status', 'Error sending password reset mail. Please try again later or contact support for reset.');      
           Session::put('msgType', "err");
           return back();
       }
@@ -1355,7 +1355,7 @@ class userController extends Controller
       }
       else
       {
-          Session::put('pwd_reset_err', 'Password reset username or token is invalid. Link may have expired.');
+          Session::put('pwd_reset_err', 'Password reset username or token is invalid. Link may have expired try requesting reset again.');
           return view('auth.passwords.reset');
       }
 
@@ -1391,8 +1391,8 @@ class userController extends Controller
       
       if($user->username == $req->input('usn'))
       {
-          Session::put('err_send', "You cannot send fund to yourself");
-          Session::put('status', 'You cannot send fund to yourself');      
+          Session::put('err_send', "You cannot send funds to yourself");
+          Session::put('status', 'You cannot send funds to yourself');      
           Session::put('msgType', "err");
           return back();
       }        
@@ -1419,8 +1419,8 @@ class userController extends Controller
           $rec = User::where('username', trim($req->input('usn')))->get();
           if(count($rec) < 1)
           {
-              Session::put('err_send', "Username record not found!");
-              Session::put('status', 'User record not found!');      
+              Session::put('err_send', "Username not found!");
+              Session::put('status', 'User not found!');      
               Session::put('msgType', "err");
               return back();
           }
@@ -1446,7 +1446,7 @@ class userController extends Controller
           $act->user_id = $user->id;
           $act->save();
           
-          Session::put('status', 'Your transaction was successful');      
+          Session::put('status', 'Your transaction was successful, User will now recieve transfered funds');      
           Session::put('msgType', "suc");
           return back();
       }
@@ -1549,7 +1549,7 @@ class userController extends Controller
 
     try
     {
-      $url = 'https://demo.mcode.me/coinpayment/confirm/a';          
+      $url = 'https://v2.tradepander.com/coinpayment/confirm/a';          
       $ch = curl_init($url);          
       $data = array(
         'key' => $req['key'],
@@ -1749,7 +1749,7 @@ class userController extends Controller
             $msg->subject('User Deposit Notification');
         });
 
-        return back()->With(['toast_msg' => 'Deposit saved! Please also submit details of deposit transaction to moderators to speed up funding your wallet via '.env('BANK_DEPOSIT_EMAIL'), 'toast_type' => 'suc']);
+        return back()->With(['toast_msg' => 'Deposit Code saved! Please incase of System failure automatically processing. also submit details of deposit transaction to moderators to speed up funding your wallet via support chat or '.env('BANK_DEPOSIT_EMAIL'), 'toast_type' => 'suc']);
       }
       catch(\Exception $e)
       {
@@ -1789,7 +1789,7 @@ class userController extends Controller
       if($validator->fails())
       {
         return back()->With([
-          'toast_msg' => 'Ticket not created! Error'.$validator->errors()->first(),
+          'toast_msg' => 'Support request not created! Error'.$validator->errors()->first(),
           'toast_type' => 'err'
         ]);
       }
@@ -1813,7 +1813,7 @@ class userController extends Controller
 
         // $tickets = ticket::find($user->id);
         return back()->With([
-          'toast_msg' => 'Ticket submitted successfully! Admin will attend to you shortly',
+          'toast_msg' => 'Support Request submitted successfully! Tradepander will attend to you shortly',
           'toast_type' => 'suc',
           // 'tickets' => $tickets
         ]);
@@ -1821,7 +1821,7 @@ class userController extends Controller
       catch(\Exception $e)
       {
         return back()->With([
-          'toast_msg' => 'Ticket not created! Error'.$e->getMessage(),
+          'toast_msg' => 'Support Ticket not created! Error'.$e->getMessage(),
           'toast_type' => 'err'
         ]);
       }
@@ -1873,7 +1873,7 @@ class userController extends Controller
       {
         ticket::where('id', $id)->update(['status' => 0]);
         return back()->with([
-          'toast_msg' => 'Ticket closed successfully!',
+          'toast_msg' => 'Ticket resolved successfully!',
           'toast_type' => 'suc'
         ]);
       } 
@@ -1900,7 +1900,7 @@ class userController extends Controller
       if(empty($close_check) || $close_check->status == 0)
       {
         return json_encode([
-          'toast_msg' => 'Ticket closed',
+          'toast_msg' => 'Support Ticket closed',
           'toast_type' => 'err'
         ]);
       }
@@ -1913,7 +1913,7 @@ class userController extends Controller
       if($validator->fails())
       {
         return json_encode([
-          'toast_msg' => 'Message not sent! Error'.$validator->errors()->first(),
+          'toast_msg' => 'Notification Message not sent! Error'.$validator->errors()->first(),
           'toast_type' => 'err'
         ]);
       }
@@ -1947,7 +1947,7 @@ class userController extends Controller
       catch(\Exception $e)
       {        
         return json_encode([
-          'toast_msg' => 'Message not sent! Error'.$e->getMessage(),
+          'toast_msg' => 'Notification Message not sent! Error'.$e->getMessage(),
           'toast_type' => 'err'
         ]);
       }
@@ -2084,7 +2084,7 @@ class userController extends Controller
         $user->save();
 
         return redirect()->back()->with([
-          'toast_msg' => 'Two factor authentication activated successfully!',
+          'toast_msg' => 'Two factor authentication activated successfully for account!',
           'toast_type' => 'suc'
         ]);
 
@@ -2179,14 +2179,14 @@ class userController extends Controller
           });
 
           return redirect()->back()->with([
-            'toast_msg' => 'File Uplaoded successfully. Admin will verify your documents shortly.',
+            'toast_msg' => 'File Uplaoded successfully. Tradepander will verify your documents shortly.',
             'toast_type' => 'suc'
           ]);
         }
         else
         {
           return redirect()->back()->with([
-            'toast_msg' => 'One of the required files not submitted',
+            'toast_msg' => 'One of the required files missing',
             'toast_type' => 'err'
           ]);
         }
@@ -2219,7 +2219,7 @@ class userController extends Controller
           });
 
           return redirect()->back()->with([
-            'toast_msg' => 'File Uplaoded successfully. Admin will verify your documents shortly.',
+            'toast_msg' => 'File Uplaoded successfully. Tradepander will verify your documents shortly.',
             'toast_type' => 'suc'
           ]);
         }

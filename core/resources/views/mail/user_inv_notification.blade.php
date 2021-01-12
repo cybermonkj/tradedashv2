@@ -17,7 +17,7 @@
         	<p>
         	   Hi, <b>{{$md['username']}}</b> your Investment on {{env('APP_URL')}} was successful.
         	   <br>
-               You can check your investment growth under my investments on your dashboard.
+               You can check your investment growth under my investments on your dashboard. Now you would start to see Returns which you can withdraw when due
         	   
         	</p>
         	<p>

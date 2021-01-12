@@ -16,13 +16,13 @@
 	</div>
 	<h3 align=""> Hi {{$md['username']}}</h3>
 	<p>
-		This is to notify you that there is a login into your account a moment ago.<br>
-		If you were not the one please contact support now for a quick action.<br>
+		This is to notify you that there was a login into your account a moment ago.<br>
+		If you were not the one please Make changes to your Password.<br>
 		<br>
-		Contact support now: {{env('SUPPORT_EMAIL')}}
+		Or Contact support now: {{env('SUPPORT_EMAIL')}}
 	</p>
 	<p>
-		<i class="fa fa-certificate"></i> Thanks for using {{$st->site_title}}.
+		<i class="fa fa-certificate"></i> Thanks for Investing with {{$st->site_title}}.
 	</p>
 </body>
 </html>

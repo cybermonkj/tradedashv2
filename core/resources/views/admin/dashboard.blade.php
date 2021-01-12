@@ -11,7 +11,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"> {{ __('Overall Statistics') }} </div>
+                                        <div class="card-title"> {{ __('Tradepander Statistics') }} </div>
                                         <div class="card-tools">                                            
                                         </div>
                                     </div>
@@ -65,10 +65,10 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row card-tools-still-right">
-                                        <h4 class="card-title"> {{ __('User Activities') }} </h4>                                        
+                                        <h4 class="card-title"> {{ __('Admin Activities') }} </h4>                                        
                                     </div>
                                     <p class="card-category">
-                                        {{ __('All actions performed users.') }} 
+                                        {{ __('All actions performed by admins and Intresting users appear here.') }} 
                                     </p>
                                 </div>
                                 <div class="card-body">

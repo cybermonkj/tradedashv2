@@ -16,7 +16,7 @@
         	<h3 align="">Hi {{$md['usr']}}, </h3>
         	<p>
         	    You've taken a bold step for registering with us at <a href="{{env('APP_URL')}}"><b>{{env('APP_NAME')}}</b></a><br>
-        		To complete your registration and begin investing with us, please click the link below to activate your account.<br>
+        		To complete your registration and begin investing with us, please click the link below to activate your account.<br> We look forward to great achivements and Returns on Iinvestment. Once more, we say welcome
         		<br>
         		<a class="btn btn-info" href="{{env('APP_URL')}}/registration/confirm/{{$md['usr']}}/{{$md['token']}}"><b>Confirm Registration</b></a>
         	</p>

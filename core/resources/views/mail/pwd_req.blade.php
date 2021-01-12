@@ -16,7 +16,7 @@
 	<h3 align=""> Hi {{$md['username']}}</h3>
 	<p>
 		You receive this mail because you requested for password reset for your account a moment ago.<br>
-		If you were not the one please contact support now for a quick action.<br>
+		If you were not the one please ignore this email.<br>
 		<br>
 		<a  href="{{env('APP_URL')}}/reset/password/{{$md['username']}}/{{$md['token']}}">Reset Password</a><br><br>
 		Contact support now: {{env('SUPPORT_EMAIL')}}

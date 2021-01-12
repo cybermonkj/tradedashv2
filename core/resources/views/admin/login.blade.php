@@ -11,7 +11,7 @@
                         <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                         <h1>{{$settings->site_title}}</h1> 
                         <p>                                                       
-                            <h4> {{ __('Login to manage website') }} </h4>
+                            <h4> {{ __('Support and Admin Login') }} </h4>
                         </p>
                     </div>                    
                 </div>

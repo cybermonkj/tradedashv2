@@ -46,7 +46,7 @@ class PasswordReset extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.') // Here are the lines you can safely override
+            ->line('You are receiving this email because we received a password reset request for your account. Please kindly ignore if you did not request for a password reset') // Here are the lines you can safely override
             ->action('Reset Password', url('password/reset', $this->token))
             ->line('If you did not request a password reset, no further action is required.');
     }
