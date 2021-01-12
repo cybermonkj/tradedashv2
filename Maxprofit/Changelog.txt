@@ -1,0 +1,14 @@
+CHANGELOG
+========================
+
+
+
+Please refer to 
+
+https://maxprofit.mcode.me/docs for instruction on how to perform version 4.1 update.
+
+Maxprofit v4.1 Changelog
+===================================
+
+- Modified Registration Page
+- Fixed other bugs

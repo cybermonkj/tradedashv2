@@ -1,0 +1,6 @@
+VERSION 4.1 UPDATE INSTRUCTION
+==============================
+
+In this version, there is no changes to database, you just need to overwrite/replace the whole "core" folder
+
+Please make sure you back your current core folder if you have make some custom changes to your website. It is important to also backup your .env file so you can easy copy the content to new .env file

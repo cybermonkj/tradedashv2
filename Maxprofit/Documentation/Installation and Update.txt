@@ -1,0 +1,8 @@
+INSTALLATION HELP
+========================
+
+
+
+Please refer to 
+
+https://maxprofit.mcode.me/docs for instructions on how to install and update script
