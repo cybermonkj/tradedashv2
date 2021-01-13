@@ -6,6 +6,79 @@
 			    @php($breadcome = 'Dashboard')
 				@include('user.atlantis.main_bar')
 				<div class="page-inner mt--5">
+					<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "Nasdaq 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR/USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "BTC/USD"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "ETH/USD"
+    },
+    {
+      "description": "Agile",
+      "proName": "NYSE:A"
+    },
+    {
+      "description": "Microsoft",
+      "proName": "NASDAQ:MSFT"
+    },
+    {
+      "description": "Apple",
+      "proName": "NASDAQ:AAPL"
+    },
+    {
+      "description": "Paypal",
+      "proName": "NASDAQ:PYPL"
+    },
+    {
+      "description": "SAMSUNG",
+      "proName": "KRX:005930"
+    },
+    {
+      "description": "LG",
+      "proName": "KRX:066570"
+    },
+    {
+      "description": "TESLA",
+      "proName": "NASDAQ:TSLA"
+    },
+    {
+      "description": "FORD",
+      "proName": "NYSE:F"
+    },
+    {
+      "description": "VOLKSWAGEN",
+      "proName": "SWB:VOW3"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
 					@include('user.atlantis.overview')
 					<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
