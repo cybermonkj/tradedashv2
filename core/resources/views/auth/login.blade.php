@@ -1,7 +1,7 @@
 @extends('inc.auth_layout')
 @section('content')
-<body>
-    <div style="background-color: #5a42f5; opacity: 0.3;">
+<body >
+    <div style="">
         <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
         <div class="fixedOeverlayBG"></div>
         <div class="">
@@ -25,7 +25,7 @@
                                             <div align="center">
                                                 <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                                                 <br>
-                                                <h3 class="colhd"><i class="fa fa-key"></i>{{ __('User Login') }}</h3>
+                                                <h3 class="colhd"><i class="fa fa-key"></i>{{ __('Secure Login') }}</h3>
                                                 <hr>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                                     <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                                     &nbsp;
                                                     <label class="" for="remember">
-                                                        {{ __('Remember Me') }}
+                                                        {{ __('Keep me logged in') }}
                                                     </label>
                                                                                                             
                                                 </div>
