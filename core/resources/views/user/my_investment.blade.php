@@ -13,7 +13,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('My Investment') }}</div>                                       
+                                        <div class="card-title">{{ __('My Investments') }}</div>                                       
                                     </div>
                                 </div>
                                 <div class="card-body ">  
@@ -141,7 +141,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <div class="card-title"> Available Packages</div>
+                                    <div class="card-title"> Other Available Packages</div>
                                 </div>
                                 <div class="card-body pb-0">
                                     @include('user.inc.packages')

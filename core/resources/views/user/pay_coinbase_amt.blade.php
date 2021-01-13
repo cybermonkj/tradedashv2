@@ -5,7 +5,7 @@
 
     <div class="main-panel">
         <div class="content">
-            @php($breadcome = 'Coinbase Crypto Payment')
+            @php($breadcome = 'Pay with Coinbase')
             @include('user.atlantis.main_bar')
             <div class="page-inner mt--5">                   
                 <div id="prnt"></div>
@@ -14,7 +14,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <div class="card-head-row">
-                                    <div class="card-title">{{ __('Deposit Using Coinbase') }}</div>
+                                    <div class="card-title">{{ __('Deposit Using Coinbase payment Platform') }}</div>
                                     <div class="card-tools">                                            
                                     </div>
                                 </div>
@@ -46,7 +46,7 @@
                                                     <div class="form-group">
                                                         <div class="col-md-6 col-md-offset-4">
                                                             <button type="submit" class="btn btn-primary">
-                                                                {{ __('Pay Now') }}
+                                                                {{ __('Continue to Payment') }}
                                                             </button>
                                                         </div>
                                                     </div>
@@ -77,7 +77,7 @@
                                                     <div>
                                                         <p class="text-danger">
                                                             Please send the exact BTC Value above to the address.
-                                                            Alwayes check your depost history and click on <em>Check</em> button. When coin confirms your deposit will be approve successfully.
+                                                            Alwayes check your depost history and click on <em>Check</em> button. When coin confirms your deposit will be approved by the Tradepander system successfully.
                                                         </p>
                                                     </div>
                                                     

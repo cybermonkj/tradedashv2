@@ -16,7 +16,7 @@
 
         <div>
           <span style="">            
-            <a id="succ_close" href="javascript:void(0)" class="btn btn-success">{{ __('Okay') }}</a>        
+            <a id="succ_close" href="javascript:void(0)" class="btn btn-success">{{ __('Alright') }}</a>        
           </span>
           <br><br><br><br>
         </div>
@@ -50,7 +50,7 @@
 
         <div>
           <span style="">            
-            <a id="errr_close" href="javascript:void(0)" class="btn btn-danger">{{ __('Okay') }}</a>        
+            <a id="errr_close" href="javascript:void(0)" class="btn btn-danger">{{ __('Alright') }}</a>        
           </span>
           <br><br><br><br>
         </div>

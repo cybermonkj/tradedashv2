@@ -3,7 +3,7 @@
 @Section('content')
     <div class="main-panel">
         <div class="content">
-            @php($breadcome = 'Coinpayment Gateway')
+            @php($breadcome = 'Pay with BTC')
             @include('user.atlantis.main_bar')
             <div class="page-inner mt--5">
                 
