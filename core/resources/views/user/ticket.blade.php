@@ -12,8 +12,8 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title col-sm-12"  >{{ __('Support Channel') }} 
-                                            <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Support Request</a></span>
+                                        <div class="card-title col-sm-12"  >{{ __('Open Ticket') }} 
+                                            <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Ticket</a></span>
                                         </div>
                                     </div>
                                      
