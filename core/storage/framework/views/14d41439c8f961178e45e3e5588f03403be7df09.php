@@ -16,7 +16,7 @@
 
         <div>
           <span style="">            
-            <a id="succ_close" href="javascript:void(0)" class="btn btn-success"><?php echo e(__('Okay')); ?></a>        
+            <a id="succ_close" href="javascript:void(0)" class="btn btn-success"><?php echo e(__('Alright')); ?></a>        
           </span>
           <br><br><br><br>
         </div>
@@ -50,7 +50,7 @@
 
         <div>
           <span style="">            
-            <a id="errr_close" href="javascript:void(0)" class="btn btn-danger"><?php echo e(__('Okay')); ?></a>        
+            <a id="errr_close" href="javascript:void(0)" class="btn btn-danger"><?php echo e(__('Alright')); ?></a>        
           </span>
           <br><br><br><br>
         </div>

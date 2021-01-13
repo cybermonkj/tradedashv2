@@ -10,7 +10,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"> <?php echo e(__('Overall Statistics')); ?> </div>
+                                        <div class="card-title"> <?php echo e(__('Tradepander Statistics')); ?> </div>
                                         <div class="card-tools">                                            
                                         </div>
                                     </div>
@@ -64,10 +64,10 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row card-tools-still-right">
-                                        <h4 class="card-title"> <?php echo e(__('User Activities')); ?> </h4>                                        
+                                        <h4 class="card-title"> <?php echo e(__('Admin Activities')); ?> </h4>                                        
                                     </div>
                                     <p class="card-category">
-                                        <?php echo e(__('All actions performed users.')); ?> 
+                                        <?php echo e(__('All actions performed by admins and Intresting users appear here.')); ?> 
                                     </p>
                                 </div>
                                 <div class="card-body">
