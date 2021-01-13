@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="form-group">                                                                                                           
-                            <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>  
+                            <button type="submit" class="btn btn-primary">{{ __('submit') }}</button>  
                         </div>
                     </form>
                   </div>
