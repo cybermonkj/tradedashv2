@@ -25,7 +25,7 @@
                                             <div align="center">
                                                 <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                                                 <br>
-                                                <h3 class="colhd"><i class="fa fa-key"></i>{{ __('Secure Login') }}</h3>
+                                                <h3 class="colhd"><i class="fa fa-key"></i>{{ __('Secure Signin') }}</h3>
                                                 <hr>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                                     <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                                     &nbsp;
                                                     <label class="" for="remember">
-                                                        {{ __('Keep me logged in') }}
+                                                        {{ __('Keep me signed in') }}
                                                     </label>
                                                                                                             
                                                 </div>
@@ -82,7 +82,7 @@
                                                 <div class="">
                                                     <div class="" align="center">
                                                         <button type="submit" class="collc btn btn-primary">
-                                                            {{ __('Login') }}
+                                                            {{ __('Signin') }}
                                                         </button>                               
                                                     </div>
                                                     <div class="" align="center" >                                
@@ -97,7 +97,7 @@
                                                 <div class="">
                                                     <div class="" align="center">
                                                        <p>
-                                                           <strong>{{ __("Don't have an account?") }} <a href="/register">{{ __('Register') }}</a></strong>
+                                                           <strong>{{ __("Don't have an account?") }} <a href="/register">{{ __('Signup') }}</a></strong>
                                                        </p>                            
                                                     </div>                                                   
                                                     
