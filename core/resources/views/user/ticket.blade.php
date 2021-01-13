@@ -83,24 +83,6 @@
                     
                 </div>
             </div>
-			
-			<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> We are glad to announce that our New ICO Token would be coming live In March</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-  {
-  "width": 1000,
-  "height": 490,
-  "defaultColumn": "overview",
-  "screener_type": "crypto_mkt",
-  "displayCurrency": "USD",
-  "colorTheme": "light",
-  "locale": "en"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
 
             @include('user.inc.confirm_inv')
 
@@ -118,7 +100,7 @@
                     <form class="form-horizontal" method="POST" role="form" action="{{ route('ticket.create') }}" >
                         @csrf
                         <div class="form-group {{ $errors->has('amount') ? ' has-error' : '' }}">
-                            <label class="control-label">{{ __('Problem') }}</label>                            
+                            <label class="control-label">{{ __('Title') }}</label>                            
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-pen-alt"></i></span>
@@ -127,13 +109,13 @@
                             </div>
                         </div>
                         <div class="form-group ">
-                            <label class="control-label">{{ __('More Detail) }}</label>                            
+                            <label class="control-label">{{ __('Message') }}</label>                            
                             <div class="input-group">                               
                                 <textarea name="msg" class="form-control" required></textarea>                                                   
                             </div>
                         </div>
                         <div class="form-group">                                                                                                           
-                            <button type="submit" class="btn btn-primary">{{ __('submit') }}</button>  
+                            <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>  
                         </div>
                     </form>
                   </div>
