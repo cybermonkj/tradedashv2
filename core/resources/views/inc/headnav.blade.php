@@ -5,13 +5,13 @@
 <!--        <div class="container-fluid" style="background-color: transparent; min-width: 100%;">                        -->
 <!--            <div class="row" >-->
 <!--                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" style="margin-top: 8px; " align="center">-->
-<!--                    <a href="http://daimondhubplus.com" style="color:#FFF;">-->
-<!--                        <img src="/img/logo.jpg" alt="DaimondHubPlus" style="border-radius:50%; height: 40px; width: 40px;"> -->
-<!--                        <b>DIAMONDHUBPLUS</b>-->
+<!--                    <a href="http://TRADEPANDER style="color:#FFF;">-->
+<!--                        <img src="/img/logo.jpg" alt="TRADEPANDER" style="border-radius:50%; height: 40px; width: 40px;"> -->
+<!--                        <b>Tradepander</b>-->
 <!--                    </a>-->
                     <!-- <div class="admin-logo logo-wrap-pro">
-<!--                        <a href="http://daimondhubplus.com">-->
-<!--                            <img src="/img/logo.jpg" alt="DaimondHubPlus" style="border-radius:50%; height: 40px; width: 40px;">-->
+<!--                        <a href="http://Tradepander.com">-->
+<!--                            <img src="/img/logo.jpg" alt="TRADEPANDER" style="border-radius:50%; height: 40px; width: 40px;">-->
 <!--                        </a>-->
 <!--                    </div> -->-->
 <!--                </div>-->
