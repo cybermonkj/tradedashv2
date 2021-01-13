@@ -1,8 +1,8 @@
 @extends('inc.auth_layout')
 @section('content')
 <body>
-    <div style="">
-        <img src="/img/inv_bg2.jpg" class="fixedOverlayIMG">         
+    <div style="background-color: #5a42f5; opacity: 0.3;">
+        <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
         <div class="fixedOeverlayBG"></div>
         <div class="">
             <div class="row login_row_cont">
