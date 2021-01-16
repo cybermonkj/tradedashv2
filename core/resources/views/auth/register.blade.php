@@ -6,7 +6,7 @@
                 <div class="col-md-6 position_relative">
                     <div class="logo_cont" align="center">
                         <img src="/img/blacklogo.png" alt="{{$settings->site_title}}" class="login_logo">
-                        <h1>{{$settings->site_title}}</h1> 
+                        <h1 style="font-weight: bold">{{$settings->site_title}}</h1> 
                         <p>                                                       
                             <h4 style="color:grey;">{{$settings->site_descr}}</h4>
                         </p>
@@ -45,7 +45,7 @@
                                             <div align="center">
                                                 <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                                                 <br>
-                                                <h3 class="colhd"><i class="fa fa-user"></i> Create an Account</h3>
+                                                <h3 style="font-weight: bold" class="colhd"><i class="fa fa-user"></i> Create an Account</h3>
                                                 <hr>
                                             </div>
                                         </div>
