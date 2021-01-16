@@ -45,7 +45,7 @@
                                             <div align="center">
                                                 <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                                                 <br>
-                                                <h3 style="font-weight: bold" class="colhd"><i class="fa fa-user"></i> Create an Account</h3>
+                                                <h3 style="font-weight: bold" class="colhd"> Create an Account <i class="fa fa-user"></i></h3>
                                                 <hr>
                                             </div>
                                         </div>

@@ -28,7 +28,7 @@
                                             <div align="center">
                                                 <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                                                 <br>
-                                                <h3 style="font-weight: bold" class="colhd"><i class="fa fa-key"></i>{{ __('Secure Signin') }}</h3>
+                                                <h3 style="font-weight: bold" class="colhd">{{ __('Secure Signin ') }} <i class="fa fa-key"></i></h3>
                                                 <hr>
                                             </div>
                                         </div>
