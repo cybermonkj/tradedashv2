@@ -2,10 +2,8 @@
 @section('content')
 <body >
     <div style="">
-        <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
-        <div class="fixedOeverlayBG"></div>
-        <div class="">
-            <div class="row login_row_cont">
+		
+		    <div class="row login_row_cont">
                 <div class="col-md-6 position_relative">
                     <div class="logo_cont" align="center">
                         <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
@@ -13,8 +11,13 @@
                         <p>                                                       
                             <h4>{{$settings->site_descr}}, At Tradepander we harness the power of the Multi-billion dollar Forex market and other calculated investment opportunities to bring you secured returns.</h4>
                         </p>
-                    </div>                    
-                </div>
+                    </div>                     
+				
+       <!-- <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
+        <div class="fixedOeverlayBG"></div>
+        <div class="">
+        
+                </div>-->
                 <div class="col-md-6 bg_white">
                     <div class="login_fixed_panel">
                         <div class="row">
