@@ -1,19 +1,22 @@
 <?php $__env->startSection('content'); ?>
 <body >
     <div style="">
-        <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
-        <div class="fixedOeverlayBG"></div>
-        <div class="">
-            <div class="row login_row_cont">
+		
+		    <div background-color: "#5407d9" class="row login_row_cont">
                 <div class="col-md-6 position_relative">
                     <div class="logo_cont" align="center">
-                        <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
+                        <img src="/img/blacklogo.png" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                         <h1><?php echo e($settings->site_title); ?></h1> 
                         <p>                                                       
-                            <h4><?php echo e($settings->site_descr); ?></h4>
+                            <h4 style="color:grey;"><?php echo e($settings->site_descr); ?></h4>
                         </p>
-                    </div>                    
-                </div>
+                    </div>                     
+				
+       <!-- <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
+        <div class="fixedOeverlayBG"></div>
+        <div class="">
+        
+                </div>-->
                 <div class="col-md-6 bg_white">
                     <div class="login_fixed_panel">
                         <div class="row">
@@ -24,7 +27,7 @@
                                             <div align="center">
                                                 <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                                                 <br>
-                                                <h3 class="colhd"><i class="fa fa-key"></i><?php echo e(__('Secure Signin')); ?></h3>
+                                                <h3 style="font-weight: bold" class="colhd"><?php echo e(__('Secure Signin ')); ?> <i class="fa fa-key"></i></h3>
                                                 <hr>
                                             </div>
                                         </div>
