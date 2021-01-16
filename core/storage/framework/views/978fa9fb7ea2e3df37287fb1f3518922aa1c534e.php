@@ -10,7 +10,7 @@
                         <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                         <h1><?php echo e($settings->site_title); ?></h1> 
                         <p>                                                       
-                            <h4> <?php echo e(__('Login to manage website')); ?> </h4>
+                            <h4> <?php echo e(__('Support and Admin Login')); ?> </h4>
                         </p>
                     </div>                    
                 </div>

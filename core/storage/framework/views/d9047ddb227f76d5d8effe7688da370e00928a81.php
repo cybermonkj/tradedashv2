@@ -3,7 +3,7 @@
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
 				<h2 class="text-white pb-2 fw-bold">					
-					Hi! Welcome <?php echo e(ucfirst($adm->name)); ?>					
+					Hi! Welcome back <?php echo e(ucfirst($adm->name)); ?>					
 				</h2>	
 				<p class="text-white"><?php echo e(str_replace('/', ' > ', ucfirst(Request::path()))); ?></p>			
 			</div>

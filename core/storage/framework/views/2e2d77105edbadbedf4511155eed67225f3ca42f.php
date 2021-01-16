@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
-<body>
+<body >
     <div style="">
-        <img src="/img/inv_bg2.jpg" class="fixedOverlayIMG">         
+        <img src="/img/1inv_bg2.jpg" class="fixedOverlayIMG">         
         <div class="fixedOeverlayBG"></div>
         <div class="">
             <div class="row login_row_cont">
@@ -24,7 +24,7 @@
                                             <div align="center">
                                                 <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                                                 <br>
-                                                <h3 class="colhd"><i class="fa fa-key"></i><?php echo e(__('User Login')); ?></h3>
+                                                <h3 class="colhd"><i class="fa fa-key"></i><?php echo e(__('Secure Signin')); ?></h3>
                                                 <hr>
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@ unset($__errorArgs, $__bag); ?>
                                                     <input class="" type="checkbox" name="remember" id="remember" <?php echo e(old('remember') ? 'checked' : ''); ?>>
                                                     &nbsp;
                                                     <label class="" for="remember">
-                                                        <?php echo e(__('Remember Me')); ?>
+                                                        <?php echo e(__('Keep me signed in')); ?>
 
                                                     </label>
                                                                                                             
@@ -116,7 +116,7 @@ unset($__errorArgs, $__bag); ?>
                                                 <div class="">
                                                     <div class="" align="center">
                                                         <button type="submit" class="collc btn btn-primary">
-                                                            <?php echo e(__('Login')); ?>
+                                                            <?php echo e(__('Signin')); ?>
 
                                                         </button>                               
                                                     </div>
@@ -133,7 +133,7 @@ unset($__errorArgs, $__bag); ?>
                                                 <div class="">
                                                     <div class="" align="center">
                                                        <p>
-                                                           <strong><?php echo e(__("Don't have an account?")); ?> <a href="/register"><?php echo e(__('Register')); ?></a></strong>
+                                                           <strong><?php echo e(__("Don't have an account?")); ?> <a href="/register"><?php echo e(__('Signup')); ?></a></strong>
                                                        </p>                            
                                                     </div>                                                   
                                                     

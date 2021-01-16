@@ -165,21 +165,21 @@
 												<span class="fas fa-donate"></span>&nbsp; User Deposits
 											</a>
 											<a class="dropdown-item" href="/admin/manage/withdrawals">
-												<span class="fa fa-file"></span>&nbsp; User Withdrawal 
+												<span class="fa fa-file"></span>&nbsp; Withdrawal Requests
 											</a>
 										<?php endif; ?>
 
 										<a class="dropdown-item" href="/admin/manage/packages">
-											<span class="fa fa-briefcase"></span>&nbsp; Packages
+											<span class="fa fa-briefcase"></span>&nbsp; Packages Manager
 										</a>
 										<a class="dropdown-item" href="/admin/send/msg">
-											<span class="fa fa-bell"></span>&nbsp; Send Notification
+											<span class="fa fa-bell"></span>&nbsp; Notification Manager
 										</a>
 										<a class="dropdown-item" href="/admin/change/pwd">
 											<span class="fa fa-key"></span>&nbsp; Change Password
 										</a>	
 										<a class="dropdown-item" href="<?php echo e(route('support.index')); ?>">
-											<span class="fab fa-teamspeak"></span>&nbsp; Support Center
+											<span class="fab fa-teamspeak"></span>&nbsp; Ticker Center
 										</a>	
 
 										<?php ($role = Session::get('adm')); ?>
@@ -305,7 +305,7 @@
 						<li class="nav-item">
 					    	<a href="<?php echo e(route('support.index')); ?>">
 								<i class="fab fa-teamspeak"></i>
-								<p> Support Center </p>
+								<p> Support Tickets </p>
 							</a>
 						</li>			
 
@@ -327,7 +327,7 @@
 										
 										<li class="">
 											<a href="/admin/view/settings">
-												<span class="sub-item">Settings</span>
+												<span class="sub-item">Tradepander</span>
 											</a>
 										</li>
 										<li class="">
