@@ -6,7 +6,7 @@
 		    <div background-color: "#5407d9" class="row login_row_cont">
                 <div class="col-md-6 position_relative">
                     <div class="logo_cont" align="center">
-                        <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
+                        <img src="/img/blacklogo.png" alt="{{$settings->site_title}}" class="login_logo">
                         <h1>{{$settings->site_title}}</h1> 
                         <p>                                                       
                             <h4 style="color:grey;">{{$settings->site_descr}}</h4>
