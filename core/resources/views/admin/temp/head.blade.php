@@ -3,7 +3,7 @@
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>DHP {{ucwords(str_replace("/", " ", Request::path())) }} - Diamond Hub Plus</title>
+    <title>TP {{ucwords(str_replace("/", " ", Request::path())) }} - Tradepander</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon

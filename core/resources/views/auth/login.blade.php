@@ -11,7 +11,7 @@
                         <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
                         <h1>{{$settings->site_title}}</h1> 
                         <p>                                                       
-                            <h4>{{$settings->site_descr}}</h4>
+                            <h4>{{$settings->site_descr}}, At Tradepander we harness the power of the Multi-billion dollar Forex market and other calculated investment opportunities to bring you secured returns.</h4>
                         </p>
                     </div>                    
                 </div>

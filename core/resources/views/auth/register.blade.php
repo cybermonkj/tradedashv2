@@ -2,7 +2,7 @@
 @section('content')
 <body>
     <div style="">
-        <img src="/img/inv_bg2.jpg" class="fixedOverlayIMG">         
+      <!--  <img src="/img/inv_bg2.jpg" class="fixedOverlayIMG">         
         <div class="fixedOeverlayBG"></div>
         <div class="">
             <div class="row login_row_cont">
@@ -14,7 +14,7 @@
                             <h4>{{$settings->site_descr}}</h4>
                         </p>
                     </div>                    
-                </div>
+                </div> -->
                 <div class="col-md-6 bg_white">
                     <div class="login_fixed_panel">
                         <div class="row">
