@@ -3,7 +3,7 @@
 <?php $__env->startSection('content'); ?>
     <div class="main-panel">
         <div class="content">
-            <?php ($breadcome = 'Coinpayment Gateway'); ?>
+            <?php ($breadcome = 'Pay with BTC'); ?>
             <?php echo $__env->make('user.atlantis.main_bar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             <div class="page-inner mt--5">
                 
