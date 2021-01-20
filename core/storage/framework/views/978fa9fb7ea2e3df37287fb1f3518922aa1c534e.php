@@ -10,7 +10,7 @@
                         <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                         <h1><?php echo e($settings->site_title); ?></h1> 
                         <p>                                                       
-                            <h4> <?php echo e(__('Support and Admin Login')); ?> </h4>
+                           <!-- <h4> <?php echo e(__('Support and Admin Login')); ?> </h4> -->
                         </p>
                     </div>                    
                 </div>
@@ -20,7 +20,7 @@
                             <div class="col-md-12" >
                                 <div style="">                        
                                     <div class="panel" align="center">
-                                        <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
+                                        <img src="/img/blacklogo.png; ?>" alt="<?php echo e($settings->site_title); ?>" class="login_logo">
                                         <br><br>
                                         <h4 align="center"> <?php echo e(__('Admin Login')); ?> </h4> 
                                         <div id="errMsg" class="card-header alert alert-danger cont_display_none" align="center">         
