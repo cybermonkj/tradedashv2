@@ -251,6 +251,12 @@
 							</a>							
 						</li>
 						<li class="nav-item">
+							<a href="#">
+								<i class="fa fa-money"></i>
+								<p>Trader/ICO (Coming Soon)</p>
+							</a>							
+						</li>
+						<li class="nav-item">
 							<a href="{{route('ticket.index')}}">
 								<i class="fas fa-headset"></i>
 								<p>Get Support</p>

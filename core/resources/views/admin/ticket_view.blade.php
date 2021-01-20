@@ -23,7 +23,7 @@
                                         <table id="basic-datatables" class=" display  table table-striped table-hover" >
                                             <thead>
                                                 <tr> 
-                                                    <th>{{ __('Ticket ID') }}</th>
+                                                    <th>{{ __('Ticket No.') }}</th>
                                                     <th>{{ __('User ID') }}</th> 
                                                     <th>{{ __('Title') }}</th>
                                                     <th>{{ __('status') }}</th>
