@@ -55,8 +55,8 @@
                                   </div>                                               
                                   <div class="col-md-6" align="center"> 
                                         <img src="/img/{{$settings->site_logo}}" alt="Logo" class="height_50" align="center" >
-                                  </div>                                                
-                              </div> -->
+                                  </div>  -->                                              
+                              </div> 
                               <br><br>
                               <hr>
 
