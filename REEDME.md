@@ -48,4 +48,9 @@ Thats it. Trade pander is ready to run live on your local Server, Just restart y
 
 
 
+Accessing Admin Area: Follow the route
+https://localhost:(Your Port Number)/back-end
+
+
+
 

@@ -211,8 +211,8 @@
                                                                 </div>
                                                                 <div class="row">              
                                                                     <div class="col-sm-12">
-                                                                        <p class="text-danger">
-                                                                           {{ __('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code') }} 
+                                                                        	<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a>
+                                                                          <p> {{ __('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code') }} 
                                                                         </p>
                                                                     </div>
                                                                 </div>
