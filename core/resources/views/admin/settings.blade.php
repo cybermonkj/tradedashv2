@@ -61,14 +61,14 @@
                               <hr>
 
                               <div class="row margin_top50"> 
-                                  <div class="col-md-6">
+                                 <!-- <div class="col-md-6">
                                       <h3><i class="fas fa-thumbtack"></i> {{ __('Site Title') }} </h3>
                                       <input type="text" name="siteTitle" value="{{$settings->site_title}}" class="form-control" placeholder="Site Name" required >
-                                  </div> 
-                                  <div class="col-md-6">
+                                  </div>  -->
+                                 <!-- <div class="col-md-6">
                                       <h3><i class="fas fa-pen"></i> {{ __('Site Description') }} </h3>
                                       <input type="text" name="siteDescr" value="{{$settings->site_descr}}" class="form-control" placeholder="Site Description" required>
-                                  </div>  
+                                  </div>  -->
                               </div>
                               <div class="row margin_top50">
                                <div class="col-md-8">
