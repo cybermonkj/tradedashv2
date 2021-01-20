@@ -1,7 +1,7 @@
 {
     "name": "Tradepander",
     "short_name": "Tradepander",
-	"start_url": "https://v2.tradepander.com/dashboard",
+	"start_url": "https://v2.tradepander.com",
   	"display": "standalone",
   	"background_color": "#fff",
   	"description": "A realiable Money making investments with big returns.",
