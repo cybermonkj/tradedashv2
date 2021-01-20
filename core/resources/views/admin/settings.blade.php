@@ -275,9 +275,9 @@
 
                           <div class="p-5 tab-pane fade" id="payment_setting_tab" role="tabpanel" aria-labelledby="payment_setting_tab-tab">
                             <div class="row ">                               
-                              <div   class="col-md-6 ">
+                          <!--    <div   class="col-md-6 ">
                                   <div class="card pad_20">
-                                  <!--    <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
+                                     <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
                                       <h2 class="text-center">Paypal Setup</h2>
                                       <hr>
                                       <div class="form-group">
@@ -301,8 +301,8 @@
                                             <input id="switch_paypal" type="checkbox" name="switch_paypal"  value="{{env('SWITCH_PAYPAL')}}" @if(env('SWITCH_PAYPAL') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_paypal')"></span>
                                           </label>
-                                      </div> --> 
-                                      
+                                      </div> 
+                                     
                                   </div>
                               </div> 
                               <div   class="col-md-6">
@@ -326,7 +326,7 @@
                                           </label>
                                       </div>                                                     
                                   </div>                                                   
-                              </div>  
+                              </div>  -->
                               
                               <div class="col-md-6">
                                   <div class="card pad_20" >
@@ -358,12 +358,13 @@
                                       </div>                                                     
                                   </div>                                                   
                               </div>  
+								
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="fab fa-bitcoin fa-3x"></i></h3>
                                       <h2 class="text-center">Coinpayment Setup</h2>
-                                      <hr>
-                                    <!--  <div class="form-group">
+                                    <!--   <hr>
+                                     <div class="form-group">
                                           <h5> {{ __('COINPAYMENTS_MERCHANT_ID') }} </h5>
                                           <input type="text" name="cp_m_id" value="{{env('COINPAYMENTS_MERCHANT_ID')}}" class="form-control" placeholder=""  >
                                       </div>  
@@ -410,8 +411,8 @@
                                       <img align="center" src="/img/coinbase.png" class="img-responsive" style="width: 45%;">
                                     </h3>
                                     <h2 class="text-center">Coinbase Setup</h2>
-                                    <hr>
-                                  <!--  <div class="form-group">
+                                   <!--   <hr>
+                                  <div class="form-group">
                                         <h5> {{ __('Coinbase Key') }} </h5>
                                         <input type="text" name="coinbase_key" value="{{ env('COINBASE_API_KEY') }}" class="form-control" placeholder="Coinbase api Key"  >
                                     </div>
@@ -434,7 +435,7 @@
                                   <div class="card pad_20" >
                                       <h3 align="center"><img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="60px"></img></h3>
                                       <h2 class="text-center">Paystack Setup</h2>
-                                      <hr>
+                                     <!-- <hr>
                                       <div class="form-group">
                                           <h5> {{ __('Paystack Public Key') }} </h5>
                                           <input type="text" name="paystack_pub_key" value="{{ env('PAYSTACK_PUBLIC_KEY') }}" class="form-control" placeholder="Paystack public key"  >
@@ -446,12 +447,12 @@
                                       <div class="form-group">
                                           <h5> {{ __('Paystack Merchant Email') }} </h5>
                                           <input type="email" name="paystack_email" value="{{ env('MERCHANT_EMAIL') }}" class="form-control" placeholder="Paystack email" >
-                                      </div>
-                                      
+                                      </div> 
+                                      -->
                                        <div class="form-group">
                                           <h5> {{ __('Paystack Webhook URL') }}</h5>
                                           <input type="text" name="" value="{{ env('APP_URL') }}/paystack/callbck" class="form-control" readonly>
-                                      </div>
+                                      </div> 
                                      
                                       <div class="" align="right"> 
                                           <b>On/Off</b><br>             
@@ -463,7 +464,7 @@
                                   </div>                                                   
                               </div> 
 
-                              <div class="col-md-6">
+                              <!--<div class="col-md-6">
                                 <div class="card pad_20" >
                                     <h3 align="center">
                                       <img align="center" src="/img/payeer.png" class="img-responsive" style="width: 45%;">
@@ -486,9 +487,9 @@
                                         </label>
                                     </div>                                                     
                                 </div>                                                   
-                              </div> 
+                              </div> -->
 
-                              <div class="col-md-6">
+                             <!-- <div class="col-md-6">
                                 <div class="card pad_20" >
                                     <h3 align="center">
                                       <img align="center" src="http://www.deminetsolution.biz/slides/slide4.jpg" class="img-responsive" style="width: 50%;">
@@ -511,7 +512,7 @@
                                         </label>
                                     </div>                                                     
                                 </div>                                                   
-                              </div> 
+                              </div> -->
 
                             </div>
 
