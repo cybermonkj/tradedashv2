@@ -206,8 +206,16 @@
                                                                         </h3>
                                                                         <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
                                                                         <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5>
-																		
-                                                                    </div>
+																		<h4>
+																			<a style="text-decoration:none;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#bank">
+																				<strong>Buy Deposit Code</strong>
+																			</a>
+																		</h4>
+																<div id="bank" class="panel-collapse collapse">
+																	<div class="">
+																	<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a>
+																	</div>
+																	
                                                                 </div>
                                                                 <div class="row">              
                                                                     <div class="col-sm-12">
@@ -372,7 +380,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt"  required placeholder="Deposit code Value" >
+                                <input type="number" class="form-control" name="amt"  required placeholder="Amount" >
                               </div>
                             </div>
                             <div class="form-group">
@@ -401,7 +409,7 @@
                             </div> -->
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info">{{ __('Proceed') }}</button>
+                                <button class="collb btn btn-info">{{ __('Submit Code') }}</button>
                                 <span style="">            
                                   <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
                                 </span>

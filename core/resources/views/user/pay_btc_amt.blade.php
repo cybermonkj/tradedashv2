@@ -14,9 +14,9 @@
                                 <div class="card-head-row">
                                     <div class="card-title">
                                         @if ($coin == 'BTC')
-                                        {{ __('Deposit Using Bitcoin') }}
+                                        {{ __('Fund Using Bitcoin') }}
                                         @else
-                                        {{ __('Deposit Using Ethereum') }}
+                                        {{ __('Fund Using Ethereum') }}
                                         @endif
                                         </div>
                                     <div class="card-tools">                                            
