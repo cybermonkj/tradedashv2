@@ -1,6 +1,10 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Tradepander",
+    "short_name": "Tradepander",
+	"start_url": "https://v2.tradepander.com/dashboard",
+  	"display": "standalone",
+  	"background_color": "#fff",
+  	"description": "A realiable Money making investments with big returns.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

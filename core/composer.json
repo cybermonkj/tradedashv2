@@ -12,6 +12,7 @@
         "bacon/bacon-qr-code": "~1.0.3",
         "cartalyst/stripe-laravel": "11.*",
         "coinbase/coinbase-commerce": "^1.0",
+        "emotality/tawk-laravel": "^1.1",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.5",
         "jackiedo/dotenv-editor": "1.*",
