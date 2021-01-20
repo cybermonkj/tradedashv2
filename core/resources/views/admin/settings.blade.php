@@ -46,9 +46,10 @@
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
                                 </div>                                                
                               </div> 
-                              <br><br>
+                              <br><br> -->
+
                               <hr>
-                               <div class="row margin_top50"> 
+                              <!--<div class="row margin_top50"> 
                                  <div class="col-md-6">
                                       <h3><i class="fab fa-centercode"></i> {{ __('Site Logo') }} </h3>
                                       <input type="file" name="siteLogo" class=" btn btn-info border_none" >
@@ -56,8 +57,8 @@
                                   <div class="col-md-6" align="center"> 
                                         <img src="/img/{{$settings->site_logo}}" alt="Logo" class="height_50" align="center" >
                                   </div>                                            
-                              </div>   
-                              <br><br>-->  
+                              </div>  --> 
+                              <br><br>  
                               <hr>
 
                               <!-- <div class="row margin_top50"> 
@@ -104,8 +105,8 @@
                                   </div>                                                
                               </div>
                               <br><br>
-                              <hr>
-                             <!--  <div class="row margin_top50">                                                                                               
+                               <hr>
+                             <!-- <div class="row margin_top50">                                                                                               
                                  <div class="col-md-12" >
                                       <h3><i class="fa fa-coggs"></i> {{ __('Currency Settings') }} </h3>
                                   </div> 
@@ -124,7 +125,7 @@
                               </div> 
 
                             </div>
-                          </div> 
+                          
 
                           <div class="p-5 tab-pane fade" id="pills-profile" role="tabpanel" >
                             <div class="row"> 
@@ -201,7 +202,6 @@
                                     </select> 
                                 </div> 
 
-                            </div>
 
                             <div id="Multi_level_settings" class="@if(env('REF_SYSTEM') != 'Multi_level'){{__('cont_display_none')}}@endif">
                              <div class="row mt-5">
@@ -228,7 +228,6 @@
                                 @endforeach                                           
                               </div>
                             </div>
-                          </div>
 
                           <div class="p-5 tab-pane fade" id="mail_settings" role="tabpanel" aria-labelledby="mail_settings-tab">
                             <div class="row "> 
