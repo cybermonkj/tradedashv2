@@ -6,7 +6,7 @@
 			    @php($breadcome = 'Notifications')
 				@include('user.atlantis.main_bar')
 				<div class="page-inner mt--5">
-					@include('user.atlantis.overview')
+					<!--@include('user.atlantis.overview') -->
 					<div id="prnt"></div>
 					<div class="row ">
 						<div class="col-md-4">
