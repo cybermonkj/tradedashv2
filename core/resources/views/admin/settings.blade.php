@@ -35,8 +35,8 @@
                           <div class="p-5 tab-pane fade show active" id="pills-home" role="tabpanel" >
                             <div class="form-group">                                            
                               <div class="row">                                                
-                              <!--  <div class="col-md-6" align="">
-                                    <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3>
+                                <div class="col-md-6" align="">
+                              <!--      <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required >
                                 </div>                                   
@@ -45,7 +45,7 @@
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
                                 </div>                                                
-                              </div>
+                              </div> -->
                               <br><br>
                               <hr>
                               <div class="row margin_top50"> 
