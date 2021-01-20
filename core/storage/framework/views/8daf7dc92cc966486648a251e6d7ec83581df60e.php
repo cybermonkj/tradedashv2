@@ -185,13 +185,13 @@
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Pay using paystack')); ?>
+                                                                <?php echo e(__('Pay with card')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('paystack.index')); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Pay with Paystack')); ?>
+                                                                    <?php echo e(__('Continue with Paystack')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -206,13 +206,13 @@
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Pay using Bank Deposit/Transfer')); ?>
+                                                                <?php echo e(__('Pay with Deposit Code')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a id="pay_with_bank_dep" href="javascript:void(0)" class="btn btn_blue" >
-                                                                    <?php echo e(__('Deposit with Bank')); ?>
+                                                                    <?php echo e(__('Use Deposit Code')); ?>
 
                                                                 </a>
                                                             </div> 

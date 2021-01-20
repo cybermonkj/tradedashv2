@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title col-sm-12"  >{{ __('Open Ticket') }} 
+                                        <div class="card-title col-sm-12"  >{{ __('Request Support') }} 
                                             <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Ticket</a></span>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                                                     @endif
                                                                 </a>
                                                                 @if($ticket->status == 0)
-                                                                    <a title="Close Ticket" href="{{ route('ticket.close', $ticket->id)}}" class="btn btn-warning">
+                                                                    <a title="Close Session" href="{{ route('ticket.close', $ticket->id)}}" class="btn btn-warning">
                                                                         <i class="fas fa-stop-circle"></i>
                                                                     </a>
                                                                 @endif
@@ -100,7 +100,7 @@
                     <form class="form-horizontal" method="POST" role="form" action="{{ route('ticket.create') }}" >
                         @csrf
                         <div class="form-group {{ $errors->has('amount') ? ' has-error' : '' }}">
-                            <label class="control-label">{{ __('Title') }}</label>                            
+                            <label class="control-label">{{ __('Summary') }}</label>                            
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-pen-alt"></i></span>

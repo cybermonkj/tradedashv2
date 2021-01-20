@@ -50,10 +50,11 @@
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
                                                             <th>{{ __('Name') }}</th>
                                                             <th>{{ __('Username') }}</th>
-                                                            <th>{{ __('Level') }}</th>
-                                                            <th>{{ __('Amount Earned') }}</th>
+															<th>{{ __('Amount Earned') }}</th>
                                                             <th>{{ __('Investment') }}</th>
-                                                            <th>{{ __('Date Registered') }}</th>   
+                                                            <th>{{ __('Date Registered') }}</th>
+                                                            <th>{{ __('Level') }}</th>
+                                                              
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -82,17 +83,17 @@
                                                             @endforeach
                                                         @else
                                                             <tr>                                                    
-                                                                <td colspan="4">No data</td>                     
+                                                                <td colspan="4">No data to Display</td>                     
                                                             </tr>
                                                         @endif
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                            <th>{{ __('Name') }}</th>
+                                                           <!-- <th>{{ __('Name') }}</th> -->
                                                             <th>{{ __('Username') }}</th>
                                                             <th>{{ __('Amount Earned') }}</th>
-                                                            <th>{{ __('Investment') }}</th>
+                                                           <!-- <th>{{ __('Investment') }}</th> -->
                                                             <th>{{ __('Date Registered') }}</th>   
                                                         </tr>
                                                     </tfoot>
