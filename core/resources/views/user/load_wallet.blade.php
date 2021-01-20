@@ -394,15 +394,15 @@
                                 </div>
                                 <input type="text" class="form-control" name="account_no"  required placeholder="Your name" >
                               </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend" >
                                   <span class="input-group-text span_bg"><i class="fa fa-home" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="bank_name"  required placeholder="Bank name sent from" >
+                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
                               </div>
-                            </div> -->
+                            </div>
                             <div class="form-group">
                               <br>
                                 <button class="collb btn btn-info">{{ __('Submit') }}</button>
