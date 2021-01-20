@@ -42,7 +42,7 @@
                                                                 <i class="fab fa-cc-paypal fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Pay with paypal')); ?>
+                                                                <?php echo e(__('Fund with paypal')); ?>
 
                                                             </p>
                                                             <div align="">
@@ -58,13 +58,13 @@
                                                                 <i class="fab fa-cc-stripe fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Pay with Stripe gateway')); ?>
+                                                                <?php echo e(__('Fund with Stripe payment gateway')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('stripe.amount')); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Pay with Stripe')); ?>
+                                                                    <?php echo e(__('Fund with Stripe')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -79,7 +79,7 @@
                                                                 <img src="/img/pm.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Pay using Perfect Money - Low fees')); ?>
+                                                                <?php echo e(__('Fund using Perfect Money')); ?>
 
                                                             </p> 
                                                            
@@ -101,7 +101,7 @@
                                                                 <img src="/img/payeer.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Deposit with Payeer gateway')); ?>
+                                                                <?php echo e(__('Fund with Payeer gateway')); ?>
 
                                                             </p> 
                                                            
@@ -122,13 +122,13 @@
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Fund with Bitcoin')); ?>
+                                                                <?php echo e(__('Fund using Bitcoin')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('btc.index', ['coin' => 'BTC'])); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Continue to Payment')); ?>
+                                                                    <?php echo e(__('Fund with BTC')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -143,13 +143,13 @@
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Fund with coinbase - More Payment Methodes')); ?>
+                                                                <?php echo e(__('Fund using Coinbase Crypto payment system')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('coinbase.index')); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Continue with coin base')); ?>
+                                                                    <?php echo e(__('Fund with Coinbase')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -170,7 +170,7 @@
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('btc.index', ['coin' => 'ETH'])); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Continue with ETH')); ?>
+                                                                    <?php echo e(__('Fund with ETH')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -185,13 +185,13 @@
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                <?php echo e(__('Fund with Card')); ?>
+                                                                <?php echo e(__('Fund using Card')); ?>
 
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="<?php echo e(route('paystack.index')); ?>" class="btn btn_blue" >
-                                                                    <?php echo e(__('Continue')); ?>
+                                                                    <?php echo e(__('Process with Paystack')); ?>
 
                                                                 </a>
                                                             </div>                                      
@@ -223,18 +223,10 @@
                                                                             <i class="fas fa-money-check-alt color_blue_9"></i> <?php echo e(env('ACCOUNT_NAME')); ?>
 
                                                                         </h3>
-                                                                        <h4 class="text-danger">Auto Verification: <?php echo e(env('ACCOUNT_NUMBER')); ?></h4>
-                                                                        <h5 class="">Average Response time: <?php echo e(env('BANK_NAME')); ?></h5>
-																		<h4>
-																			<a style="text-decoration:none;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#bank">
-																				<strong>Buy Deposit Code</strong>
-																			</a>
-																		</h4>
-																<div id="bank" class="panel-collapse collapse">
-																	<div class="">
-																	<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-<?php echo e($text); ?>">Find Deposit code vendors</a>
-																	</div>
-																	
+                                                                       <!-- <h4 class="text-danger">Auto Verification: <?php echo e(env('ACCOUNT_NUMBER')); ?></h4>
+                                                                        <h5 class="">Average Response time: <?php echo e(env('BANK_NAME')); ?></h5> -->
+																		
+                                                                    </div>
                                                                 </div>
                                                                 <div class="row">              
                                                                     <div class="col-sm-12">
@@ -297,8 +289,8 @@
                                             <tr>  
                                                 <th><?php echo e(__('Amount')); ?></th>        
                                                 <th><?php echo e(__('Method')); ?></th>
-                                                <th><?php echo e(__('Account')); ?></th>
-                                                <th><?php echo e(__('Acc Name')); ?></th>
+                                                <th><?php echo e(__('Account/Code/Haash')); ?></th>
+                                                <th><?php echo e(__('Acc/Deposit Code')); ?></th>
                                                 <th><?php echo e(__('Date')); ?></th>
                                                 <th><?php echo e(__('Status')); ?></th>
                                                 <th><?php echo e(__('Url')); ?></th>                                                                        
@@ -411,7 +403,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Code Source" >
+                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
                               </div>
                             </div>
                            <!-- <div class="form-group">
@@ -432,7 +424,7 @@
                             </div> -->
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info"><?php echo e(__('Submit Code')); ?></button>
+                                <button class="collb btn btn-info"><?php echo e(__('Submit')); ?></button>
                                 <span style="">            
                                   <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>        
                                 </span>

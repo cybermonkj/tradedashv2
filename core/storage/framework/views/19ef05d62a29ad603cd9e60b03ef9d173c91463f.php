@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('content'); ?>
         <div class="main-panel">
             <div class="content">
@@ -12,25 +11,26 @@
                           <li class="nav-item">
                             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">General</a>
                           </li>
+							<li class="nav-item">
+                            <a class="nav-link" id="referral-tab" data-toggle="pill" href="#referral" role="tab" aria-controls="pills-contact" aria-selected="false">Referral</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="mail_settings-tab" data-toggle="pill" href="#mail_settings" role="tab" aria-controls="pills-contact" aria-selected="false">Email</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#payment_setting_tab" role="tab" aria-controls="pills-contact" aria-selected="false">Payment Methods</a>
+                          </li>
                           <li class="nav-item">
                             <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Deposit</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Withdrawal</a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="referral-tab" data-toggle="pill" href="#referral" role="tab" aria-controls="pills-contact" aria-selected="false">Referral</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="mail_settings-tab" data-toggle="pill" href="#mail_settings" role="tab" aria-controls="pills-contact" aria-selected="false">SMTP</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#payment_setting_tab" role="tab" aria-controls="pills-contact" aria-selected="false">Payment Methods</a>
-                          </li>
+                         
                           
                         </ul>
 
-                        <div class="tab-content" id="pills-tabContent">
+                       <!-- <div class="tab-content" id="pills-tabContent">
                           <div class="p-5 tab-pane fade show active" id="pills-home" role="tabpanel" >
                             <div class="form-group">                                            
                               <div class="row">                                                
@@ -68,7 +68,7 @@
                                       <h3><i class="fas fa-pen"></i> <?php echo e(__('Site Description')); ?> </h3>
                                       <input type="text" name="siteDescr" value="<?php echo e($settings->site_descr); ?>" class="form-control" placeholder="Site Description" required>
                                   </div>  
-                              </div>
+                              </div> -->
                               <div class="row margin_top50">
                                <div class="col-md-8">
                                       <h3><i class="fas fa-envelope"></i> <?php echo e(__('Support Email')); ?> </h3>
@@ -78,7 +78,10 @@
                               <br>
                               <div class="row margin_top50"> 
                                 <div class="col-md-4">
-                                    <h3><i class="fas fa-hand-holding-usd"></i> <?php echo e(__('Enable Investment')); ?>  </h3>
+                                    <h3><i class="fas fa-hand-holding-usd"></i> <?php echo e(__('Enable Investment system')); ?>  </h3>
+									<p>
+										Super Says: Do Not Change except absolutely Neccery eg. On Migrations
+									</p>
                                 </div>                                               
                                 <div class="col-md-8" align="right">
                                     <b>On/Off</b><br>               
@@ -92,6 +95,9 @@
                               <div class="row margin_top50"> 
                                   <div   class="col-md-4">
                                       <h3> <i class="fas fa-user"></i> <?php echo e(__('Enable User Registration')); ?> </h3>
+									  <p>
+										Super Admin: Disables New User Registrations, Used During Migration only
+									</p>
                                   </div>                                               
                                   <div class="col-md-8" align="right">
                                       <b>On/Off</b><br>               
@@ -103,7 +109,7 @@
                               </div>
                               <br><br>
                               <hr>
-                              <div class="row margin_top50">                                                                                               
+                             <!-- <div class="row margin_top50">                                                                                               
                                   <div class="col-md-12" >
                                       <h3><i class="fa fa-coggs"></i> <?php echo e(__('Currency Settings')); ?> </h3>
                                   </div>
@@ -121,7 +127,7 @@
                                   </div>                                            
                               </div>
 
-                            </div>
+                            </div> -->
                           </div>
 
                           <div class="p-5 tab-pane fade" id="pills-profile" role="tabpanel" >
@@ -134,6 +140,11 @@
                                     <h5> <?php echo e(__('Maximum Deposit (').$settings->currency.__(')')); ?> </h5>
                                     <input type="number" name="max_dep" value="<?php echo e(env('MAX_DEPOSIT')); ?>" class="form-control" placeholder="Maximum deposit" step="1" required>
                                 </div> 
+								
+								<p>
+										Super Says: Do Not Change except absolutely Neccery eg. I guess they are self explanatory -
+									</p>
+								
                                 <div class="col-md-12 mt-3" align="right"> 
                                     <b>On/Off</b><br>             
                                     <label class="switch">
@@ -146,22 +157,28 @@
 
                           <div class="p-5 tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">                            
                             <div class="row"> 
+							 <div class="col-sm-6">
+                                <h5> <?php echo e(__('Withdrawal Limit')); ?> </h5>
+                                <input type="number" name="wd_limit" value="<?php echo e(env('WD_LIMIT')); ?>" class="form-control" placeholder="Enter value" >
+                              </div> 
+								
                               <div class="col-sm-6">
                                 <h5> <?php echo e(__('Minimum Withdrawal')); ?> </h5>
                                 <input type="number" name="min_wd" value="<?php echo e(env('MIN_WD')); ?>" class="form-control" placeholder="Enter value" >
                               </div>
-                              <div class="col-sm-6">
-                                <h5> <?php echo e(__('Withdrawal Limit')); ?> </h5>
-                                <input type="number" name="wd_limit" value="<?php echo e(env('WD_LIMIT')); ?>" class="form-control" placeholder="Enter value" >
-                              </div> 
+
                                                                     
                               <div class="col-sm-12 mt-3">
-                                <h5> <?php echo e(__('Withdrawal Fee. (Exp. 2 means 2%)')); ?> </h5>
+                                <h5> <?php echo e(__('Withdrawal Fee. in % eg. 4 = 4%')); ?> </h5>
                                 <input type="number" name="wd_fee" value="<?php echo e(env('WD_FEE')*100); ?>" class="form-control" placeholder="Enter value" >
                               </div> 
                                                                                                          
                               <div class="col-md-12 mt-2" align="right">
-                                <b>On/Off</b><br>               
+                                <b>On/Off</b><br>  
+								  <p>
+										Super Says: This Disables Withdrawal system and throws a Message alerting users
+									</p>
+								  
                                 <label class="switch">
                                   <input id="wd" type="checkbox" name="wd" value="<?php echo e($settings->withdrawal); ?>" <?php if($settings->withdrawal == 1): ?><?php echo e('checked'); ?><?php endif; ?>>
                                   <span id="" class="slider round" onclick="checkedOnOff('wd')"></span>
@@ -170,7 +187,7 @@
                             </div>                                              
                           </div>
 
-                          <div class="tab-pane fade p-5" id="referral" role="tabpanel" aria-labelledby="referral-tab">
+                         <!-- <div class="tab-pane fade p-5" id="referral" role="tabpanel" aria-labelledby="referral-tab">
                             
                             <div class="row ">                                 
                                 <div class="col-sm-6">
@@ -184,7 +201,7 @@
                                             <option value="Multi_level" selected>Enabled</option>
                                         <?php endif; ?>
                                     </select>                                   
-                                </div>
+                                </div> -->
                                 
                                                                 <div class="col-sm-6">
                                     <h5></i> <?php echo e(__('Referral Type')); ?> </h5>
@@ -201,7 +218,7 @@
 
                             </div>
 
-                            <div id="Multi_level_settings" class="<?php if(env('REF_SYSTEM') != 'Multi_level'): ?><?php echo e(__('cont_display_none')); ?><?php endif; ?>">
+                           <!-- <div id="Multi_level_settings" class="<?php if(env('REF_SYSTEM') != 'Multi_level'): ?><?php echo e(__('cont_display_none')); ?><?php endif; ?>">
                               <div class="row mt-5">
                                   <div class="col-sm-6">                                    
                                     <h6> <?php echo e(__('Referral Levels (Enter Number)')); ?> </h6>
@@ -209,7 +226,7 @@
                                     <small class="font_11">Enter 1 for Single Level</small>
 
                                   </div>                                                 
-                              </div> 
+                              </div>  -->
 
                               <div id="warning_div" class="row mt-5">
                                 <div class="col-sm-12 alert alert-warning text-center">Note: Entering '4' means 4% as referral percentage</div>
@@ -232,17 +249,17 @@
                           <div class="p-5 tab-pane fade" id="mail_settings" role="tabpanel" aria-labelledby="mail_settings-tab">
                             <div class="row "> 
                               <div class="col-sm-12">
-                                  <h2 class=""><i class="fas fa-envelope"></i> <?php echo e(__('Mail Setup')); ?></h2>
+                                  <h2 class=""><i class="fas fa-envelope"></i> <?php echo e(__('Mail Settings (SMTP)')); ?></h2>
                               </div>
                               <div   class="col-md-6 ">
                                   <div class="card pad_20">
                                       <br>
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Mail Host')); ?> </h5>
+                                          <h5> <?php echo e(__('SMTP Host')); ?> </h5>
                                           <input type="text" name="m_host" value="<?php echo e(env('MAIL_HOST')); ?>" class="form-control" placeholder="Mail Host" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Mail Port')); ?> </h5>
+                                          <h5> <?php echo e(__('SMTP Port')); ?> </h5>
                                           <input type="text" name="m_port" value="<?php echo e(env('MAIL_PORT')); ?>" class="form-control" placeholder="Mail Port" >
                                       </div>
                                       <div class="form-group">
@@ -273,10 +290,10 @@
 
                           <div class="p-5 tab-pane fade" id="payment_setting_tab" role="tabpanel" aria-labelledby="payment_setting_tab-tab">
                             <div class="row ">                               
-                              <div   class="col-md-6 ">
+                             <!-- <div   class="col-md-6 ">
                                   <div class="card pad_20">
                                       <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
-                                      <h2 class="text-center">Paypal Setup</h2>
+                                      <h2 class="text-center">Paypal Keys</h2>
                                       <hr>
                                       <div class="form-group">
                                           <h5> <?php echo e(__('Paypal ID')); ?> </h5>
@@ -302,8 +319,8 @@
                                       </div>  
                                       
                                   </div>
-                              </div> 
-                              <div   class="col-md-6">
+                              </div> -->
+                              <!--<div   class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="fab fa-cc-stripe fa-3x"></i></h3>
                                       <h2 class="text-center">Stripe Setup</h2>
@@ -324,31 +341,31 @@
                                           </label>
                                       </div>                                                     
                                   </div>                                                   
-                              </div>  
+                              </div>  -->
                               
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="far fa-building fa-3x"></i></h3>
-                                      <h2 class="text-center">Bank Deposit Setup</h2>
+                                      <h2 class="text-center">Deposit Code Setup</h2>
                                       <hr>
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Bank Name')); ?> </h5>
+                                          <h5> <?php echo e(__('Awaiting Build')); ?> </h5>
                                           <input type="text" name="bank_name" value="<?php echo e(env('BANK_NAME')); ?>" class="form-control" placeholder=""  >
                                       </div>
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Account Name')); ?> </h5>
+                                          <h5> <?php echo e(__('Awaiting Build')); ?> </h5>
                                           <input type="text" name="act_name" value="<?php echo e(env('ACCOUNT_NAME')); ?>" class="form-control" placeholder="" >
                                       </div>  
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Account Number')); ?> </h5>
+                                          <h5> <?php echo e(__('Awaiting Build')); ?> </h5>
                                           <input type="number" name="act_no" value="<?php echo e(env('ACCOUNT_NUMBER')); ?>" class="form-control" placeholder="" >
                                       </div> 
                                       <div class="form-group">
-                                          <h5> <?php echo e(__('Response Email')); ?> </h5>
+                                          <h5> <?php echo e(__('Support Email for Deposit Code')); ?> </h5>
                                           <input type="email" name="dep_email" value="<?php echo e(env('BANK_DEPOSIT_EMAIL')); ?>" class="form-control" placeholder="" >
                                       </div>  
                                       <div class="" align="right"> 
-                                          <b>On/Off</b><br>             
+                                          <b>Enable/Disable</b><br>             
                                           <label class="switch">
                                             <input id="switch_bank_deposit" type="checkbox" name="switch_bank_deposit"  value="<?php echo e(env('BANK_DEPOSIT_SWITCH')); ?>" <?php if(env('BANK_DEPOSIT_SWITCH') == 1): ?><?php echo e('checked'); ?><?php endif; ?>>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_bank_deposit')"></span>
@@ -359,9 +376,12 @@
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="fab fa-bitcoin fa-3x"></i></h3>
-                                      <h2 class="text-center">Coinpayment Setup</h2>
+                                      <h2 class="text-center">Coinpayment Keys</h2>
+									  <p>
+										  For Security Reasons Changes are Made on .env file
+									  </p>
                                       <hr>
-                                      <div class="form-group">
+                                     <!-- <div class="form-group">
                                           <h5> <?php echo e(__('COINPAYMENTS_MERCHANT_ID')); ?> </h5>
                                           <input type="text" name="cp_m_id" value="<?php echo e(env('COINPAYMENTS_MERCHANT_ID')); ?>" class="form-control" placeholder=""  >
                                       </div>  
@@ -380,7 +400,7 @@
                                       <div class="form-group">
                                           <h5> <?php echo e(__('COINPAYMENTS_IPN_URL')); ?> </h5>
                                           <input type="text" name="cp_ipn_url" value="<?php echo e(env('COINPAYMENTS_IPN_URL')); ?>" class="form-control" placeholder=""  >
-                                      </div>
+                                      </div> -->
                                       
                                       <div class="" align="right"> 
                                           <b>On/Off Bitcoin </b><br>             
@@ -406,18 +426,21 @@
                                     <h3 align="center">
                                       <img align="center" src="/img/coinbase.png" class="img-responsive" style="width: 45%;">
                                     </h3>
-                                    <h2 class="text-center">Coinbase Setup</h2>
+                                    <h2 class="text-center">Coinbase Keys</h2>
+									<p>
+										Still awaiting Registration Byepass as credentials don't exist
+									</p>
                                     <hr>
-                                    <div class="form-group">
+                                  <!--  <div class="form-group">
                                         <h5> <?php echo e(__('Coinbase Key')); ?> </h5>
                                         <input type="text" name="coinbase_key" value="<?php echo e(env('COINBASE_API_KEY')); ?>" class="form-control" placeholder="Coinbase api Key"  >
                                     </div>
                                     <div class="form-group">
                                         <h5> <?php echo e(__('Coinbase Webhook Secret')); ?> </h5>
                                         <input type="text" name="coinbase_seceret" value="<?php echo e(env('COINBASE_WEBHOOK_SECRETE')); ?>" class="form-control" placeholder="Coinbase seceret" >
-                                    </div>
+                                    </div> -->
                                     <div class="" align="right"> 
-                                        <b>On/Off</b><br>             
+                                        <b>Enable/Disable</b><br>             
                                         <label class="switch">
                                           <input id="coinbase_switch" type="checkbox" name="coinbase_switch"  value="<?php echo e(env('COINBASE_SWITCH')); ?>" <?php if(env('COINBASE_SWITCH') == 1): ?><?php echo e('checked'); ?><?php endif; ?>>
                                           <span id="" class="slider round" onclick="checkedOnOff('coinbase_switch')"></span>
@@ -429,9 +452,13 @@
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="60px"></img></h3>
-                                      <h2 class="text-center">Paystack Setup</h2>
+                                      <h2 class="text-center">Paystack Keys</h2>
+								  <p>
+									  Key Changes Must be made on .env for security
+								  </p>
                                       <hr>
-                                      <div class="form-group">
+								  
+                                    <!--  <div class="form-group">
                                           <h5> <?php echo e(__('Paystack Public Key')); ?> </h5>
                                           <input type="text" name="paystack_pub_key" value="<?php echo e(env('PAYSTACK_PUBLIC_KEY')); ?>" class="form-control" placeholder="Paystack public key"  >
                                       </div>
@@ -447,10 +474,10 @@
                                        <div class="form-group">
                                           <h5> <?php echo e(__('Paystack Webhook URL')); ?></h5>
                                           <input type="text" name="" value="<?php echo e(env('APP_URL')); ?>/paystack/callbck" class="form-control" readonly>
-                                      </div>
+                                      </div> -->
                                      
                                       <div class="" align="right"> 
-                                          <b>On/Off</b><br>             
+                                          <b>Enable/Disable</b><br>             
                                           <label class="switch">
                                             <input id="paystack_switch" type="checkbox" name="paystack_switch"  value="<?php echo e(env('PAYSTACK_SWITCH')); ?>" <?php if(env('PAYSTACK_SWITCH') == 1): ?><?php echo e('checked'); ?><?php endif; ?>>
                                             <span id="" class="slider round" onclick="checkedOnOff('paystack_switch')"></span>
@@ -459,7 +486,7 @@
                                   </div>                                                   
                               </div> 
 
-                              <div class="col-md-6">
+                             <!-- <div class="col-md-6">
                                 <div class="card pad_20" >
                                     <h3 align="center">
                                       <img align="center" src="/img/payeer.png" class="img-responsive" style="width: 45%;">
@@ -507,7 +534,7 @@
                                         </label>
                                     </div>                                                     
                                 </div>                                                   
-                              </div> 
+                              </div> -->
 
                             </div>
 
@@ -516,7 +543,7 @@
 
                         <div class="row margin_top50 mb-5"> 
                           <div   class="col-md-12">
-                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > <?php echo e(__('Save Changes')); ?> </button>
+                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > <?php echo e(__('Update Tradepander')); ?> </button>
                           </div>                                     
                         </div>
 

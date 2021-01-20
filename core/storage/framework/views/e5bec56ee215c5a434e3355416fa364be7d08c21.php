@@ -19,7 +19,7 @@
         	   <br>
                Your wallet balance will be updated shortly.
 				<br>
-				Thinking about what you can do next? With your balance you can activate investments, Transfer funds to friends and even Trade our ICO (Beta)
+				Thinking about what you can do next? With your balance you can activate investments, Transfer funds to friends and Buy and Trade Coins even Trade our ICO (Beta)
         	   
         	</p>
         	<p>

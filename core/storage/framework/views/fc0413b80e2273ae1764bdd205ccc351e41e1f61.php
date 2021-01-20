@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Investment Notification</title>
+	<title>Deposit Notification</title>
 </head>
 <body>
     <div class="row">
@@ -13,11 +13,11 @@
             <div align="">
         		<img src="<?php echo e(env('APP_URL')); ?>/img/<?php echo e($st->site_logo); ?>" style="height:100px; width:100px;" align="center">
         	</div>
-        	<h3 align="">Investment Notification</h3>
+        	<h3 align="">Deposit Notification</h3>
         	<p>
-        	   Hi, <b><?php echo e($md['username']); ?></b> your Investment on <?php echo e(env('APP_URL')); ?> was successful.
+        	   Hi Admin, <b><?php echo e($md['username']); ?></b> has deposited on <?php echo e(env('APP_URL')); ?>.
         	   <br>
-               You can check your investment growth under my investments on your dashboard. Now you would start to see Returns which you can withdraw when due
+               Kindly attend to this transaction.
         	   
         	</p>
         	<p>
@@ -27,4 +27,4 @@
     </div>
 	
 </body>
-</html><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/mail/user_inv_notification.blade.php ENDPATH**/ ?>
+</html><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/mail/admin_deposit_notification.blade.php ENDPATH**/ ?>

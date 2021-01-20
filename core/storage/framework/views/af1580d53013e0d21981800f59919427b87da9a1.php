@@ -12,9 +12,9 @@
                             <div class="card">
                                 <div class="card-header card_header_bg_blue">
                                     <div class="card-head-row card-tools-still-right">
-                                        <h4 class="card-title text-white"> <i class="fas fa-briefcase"></i> <?php echo e(__('Investment Packages')); ?> </h4>
+                                        <h4 class="card-title text-white"> <i class="fas fa-briefcase"></i> <?php echo e(__('Simplified Investment Packages')); ?> </h4>
                                         <div class="card-tools">
-                                            <a href="/admin/create/package" class="btn btn-default"><i class="fa fa-plus"></i> <?php echo e(__('Add')); ?> </a>
+                                            <a href="/admin/create/package" class="btn btn-default"><i class="fa fa-plus"></i> <?php echo e(__('Creat')); ?> </a>
                                         </div>                                                                       
                                     </div>
                                 </div>
@@ -30,5 +30,5 @@
 
             <?php echo $__env->make('admin.inc.edit_pack', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<?php $__env->stopSection(); ?>
+@endSectionn
 <?php echo $__env->make('admin.atlantis.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/admin/inv_packages.blade.php ENDPATH**/ ?>
