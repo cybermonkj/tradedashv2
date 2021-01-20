@@ -372,7 +372,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt"  required placeholder="Deposit code Value" >
+                                <input type="number" class="form-control" name="amt"  required placeholder="Amount" >
                               </div>
                             </div>
                             <div class="form-group">
@@ -380,7 +380,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Code Source" >
+                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
                               </div>
                             </div>
                            <!-- <div class="form-group">
