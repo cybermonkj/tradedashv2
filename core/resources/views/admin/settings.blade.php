@@ -175,7 +175,7 @@
                           <div class="tab-pane fade p-5" id="referral" role="tabpanel" aria-labelledby="referral-tab">
                             
                             <div class="row ">                                 
-                                <div class="col-sm-6">
+                              <!--  <div class="col-sm-6">
                                     <h5></i> {{ __('Referral System') }} </h5>
                                        <select id="referal_system" class="form-control" name="referal_system" >
                                         @if(env('REF_SYSTEM') == 'Single_level' )
@@ -186,9 +186,9 @@
                                             <option value="Multi_level" selected>Enabled</option>
                                         @endif
                                     </select>                                   
-                                </div>
+                                </div> -->
                                 
-                                                                <div class="col-sm-6">
+                                            <!--                    <div class="col-sm-6">
                                     <h5></i> {{ __('Referral Type') }} </h5>
                                      <select class="form-control" name="referal_type" >
                                         @if(env('REF_TYPE') == 'Once')
@@ -199,19 +199,19 @@
                                             <option value="Continous" selected>Continous (for every investment)</option>
                                         @endif
                                     </select> 
-                                </div>
+                                </div> -->
 
                             </div>
 
                             <div id="Multi_level_settings" class="@if(env('REF_SYSTEM') != 'Multi_level'){{__('cont_display_none')}}@endif">
-                              <div class="row mt-5">
+                            <!--  <div class="row mt-5">
                                   <div class="col-sm-6">                                    
                                     <h6> {{ __('Referral Levels (Enter Number)') }} </h6>
                                     <input type="number" name="referal_levels" value="{{env('REF_LEVEL_CNT')}}" class="form-control" onkeyup="set_inputs(this.value)" > 
                                     <small class="font_11">Enter 1 for Single Level</small>
 
                                   </div>                                                 
-                              </div> 
+                              </div> -->
 
                               <div id="warning_div" class="row mt-5">
                                 <div class="col-sm-12 alert alert-warning text-center">Note: Entering '4' means 4% as referral percentage</div>
@@ -276,8 +276,8 @@
                           <div class="p-5 tab-pane fade" id="payment_setting_tab" role="tabpanel" aria-labelledby="payment_setting_tab-tab">
                             <div class="row ">                               
                               <div   class="col-md-6 ">
-                                  <!--<div class="card pad_20">
-                                      <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
+                                  <div class="card pad_20">
+                                  <!--    <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
                                       <h2 class="text-center">Paypal Setup</h2>
                                       <hr>
                                       <div class="form-group">
