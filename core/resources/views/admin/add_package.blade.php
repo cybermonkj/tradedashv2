@@ -4,7 +4,7 @@
             <div class="content">
                 @include('admin.atlantis.main_bar')
                 <div class="page-inner mt--5">
-                    <!--@include('admin.atlantis.overview') -->
+                     @include('admin.atlantis.overview')
                     <div id="prnt"></div>  
                     <div class="row">
                         <div class="col-md-12">
