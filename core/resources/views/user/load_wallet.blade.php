@@ -56,7 +56,7 @@
                                                                 <i class="fab fa-cc-stripe fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Pay with Stripe gateway') }}
+                                                                {{ __('Pay with Stripe payment gateway') }}
                                                             </p> 
                                                            
                                                             <div align="">
@@ -75,7 +75,7 @@
                                                                 <img src="/img/pm.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Pay using Perfect Money - Low fees') }}
+                                                                {{ __('Pay using Perfect Money') }}
                                                             </p> 
                                                            
                                                             <div align="">
@@ -114,12 +114,12 @@
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Fund with Bitcoin') }}
+                                                                {{ __('Pay using Bitcoin (Coinpayment system)') }}
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="{{ route('btc.index', ['coin' => 'BTC']) }}" class="btn btn_blue" >
-                                                                    {{ __('Continue to Payment') }}
+                                                                    {{ __('Pay with BTC') }}
                                                                 </a>
                                                             </div>                                      
                                                         </div>                                                       
@@ -133,12 +133,12 @@
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Fund with coinbase - More Payment Methodes') }}
+                                                                {{ __('Pay using Coinbase Crypto payment system') }}
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="{{ route('coinbase.index') }}" class="btn btn_blue" >
-                                                                    {{ __('Continue with coin base') }}
+                                                                    {{ __('Pay with Coinbase') }}
                                                                 </a>
                                                             </div>                                      
                                                         </div>                                                       
@@ -152,12 +152,12 @@
                                                                 <i class="fab fa-ethereum fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Fund using Ethereum') }}
+                                                                {{ __('Pay using Ethereum (Coinpayment system)') }}
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="{{ route('btc.index', ['coin' => 'ETH']) }}" class="btn btn_blue" >
-                                                                    {{ __('Continue with ETH') }}
+                                                                    {{ __('Pay with ETH') }}
                                                                 </a>
                                                             </div>                                      
                                                         </div>                                                       
@@ -171,12 +171,12 @@
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Fund with Card') }}
+                                                                {{ __('Pay using paystack') }}
                                                             </p> 
                                                            
                                                             <div align="">
                                                                 <a href="{{ route('paystack.index') }}" class="btn btn_blue" >
-                                                                    {{ __('Continue') }}
+                                                                    {{ __('Pay with Paystack') }}
                                                                 </a>
                                                             </div>                                      
                                                         </div>                                                       
@@ -190,7 +190,7 @@
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Fund with Deposit Code') }}
+                                                                {{ __('Pay with Deposit Code') }}
                                                             </p> 
                                                            
                                                             <div align="">
@@ -206,15 +206,7 @@
                                                                         </h3>
                                                                         <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
                                                                         <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5>
-																		<h4>
-																			<a style="text-decoration:none;" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#bank">
-																				<strong>Buy Deposit Code</strong>
-																			</a>
-																		</h4>
-																<div id="bank" class="panel-collapse collapse">
-																	<div class="">
-																	<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a>
-																	
+																		
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">              
@@ -380,7 +372,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt"  required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amt"  required placeholder="Deposit code Value" >
                               </div>
                             </div>
                             <div class="form-group">
@@ -409,7 +401,7 @@
                             </div> -->
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info">{{ __('Submit Code') }}</button>
+                                <button class="collb btn btn-info">{{ __('Proceed') }}</button>
                                 <span style="">            
                                   <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
                                 </span>
