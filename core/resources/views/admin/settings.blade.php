@@ -41,22 +41,22 @@
                                <!--  <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > -->
                                 </div>                                   
                                 <div class="col-md-6" align="">
-                                    <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
+                                   <!--  <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
                                 </div>                                                
-                              </div> 
+                              </div>  -->
                               <br><br>
                               <hr>
                               <div class="row margin_top50"> 
-                                  <div class="col-md-6">
+                                 <!-- <div class="col-md-6">
                                       <h3><i class="fab fa-centercode"></i> {{ __('Site Logo') }} </h3>
                                       <input type="file" name="siteLogo" class=" btn btn-info border_none" >
                                   </div>                                               
                                   <div class="col-md-6" align="center"> 
                                         <img src="/img/{{$settings->site_logo}}" alt="Logo" class="height_50" align="center" >
                                   </div>                                                
-                              </div>
+                              </div> -->
                               <br><br>
                               <hr>
 
@@ -75,7 +75,7 @@
                                       <h3><i class="fas fa-envelope"></i> {{ __('Support Email') }} </h3>
                                       <input type="text" name="supEmail" value="{{env('SUPPORT_EMAIL')}}" class="form-control" placeholder="Support Email" required>
                                   </div>
-                              </div> -->
+                              </div> 
                               <br>
                               <div class="row margin_top50"> 
                                 <div class="col-md-4">
@@ -95,7 +95,8 @@
                                       <h3> <i class="fas fa-user"></i> {{ __('Enable User Registration') }} </h3>
                                   </div>                                               
                                   <div class="col-md-8" align="right">
-                                      <b>On/Off</b><br>               
+                                      <b>Enable/Disable</b><br>
+	
                                       <label class="switch">
                                         <input id="reg" type="checkbox" name="reg" value="{{$settings->user_reg}}" @if($settings->user_reg == 1){{'checked'}}@endif>
                                         <span id="" class="slider round" onclick="checkedOnOff('reg')"></span>
@@ -105,7 +106,7 @@
                               <br><br>
                               <hr>
                               <div class="row margin_top50">                                                                                               
-                                  <div class="col-md-12" >
+                                 <!-- <div class="col-md-12" >
                                       <h3><i class="fa fa-coggs"></i> {{ __('Currency Settings') }} </h3>
                                   </div>
                                   <div   class="col-md-6 ">
@@ -120,10 +121,10 @@
                                           <input type="text" name="cur_conv" value="{{$settings->currency_conversion}}" class="form-control" placeholder="Currency conversion rate to dollar" required >
                                       </div>
                                   </div>                                            
-                              </div>
+                              </div> 
 
                             </div>
-                          </div>
+                          </div> -->
 
                           <div class="p-5 tab-pane fade" id="pills-profile" role="tabpanel" >
                             <div class="row"> 
