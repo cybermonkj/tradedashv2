@@ -12,8 +12,8 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title col-sm-12"  ><?php echo e(__('Support Channel')); ?> 
-                                            <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Support Request</a></span>
+                                        <div class="card-title col-sm-12"  ><?php echo e(__('Open Ticket')); ?> 
+                                            <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Ticket</a></span>
                                         </div>
                                     </div>
                                      
@@ -86,24 +86,6 @@
                     
                 </div>
             </div>
-			
-			<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> We are glad to announce that our New ICO Token would be coming live In March</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-  {
-  "width": 1000,
-  "height": 490,
-  "defaultColumn": "overview",
-  "screener_type": "crypto_mkt",
-  "displayCurrency": "USD",
-  "colorTheme": "light",
-  "locale": "en"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
 
             <?php echo $__env->make('user.inc.confirm_inv', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
@@ -121,7 +103,7 @@
                     <form class="form-horizontal" method="POST" role="form" action="<?php echo e(route('ticket.create')); ?>" >
                         <?php echo csrf_field(); ?>
                         <div class="form-group <?php echo e($errors->has('amount') ? ' has-error' : ''); ?>">
-                            <label class="control-label"><?php echo e(__('Problem')); ?></label>                            
+                            <label class="control-label"><?php echo e(__('Title')); ?></label>                            
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-pen-alt"></i></span>
@@ -130,13 +112,13 @@
                             </div>
                         </div>
                         <div class="form-group ">
-                            <label class="control-label"><?php echo e(__('More Detail)); ?></label>                            
+                            <label class="control-label"><?php echo e(__('Message')); ?></label>                            
                             <div class="input-group">                               
                                 <textarea name="msg" class="form-control" required></textarea>                                                   
                             </div>
                         </div>
                         <div class="form-group">                                                                                                           
-                            <button type="submit" class="btn btn-primary"><?php echo e(__('submit')); ?></button>  
+                            <button type="submit" class="btn btn-primary"><?php echo e(__('Submit')); ?></button>  
                         </div>
                     </form>
                   </div>
@@ -147,4 +129,4 @@
 
 <?php $__env->stopSection(); ?>
             
-<?php echo $__env->make('layouts.atlantis.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> ?><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/user/ticket.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.atlantis.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/user/ticket.blade.php ENDPATH**/ ?>
