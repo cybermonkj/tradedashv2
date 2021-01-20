@@ -190,7 +190,7 @@
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
                                                             </p>
                                                             <p>
-                                                                {{ __('Pay with Deposit Code') }}
+                                                                {{ __('Fund with Deposit Code') }}
                                                             </p> 
                                                            
                                                             <div align="">
@@ -204,8 +204,8 @@
                                                                         <h3 class="color_blue_b">
                                                                             <i class="fas fa-money-check-alt color_blue_9"></i> {{env('ACCOUNT_NAME')}}
                                                                         </h3>
-                                                                        <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
-                                                                        <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5>
+                                                                       <!-- <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
+                                                                        <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5> -->
 																		
                                                                     </div>
                                                                 </div>
