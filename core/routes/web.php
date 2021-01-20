@@ -12,8 +12,8 @@
 */
 
 Route::get('/clear-cache', function() {
-    Artisan::call('cache:clear');
-    return "Cache is cleared";
+	Artisan::call(‘optimize:clear’);
+	echo Artisan::output();
 });
 
 Route::get('/', function () {
