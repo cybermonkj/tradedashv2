@@ -19,10 +19,10 @@
                             <a class="nav-link" id="referral-tab" data-toggle="pill" href="#referral" role="tab" aria-controls="pills-contact" aria-selected="false">Referral</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" id="mail_settings-tab" data-toggle="pill" href="#mail_settings" role="tab" aria-controls="pills-contact" aria-selected="false">SMTP</a>
+                            <a class="nav-link" id="mail_settings-tab" data-toggle="pill" href="#mail_settings" role="tab" aria-controls="pills-contact" aria-selected="false">Email (SMTP)</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#payment_setting_tab" role="tab" aria-controls="pills-contact" aria-selected="false">Payment Methods</a>
+                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#payment_setting_tab" role="tab" aria-controls="pills-contact" aria-selected="false">Payment Settings</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Withdrawal</a>
@@ -35,7 +35,7 @@
                           <div class="p-5 tab-pane fade show active" id="pills-home" role="tabpanel" >
                             <div class="form-group">                                            
                               <div class="row">                                                
-                                <div class="col-md-6" align="">
+                              <!--  <div class="col-md-6" align="">
                                     <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required >
@@ -75,14 +75,14 @@
                                       <h3><i class="fas fa-envelope"></i> {{ __('Support Email') }} </h3>
                                       <input type="text" name="supEmail" value="{{env('SUPPORT_EMAIL')}}" class="form-control" placeholder="Support Email" required>
                                   </div>
-                              </div>
+                              </div> -->
                               <br>
                               <div class="row margin_top50"> 
                                 <div class="col-md-4">
-                                    <h3><i class="fas fa-hand-holding-usd"></i> {{ __('Enable Investment') }}  </h3>
+                                    <h3><i class="fas fa-hand-holding-usd"></i> {{ __('Enable Investment system') }}  </h3>
                                 </div>                                               
                                 <div class="col-md-8" align="right">
-                                    <b>On/Off</b><br>               
+                                    <b>Enable/Disable</b><br>               
                                     <label class="switch">
                                       <input id="inv" type="checkbox" name="inv"  value="{{$settings->investment}}" @if($settings->investment == 1){{'checked'}}@endif>
                                       <span id="" class="slider round" onclick="checkedOnOff('inv')"></span>
