@@ -27,7 +27,7 @@
                 $dep2 = 0;
             ?>           
 						<div id="circles-3"></div>
-						<h6 class="fw-bold mt-3 mb-0">Deposits</h6>
+						<h6 class="fw-bold mt-3 mb-0">Total Deposits</h6>
             			<span>Inactive: {{count($deposits->where('status', '!=', '1'))}}</span>
 					</div>
 				</div>
@@ -66,15 +66,6 @@
 							<br>						
 						</div>						
 					  <div class="clearfix"><br></div>						
-						<div>					
-						   
-							<h4 class="fw-bold text-uppercase text-success op-8">Deposits</h4>
-							<h3 class="fw-bold">{{$settings->currency}} {{ $dep }}</h3>
-							<div class="colhd" style="font-size: 10px; margin-top: -10px;">&emsp;</div>
-							<br>									
-						</div>
-					</div>
-
 					<div class="col-md-6">
 						<div style="border-bottom: 1px solid #CCC;">
 							<h4 class="fw-bold text-uppercase text-success op-8">Withdrawals</h4>
@@ -83,6 +74,16 @@
 							<br>	
 						</div>
 					</div>
+						
+						<div>	
+							<h4 class="fw-bold text-uppercase text-success op-8">Deposits</h4>
+							<h3 class="fw-bold">{{$settings->currency}} {{ $dep }}</h3>
+							<div class="colhd" style="font-size: 10px; margin-top: -10px;">&emsp;</div>
+							<br>									
+						</div>
+					</div>
+
+
 				</div>		       
 			</div>
 		</div>

@@ -143,14 +143,15 @@
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>										
-										<a class="dropdown-item" href="/{{$user->username}}/dashboard"><span class="fa fa-desktop"></span> &nbsp;Dashboard</a>
-										<a class="dropdown-item" href="/{{$user->username}}/wallet"><span class="fa fa-folder"></span>&nbsp; Deposit</a>
-										<a class="dropdown-item" href="/{{$user->username}}/send_money"><span class="fa fa-paper-plane"></span>&nbsp; Transfer Fund</a>
-										<a class="dropdown-item" href="/{{$user->username}}/investments"><span class="fa fa-wallet"></span>&nbsp; My Investments</a>
+										<a class="dropdown-item" href="/{{$user->username}}/dashboard"><span class="fa fa-desktop"></span> &nbsp;Overview</a>
+										<a class="dropdown-item" href="/{{$user->username}}/wallet"><span class="fa fa-folder"></span>&nbsp; Fund Wallet</a>
 										<a class="dropdown-item" href="/{{$user->username}}/withdrawal"><span class="fa fa-download"></span>&nbsp; Withdrawal</a>
+										<a class="dropdown-item" href="/{{$user->username}}/investments"><span class="fa fa-wallet"></span>&nbsp; Investments</a>
+										<a class="dropdown-item" href="/{{$user->username}}/send_money"><span class="fa fa-paper-plane-o"></span>&nbsp; Transfer(Beta)</a>
+										<a class="dropdown-item" href="/{{$user->username}}/#"><span class="fa fa-money"></span>&nbsp; Trader / ICO(Alpha V1)</a>
 										<a class="dropdown-item" href="/{{$user->username}}/downlines"><span class="fa fa-users"></span>&nbsp; Downlines</a>
 										<a class="dropdown-item" href="{{route('ticket.index')}}">
-											<span class="fab fa-teamspeak"></span>&nbsp; Contact Support
+											<span class="fab fa-teamspeak"></span>&nbsp; Get Support
 											<?php                                  
 				                                $msgs = App\ticket::With('comments')->orderby('id', 'desc')->get();
 				                                $rd = 0;
@@ -207,50 +208,50 @@
 						<li class="nav-item">
 							<a href="/{{$user->username}}/dashboard">
 								<i class="fas fa-layer-group"></i>
-								<p>Dashboard</p>								
+								<p>Overview</p>								
 							</a>							
 						</li>
 						<li class="nav-item">
 							<a href="/{{$user->username}}/profile">
 								<i class="fas fa-user"></i>
-								<p>My Profile</p>								
+								<p>Profile</p>								
 							</a>							
 						</li>
 						<li class="nav-item">
 							<a  href="/{{$user->username}}/wallet">
-								<i class="fas fa-wallet"></i>
+								<i class="fas fa-google-wallet"></i>
 								<p>Wallet Deposit</p>
 							</a>							
 						</li>
 						<li class="nav-item">
 							<a href="/{{$user->username}}/send_money">
 								<i class="fas fa-paper-plane"></i>
-								<p>Transfer Fund</p>
+								<p>Transfer</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="/{{$user->username}}/investments">
-								<i class="fas fa-folder"></i>
-								<p>My Investments</p>
+								<i class="fab fa-accusoft"></i>
+								<p>Investments</p>
 							</a>							
 						</li>
 						
 						<li class="nav-item">
 							<a href="/{{$user->username}}/withdrawal">
-								<i class="fas fa-download"></i>
+								<i class="fas fa-arrow-alt-circle-down"></i>
 								<p>Withdrawal</p>
 							</a>
 						</li>
 						<li class="nav-item">
 							<a href="/{{$user->username}}/downlines">
-								<i class="fas fa-users"></i>
-								<p>Downlines</p>
+								<i class="fas fa-user-friends"></i>
+								<p>Referrals</p>
 							</a>							
 						</li>
 						<li class="nav-item">
 							<a href="{{route('ticket.index')}}">
-								<i class="fab fa-teamspeak"></i>
-								<p>Contact Support</p>
+								<i class="fas fa-headset"></i>
+								<p>Get Support</p>
 								<?php                                  
 	                                $msgs = App\ticket::With('comments')->where('user_id', $user->id)->get();
 	                                $rd = 0;
@@ -271,7 +272,7 @@
 
 						<li class="nav-item">
 							<a href="/logout">
-								<i class="fas fa-arrow-right"></i>
+								<i class="fas fa-sign-out-alt"></i>
 								<p>Logout</p>
 							</a>							
 						</li>

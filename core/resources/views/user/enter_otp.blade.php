@@ -12,7 +12,7 @@
                         <div class="card ">
                             <div class="card-header">
                                 <div align="center">
-                                    <h3 class="colhd"><i class="fa fa-key"></i>{{ __(' Enter 2FA OTP') }} </h3>
+                                    <h3 class="colhd"><i class="fa fa-key"></i>{{ __(' Enter OTP') }} </h3>
                                 </div>
                             </div>
                             <div class="card-body" style="">
@@ -21,7 +21,7 @@
                                        <input type="number" name="otp" class="form-control border-info">
                                     </div>
                                     <div class="form-group  text-center " align="center">
-                                       <button type="submit" class="btn collc btn-primary ">Verify OTP</button>
+                                       <button type="submit" class="btn collc btn-primary ">Verify</button>
                                     </div>
                                 </form>
                                     

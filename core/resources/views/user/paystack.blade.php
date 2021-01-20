@@ -3,7 +3,7 @@
 @Section('content')
         <div class="main-panel">
             <div class="content">
-                @php($breadcome = 'Paystack Payment')
+                @php($breadcome = 'Paystack Gateway')
                 @include('user.atlantis.main_bar')
                 <div class="page-inner mt--5">                   
                     <div id="prnt"></div>
@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('Deposit Using Paystack') }}</div>
+                                        <div class="card-title">{{ __('Fund Using Paystack') }}</div>
                                         <div class="card-tools">                                            
                                         </div>
                                     </div>

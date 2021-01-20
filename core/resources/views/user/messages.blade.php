@@ -3,7 +3,7 @@
 @Section('content')
 		<div class="main-panel">
 			<div class="content">
-			    @php($breadcome = 'Messages')
+			    @php($breadcome = 'Notifications')
 				@include('user.atlantis.main_bar')
 				<div class="page-inner mt--5">
 					@include('user.atlantis.overview')
