@@ -33,14 +33,14 @@
 
                         <div class="tab-content" id="pills-tabContent">
                           <div class="p-5 tab-pane fade show active" id="pills-home" role="tabpanel" >
-                            <div class="form-group">                                            
+                           <!--  <div class="form-group">                                            
                               <div class="row">                                                
                                 <div class="col-md-6" align="">
-                              <!-- <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3> -->
+                              <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3> 
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                               <!--  <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > -->
+                                <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > 
                                 </div>                                   
-                               <!-- <div class="col-md-6" align="">
+                                <div class="col-md-6" align="">
                                     <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
