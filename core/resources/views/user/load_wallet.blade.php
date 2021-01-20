@@ -206,14 +206,15 @@
                                                                         </h3>
                                                                        <!-- <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
                                                                         <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5> -->
+																		<p>
+																		<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a> </p>
+                                                                          
 																		
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">              
                                                                     <div class="col-sm-12">
-                                                                        	<p>
-																				<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a> </p>
-                                                                          <p> {{ __('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code') }} 
+                                                                        	<p> {{ __('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code') }} 
                                                                         </p>
                                                                     </div>
                                                                 </div>
