@@ -120,11 +120,11 @@
                                           <h5> {{ __('Currency Rate to US Dollar') }} </h5>
                                           <input type="text" name="cur_conv" value="{{$settings->currency_conversion}}" class="form-control" placeholder="Currency conversion rate to dollar" required >
                                       </div>
-                                  </div>                                            
+                                  </div>   -->                                         
                               </div> 
 
                             </div>
-                          </div> -->
+                          </div> 
 
                           <div class="p-5 tab-pane fade" id="pills-profile" role="tabpanel" >
                             <div class="row"> 
