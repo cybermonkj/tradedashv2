@@ -137,7 +137,7 @@
                                     <input type="number" name="max_dep" value="{{env('MAX_DEPOSIT')}}" class="form-control" placeholder="Maximum deposit" step="1" required>
                                 </div> 
                                 <div class="col-md-12 mt-3" align="right"> 
-                                    <b>On/Off</b><br>             
+                                    <b>Enable/Disable</b><br>             
                                     <label class="switch">
                                       <input id="wallet" type="checkbox" name="wallet"  value="{{$settings->deposit}}" @if($settings->deposit == 1){{'checked'}}@endif>
                                       <span id="" class="slider round" onclick="checkedOnOff('wallet')"></span>
@@ -163,7 +163,7 @@
                               </div> 
                                                                                                          
                               <div class="col-md-12 mt-2" align="right">
-                                <b>On/Off</b><br>               
+                                <b>Enable/Disable</b><br>               
                                 <label class="switch">
                                   <input id="wd" type="checkbox" name="wd" value="{{$settings->withdrawal}}" @if($settings->withdrawal == 1){{'checked'}}@endif>
                                   <span id="" class="slider round" onclick="checkedOnOff('wd')"></span>
@@ -234,17 +234,17 @@
                           <div class="p-5 tab-pane fade" id="mail_settings" role="tabpanel" aria-labelledby="mail_settings-tab">
                             <div class="row "> 
                               <div class="col-sm-12">
-                                  <h2 class=""><i class="fas fa-envelope"></i> {{ __('Mail Setup') }}</h2>
+                                  <h2 class=""><i class="fas fa-envelope"></i> {{ __('SMTP Settings') }}</h2>
                               </div>
                               <div   class="col-md-6 ">
                                   <div class="card pad_20">
                                       <br>
                                       <div class="form-group">
-                                          <h5> {{ __('Mail Host') }} </h5>
+                                          <h5> {{ __('SMTP Host') }} </h5>
                                           <input type="text" name="m_host" value="{{env('MAIL_HOST')}}" class="form-control" placeholder="Mail Host" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('Mail Port') }} </h5>
+                                          <h5> {{ __('SMTP Port') }} </h5>
                                           <input type="text" name="m_port" value="{{env('MAIL_PORT')}}" class="form-control" placeholder="Mail Port" >
                                       </div>
                                       <div class="form-group">
@@ -257,15 +257,15 @@
                                   <div class="card pad_20">
                                       <br>
                                       <div class="form-group">
-                                          <h5> {{ __('Mail Username') }} </h5>
+                                          <h5> {{ __('SMTP  Username') }} </h5>
                                           <input type="text" name="m_user" value="{{env('MAIL_USERNAME')}}" class="form-control" placeholder="Mail Username" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('Mail Password') }} </h5>
+                                          <h5> {{ __('SMTP Password') }} </h5>
                                           <input type="password" name="m_pwd" value="{{env('MAIL_PASSWORD')}}" class="form-control" placeholder="Mail Password" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('Mail Encryption') }} </h5>
+                                          <h5> {{ __('SMTP Encryption') }} </h5>
                                           <input type="text" name="m_enc" value="{{env('MAIL_ENCRYPTION')}}" class="form-control" placeholder="Mail Encryption" >
                                       </div>
                                   </div>
@@ -276,7 +276,7 @@
                           <div class="p-5 tab-pane fade" id="payment_setting_tab" role="tabpanel" aria-labelledby="payment_setting_tab-tab">
                             <div class="row ">                               
                               <div   class="col-md-6 ">
-                                  <div class="card pad_20">
+                                  <!--<div class="card pad_20">
                                       <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
                                       <h2 class="text-center">Paypal Setup</h2>
                                       <hr>
@@ -301,7 +301,7 @@
                                             <input id="switch_paypal" type="checkbox" name="switch_paypal"  value="{{env('SWITCH_PAYPAL')}}" @if(env('SWITCH_PAYPAL') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_paypal')"></span>
                                           </label>
-                                      </div>  
+                                      </div> --> 
                                       
                                   </div>
                               </div> 
@@ -319,7 +319,7 @@
                                           <input type="text" name="stripe_secret" value="{{$settings->stripe_secret}}" class="form-control" placeholder="Stripe Secrete" >
                                       </div>   
                                       <div class="" align="right"> 
-                                          <b>On/Off</b><br>             
+                                          <b>Enable/Disable</b><br>             
                                           <label class="switch">
                                             <input id="switch_stripe" type="checkbox" name="switch_stripe"  value="{{env('SWITCH_STRIPE')}}" @if(env('SWITCH_STRIPE') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_stripe')"></span>
@@ -331,9 +331,9 @@
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="far fa-building fa-3x"></i></h3>
-                                      <h2 class="text-center">Bank Deposit Setup</h2>
+                                      <h2 class="text-center">Deposit Code</h2>
                                       <hr>
-                                      <div class="form-group">
+                                    <!--  <div class="form-group">
                                           <h5> {{ __('Bank Name') }} </h5>
                                           <input type="text" name="bank_name" value="{{env('BANK_NAME')}}" class="form-control" placeholder=""  >
                                       </div>
@@ -344,13 +344,13 @@
                                       <div class="form-group">
                                           <h5> {{ __('Account Number') }} </h5>
                                           <input type="number" name="act_no" value="{{env('ACCOUNT_NUMBER')}}" class="form-control" placeholder="" >
-                                      </div> 
+                                      </div>   -->
                                       <div class="form-group">
-                                          <h5> {{ __('Response Email') }} </h5>
+                                          <h5> {{ __('Deposit Code Support email') }} </h5>
                                           <input type="email" name="dep_email" value="{{env('BANK_DEPOSIT_EMAIL')}}" class="form-control" placeholder="" >
                                       </div>  
                                       <div class="" align="right"> 
-                                          <b>On/Off</b><br>             
+                                          <b>Enable/Disable</b><br>             
                                           <label class="switch">
                                             <input id="switch_bank_deposit" type="checkbox" name="switch_bank_deposit"  value="{{env('BANK_DEPOSIT_SWITCH')}}" @if(env('BANK_DEPOSIT_SWITCH') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_bank_deposit')"></span>
@@ -363,7 +363,7 @@
                                       <h3 align="center"><i class="fab fa-bitcoin fa-3x"></i></h3>
                                       <h2 class="text-center">Coinpayment Setup</h2>
                                       <hr>
-                                      <div class="form-group">
+                                    <!--  <div class="form-group">
                                           <h5> {{ __('COINPAYMENTS_MERCHANT_ID') }} </h5>
                                           <input type="text" name="cp_m_id" value="{{env('COINPAYMENTS_MERCHANT_ID')}}" class="form-control" placeholder=""  >
                                       </div>  
@@ -382,7 +382,8 @@
                                       <div class="form-group">
                                           <h5> {{ __('COINPAYMENTS_IPN_URL') }} </h5>
                                           <input type="text" name="cp_ipn_url" value="{{env('COINPAYMENTS_IPN_URL')}}" class="form-control" placeholder=""  >
-                                      </div>
+                                      </div> -->
+									  <p> Cyber Admin: Keys must be edited via the .env file for security reasons</p>
                                       
                                       <div class="" align="right"> 
                                           <b>On/Off Bitcoin </b><br>             
@@ -410,14 +411,15 @@
                                     </h3>
                                     <h2 class="text-center">Coinbase Setup</h2>
                                     <hr>
-                                    <div class="form-group">
+                                  <!--  <div class="form-group">
                                         <h5> {{ __('Coinbase Key') }} </h5>
                                         <input type="text" name="coinbase_key" value="{{ env('COINBASE_API_KEY') }}" class="form-control" placeholder="Coinbase api Key"  >
                                     </div>
                                     <div class="form-group">
                                         <h5> {{ __('Coinbase Webhook Secret') }} </h5>
                                         <input type="text" name="coinbase_seceret" value="{{ env('COINBASE_WEBHOOK_SECRETE') }}" class="form-control" placeholder="Coinbase seceret" >
-                                    </div>
+                                    </div> -->
+									
                                     <div class="" align="right"> 
                                         <b>On/Off</b><br>             
                                         <label class="switch">
