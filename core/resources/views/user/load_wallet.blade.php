@@ -401,7 +401,7 @@
                             </div> -->
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info">{{ __('Proceed') }}</button>
+                                <button class="collb btn btn-info">{{ __('Submit') }}</button>
                                 <span style="">            
                                   <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
                                 </span>
