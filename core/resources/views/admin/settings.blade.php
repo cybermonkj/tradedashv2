@@ -68,8 +68,8 @@
                                  <div class="col-md-6">
                                       <h3><i class="fas fa-pen"></i> {{ __('Site Description') }} </h3>
                                       <input type="text" name="siteDescr" value="{{$settings->site_descr}}" class="form-control" placeholder="Site Description" required>
-                                  </div>  -->
-                              </div>
+                                  </div>  
+                              </div> -->
                               <div class="row margin_top50">
                                <div class="col-md-8">
                                       <h3><i class="fas fa-envelope"></i> {{ __('Support Email') }} </h3>
@@ -105,22 +105,22 @@
                               </div>
                               <br><br>
                               <hr>
-                              <div class="row margin_top50">                                                                                               
-                                 <!-- <div class="col-md-12" >
+                             <!--  <div class="row margin_top50">                                                                                               
+                                 <div class="col-md-12" >
                                       <h3><i class="fa fa-coggs"></i> {{ __('Currency Settings') }} </h3>
-                                  </div> -->
-                                 <!-- <div   class="col-md-6 ">
+                                  </div> 
+                                  <div   class="col-md-6 ">
                                       <div class="card pad_20" >
                                           <h5> {{ __('Currency symbol/Code') }} </h5>
                                           <input type="text" name="cur" value="{{$settings->currency}}" class="form-control" placeholder="currency symbol or code" required >
                                       </div>
-                                  </div>  -->
+                                  </div> 
                                   <div   class="col-md-6">
                                       <div class="card form-group pad_20" >
                                           <h5> {{ __('Currency Rate to US Dollar') }} </h5>
                                           <input type="text" name="cur_conv" value="{{$settings->currency_conversion}}" class="form-control" placeholder="Currency conversion rate to dollar" required >
                                       </div>
-                                  </div>                                          
+                                  </div>  -->                                         
                               </div> 
 
                             </div>
