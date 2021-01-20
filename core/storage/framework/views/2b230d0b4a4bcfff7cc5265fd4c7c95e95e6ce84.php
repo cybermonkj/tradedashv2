@@ -83,6 +83,22 @@
 </div>
 <!-- TradingView Widget END -->
 					
+					
+				<!-- MT5 Trader start -->
+            <!--  <div class="col p-4" style="margin-left:-30px">
+                <iframe src="https://trade.mql5.com/trade" name="WebTrader" title="Stock/Forex Trader" frameborder="0" style="display: block; border: none; height: 76vh; width: 80vw;"></iframe>
+                        </div> 
+                    
+                    </div>
+                </div>-->
+                <!-- end of chart -->
+					
+					
+					
+					
+					</div>
+
+					
 					<div id="prnt"></div>
 					<div class="row">
 						<div class="col-md-8">
@@ -160,7 +176,7 @@
 											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
 										</div>
 									</div>
-									<p class="card-category"><?php echo e(__('All actions performed by you on tradepander.')); ?></p>
+									<p class="card-category"><?php echo e(__('All actions by you on tradepander.')); ?></p>
 								</div>
 								<div class="card-body">
 									<div class="row">

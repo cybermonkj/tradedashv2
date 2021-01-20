@@ -15,18 +15,19 @@
                             <li class="nav-item">
                               <a class="nav-link active" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profile</a>
                             </li>
-                            <li class="nav-item">
-                              <a class="nav-link" id="bank-tab" data-toggle="pill" href="#bank" role="tab" aria-controls="bank" aria-selected="false">Banks</a>
+							<li class="nav-item">
+                              <a class="nav-link" id="sec-tab" data-toggle="pill" href="#sec" role="tab" aria-controls="sec" aria-selected="false">Password</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" id="wallet-tab" data-toggle="pill" href="#wallet" role="tab" aria-controls="wallet" aria-selected="false">Wallets</a>
+                              <a class="nav-link" id="bank-tab" data-toggle="pill" href="#bank" role="tab" aria-controls="bank" aria-selected="false">Withdrawal Methods</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="wallet-tab" data-toggle="pill" href="#wallet" role="tab" aria-controls="wallet" aria-selected="false">Add Wallet</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" id="kyc-tab" data-toggle="pill" href="#kyc" role="tab" aria-controls="kyc" aria-selected="false">KYC</a>
                             </li>
-                            <li class="nav-item">
-                              <a class="nav-link" id="sec-tab" data-toggle="pill" href="#sec" role="tab" aria-controls="sec" aria-selected="false">Security</a>
-                            </li>
+
                                                         
                           </ul>
 
@@ -118,6 +119,17 @@
                                                   </div>                               
                                                   
                                               </div>
+											  
+											  <div class="col-lg-6">
+                                                      <div class="form-group">
+                                                          <label><?php echo e(__('Username')); ?></label>
+                                                          <div class="input-group">                                                       
+                                                              <input id="usn" type="text" value="<?php echo e($user->username); ?>" class="form-control" name="usn" readonly>
+                                                          </div>
+                                                          
+                                                      </div>
+                                                  </div>                                             
+
 
                                               <div class="row">
                                                   <div class="col-lg-6">
@@ -130,16 +142,7 @@
                                                       </div>
                                                   </div>     
 
-                                                  <div class="col-lg-6">
-                                                      <div class="form-group">
-                                                          <label><?php echo e(__('Username')); ?></label>
-                                                          <div class="input-group">                                                       
-                                                              <input id="usn" type="text" value="<?php echo e($user->username); ?>" class="form-control" name="usn" readonly>
-                                                          </div>
-                                                          
-                                                      </div>
-                                                  </div>                                             
-                                                  
+                                                                                                    
                                               </div>   
 
                                               <form class="" method="post" action="/user/update/profile">
@@ -249,7 +252,7 @@
                                 <div class="col-sm-12">
                                   <div class="card">
                                     <div class="card-header">
-                                        <div class="card-title"><?php echo e(__('Add Bank Details')); ?></div>
+                                        <div class="card-title"><?php echo e(__('Add withdrawal Bank Details')); ?></div>
                                     </div>
                                     <div class="card-body">
                                         <form class="" method="post" action="/user/add/bank">
@@ -294,7 +297,7 @@
                                 <div class="col-sm-12">
                                   <div class="card">
                                     <div class="card-header">
-                                        <div class="card-title"><?php echo e(__('My Bank Details')); ?></div>
+                                        <div class="card-title"><?php echo e(__('Saved Bank Details')); ?></div>
                                     </div>
                                     <div class="card-body pb-0 table-responsive" >
                                        <table id="basic-datatables" class="display table table-striped table-hover" >
@@ -347,13 +350,13 @@
                                                     <div class="form-group">
                                                         <label><?php echo e(__('Coin Name')); ?></label>
                                                         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
-                                                        <input type="text" class="form-control" name="coin_name" required placeholder="Exp. BTC, ETH, BCH, XRP">
+                                                        <input type="text" class="form-control" name="coin_name" required placeholder="Supported. BTC, ETH,">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="form-group">
                                                         <label><?php echo e(__('Coin Host')); ?></label>
-                                                        <input type="text" class="form-control" name="coin_host"  required placeholder="Exp. Blockchain, Coinbase, Paxful">
+                                                        <input type="text" class="form-control" name="coin_host"  required placeholder="Supported. Blockchain, Coinbase, Paxful">
                                                     </div>
                                                 </div>
                                             </div>
@@ -378,7 +381,7 @@
                                 <div class="col-sm-12">
                                   <div class="card">
                                     <div class="card-header">
-                                        <div class="card-title"><?php echo e(__('My Wallet Addresses')); ?></div>
+                                        <div class="card-title"><?php echo e(__('Saved Wallet Addresses')); ?></div>
                                     </div>
                                     <div class="card-body pb-0 table-responsive" >
                                        <table id="basic-datatables" class="display table table-striped table-hover" >
@@ -430,7 +433,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="alert alert-warning">
-                                          <?php echo e(_('Your verification is under review. You will be notified shortly')); ?>
+                                          <?php echo e(_('Your verification is under review. You will be notified shortly of Verification, which unlocks more of tradepander for you. ')); ?>
 
                                         </div>                                  
                                     </div>
@@ -460,7 +463,10 @@
                                     <div class="col-sm-6">
                                       <div class="card">
                                         <div class="card-header">
-                                            <div class="card-title"><?php echo e(__('KYC Level Upgrade')); ?></div>
+                                            <div class="card-title"><?php echo e(__('Upgrade your account')); ?></div>
+											<p>
+												Unlocks More of tradepander 
+											</p>
                                         </div>
                                         <div class="card-body">
 
@@ -484,7 +490,7 @@
                                                 <div class="form-group">
                                                   <h3><?php echo e(__('Identity verification')); ?></h3> 
                                                   <p>
-                                                    <?php echo e(__('Valid documents are: Country ID Card, Internattional Passport and Drivers Licence')); ?>
+                                                    <?php echo e(__('Valid documents are: Country ID Card, Internattional Passport, Drivers Licence and University ID')); ?>
 
                                                   </p> 
                                                 </div>
@@ -492,15 +498,15 @@
                                                   <label>Card Type</label>                                                  
                                                   <select id="card_select" name="cardtype" class="form-control" required="required">
                                                     <option selected disabled >Select ID type</option>
-                                                    <option value="idcard_op">Country/State ID</option>
+                                                    <option value="idcard_op">Nation/State ID</option>
                                                     <option value="passport_op">International Passport</option>
-                                                    <option value="driver_op">Driver's Licence</option>
+                                                    <option value="driver_op">Driver's Licence / University ID</option>
                                                   </select>
                                                 </div>
                                                 <hr>
                                                 <div id="card_cont" class="cont_display_none">
                                                   <div class="form-group mt-3">                                              
-                                                    <label>Card Front</label> 
+                                                    <label>ID (Front)</label> 
                                                     <br>
                                                     <img src="/img/id_temp_front.png" class="img_card_temp" width="100%">                                                 
                                                     <input type="file" class="form-control upload_inp mt-2" name="id_front" >
@@ -508,7 +514,7 @@
 
                                                   <hr>
                                                   <div class="form-group mt-3">                                              
-                                                    <label>Card Back</label>
+                                                    <label>ID (Back)</label>
                                                     <br>
                                                     <img src="/img/id_tem_bac.png" class="img_card_temp" width="100%">                                                   
                                                     <input type="file" class="form-control mt-2" name="id_back" >
@@ -544,7 +550,7 @@
                                                   <div class="form-group">
                                                     <h3></h3> 
                                                     <p>
-                                                      <?php echo e(__('Valid documents are: Utility bill and Bank statement')); ?>
+                                                      <?php echo e(__('Valid documents are: Any Utility Bill')); ?>
 
                                                     </p>                                                   
                                                     <input type="file" class="form-control" name="utility_doc" required >
@@ -561,7 +567,7 @@
 
                                     <div class="col-sm-12 mt-5">
                                       <div class="form-group">
-                                        <button class="collcc btn btn-info float-right"><?php echo e(__('Upload')); ?></button>
+                                        <button class="collcc btn btn-info float-right"><?php echo e(__('Submit')); ?></button>
                                       </div>
                                     </div>
 
@@ -579,14 +585,17 @@
                                 <div class="col-sm-6">
                                   <div class="card">
                                     <div class="card-header">
-                                        <div class="card-title"><?php echo e(__('2FA Security')); ?></div>
+                                        <div class="card-title"><?php echo e(__('2 Step Authentication (2FA) Extra Security')); ?></div>
                                     </div>
                                     <div class="card-body">
                                         
                                       <div class="row">
                                           <div id="sec_enable_div" class="col-lg-12">
                                             <div class="form-group ">
-                                              <div>
+												<div><p>
+													Supports Google Authenticator
+													</p></div>
+												<div>
                                                 <label><?php echo e(__('Enable/Disable')); ?></label>
                                               </div>
                                                 
@@ -618,7 +627,7 @@
                                                 </div>
                                                 <div class="form-group">
                                                   <p>
-                                                    Scan the QR CODE with Google Authenticator and enter the coe dispayed in the box below.
+                                                    Scan the QR CODE with Google Authenticator and enter the code dispayed in the box below.
                                                   </p>
                                                 </div> 
                                                 <form action="<?php echo e(route('user2fa.verify_2fa')); ?>" method="post">

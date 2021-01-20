@@ -14,7 +14,7 @@
               <div class="card">
 
                 <div class="card-header">
-                  <div class="card-title"> Fund Transfer </div>
+                  <div class="card-title"> Transfer Fund </div>
                 </div>
 
                 <div class="card-body pb-0">                 
@@ -26,6 +26,7 @@
                         <?php echo e(Session::forget('err_send')); ?>
 
                     <?php endif; ?>
+					<div><p>Enter Correct Username</p></div>
                     <div class="">                        
                         <form action="/user/send/fund" method="post" enctype="multipart/form-data">
                           <div class="form-group" align="left">                       
