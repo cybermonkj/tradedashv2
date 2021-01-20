@@ -235,7 +235,7 @@
 						<li class="nav-item">
 							<a  href="/{{$user->username}}/wallet">
 								<i class="fa fa-folder"></i>
-								<p>Fund Account</p>
+								<p>Deposit</p>
 							</a>							
 						</li>
 						<li class="nav-item">

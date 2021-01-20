@@ -391,7 +391,7 @@
                                 <input type="text" class="form-control" name="account_name"  required placeholder="Code Source" >
                               </div>
                             </div>
-                           <!-- <div class="form-group">
+                           <<div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-home" ></i></span>
@@ -406,7 +406,7 @@
                                 </div>
                                 <input type="text" class="form-control" name="bank_name"  required placeholder="Bank name sent from" >
                               </div>
-                            </div> -->
+                            </div>
                             <div class="form-group">
                               <br>
                                 <button class="collb btn btn-info">{{ __('Submit Code') }}</button>
