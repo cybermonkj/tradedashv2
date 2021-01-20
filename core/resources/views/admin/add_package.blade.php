@@ -12,7 +12,7 @@
                                 <div class="card-header card_header_bg_blue" >
                                     <div class="card-head-row card-tools-still-right">
                                         <h4 class="card-title text-white"> 
-                                            <i class="fas fa-plus"></i>{{ __('Add Investmen Packages') }} 
+                                            <i class="fas fa-plus"></i>{{ __('Add Investment Packages') }} 
                                         </h4>
                                     </div>
                                 </div>
