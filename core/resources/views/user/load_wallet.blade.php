@@ -270,7 +270,7 @@
                                                 <th>{{ __('Amount') }}</th>        
                                                 <th>{{ __('Method') }}</th>
                                                 <th>{{ __('Account/Code/Haash') }}</th>
-                                                <th>{{ __('Acc Name') }}</th>
+                                                <th>{{ __('Acc/Deposit Code') }}</th>
                                                 <th>{{ __('Date') }}</th>
                                                 <th>{{ __('Status') }}</th>
                                                 <th>{{ __('Url') }}</th>                                                                        
