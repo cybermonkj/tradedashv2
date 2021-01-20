@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title col-sm-12"  >{{ __('Ticket Chat') }} 
+                                        <div class="card-title col-sm-12"  >{{ __('Support Chat') }} 
                                             <!-- <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i> Open Ticket</a></span> -->
                                         </div>
                                     </div>

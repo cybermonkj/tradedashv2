@@ -305,7 +305,7 @@
 						<li class="nav-item">
 					    	<a href="{{route('support.index')}}">
 								<i class="fab fa-teamspeak"></i>
-								<p> Support Tickets </p>
+								<p> Support System </p>
 							</a>
 						</li>			
 

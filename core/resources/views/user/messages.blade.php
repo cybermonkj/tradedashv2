@@ -90,7 +90,7 @@
                                         <hr>                               
                                         <p>{!! $m->message !!}</p>
                                     @else
-                                    	<div class="alert alert-info">{{__('Select a notification')}}</div>
+                                    	<div class="alert alert-info">{{__('Select a notification to view it')}}</div>
 									@endif
 
 								</div>

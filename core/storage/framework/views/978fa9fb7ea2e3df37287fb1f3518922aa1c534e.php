@@ -1,8 +1,8 @@
 <?php $__env->startSection('content'); ?>
 <body>
     <div style="">
-        <img src="/img/adult.jpg" class="fixedOverlayIMG">         
-        <div class="fixedOeverlayBG"></div>
+      <!--  <img src="/img/adult.jpg" class="fixedOverlayIMG">         
+        <div class="fixedOeverlayBG"></div> -->
         <div class="">
             <div class="row admin_login_row">
                 <div class="col-md-6 position_relative" >
