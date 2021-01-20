@@ -147,7 +147,7 @@
 										<a class="dropdown-item" href="/{{$user->username}}/wallet"><span class="fa fa-folder"></span>&nbsp; Fund Wallet</a>
 										<a class="dropdown-item" href="/{{$user->username}}/withdrawal"><span class="fa fa-download"></span>&nbsp; Withdrawal</a>
 										<a class="dropdown-item" href="/{{$user->username}}/investments"><span class="fa fa-wallet"></span>&nbsp; Investments</a>
-										<a class="dropdown-item" href="/{{$user->username}}/send_money"><span class="fa fa-paper-plane-o"></span>&nbsp; Transfer(Beta)</a>
+										<a class="dropdown-item" href="/{{$user->username}}/send_money"><span class="fa fa-paper-plane"></span>&nbsp; Transfer(Beta)</a>
 										<a class="dropdown-item" href="/{{$user->username}}/#"><span class="fa fa-money"></span>&nbsp; Trader / ICO(Alpha V1)</a>
 										<a class="dropdown-item" href="/{{$user->username}}/downlines"><span class="fa fa-users"></span>&nbsp; Downlines</a>
 										<a class="dropdown-item" href="{{route('ticket.index')}}">
@@ -213,14 +213,17 @@
 						</li>
 						<li class="nav-item">
 							<a href="/{{$user->username}}/profile">
-								<i class="fas fa-user"></i>
+								<!--<i class="fas fa-user"></i>-->
+								<i class="far fa-user-circle"></i>
 								<p>Profile</p>								
 							</a>							
 						</li>
+
+
 						<li class="nav-item">
-							<a  href="/{{$user->username}}/wallet">
-								<i class="fas fa-google-wallet"></i>
-								<p>Wallet Deposit</p>
+							<a href="/{{$user->username}}/investments">
+								<i class="fab fa-accusoft"></i>
+								<p>Investments</p>
 							</a>							
 						</li>
 						<li class="nav-item">
@@ -230,12 +233,11 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="/{{$user->username}}/investments">
-								<i class="fab fa-accusoft"></i>
-								<p>Investments</p>
+							<a  href="/{{$user->username}}/wallet">
+								<i class="fas fa-google-wallet"></i>
+								<p>Fund Account</p>
 							</a>							
 						</li>
-						
 						<li class="nav-item">
 							<a href="/{{$user->username}}/withdrawal">
 								<i class="fas fa-arrow-alt-circle-down"></i>
