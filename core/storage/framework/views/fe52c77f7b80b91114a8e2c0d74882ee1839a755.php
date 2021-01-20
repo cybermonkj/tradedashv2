@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title col-sm-12"  ><?php echo e(__('Open Ticket')); ?> 
+                                        <div class="card-title col-sm-12"  ><?php echo e(__('Request Support')); ?> 
                                             <span class="float-right"><a data-target="#open_ticket" data-toggle="modal" href="javascript:void(0)" class="btn btn_blue text-white"><i class="fas fa-plus-circle "></i>New Ticket</a></span>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                                                     <?php endif; ?>
                                                                 </a>
                                                                 <?php if($ticket->status == 0): ?>
-                                                                    <a title="Close Ticket" href="<?php echo e(route('ticket.close', $ticket->id)); ?>" class="btn btn-warning">
+                                                                    <a title="Close Session" href="<?php echo e(route('ticket.close', $ticket->id)); ?>" class="btn btn-warning">
                                                                         <i class="fas fa-stop-circle"></i>
                                                                     </a>
                                                                 <?php endif; ?>
@@ -103,7 +103,7 @@
                     <form class="form-horizontal" method="POST" role="form" action="<?php echo e(route('ticket.create')); ?>" >
                         <?php echo csrf_field(); ?>
                         <div class="form-group <?php echo e($errors->has('amount') ? ' has-error' : ''); ?>">
-                            <label class="control-label"><?php echo e(__('Title')); ?></label>                            
+                            <label class="control-label"><?php echo e(__('Summary')); ?></label>                            
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-pen-alt"></i></span>

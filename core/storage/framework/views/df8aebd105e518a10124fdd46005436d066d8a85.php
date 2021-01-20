@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title><?php echo e($settings->site_title); ?> - <?php echo e($settings->site_descr); ?></title>
+    <title><?php echo e($settings->site_title); ?><!-- - <?php echo e($settings->site_descr); ?>--></title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <link rel="icon" href="/img/<?php echo e($settings->site_logo); ?>" type="image/x-icon"/>
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

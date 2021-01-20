@@ -51,10 +51,11 @@
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
                                                             <th><?php echo e(__('Name')); ?></th>
                                                             <th><?php echo e(__('Username')); ?></th>
-                                                            <th><?php echo e(__('Level')); ?></th>
-                                                            <th><?php echo e(__('Amount Earned')); ?></th>
+															<th><?php echo e(__('Amount Earned')); ?></th>
                                                             <th><?php echo e(__('Investment')); ?></th>
-                                                            <th><?php echo e(__('Date Registered')); ?></th>   
+                                                            <th><?php echo e(__('Date Registered')); ?></th>
+                                                            <th><?php echo e(__('Level')); ?></th>
+                                                              
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -84,17 +85,17 @@
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         <?php else: ?>
                                                             <tr>                                                    
-                                                                <td colspan="4">No data</td>                     
+                                                                <td colspan="4">No data to Display</td>                     
                                                             </tr>
                                                         <?php endif; ?>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                            <th><?php echo e(__('Name')); ?></th>
+                                                           <!-- <th><?php echo e(__('Name')); ?></th> -->
                                                             <th><?php echo e(__('Username')); ?></th>
                                                             <th><?php echo e(__('Amount Earned')); ?></th>
-                                                            <th><?php echo e(__('Investment')); ?></th>
+                                                           <!-- <th><?php echo e(__('Investment')); ?></th> -->
                                                             <th><?php echo e(__('Date Registered')); ?></th>   
                                                         </tr>
                                                     </tfoot>
