@@ -251,6 +251,18 @@
 							</a>							
 						</li>
 						<li class="nav-item">
+							<a href="#">
+								<i class="fa fa-money"></i>
+								<p>Trader/ICO (Coming Soon)</p>
+							</a>							
+						</li>
+												<li class="nav-item">
+							<a href="https://tradepander.com/buy-tradepander-deposit-code">
+								<i class="fa fa-money"></i>
+								<p>Buy Deposit Code</p>
+							</a>							
+						</li>
+						<li class="nav-item">
 							<a href="{{route('ticket.index')}}">
 								<i class="fas fa-headset"></i>
 								<p>Get Support</p>

@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/clear-cache', function() {
+	Artisan::call(‘optimize:clear’);
+	echo Artisan::output();
+});
+
 Route::get('/', function () {
 	$user = Auth::User();
 	if(!empty($user))

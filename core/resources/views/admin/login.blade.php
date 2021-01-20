@@ -8,10 +8,10 @@
             <div class="row admin_login_row">
                 <div class="col-md-6 position_relative" >
                     <div class="admin_login_title" align="center">
-                        <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
+                        <img src="/img/blacklogo.png" alt="{{$settings->site_title}}" class="login_logo">
                         <h1>{{$settings->site_title}}</h1> 
                         <p>                                                       
-                            <h4> {{ __('Support and Admin Login') }} </h4>
+                           <!-- <h4> {{ __('Support and Admin Login') }} </h4> -->
                         </p>
                     </div>                    
                 </div>
@@ -21,7 +21,7 @@
                             <div class="col-md-12" >
                                 <div style="">                        
                                     <div class="panel" align="center">
-                                        <img src="/img/{{$settings->site_logo}}" alt="{{$settings->site_title}}" class="login_logo">
+                                        <img src="/img/blacklogo.png" alt="{{$settings->site_title}}" class="login_logo">
                                         <br><br>
                                         <h4 align="center"> {{ __('Admin Login') }} </h4> 
                                         <div id="errMsg" class="card-header alert alert-danger cont_display_none" align="center">         
