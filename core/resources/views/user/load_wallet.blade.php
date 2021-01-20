@@ -207,7 +207,7 @@
                                                                        <!-- <h4 class="text-danger">Auto Verification: {{env('ACCOUNT_NUMBER')}}</h4>
                                                                         <h5 class="">Average Response time: {{env('BANK_NAME')}}</h5> -->
 																		<p>
-																		<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn-{{$text}}">Find Deposit code vendors</a> </p>
+																		<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn_blue">Find Deposit code vendors</a> </p>
                                                                           
 																		
                                                                     </div>
