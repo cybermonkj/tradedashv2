@@ -40,23 +40,23 @@
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                <!--  <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > -->
                                 </div>                                   
-                                <div class="col-md-6" align="">
-                                   <!--  <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
+                               <!-- <div class="col-md-6" align="">
+                                    <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
                                 </div>                                                
                               </div>  -->
                               <br><br>
                               <hr>
-                              <div class="row margin_top50"> 
-                                 <!-- <div class="col-md-6">
+                              <!-- <div class="row margin_top50"> 
+                                 <div class="col-md-6">
                                       <h3><i class="fab fa-centercode"></i> {{ __('Site Logo') }} </h3>
                                       <input type="file" name="siteLogo" class=" btn btn-info border_none" >
                                   </div>                                               
                                   <div class="col-md-6" align="center"> 
                                         <img src="/img/{{$settings->site_logo}}" alt="Logo" class="height_50" align="center" >
-                                  </div>  -->                                              
-                              </div> 
+                                  </div>                                            
+                              </div>  -->   
                               <br><br>
                               <hr>
 
@@ -520,7 +520,7 @@
 
                         <div class="row margin_top50 mb-5"> 
                           <div   class="col-md-12">
-                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > {{ __('Save Changes') }} </button>
+                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > {{ __('Update Tradepander') }} </button>
                           </div>                                     
                         </div>
 
