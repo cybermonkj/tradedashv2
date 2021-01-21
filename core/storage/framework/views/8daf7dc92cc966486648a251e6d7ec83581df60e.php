@@ -225,13 +225,15 @@
                                                                         </h3>
                                                                        <!-- <h4 class="text-danger">Auto Verification: <?php echo e(env('ACCOUNT_NUMBER')); ?></h4>
                                                                         <h5 class="">Average Response time: <?php echo e(env('BANK_NAME')); ?></h5> -->
+																		<p>
+																		<a href="https://tradepander.com/buy-tradepander-deposit-code"  class="btn btn_blue">Find Deposit code vendors</a> </p>
+                                                                          
 																		
                                                                     </div>
                                                                 </div>
                                                                 <div class="row">              
                                                                     <div class="col-sm-12">
-                                                                        <p class="text-danger">
-                                                                           <?php echo e(__('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code')); ?> 
+                                                                        	<p> <?php echo e(__('After Submitting a Deposit code, Please wait while system Verifies Your Deposit code')); ?> 
                                                                         </p>
                                                                     </div>
                                                                 </div>
@@ -395,7 +397,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><?php echo e($settings->currency); ?></span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt"  required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
                               </div>
                             </div>
                             <div class="form-group">
@@ -406,6 +408,8 @@
                                 <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
                               </div>
                             </div>
+							
+							
                            <!-- <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
@@ -413,15 +417,15 @@
                                 </div>
                                 <input type="text" class="form-control" name="account_no"  required placeholder="Your name" >
                               </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend" >
                                   <span class="input-group-text span_bg"><i class="fa fa-home" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="bank_name"  required placeholder="Bank name sent from" >
+                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
                               </div>
-                            </div> -->
+                            </div>
                             <div class="form-group">
                               <br>
                                 <button class="collb btn btn-info"><?php echo e(__('Submit')); ?></button>

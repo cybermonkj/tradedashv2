@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('content'); ?>
     <div class="main-panel">
         <div class="content">
@@ -11,7 +10,7 @@
                         <div class="card">
                             <div class="card-header card_header_bg_blue" >
                                 <div class="card-head-row card-tools-still-right">
-                                    <h4 class="card-title text-white" > <?php echo e(__('KYC Users')); ?> </h4>
+                                    <h4 class="card-title text-white" > <?php echo e(__('Submitted KYC')); ?> </h4>
                                     <div class="card-tools">
                                        <form action="/admin/search/user" method="post">
                                             <div class="input-group">
