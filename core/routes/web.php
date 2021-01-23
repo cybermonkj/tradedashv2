@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CouponController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -251,6 +255,9 @@ Route::get('/admin/viewlogs', function () {
 	}
    
 });
+
+// Coupons
+Route::get('/admin/coupons', [CouponController::class, 'index']);
 
 Route::get('/admin/send/msg', function () {
 	if(Session::has('adm'))
