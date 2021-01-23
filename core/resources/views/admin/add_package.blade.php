@@ -27,27 +27,27 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label for="min">{{ __('Min Investment Value') }}</label>
+                                                <label for="min">{{ __('Min Investment Price') }}</label>
                                                 <input id="min" type="number" class="regTxtBox" name="min" value="" required autocomplete="min" autofocus placeholder="Minimum investment value">
                                             </div>
                                              <div class="col-sm-6">
-                                                <label for="max" class="">{{ __('Max Investment Value') }}</label>
+                                                <label for="max" class="">{{ __('Max Investment Price') }}</label>
                                                 <input id="max" type="number" class="regTxtBox" name="max" value="" required autocomplete="max" autofocus placeholder="Maximum Investment Value">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-12">
-                                                <label for="daily_interest">{{ __('Package Interest (%)') }}</label>
+                                                <label for="daily_interest">{{ __('Package Interest (100+Package) (%)') }}</label>
                                                 <input id="daily_interest" step="0.1" type="number" class="regTxtBox" name="interest" value="" required autocomplete="daily_interest" autofocus placeholder="Percentage interest for the whole period of investment">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label for="period">{{ __('Total Period of Investment(Days)') }}</label>
+                                                <label for="period">{{ __('Maturity (Days)') }}</label>
                                                 <input id="period" step="1" type="number" class="regTxtBox" name="period" value="" required autocomplete="period" autofocus placeholder="Period of Investment (Days)">
                                             </div>
                                              <div class="col-sm-6">
-                                                <label for="interval" class="">{{ __('Withdrawal Interval (Days)') }}</label>
+                                                <label for="interval" class="">{{ __('Withdrawable in (Days)') }}</label>
                                                 <input id="interval" type="number" class="regTxtBox" name="interval" value="" required autocomplete="interval" autofocus placeholder="Withdrawal interval (Days)">
                                             </div>
                                         </div>
