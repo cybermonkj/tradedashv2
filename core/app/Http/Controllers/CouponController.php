@@ -14,7 +14,7 @@ class CouponController extends Controller
     {
         // $coupons = Coupon::all();
 		
-		if(Session::has('adm'))
+		if (Session::has('adm'))
 		{
 			 return view('admin.coupons');
 		} else {
