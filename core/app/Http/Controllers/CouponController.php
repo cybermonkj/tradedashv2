@@ -12,13 +12,11 @@ class CouponController extends Controller
 
     public function index()
     {
-        $coupons = Coupon::all();
+        // $coupons = Coupon::all();
 		
 		if(Session::has('adm'))
 		{
-			 return view('admin.coupons', [
-				'coupons' => $coupons,
-			]);
+			 return view('admin.coupons');
 		} else {
 			return redirect('/back-end');
 		}
