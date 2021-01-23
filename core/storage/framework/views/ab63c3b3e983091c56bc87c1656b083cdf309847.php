@@ -284,14 +284,14 @@
 						<li class="nav-item">
 					    	<a href="/admin/manage/packages">
 								<i class="fa fa-briefcase"></i>
-								<p> Packages </p>
+								<p>Manage Packages </p>
 							</a>
 						</li>
 						
 						<li class="nav-item">
 					    	<a href="/admin/send/msg">
 								<i class="fa fa-bell"></i>
-								<p> Send Notification </p>
+								<p> Manage Notifications </p>
 							</a>
 						</li>
 						
@@ -325,16 +325,16 @@
 											</a>
 										</li>
 										
-										<li class="">
+										<!--<li class="">
 											<a href="/admin/view/settings">
 												<span class="sub-item">Tradepander</span>
 											</a>
-										</li>
+										</li> -->
 										<li class="">
 											<a href="/admin/profile/settings">
 												<span class="sub-item">Profile</span>
 											</a>
-										</li>
+										</li> 
 
 										<li class="">
 											<a href="/admin/profile/kyc">

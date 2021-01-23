@@ -1,0 +1,17 @@
+{
+    "name": "yii-dream-team/payeer",
+    "version": "1.0",
+    "description": "Payeer PHP Library",
+    "homepage": "https://github.com/yii-dream-team/payeer",
+    "authors": [
+        {
+            "name": "Alexey Samoylov",
+            "email": "alexey.samoylov@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./src/cpayeer.php"
+        ]
+    }
+}
