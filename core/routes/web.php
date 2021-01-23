@@ -286,6 +286,8 @@ Route::get('/admin/ban/admuser/{id}', 'adminController@admin_ban_user');
 Route::get('/admin/activate/admuser/{id}', 'adminController@admin_activate_user');
 Route::get('/admin/delete/admuser/{id}', 'adminController@dadmin_delete_user');
 
+
+///////////////Manual Payment Aproval Routes ////////////////////////////
 Route::get('/admin/reject/user/wd/{id}', 'adminController@rejectWD');
 Route::get('/admin/approve/user/wd/{id}', 'adminController@approveWD');
 Route::get('/admin/delete/user/wd/{id}', 'adminController@deleteWD');
@@ -294,6 +296,11 @@ Route::get('/admin/reject/user/payment/{id}', 'adminController@rejectDep');
 Route::get('/admin/approve/user/payment/{id}', 'adminController@approveDep');
 Route::get('/admin/delete/user/payment/{id}', 'adminController@deleteDep');
 
+
+
+
+
+////////////////User Enable Disable Routes//////////////////////////////
 Route::get('/admin/pause/user_inv/{id}', 'adminController@pauseInv');
 Route::get('/admin/activate/user_inv/{id}', 'adminController@activateInv');
 Route::get('/admin/delete/user_inv/{id}', 'adminController@deleteInv');

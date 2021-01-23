@@ -33,44 +33,43 @@
 
                         <div class="tab-content" id="pills-tabContent">
                           <div class="p-5 tab-pane fade show active" id="pills-home" role="tabpanel" >
-                           <!--  <div class="form-group">                                            
+                            <div class="form-group">                                            
                               <div class="row">                                                
                                 <div class="col-md-6" align="">
-                              <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3> 
+                              <!-- <h3><i class="fas fa-feather-alt"></i> {{ __('Header Color') }} </h3> -->
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > 
+                               <!--  <input id="input_hcolor" value="{{$settings->header_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="hcolor" required > -->
                                 </div>                                   
                                 <div class="col-md-6" align="">
-                                    <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
+                                   <!--  <h3><i class="fas fa-feather-alt"></i> {{ __('Footer Color') }} </h3>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <input id="input_fcolor" value="{{$settings->footer_color}}" class="p-0 color_picker float-left with_50per" type="color"  name="fcolor" required >
                                 </div>                                                
-                              </div> 
-                              <br><br> -->
-
+                              </div> -->
+                              <br><br>
                               <hr>
-                              <!--<div class="row margin_top50"> 
+                              <div class="row margin_top50"> 
                                  <div class="col-md-6">
                                       <h3><i class="fab fa-centercode"></i> {{ __('Site Logo') }} </h3>
                                       <input type="file" name="siteLogo" class=" btn btn-info border_none" >
                                   </div>                                               
                                   <div class="col-md-6" align="center"> 
                                         <img src="/img/{{$settings->site_logo}}" alt="Logo" class="height_50" align="center" >
-                                  </div>                                            
-                              </div>  --> 
-                              <br><br>  
+                                  </div>                                                
+                              </div> 
+                              <br><br>
                               <hr>
 
-                              <!-- <div class="row margin_top50"> 
+                              <div class="row margin_top50"> 
                                  <div class="col-md-6">
                                       <h3><i class="fas fa-thumbtack"></i> {{ __('Site Title') }} </h3>
                                       <input type="text" name="siteTitle" value="{{$settings->site_title}}" class="form-control" placeholder="Site Name" required >
-                                  </div> 
-                                 <div class="col-md-6">
+                                  </div>  
+                                  <div class="col-md-6">
                                       <h3><i class="fas fa-pen"></i> {{ __('Site Description') }} </h3>
                                       <input type="text" name="siteDescr" value="{{$settings->site_descr}}" class="form-control" placeholder="Site Description" required>
-                                  </div>  
-                              </div> -->
+                                  </div> 
+                              </div>
                               <div class="row margin_top50">
                                <div class="col-md-8">
                                       <h3><i class="fas fa-envelope"></i> {{ __('Support Email') }} </h3>
@@ -105,11 +104,11 @@
                                   </div>                                                
                               </div>
                               <br><br>
-                               <hr>
-                             <!-- <div class="row margin_top50">                                                                                               
-                                 <div class="col-md-12" >
+                              <hr>
+                              <div class="row margin_top50">                                                                                               
+                                <div class="col-md-12" >
                                       <h3><i class="fa fa-coggs"></i> {{ __('Currency Settings') }} </h3>
-                                  </div> 
+                                  </div>
                                   <div   class="col-md-6 ">
                                       <div class="card pad_20" >
                                           <h5> {{ __('Currency symbol/Code') }} </h5>
@@ -121,11 +120,11 @@
                                           <h5> {{ __('Currency Rate to US Dollar') }} </h5>
                                           <input type="text" name="cur_conv" value="{{$settings->currency_conversion}}" class="form-control" placeholder="Currency conversion rate to dollar" required >
                                       </div>
-                                  </div>  -->                                         
+                                  </div>                                            
                               </div> 
 
                             </div>
-                          
+                          </div>  
 
                           <div class="p-5 tab-pane fade" id="pills-profile" role="tabpanel" >
                             <div class="row"> 
@@ -176,7 +175,7 @@
                           <div class="tab-pane fade p-5" id="referral" role="tabpanel" aria-labelledby="referral-tab">
                             
                             <div class="row ">                                 
-                              <div class="col-sm-6">
+                                <div class="col-sm-6">
                                     <h5></i> {{ __('Referral System') }} </h5>
                                        <select id="referal_system" class="form-control" name="referal_system" >
                                         @if(env('REF_SYSTEM') == 'Single_level' )
@@ -187,9 +186,9 @@
                                             <option value="Multi_level" selected>Enabled</option>
                                         @endif
                                     </select>                                   
-                                </div> 
+                                </div>
                                 
-                                <div class="col-sm-6">
+                                                                <div class="col-sm-6">
                                     <h5></i> {{ __('Referral Type') }} </h5>
                                      <select class="form-control" name="referal_type" >
                                         @if(env('REF_TYPE') == 'Once')
@@ -200,11 +199,12 @@
                                             <option value="Continous" selected>Continous (for every investment)</option>
                                         @endif
                                     </select> 
-                                </div> 
+                                </div>
 
+                            </div>
 
                             <div id="Multi_level_settings" class="@if(env('REF_SYSTEM') != 'Multi_level'){{__('cont_display_none')}}@endif">
-                             <div class="row mt-5">
+                              <div class="row mt-5">
                                   <div class="col-sm-6">                                    
                                     <h6> {{ __('Referral Levels (Enter Number)') }} </h6>
                                     <input type="number" name="referal_levels" value="{{env('REF_LEVEL_CNT')}}" class="form-control" onkeyup="set_inputs(this.value)" > 
@@ -212,6 +212,7 @@
 
                                   </div>                                                 
                               </div> 
+
                               <div id="warning_div" class="row mt-5">
                                 <div class="col-sm-12 alert alert-warning text-center">Note: Entering '4' means 4% as referral percentage</div>
                               </div> 
@@ -228,6 +229,7 @@
                                 @endforeach                                           
                               </div>
                             </div>
+                          </div>
 
                           <div class="p-5 tab-pane fade" id="mail_settings" role="tabpanel" aria-labelledby="mail_settings-tab">
                             <div class="row "> 
@@ -238,11 +240,11 @@
                                   <div class="card pad_20">
                                       <br>
                                       <div class="form-group">
-                                          <h5> {{ __('SMTP Host') }} </h5>
+                                          <h5> {{ __('Mail Host') }} </h5>
                                           <input type="text" name="m_host" value="{{env('MAIL_HOST')}}" class="form-control" placeholder="Mail Host" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('SMTP Port') }} </h5>
+                                          <h5> {{ __('Mail Port') }} </h5>
                                           <input type="text" name="m_port" value="{{env('MAIL_PORT')}}" class="form-control" placeholder="Mail Port" >
                                       </div>
                                       <div class="form-group">
@@ -255,15 +257,15 @@
                                   <div class="card pad_20">
                                       <br>
                                       <div class="form-group">
-                                          <h5> {{ __('SMTP  Username') }} </h5>
+                                          <h5> {{ __('Mail Username') }} </h5>
                                           <input type="text" name="m_user" value="{{env('MAIL_USERNAME')}}" class="form-control" placeholder="Mail Username" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('SMTP Password') }} </h5>
+                                          <h5> {{ __('Mail Password') }} </h5>
                                           <input type="password" name="m_pwd" value="{{env('MAIL_PASSWORD')}}" class="form-control" placeholder="Mail Password" >
                                       </div>
                                       <div class="form-group">
-                                          <h5> {{ __('SMTP Encryption') }} </h5>
+                                          <h5> {{ __('Mail Encryption') }} </h5>
                                           <input type="text" name="m_enc" value="{{env('MAIL_ENCRYPTION')}}" class="form-control" placeholder="Mail Encryption" >
                                       </div>
                                   </div>
@@ -273,9 +275,9 @@
 
                           <div class="p-5 tab-pane fade" id="payment_setting_tab" role="tabpanel" aria-labelledby="payment_setting_tab-tab">
                             <div class="row ">                               
-                          <!--    <div   class="col-md-6 ">
+                              <div   class="col-md-6 ">
                                   <div class="card pad_20">
-                                     <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
+                                      <h3 align="center"><i class="fab fa-cc-paypal fa-3x"></i></h3>
                                       <h2 class="text-center">Paypal Setup</h2>
                                       <hr>
                                       <div class="form-group">
@@ -299,8 +301,8 @@
                                             <input id="switch_paypal" type="checkbox" name="switch_paypal"  value="{{env('SWITCH_PAYPAL')}}" @if(env('SWITCH_PAYPAL') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_paypal')"></span>
                                           </label>
-                                      </div> 
-                                     
+                                      </div>  
+                                      
                                   </div>
                               </div> 
                               <div   class="col-md-6">
@@ -317,21 +319,21 @@
                                           <input type="text" name="stripe_secret" value="{{$settings->stripe_secret}}" class="form-control" placeholder="Stripe Secrete" >
                                       </div>   
                                       <div class="" align="right"> 
-                                          <b>Enable/Disable</b><br>             
+                                          <b>On/Off</b><br>             
                                           <label class="switch">
                                             <input id="switch_stripe" type="checkbox" name="switch_stripe"  value="{{env('SWITCH_STRIPE')}}" @if(env('SWITCH_STRIPE') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_stripe')"></span>
                                           </label>
                                       </div>                                                     
                                   </div>                                                   
-                              </div>  -->
+                              </div>  
                               
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="far fa-building fa-3x"></i></h3>
-                                      <h2 class="text-center">Deposit Code</h2>
+                                      <h2 class="text-center">Bank Deposit Setup</h2>
                                       <hr>
-                                    <!--  <div class="form-group">
+                                      <div class="form-group">
                                           <h5> {{ __('Bank Name') }} </h5>
                                           <input type="text" name="bank_name" value="{{env('BANK_NAME')}}" class="form-control" placeholder=""  >
                                       </div>
@@ -342,13 +344,13 @@
                                       <div class="form-group">
                                           <h5> {{ __('Account Number') }} </h5>
                                           <input type="number" name="act_no" value="{{env('ACCOUNT_NUMBER')}}" class="form-control" placeholder="" >
-                                      </div>   -->
+                                      </div> 
                                       <div class="form-group">
-                                          <h5> {{ __('Deposit Code Support email') }} </h5>
+                                          <h5> {{ __('Response Email') }} </h5>
                                           <input type="email" name="dep_email" value="{{env('BANK_DEPOSIT_EMAIL')}}" class="form-control" placeholder="" >
                                       </div>  
                                       <div class="" align="right"> 
-                                          <b>Enable/Disable</b><br>             
+                                          <b>On/Off</b><br>             
                                           <label class="switch">
                                             <input id="switch_bank_deposit" type="checkbox" name="switch_bank_deposit"  value="{{env('BANK_DEPOSIT_SWITCH')}}" @if(env('BANK_DEPOSIT_SWITCH') == 1){{'checked'}}@endif>
                                             <span id="" class="slider round" onclick="checkedOnOff('switch_bank_deposit')"></span>
@@ -356,13 +358,12 @@
                                       </div>                                                     
                                   </div>                                                   
                               </div>  
-								
                               <div class="col-md-6">
                                   <div class="card pad_20" >
                                       <h3 align="center"><i class="fab fa-bitcoin fa-3x"></i></h3>
                                       <h2 class="text-center">Coinpayment Setup</h2>
-                                    <!--   <hr>
-                                     <div class="form-group">
+                                      <hr>
+                                      <div class="form-group">
                                           <h5> {{ __('COINPAYMENTS_MERCHANT_ID') }} </h5>
                                           <input type="text" name="cp_m_id" value="{{env('COINPAYMENTS_MERCHANT_ID')}}" class="form-control" placeholder=""  >
                                       </div>  
@@ -381,8 +382,7 @@
                                       <div class="form-group">
                                           <h5> {{ __('COINPAYMENTS_IPN_URL') }} </h5>
                                           <input type="text" name="cp_ipn_url" value="{{env('COINPAYMENTS_IPN_URL')}}" class="form-control" placeholder=""  >
-                                      </div> -->
-									  <p> Cyber Admin: Keys must be edited via the .env file for security reasons</p>
+                                      </div>
                                       
                                       <div class="" align="right"> 
                                           <b>On/Off Bitcoin </b><br>             
@@ -409,16 +409,15 @@
                                       <img align="center" src="/img/coinbase.png" class="img-responsive" style="width: 45%;">
                                     </h3>
                                     <h2 class="text-center">Coinbase Setup</h2>
-                                   <!--   <hr>
-                                  <div class="form-group">
+                                    <hr>
+                                    <div class="form-group">
                                         <h5> {{ __('Coinbase Key') }} </h5>
                                         <input type="text" name="coinbase_key" value="{{ env('COINBASE_API_KEY') }}" class="form-control" placeholder="Coinbase api Key"  >
                                     </div>
                                     <div class="form-group">
                                         <h5> {{ __('Coinbase Webhook Secret') }} </h5>
                                         <input type="text" name="coinbase_seceret" value="{{ env('COINBASE_WEBHOOK_SECRETE') }}" class="form-control" placeholder="Coinbase seceret" >
-                                    </div> -->
-									
+                                    </div>
                                     <div class="" align="right"> 
                                         <b>On/Off</b><br>             
                                         <label class="switch">
@@ -433,7 +432,7 @@
                                   <div class="card pad_20" >
                                       <h3 align="center"><img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="60px"></img></h3>
                                       <h2 class="text-center">Paystack Setup</h2>
-                                     <!-- <hr>
+                                      <hr>
                                       <div class="form-group">
                                           <h5> {{ __('Paystack Public Key') }} </h5>
                                           <input type="text" name="paystack_pub_key" value="{{ env('PAYSTACK_PUBLIC_KEY') }}" class="form-control" placeholder="Paystack public key"  >
@@ -445,12 +444,12 @@
                                       <div class="form-group">
                                           <h5> {{ __('Paystack Merchant Email') }} </h5>
                                           <input type="email" name="paystack_email" value="{{ env('MERCHANT_EMAIL') }}" class="form-control" placeholder="Paystack email" >
-                                      </div> 
-                                      -->
+                                      </div>
+                                      
                                        <div class="form-group">
                                           <h5> {{ __('Paystack Webhook URL') }}</h5>
                                           <input type="text" name="" value="{{ env('APP_URL') }}/paystack/callbck" class="form-control" readonly>
-                                      </div> 
+                                      </div>
                                      
                                       <div class="" align="right"> 
                                           <b>On/Off</b><br>             
@@ -462,7 +461,7 @@
                                   </div>                                                   
                               </div> 
 
-                              <!--<div class="col-md-6">
+                              <div class="col-md-6">
                                 <div class="card pad_20" >
                                     <h3 align="center">
                                       <img align="center" src="/img/payeer.png" class="img-responsive" style="width: 45%;">
@@ -485,9 +484,9 @@
                                         </label>
                                     </div>                                                     
                                 </div>                                                   
-                              </div> -->
+                              </div> 
 
-                             <!-- <div class="col-md-6">
+                              <div class="col-md-6">
                                 <div class="card pad_20" >
                                     <h3 align="center">
                                       <img align="center" src="http://www.deminetsolution.biz/slides/slide4.jpg" class="img-responsive" style="width: 50%;">
@@ -508,7 +507,7 @@
                                           <input id="pm_switch" type="checkbox" name="pm_switch"  value="{{ env('PM_SWITCH') }}" @if(env('PM_SWITCH') == 1){{'checked'}}@endif>
                                           <span class="slider round" onclick="checkedOnOff('pm_switch')"></span>
                                         </label>
-                                    </div>  -->                                                   
+                                    </div>                                                     
                                 </div>                                                   
                               </div> 
 
@@ -519,7 +518,7 @@
 
                         <div class="row margin_top50 mb-5"> 
                           <div   class="col-md-12">
-                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > {{ __('Update Tradepander') }} </button>
+                            <button class="btn btn-info float-right"  onclick="load_post_ajax('/admin/update/site/settings', 'settings_form', 'admin_settings_form' )" > {{ __('Save Changes') }} </button>
                           </div>                                     
                         </div>
 
