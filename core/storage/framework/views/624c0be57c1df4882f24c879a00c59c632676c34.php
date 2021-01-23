@@ -10,7 +10,7 @@
                             <div class="card">
                                 <div class="card-header card_header_bg_blue" >
                                     <div class="card-head-row card-tools-still-right">
-                                        <h4 class="card-title text-white" > <i class="fas fa-hand-holding-usd"></i> <?php echo e(__('User Investments')); ?> </h4>
+                                        <h4 class="card-title text-white" > <i class="fas fa-hand-holding-usd"></i> <?php echo e(__('User Investments Manaager')); ?> </h4>
                                         <div class="card-tools">
                                             <form action="/admin/search/investment" method="post">
                                                 <div class="input-group">
