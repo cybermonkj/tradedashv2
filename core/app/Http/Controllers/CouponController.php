@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coupon;
+use Session;
 use Illuminate\Http\Request;
 
 
