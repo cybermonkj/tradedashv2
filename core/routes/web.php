@@ -73,6 +73,11 @@ Route::get('/register/{usn}', function ($username) {
 });
 
 
+// User Coupon validation
+Route::post('/deposit/validate', [CouponController::class, 'validate'])->name('deposit.validate');
+
+// Test validate routes
+Route::get('{username}/yourid', [CouponController::class, 'validate']);
 
 Route::get('/{username}/wallet', function () {
     return view('user.load_wallet');
@@ -256,8 +261,9 @@ Route::get('/admin/viewlogs', function () {
    
 });
 
-// Coupons
+// Admin Coupons
 Route::get('/admin/coupons', [CouponController::class, 'index']);
+
 
 Route::get('/admin/send/msg', function () {
 	if(Session::has('adm'))
