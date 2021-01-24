@@ -34,7 +34,7 @@ class CouponController extends Controller
 		// Get the user id
 		$id = Auth::id();
 		
-		if ($id)
+		if (Auth::check())
 		{
 			return view('user.get_id_validate', [
 				'id' => $id,
