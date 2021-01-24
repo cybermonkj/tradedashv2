@@ -9,7 +9,7 @@ class Coupon extends Model
     protected $fillable = [
         'coupon_code',
         'price_tag',
-        'status',
+        'is_used',
     ];
 
     protected $casts = [

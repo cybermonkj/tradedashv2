@@ -35,7 +35,7 @@
                                             @if($settings->deposit == 1)      
                                                 <div id="pay_cont" class="row">
                                                     @if(env('SWITCH_PAYPAL') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                        
+                                                    <div class="mt-5 col-lg-6">                                                        
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-paypal fa-4x text-info"></i> <br>
@@ -50,7 +50,7 @@
                                                     </div>
                                                     @endif
                                                     @if(env('SWITCH_STRIPE') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                                                  
+                                                    <div class="mt-5 col-lg-6">                                                                                                  
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-stripe fa-4x text-info"></i> <br>
@@ -69,7 +69,7 @@
                                                     @endif
 
                                                     @if(env('PM_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/pm.png" height="50px"></img> <br>
@@ -89,7 +89,7 @@
 
                                                    
                                                     @if(env('PAYEER_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/payeer.png" height="50px"></img> <br>
@@ -108,7 +108,7 @@
                                                     @endif
 
                                                     @if(env('SWITCH_BTC') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -127,7 +127,7 @@
                                                     @endif
 
                                                     @if(env('COINBASE_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -146,7 +146,7 @@
                                                     @endif
 
                                                     @if(env('SWITCH_ETH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-ethereum fa-4x text-info"></i> <br>
@@ -165,7 +165,7 @@
                                                     @endif
 
                                                     @if(env('PAYSTACK_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
@@ -184,7 +184,7 @@
                                                     @endif
 
                                                     @if(env('BANK_DEPOSIT_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
@@ -199,7 +199,7 @@
                                                                 </a>
                                                             </div> 
                                                             <div id="bank_dets" align="" class="cont_display_none">
-                                                                <div class="row mt-5 border border-primary rounded">              
+                                                                <div class="mt-5 border rounded row border-primary">              
                                                                     <div class="col-sm-12">
                                                                         <h3 class="color_blue_b">
                                                                             <i class="fas fa-money-check-alt color_blue_9"></i> {{env('ACCOUNT_NAME')}}
@@ -260,13 +260,13 @@
                                 <div class="card-header">
                                     <div class="card-title">{{ __('Deposit History') }}</div>
                                 </div>
-                                <div class="card-body pb-0">
+                                <div class="pb-0 card-body">
                                     <?php
                                         $deps = App\deposits::where('user_id', $user->id)->orderby('id', 'desc')->paginate(10);
                                     ?>                                                   
                                                 
                                     <div class="table-responsive">
-                                        <table class="display table table-striped table-hover" >
+                                        <table class="table display table-striped table-hover" >
                                         <thead>
                                             <tr>  
                                                 <th>{{ __('Amount') }}</th>        
@@ -382,7 +382,7 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
+                                <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
 							
