@@ -217,7 +217,7 @@ Route::get('/admin/manage/deposits', function () {
 Route::get('/admin/manage/coupons', function () {
 	if (Session::has('adm')) 
 	{
-		return view('admin.coupon_codes');
+		return view('admin.coupon_code');
 	} 
 	else 
 	{
