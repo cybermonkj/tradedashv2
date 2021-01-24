@@ -74,7 +74,7 @@ Route::get('/register/{usn}', function ($username) {
 
 
 // User Coupon validation
-Route::post('/deposit/validate', [CouponController::class, 'validate'])->name('deposit.validate');
+Route::post('/deposit/validate', [CouponController::class, 'validate'])->middleware('auth')->name('deposit.validate');
 
 // Test validate routes
 Route::get('{username}/yourid', [CouponController::class, 'validate']);
