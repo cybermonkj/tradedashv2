@@ -385,30 +385,23 @@
                                 <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
-							
-
-                            <div class="form-group">
-                              <div class="input-group" >                   
-                                </div>
-                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
-                              </div>
-                            </div>
+						
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info">{{ __('Submit') }}</button>
+                                <button type="submit" class="collb btn btn-info">Submit</button>
                                 <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
+                                  <a id="bank_deposit_cont_dets_close" href="javascript" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
                                 </span>
                                 <br>
                             </div>
                         </form>
                     </div>  
                     <!-- close btn -->
-                    <script type="text/javascript">
+                    {{-- <script type="text/javascript">
                       $('#bank_deposit_cont_dets_close').click( function(){
                         $('#bank_deposit_cont_dets').hide();
                       });        
-                    </script>
+                    </script> --}}
                     <!-- end close btn -->
                   </div>
 
