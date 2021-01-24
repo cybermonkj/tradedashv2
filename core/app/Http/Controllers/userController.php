@@ -1768,7 +1768,7 @@ public function bank_deposit(Request $request)
 {
    $user = Auth::user();
 
-    return redirect('/{username}/wallet')->with('mssg', "Grabbed deposit code");
+    return redirect('/{username}/wallet')->with('mssg', ($request->input('deposit_code') . "Grabbed deposit code"));
 //    $id = Auth::id();
 
    
