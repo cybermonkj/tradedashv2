@@ -1763,12 +1763,11 @@ class userController extends Controller
   //     return redirect('/login');
   //   }
   // }
-
-public function bank_deposit(Request $request)
+public function bank_deposit(Request $request, $username)
 {
    $user = Auth::user();
 
-    return redirect('/{username}/wallet')->with('mssg', ($request->input('deposit_code') . "Grabbed deposit code"));
+    return redirect('/'.$user->username .'/wallet')->with('mssg', ($request->input('deposit_code') . "Grabbed deposit code"));
 //    $id = Auth::id();
 
    
