@@ -13,7 +13,14 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                        
+                                        <div class="card-title">{{ __('Fund your wallet') }}</div>
+                                        <div class="container">
+                                            <div class="card">
+                                                @if (Session::has('message'))
+                                                    <div class="alert alert-info">{{ Session::get('message') }}</div>
+                                                @endif
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                                 <div class="card-body"> 

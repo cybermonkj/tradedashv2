@@ -1775,15 +1775,19 @@ public function bank_deposit(Request $request)
 
         // Check amount to deposited
        if ($request->input('amt') < env('MIN_DEPOSIT')) {
-            return back()->with([
-               'toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 
-               'toast_type' => 'err'
-            ]);
+            // return back()->with([
+            //    'toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 
+            //    'toast_type' => 'err'
+            // ]);
+            Session::flash('message', "Deposit code MIN");
+            return redirect()->back();
        } elseif ($request->input('amt') > env('MAX_DEPOSIT')) {
-            return back()->with([
-               'toast_mg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency,
-               'toast_type' => 'err'
-            ]);
+            // return back()->with([
+            //    'toast_mg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency,
+            //    'toast_type' => 'err'
+            // ]);
+            Session::flash('message', "Deposit code MAX");
+            return redirect()->back();
        }
 
 
@@ -1792,15 +1796,16 @@ public function bank_deposit(Request $request)
 
        if (!empty($coupon_col)) {
            if ($coupon_col->is_used == false) {
-               return redirect('/deposit/validate');
-           } else if ($country->is_used == true) {
-               return back()-with('failed', 'Desposit code has been used!');
+            //    return redirect('/deposit/validate');
+                Session::flash('message', "Desposit code unused!");
+                return redirect()->back();
+           } else if ($coupon_col->is_used == true) {
+                Session::flash('message', "Deposit code has been used!");
+                return redirect()->back();
            }
        } else {
-           return back()->with([
-               'toast_msg' => "The deposit code you entered is invalid!",
-               'toast_type' => "err"
-           ]);
+            Session::flash('message', "The deposit code you inputed is invalid!");
+            return redirect()->back();
        }
        
 
