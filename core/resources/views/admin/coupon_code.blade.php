@@ -5,9 +5,12 @@
 			@include('admin.atlantis.main_bar')
 			<div class="page-inner mt--5">
 				@include('admin.atlantis.overview')
-				div id="prnt"></div>
-				<div class="row">
-					<h1 class="heading">Coupons Codes</h1>
+				<div class="container">
+					<div class="row align-items-start">
+						<div class="col-12 col-sm-12">
+							<h1 class="display-3">Coupons Codes</h1>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
