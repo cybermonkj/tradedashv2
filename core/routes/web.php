@@ -214,6 +214,17 @@ Route::get('/admin/manage/deposits', function () {
    
 });
 
+Route::get('/admin/manage/coupons', function () {
+	if (Session::has('adm')) 
+	{
+		return view('admin.coupon_codes');
+	} 
+	else 
+	{
+		return redirect('/back-end');
+	}
+});
+
 Route::get('/admin/manage/withdrawals', function () {
 	if(Session::has('adm'))
 	{
