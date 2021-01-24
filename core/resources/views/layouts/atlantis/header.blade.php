@@ -253,12 +253,12 @@
 						<li class="nav-item">
 							<a href="#">
 								<i class="fab fa-affiliatetheme"></i>
-								<p>Trader/ICO (Coming Soon)</p>
+								<p>Trader/ICO (Beta)</p>
 							</a>							
 						</li>
 												<li class="nav-item">
 							<a href="https://tradepander.com/buy-tradepander-deposit-code">
-								<i class="fa fa-money"></i>
+								<i class="fas fa-shopping-bag"></i>
 								<p>Buy Deposit Code</p>
 							</a>							
 						</li>
