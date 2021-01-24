@@ -148,7 +148,7 @@
 										<a class="dropdown-item" href="/{{$user->username}}/withdrawal"><span class="fa fa-download"></span>&nbsp; Withdrawal</a>
 										<a class="dropdown-item" href="/{{$user->username}}/investments"><span class="fa fa-wallet"></span>&nbsp; Investments</a>
 										<a class="dropdown-item" href="/{{$user->username}}/send_money"><span class="fa fa-paper-plane"></span>&nbsp; Transfer</a>
-										<a class="dropdown-item" href="/#"><span class="fa fa-money"></span>&nbsp; Trader/ICO</a>
+										<a class="dropdown-item" href="/#"><i class="fab fa-affiliatetheme"></i>>&nbsp; Trader/ICO</a>
 										<a class="dropdown-item" href="/{{$user->username}}/downlines"><span class="fa fa-users"></span>&nbsp; Downlines</a>
 										<a class="dropdown-item" href="{{route('ticket.index')}}">
 											<span class="fab fa-teamspeak"></span>&nbsp; Get Support
