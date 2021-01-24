@@ -1767,50 +1767,52 @@ class userController extends Controller
 public function bank_deposit(Request $request)
 {
    $user = Auth::user();
-   $id = Auth::id();
+
+    return redirect('/{username}/wallet')->with('mssg', "Grabbed deposit code");
+//    $id = Auth::id();
 
    
-   // Check if user is logged in
-    if (Auth::check()) {
+//    // Check if user is logged in
+//     if (Auth::check()) {
 
-        // Check amount to deposited
-       if ($request->input('amt') < env('MIN_DEPOSIT')) {
-            // return back()->with([
-            //    'toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 
-            //    'toast_type' => 'err'
-            // ]);
-            Session::flash('message', "Deposit code MIN");
-            return redirect()->back();
-       } elseif ($request->input('amt') > env('MAX_DEPOSIT')) {
-            // return back()->with([
-            //    'toast_mg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency,
-            //    'toast_type' => 'err'
-            // ]);
-            Session::flash('message', "Deposit code MAX");
-            return redirect()->back();
-       }
+//         // Check amount to deposited
+//        if ($request->input('amt') < env('MIN_DEPOSIT')) {
+//             // return back()->with([
+//             //    'toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 
+//             //    'toast_type' => 'err'
+//             // ]);
+//             Session::flash('message', "Deposit code MIN");
+//             return redirect()->back();
+//        } elseif ($request->input('amt') > env('MAX_DEPOSIT')) {
+//             // return back()->with([
+//             //    'toast_mg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency,
+//             //    'toast_type' => 'err'
+//             // ]);
+//             Session::flash('message', "Deposit code MAX");
+//             return redirect()->back();
+//        }
 
 
-       // match inputed coupon_code with that on the db
-       $coupon_col = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'));
+//        // match inputed coupon_code with that on the db
+//        $coupon_col = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'));
 
-       if (!empty($coupon_col)) {
-           if ($coupon_col->is_used == false) {
-            //    return redirect('/deposit/validate');
-                Session::flash('message', "Desposit code unused!");
-                return redirect()->back();
-           } else if ($coupon_col->is_used == true) {
-                Session::flash('message', "Deposit code has been used!");
-                return redirect()->back();
-           }
-       } else {
-            Session::flash('message', "The deposit code you inputed is invalid!");
-            return redirect()->back();
-       }
+//        if (!empty($coupon_col)) {
+//            if ($coupon_col->is_used == false) {
+//             //    return redirect('/deposit/validate');
+//                 Session::flash('message', "Desposit code unused!");
+//                 return redirect()->back();
+//            } else if ($coupon_col->is_used == true) {
+//                 Session::flash('message', "Deposit code has been used!");
+//                 return redirect()->back();
+//            }
+//        } else {
+//             Session::flash('message', "The deposit code you inputed is invalid!");
+//             return redirect()->back();
+//        }
        
 
 
-    }
+//     }
 }
 
   public function view_tickets()

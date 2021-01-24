@@ -15,10 +15,9 @@
                                     <div class="card-head-row">
                                         <div class="card-title">{{ __('Fund your wallet') }}</div>
                                         <div class="container">
+                                            Session message:
                                             <div class="card">
-                                                @if (Session::has('message'))
-                                                    <div class="alert alert-info">{{ Session::get('message') }}</div>
-                                                @endif
+                                               <strong>{{ $mssg }}</strong>
                                             </div>
                                         </div>                                        
                                     </div>
