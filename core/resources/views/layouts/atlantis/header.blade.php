@@ -252,7 +252,7 @@
 						</li>
 						<li class="nav-item">
 							<a href="#">
-								<i class="fa fa-money"></i>
+								<i class="fab fa-affiliatetheme"></i>
 								<p>Trader/ICO (Coming Soon)</p>
 							</a>							
 						</li>
