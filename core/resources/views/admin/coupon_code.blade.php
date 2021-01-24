@@ -8,7 +8,7 @@
 				<div class="container">
 					<div class="row align-items-start">
 						<div class="col-12 col-sm-12">
-							<h1 class="display-5">Coupons Codes</h1>
+							<h1 class="uppercase display-5">Coupon Codes</h1>
 						</div>
 					</div>
 				</div>
