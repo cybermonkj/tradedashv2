@@ -119,6 +119,7 @@ Route::get('/user/home/login', 'userController@home_login')->name('home_login');
 Route::get('/activate', 'userController@homelogin')->name('homelogin');
 
 Route::post('/user/wallet/bank_deposit', [userController::class, 'bank_deposit'])->middleware('auth');
+Route::get('/user/wallet/coupon_deposit', [userController::class, 'coupon_deposit'])->middleware('auth');
 Route::post('/user/send/fund', 'userController@user_send_fund')->middleware('auth');
 Route::post('/user/update/pwd', 'userController@reset_pwd');
 Route::post('/user/upload/profile_pic', 'userController@uploadProfilePic')->middleware('auth');
