@@ -371,7 +371,7 @@
                       <hr>
                     </div>
                     <div class="container">                        
-                        <form action="/user/wallet/coupon_deposit" method="post">
+                        <form action="{{ route('counpon.desposit') }}" method="post">
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-prepend ">

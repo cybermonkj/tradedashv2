@@ -1765,7 +1765,7 @@ public function bank_deposit(Request $req){
  
 // Coupon controller
 
-public function coupon_deposit(Request $request)
+public function coupon(Request $request)
 {
   $user = Auth::user();
 
