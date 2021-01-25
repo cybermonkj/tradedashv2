@@ -371,7 +371,7 @@
                       <hr>
                     </div>
                     <div class="container">                        
-                        <form action="{{{ url("/user/wallet/coupon_deposit") }}}" method="post">
+                        <form action="/user/wallet/coupon_deposit" method="post">
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-prepend ">
