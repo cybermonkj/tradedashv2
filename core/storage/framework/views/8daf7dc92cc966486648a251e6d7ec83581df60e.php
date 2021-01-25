@@ -13,7 +13,13 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><?php echo e(__('Fund your wallet')); ?></div>                                        
+                                        <div class="card-title"><?php echo e(__('Fund your wallet')); ?></div>
+                                        <div class="container">
+                                            Session message:
+                                            <div class="card">
+                                               <strong><?php echo e(session('mssg')); ?></strong>
+                                            </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                                 <div class="card-body"> 
@@ -36,7 +42,7 @@
                                             <?php if($settings->deposit == 1): ?>      
                                                 <div id="pay_cont" class="row">
                                                     <?php if(env('SWITCH_PAYPAL') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                        
+                                                    <div class="mt-5 col-lg-6">                                                        
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-paypal fa-4x text-info"></i> <br>
@@ -52,7 +58,7 @@
                                                     </div>
                                                     <?php endif; ?>
                                                     <?php if(env('SWITCH_STRIPE') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                                                  
+                                                    <div class="mt-5 col-lg-6">                                                                                                  
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-stripe fa-4x text-info"></i> <br>
@@ -73,7 +79,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('PM_SWITCH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/pm.png" height="50px"></img> <br>
@@ -95,7 +101,7 @@
 
                                                    
                                                     <?php if(env('PAYEER_SWITCH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/payeer.png" height="50px"></img> <br>
@@ -116,7 +122,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('SWITCH_BTC') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -137,7 +143,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('COINBASE_SWITCH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -158,7 +164,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('SWITCH_ETH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-ethereum fa-4x text-info"></i> <br>
@@ -179,7 +185,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('PAYSTACK_SWITCH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
@@ -200,7 +206,7 @@
                                                     <?php endif; ?>
 
                                                     <?php if(env('BANK_DEPOSIT_SWITCH') == 1): ?>
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
@@ -217,7 +223,7 @@
                                                                 </a>
                                                             </div> 
                                                             <div id="bank_dets" align="" class="cont_display_none">
-                                                                <div class="row mt-5 border border-primary rounded">              
+                                                                <div class="mt-5 border rounded row border-primary">              
                                                                     <div class="col-sm-12">
                                                                         <h3 class="color_blue_b">
                                                                             <i class="fas fa-money-check-alt color_blue_9"></i> <?php echo e(env('ACCOUNT_NAME')); ?>
@@ -280,13 +286,13 @@
                                 <div class="card-header">
                                     <div class="card-title"><?php echo e(__('Deposit History')); ?></div>
                                 </div>
-                                <div class="card-body pb-0">
+                                <div class="pb-0 card-body">
                                     <?php
                                         $deps = App\deposits::where('user_id', $user->id)->orderby('id', 'desc')->paginate(10);
                                     ?>                                                   
                                                 
                                     <div class="table-responsive">
-                                        <table class="display table table-striped table-hover" >
+                                        <table class="table display table-striped table-hover" >
                                         <thead>
                                             <tr>  
                                                 <th><?php echo e(__('Amount')); ?></th>        
@@ -405,33 +411,22 @@
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
+                                <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
-							
-
-                            <div class="form-group">
-                              <div class="input-group" >                   
-                                </div>
-                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
-                              </div>
-                            </div>
+						
                             <div class="form-group">
                               <br>
-                                <button class="collb btn btn-info"><?php echo e(__('Submit')); ?></button>
+                                <button type="submit" class="collb btn btn-info">Submit</button>
                                 <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>        
+                                  <a id="bank_deposit_cont_dets_close" href="javascript" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>        
                                 </span>
                                 <br>
                             </div>
                         </form>
                     </div>  
                     <!-- close btn -->
-                    <script type="text/javascript">
-                      $('#bank_deposit_cont_dets_close').click( function(){
-                        $('#bank_deposit_cont_dets').hide();
-                      });        
-                    </script>
+                    
                     <!-- end close btn -->
                   </div>
 
