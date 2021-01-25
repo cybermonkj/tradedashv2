@@ -1771,6 +1771,8 @@ public function coupon_deposit(Request $request)
 
   $input = Input::all();
 
+  return redirect('/{username}/wallet')->back('mssg', $input);
+
   // return redirect()->back()-> withInput();
 //    $id = Auth::id();
 

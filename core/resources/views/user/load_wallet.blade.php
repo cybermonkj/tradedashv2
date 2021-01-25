@@ -367,7 +367,7 @@
                   <div class="col-md-4">&emps;</div>
                   <div class="col-md-4 popmsg-mobile card" align="Center">        
                     <div class="mt-2">
-                      <h3><b>{{ __('Deposit Details') }}</b></h3>                              
+                      <h3><b>{{ __('Deposit Details') }}</b></h3>                             
                       <hr>
                     </div>
                     <div class="container">                        
