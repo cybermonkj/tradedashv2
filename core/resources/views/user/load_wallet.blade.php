@@ -406,11 +406,11 @@
                         </form>
                     </div>  
                     <!-- close btn -->
-                    {{-- <script type="text/javascript">
+                    <script type="text/javascript">
                       $('#bank_deposit_cont_dets_close').click( function(){
                         $('#bank_deposit_cont_dets').hide();
                       });        
-                    </script> --}}
+                    </script>
                     <!-- end close btn -->
                   </div>
 
