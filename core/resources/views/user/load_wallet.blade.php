@@ -370,7 +370,7 @@
                       <h3><b>{{ __('Deposit Details') }}</b></h3>                              
                       <hr>
                     </div>
-                    <div class="">                        
+                    <div class="container">                        
                         <form action="/user/wallet/coupon_deposit" method="get">
                             <div class="form-group">
                               <div class="input-group">
@@ -380,6 +380,7 @@
                                 <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
                               </div>
                             </div>
+                            
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
@@ -388,23 +389,16 @@
                                 <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
+                            
                             <div class="container">
                                 <div class="form-group">
                                     <input type="submit" value="submit" class="btn btn-info">
-                                    <a id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
+                                    <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
                             </div>
-						
-                            {{-- <div class="form-group">
-                              <br>
-                                <button type="submit" class="collb btn btn-info">Submit</button>
-                                <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
-                                </span>
-                                <br>
-                            </div> --}}
                         </form>
                     </div>  
+                    
                     <!-- close btn -->
                     <script type="text/javascript">
                       $('#bank_deposit_cont_dets_close').click( function(){
