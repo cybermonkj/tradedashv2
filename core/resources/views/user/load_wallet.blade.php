@@ -391,7 +391,7 @@
                             <div class="container">
                                 <div class="form-group">
                                     <input type="submit" value="submit" class="btn btn-info">
-                                    <a id="bank_deposit_cont_dets_close" href="javascript" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
+                                    <a id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
                             </div>
 						
