@@ -14,6 +14,12 @@
 						<div class="p-4 shadow card" style="width: 100% !important">
 							@include('admin.components.table')
 						</div>
+
+						<div class="px-4 my-4">
+							<div class="row align-items-end">
+								<a class="btn btn-success btn-lg text-capitalize" href="{{ route('export-coupon') }}">Export Coupons</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
