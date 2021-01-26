@@ -19,13 +19,14 @@ class DepositController extends Controller
         return view('user.components.deposit_modal');
     }
 
-    public function validateDeposit()
+    public function validateDeposit(Request $request)
     {
         $user = Auth::user();
-        $input = Input::all();
-        
+        $inputAmt = $request->input('amount');
+        $inputCode = $request->input('deposit_code');
+
         if (Auth::check()) {
-            return back()->with('success_msg', $input);
+            return back()->with('success_msg', ($inputAmt . $inputCode));
         } else {
             return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
         }
