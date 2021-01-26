@@ -9,6 +9,9 @@
 
     .table__main {
         width: 100%;
+
+        display: flex;
+        justify-content: space-between;
         
         display: grid;
         grid-template-columns: 1fr 2fr;
