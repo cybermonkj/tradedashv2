@@ -19,7 +19,7 @@ class DespoitController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.load_wallet');
     }
 
     /**

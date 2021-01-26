@@ -74,9 +74,7 @@ Route::get('/register/{usn}', function ($username) {
     return redirect('/register');
 });
 
-Route::get('/{username}/wallet', function () {
-    return view('user.load_wallet');
-})->middleware('auth')->name('wallet');
+Route::get('/{username}/wallet', [DepositController::class, 'index'])->middleware('auth')->name('wallet');
 
 Route::get('/{username}/send_money', function () {
     return view('user.send_money');
