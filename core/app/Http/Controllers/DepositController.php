@@ -35,7 +35,7 @@ class DepositController extends Controller
                 $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
                 if(!empty($coupon)) {
                     // Check used status of coupon
-                    if ($coupon->is_used != false) {
+                    if ($coupon->is_used != true) {
                         // Update coupon status to sold
                         try {
                             DB::table('coupons')
