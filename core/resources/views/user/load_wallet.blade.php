@@ -17,7 +17,7 @@
                                         <div class="container">
                                             Session message:
                                             <div class="card">
-                                               <strong>{{ session('mssg') }}</strong>
+                                               <strong>{{ session('success_msg') }}</strong>
                                             </div>
                                         </div>                                        
                                     </div>

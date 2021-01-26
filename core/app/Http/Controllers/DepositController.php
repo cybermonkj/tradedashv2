@@ -22,6 +22,8 @@ class DepositController extends Controller
     public function validateDeposit()
     {
         $user = Auth::user();
+        $input = Input::all();
+        
         if (Auth::check()) {
             return back()->with('success_msg', $input);
         } else {
