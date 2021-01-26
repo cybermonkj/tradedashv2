@@ -390,22 +390,20 @@
                   <div class="col-md-4">&emps;</div>
                   <div class="col-md-4 popmsg-mobile card" align="Center">        
                     <div class="mt-2">
-                      <h3><b><?php echo e(__('Deposit Details')); ?></b></h3>                              
+                      <h3><b><?php echo e(__('Deposit Details')); ?></b></h3>                             
                       <hr>
                     </div>
-                    <div class="">                        
-                        <form action="/user/wallet/bank_deposit" method="post">
-                            <div class="form-group" align="left">                       
-                                <input type="hidden" class="form-control" name="_token" value="<?php echo e(csrf_token()); ?>">
-                            </div>
+                    <div class="container">                        
+                        <form action="<?php echo e(route('coupon.deposit')); ?>" method="post">
                             <div class="form-group">
                               <div class="input-group">
-                                <div class="input-group-prepend " >
+                                <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg"><?php echo e($settings->currency); ?></span>
                                 </div>                        
                                 <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
                               </div>
                             </div>
+                            
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
@@ -414,19 +412,22 @@
                                 <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
-						
-                            <div class="form-group">
-                              <br>
-                                <button type="submit" class="collb btn btn-info">Submit</button>
-                                <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>        
-                                </span>
-                                <br>
+                            
+                            <div class="container">
+                                <div class="form-group">
+                                    <input style="text-transform: capitalize" type="submit" value="submit" class="btn btn-info">
+                                    <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>
+                                </div>
                             </div>
                         </form>
                     </div>  
-                    <!-- close btn -->
                     
+                    <!-- close btn -->
+                    <script type="text/javascript">
+                      $('#bank_deposit_cont_dets_close').click( function(){
+                        $('#bank_deposit_cont_dets').hide();
+                      });        
+                    </script>
                     <!-- end close btn -->
                   </div>
 

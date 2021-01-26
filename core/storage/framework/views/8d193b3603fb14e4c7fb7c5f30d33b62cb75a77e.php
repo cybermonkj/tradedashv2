@@ -14,10 +14,10 @@
                                 <div class="card-head-row">
                                     <div class="card-title">
                                         <?php if($coin == 'BTC'): ?>
-                                        <?php echo e(__('Deposit Using Bitcoin')); ?>
+                                        <?php echo e(__('Fund Using Bitcoin')); ?>
 
                                         <?php else: ?>
-                                        <?php echo e(__('Deposit Using Ethereum')); ?>
+                                        <?php echo e(__('Fund Using Ethereum')); ?>
 
                                         <?php endif; ?>
                                         </div>
