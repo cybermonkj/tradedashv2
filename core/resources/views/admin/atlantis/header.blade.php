@@ -171,12 +171,6 @@
 											<a class="dropdown-item" href="/admin/manage/investments">
 												<span class="fa fa-paper-plane"></span>&nbsp; Manage Investments
 											</a>
-											<a class="dropdown-item" href="{{ route('manage.coupons') }}">
-												<span class="fas fa-credit-card "></span>&nbsp; Manage Coupons
-											</a>
-											<a class="dropdown-item" href="{{ route('import.codes') }}">
-												<span class="fas fa-file-import"></span>&nbsp; Import Coupon Codes
-											</a>
 											<a class="dropdown-item" href="/admin/manage/deposits">
 												<span class="fas fa-donate"></span>&nbsp; User Deposits
 											</a>
@@ -184,7 +178,14 @@
 												<span class="fa fa-file"></span>&nbsp; Withdrawal Requests
 											</a>
 										@endif
+										<a class="dropdown-item" href="{{ route('manage.coupons') }}">
+											<span class="fas fa-credit-card "></span>&nbsp; Manage Coupons
+										</a>
 
+										<a class="dropdown-item" href="{{ route('import.codes') }}">
+											<span class="fas fa-file-import"></span>&nbsp; Import Coupon Codes
+										</a>
+										
 										<a class="dropdown-item" href="/admin/manage/packages">
 											<span class="fa fa-briefcase"></span>&nbsp; Packages Manager
 										</a>
