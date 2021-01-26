@@ -32,9 +32,9 @@
     .table__row--header th {
         grid-area: header;
         height: 4rem;
-        width: 200px;
+        width: 150px;
         /* width: calc(100% / 6); */
-        border: 1px solid red;
+        /* border: 1px solid red; */
 
         display: flex;
         align-items: center;
@@ -63,8 +63,8 @@
         width: 100%;
     }
 
-    .table__data {
-        
+    .table__data .d-grid button {
+        margin-bottom: 2px;
     }
 
     @media screen and (min-width: 768px) {
