@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div class="p-2 shadow card">
-            <form action="{{ route('wallet.deposit') }}" method="POST">
+            <form action="{{ route('coupon.deposit') }}" method="POST">
                 @csrf
                 <div class="mb-3 input-group">
                     <span class="input-group-text" id="basic-addon">$</span>
