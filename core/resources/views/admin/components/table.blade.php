@@ -34,6 +34,7 @@
         height: 4rem;
         width: 16.67%;
         width: calc(100% / 6);
+        border: 1px solid red;
 
         display: flex;
         align-items: center;
