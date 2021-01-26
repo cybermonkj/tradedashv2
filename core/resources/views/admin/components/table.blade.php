@@ -98,8 +98,7 @@
 </style>
 
 
-<div class="tabl__container">
-    <div class="table__heading">Codes</div>
+<div class="table__container">
     <table class="table__main">
         <thead class="table__header">
             <tr class="table__row--header">
