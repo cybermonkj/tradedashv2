@@ -12,6 +12,23 @@
             width: 100%;
             height: 100%;
             border: 1px solid red;
+            opacity: 0;
+        }
+
+        input[name=myFile]::before {
+            content: attr(data-text);
+            display: grid;
+            place-content: center;
+
+            font-weight: 600;
+            color: #78909C !important;
+        }
+
+        @media screen and (max-width: 420px) {
+            .drop-zone {
+                width: 100%;
+                height: 200px;
+            }
         }
     </style>
     <div class="main-panel">
@@ -26,7 +43,8 @@
                         <form class="form" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="drop-zone">
-                                <input type="file" name="myFile" id="myFile" class="drop-zone__input">
+                                <input data-text="Drop file or click to upload" type="file" name="myFile" id="myFile" class="drop-zone__input">
+                                
                             </div>
                             <input type="submit" value="Send File" class="btn btn-info">
                         </form>
