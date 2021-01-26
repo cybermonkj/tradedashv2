@@ -378,7 +378,7 @@
                                 <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amount" value="30" required placeholder="Amount" >
                               </div>
                             </div>
                             
