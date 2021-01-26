@@ -9,9 +9,6 @@
 
     .table__main {
         width: 100%;
-
-        display: flex;
-        justify-content: space-between;
         
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -74,6 +71,11 @@
                 "header"
                 "content"
             ;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .table__row--header {
@@ -81,7 +83,7 @@
         }
 
         .table__row--header th {
-            justify-content: space-evenly;
+            justify-content: space-between;
 
             width: 100%;
             height: 4rem;
