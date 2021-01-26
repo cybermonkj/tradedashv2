@@ -14,7 +14,7 @@ class DepositController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function sendRoute()
     {
         return view('user.components.deposit_modal');
     }
