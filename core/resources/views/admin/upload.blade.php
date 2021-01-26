@@ -13,7 +13,7 @@
                             @csrf
                             <div class="fallback">
                                 <input type="file" name="couponFile" id="couponFile" />
-                                <input type="submit" value="Send File" />
+                                <input class="btn btn-info" type="submit" value="Send File" />
                             </div>
                         </form>
                     </div>
