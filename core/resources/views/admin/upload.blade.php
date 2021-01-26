@@ -20,7 +20,7 @@
         .drop-zone__copy::before {
             position: absolute;
             top: 50%;
-            left: 20%;
+            left: 30%;
             
             content: attr(data-text);
             display: grid;
@@ -45,7 +45,7 @@
                         <h1 class="text-uppercase display-5 fw-bold">Import coupon codes</h1>
                     </div>
 
-                    <div class="p-4 m-4 shadow card" style="width: 90% !important">
+                    <div class="p-4 m-4 shadow card" style="width: 100% !important">
                         <form class="form" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="drop-zone">
