@@ -9,6 +9,10 @@
 						<div class="col-12 col-sm-12">
 							<h1 class="text-uppercase display-5">Coupon Codes</h1>
 						</div>
+
+						<div class="p-4 shadow card" style="width: 100% !important">
+							<?php echo $__env->make('admin.components.table', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+						</div>
 					</div>
 				</div>
 			</div>
