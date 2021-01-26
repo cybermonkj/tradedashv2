@@ -32,7 +32,7 @@
     .table__row--header th {
         grid-area: header;
         height: 4rem;
-        width: 16.67%;
+        width: 200px;
         /* width: calc(100% / 6); */
         border: 1px solid red;
 
