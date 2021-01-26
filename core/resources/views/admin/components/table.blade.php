@@ -29,7 +29,8 @@
     .table__row--header th {
         grid-area: header;
         height: 4rem;
-        width: calc(100% / 6%);
+        width: 16.67%;
+        width: calc(100% / 6);
 
         display: flex;
         align-items: center;
@@ -46,7 +47,8 @@
     .table__row--content td {
         grid-area: content;
         height: 4rem;
-        width: calc(100% / 6%);
+        width: 16.67%;
+        width: calc(100% / 6);
         
         display: flex;
         align-items: center;
