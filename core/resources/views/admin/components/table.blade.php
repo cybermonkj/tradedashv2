@@ -63,7 +63,7 @@
         
     }
 
-    @media screen and (min-width: 768px) {
+    @media only screen and (max-width: 420px) {
         .table__main {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
