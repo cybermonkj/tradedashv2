@@ -1773,11 +1773,11 @@ class userController extends Controller
  
 // Coupon controller
 
-public function coupon(Request $request) {
-  $user = Auth::user();
+// public function coupon(Request $request) {
+//   $user = Auth::user();
 
-  $input = Input::all();
-}
+//   $input = Input::all();
+// }
 
   public function view_tickets()
   {

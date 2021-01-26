@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\DB;
 
 class DespoitController extends Controller
 {
@@ -37,6 +41,17 @@ class DespoitController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function validate() {
+        $user = Auth::user();
+        $input = Input::all();
+
+        if (Auth::check()) {
+            return back()->with('success_msg', $input);
+        } else {
+            return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
+        }
     }
 
     /**

@@ -372,6 +372,7 @@
                     </div>
                     <div class="container">                        
                         <form action="{{ route('coupon.deposit') }}" method="post">
+                            @csrf
                             <div class="form-group">
                               <div class="input-group">
                                 <div class="input-group-prepend ">
@@ -392,7 +393,7 @@
                             
                             <div class="container">
                                 <div class="form-group">
-                                    <input style="text-transform: capitalize" type="submit" value="submit" class="btn btn-info">
+                                    <input style="text-transform: capitalize" type="submit" value="Validate" class="btn btn-info">
                                     <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
                             </div>

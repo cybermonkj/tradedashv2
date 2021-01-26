@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\DepositController;
 
 
 /*
@@ -73,13 +74,6 @@ Route::get('/register/{usn}', function ($username) {
     return redirect('/register');
 });
 
-
-// User Coupon validation
-Route::post('/deposit/validate', [CouponController::class, 'validate'])->middleware('auth')->name('deposit.validate');
-
-// Test validate routes
-Route::get('{username}/yourid', [CouponController::class, 'validate']);
-
 Route::get('/{username}/wallet', function () {
     return view('user.load_wallet');
 })->middleware('auth')->name('wallet');
@@ -119,7 +113,8 @@ Route::get('/user/home/login', 'userController@home_login')->name('home_login');
 Route::get('/activate', 'userController@homelogin')->name('homelogin');
 
 Route::post('/user/wallet/bank_deposit', [userController::class, 'bank_deposit'])->middleware('auth');
-Route::post('/user/wallet/coupon_deposit', [userController::class, 'validate_coupon'])->middleware('auth')->name('coupon.deposit');
+// Deposit Controller
+Route::post('/user/wallet/coupon_deposit', 'DepositController@validate')->middleware('auth')->name('coupon.deposit');
 Route::post('/user/send/fund', 'userController@user_send_fund')->middleware('auth');
 Route::post('/user/update/pwd', 'userController@reset_pwd');
 Route::post('/user/upload/profile_pic', 'userController@uploadProfilePic')->middleware('auth');
