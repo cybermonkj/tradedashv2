@@ -52,7 +52,7 @@
                                 <input type="file" name="myFile" id="myFile" class="drop-zone__input">
                                 <div data-text="Drop file or click to upload" class="drop-zone__copy"></div>
                             </div>
-                            <input type="submit" value="Send File" class="my-4 btn btn-info">
+                            <input type="submit" value="Import Coupons" class="my-4 btn btn-info">
                         </form>
                     </div>
                 </div>
