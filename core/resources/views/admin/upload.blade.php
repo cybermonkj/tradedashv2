@@ -16,7 +16,7 @@
         }
 
 
-        .drop-zone__copy {
+        .drop-zone__copy::before {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -48,8 +48,8 @@
                         <form class="form" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="drop-zone">
-                                <input data-text="Drop file or click to upload" type="file" name="myFile" id="myFile" class="drop-zone__input">
-                                <div class="drop-zone__copy"></div>
+                                <input type="file" name="myFile" id="myFile" class="drop-zone__input">
+                                <div data-text="Drop file or click to upload" class="drop-zone__copy"></div>
                             </div>
                             <input type="submit" value="Send File" class="btn btn-info">
                         </form>
