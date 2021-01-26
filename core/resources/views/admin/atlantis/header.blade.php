@@ -288,7 +288,6 @@
 									<p> User Withdrawal </p>
 								</a>
 							</li>
-							fas fa-credit-card		@endif
 						
 						<li class="nav-item">
 					    	<a href="/admin/manage/packages">
