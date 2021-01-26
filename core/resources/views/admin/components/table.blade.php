@@ -16,6 +16,9 @@
         grid-template-areas: 
             "header content"
         ;
+
+        display: flex;
+        justify-content: space-between;
     }
     .table__header {
         
