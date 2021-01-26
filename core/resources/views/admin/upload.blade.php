@@ -11,11 +11,12 @@
         .drop-zone__input {
             width: 100%;
             height: 100%;
-            border: 1px solid red;
+            border: 1px solid red; */
             opacity: 0;
         }
 
-        input[name=myFile]::before {
+
+        .drop-zone__copy::before {
             content: attr(data-text);
             display: grid;
             place-content: center;
@@ -44,7 +45,7 @@
                             @csrf
                             <div class="drop-zone">
                                 <input data-text="Drop file or click to upload" type="file" name="myFile" id="myFile" class="drop-zone__input">
-                                
+                                <div class="drop-zone__copy"></div>
                             </div>
                             <input type="submit" value="Send File" class="btn btn-info">
                         </form>
