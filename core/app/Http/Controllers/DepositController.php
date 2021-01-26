@@ -25,8 +25,8 @@ class DepositController extends Controller
     public function validateDeposit(Request $request)
     {
         $user = Auth::user();
-        $inputAmt = $request->input('amount');
-        $inputCode = $request->input('deposit_code');
+        // $inputAmt = $request->input('amount');
+        // $inputCode = $request->input('deposit_code');
 
         if (Auth::check()) {
             if($request->input('amount') < env('MIN_DEPOSIT')) {
@@ -43,7 +43,7 @@ class DepositController extends Controller
                             ->update(['is_used' => true]);
 
                             // Validate and execute deposit
-                            
+                            return back()->with('success', 'Coupon status updated');
                         } catch (Exception $e) {
                             return back()->with('err_msg', $e->getMessage());
                         }
