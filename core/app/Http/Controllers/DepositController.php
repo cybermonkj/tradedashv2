@@ -7,10 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB;
-
-class DespoitController extends Controller
+class DepositController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,6 +17,16 @@ class DespoitController extends Controller
     public function index()
     {
         return view('user.components.deposit_modal');
+    }
+
+    public function validate()
+    {
+        $user = Auth::user();
+        if (Auth::check()) {
+            return back()->with('success_msg', $input);
+        } else {
+            return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
+        }
     }
 
     /**
@@ -41,17 +48,6 @@ class DespoitController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    public function validateDeposit() {
-        $user = Auth::user();
-        $input = Input::all();
-
-        if (Auth::check()) {
-            return back()->with('success_msg', $input);
-        } else {
-            return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
-        }
     }
 
     /**
