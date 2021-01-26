@@ -43,7 +43,7 @@ class DespoitController extends Controller
         //
     }
 
-    public function validate() {
+    public function validateDeposit() {
         $user = Auth::user();
         $input = Input::all();
 
