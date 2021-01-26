@@ -1770,14 +1770,7 @@ class userController extends Controller
 //     return redirect('/login');
 //   }
 // }
- 
-// Coupon controller
 
-// public function coupon(Request $request) {
-//   $user = Auth::user();
-
-//   $input = Input::all();
-// }
 
   public function view_tickets()
   {

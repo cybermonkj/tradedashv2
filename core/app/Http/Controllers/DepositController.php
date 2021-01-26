@@ -6,6 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+use DotenvEditor;
 
 class DepositController extends Controller
 {
@@ -26,7 +29,33 @@ class DepositController extends Controller
         $inputCode = $request->input('deposit_code');
 
         if (Auth::check()) {
-            return back()->with('success_msg', ($inputAmt . $inputCode));
+            if($request->input('amount') < env('MIN_DEPOSIT')) {
+                return back()->with('err_msg', 'Amount less than 30$');
+            } else {
+                $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
+                if(!empty($coupon)) {
+                    // Check used status of coupon
+                    if ($coupon->is_used != false) {
+                        // Update coupon status to sold
+                        try {
+                            DB::table('coupons')
+                            ->where('id', $coupon->id)
+                            ->update(['is_used' => true]);
+
+                            // Validate and execute deposit
+                            
+                        } catch (Exception $e) {
+                            return back()->with('err_msg', $e->getMessage());
+                        }
+                    } else {
+                        return back()->with('err_msg', 'Coupon code has already been used!');
+                    }
+                    
+                    
+                } else {
+                    return back()->with('mssg', 'The coupon code you entered is invalid');
+                }
+            }
         } else {
             return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
         }
