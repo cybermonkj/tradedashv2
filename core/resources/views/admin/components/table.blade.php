@@ -33,7 +33,7 @@
         grid-area: header;
         height: 4rem;
         width: 16.67%;
-        width: calc(100% / 6);
+        /* width: calc(100% / 6); */
         border: 1px solid red;
 
         display: flex;
