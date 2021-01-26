@@ -178,13 +178,6 @@
 												<span class="fa fa-file"></span>&nbsp; Withdrawal Requests
 											</a>
 										@endif
-										<a class="dropdown-item" href="{{ route('manage.coupons') }}">
-											<span class="fas fa-credit-card "></span>&nbsp; Manage Coupons
-										</a>
-
-										<a class="dropdown-item" href="{{ route('import.codes') }}">
-											<span class="fas fa-file-import"></span>&nbsp; Import Coupon Codes
-										</a>
 										
 										<a class="dropdown-item" href="/admin/manage/packages">
 											<span class="fa fa-briefcase"></span>&nbsp; Packages Manager
@@ -296,12 +289,26 @@
 									<p> User Withdrawal </p>
 								</a>
 							</li>
-						@endif
+							fas fa-credit-card		@endif
 						
 						<li class="nav-item">
 					    	<a href="/admin/manage/packages">
 								<i class="fa fa-briefcase"></i>
 								<p>Manage Packages </p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+					    	<a href="/admin/manage/coupons">
+								<i class="fas fa-credit-card"></i>
+								<p>Manage Coupons </p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+					    	<a href="/admin/manage/import/codes">
+								<i class="fas fa-file-import"></i>
+								<p>Import Coupon File </p>
 							</a>
 						</li>
 						
