@@ -17,7 +17,7 @@
 
 						<div class="px-4 my-4">
 							<div class="row align-items-end">
-								<a class="btn btn-success btn-lg text-capitalize" href="{{ route('export.codes') }}">Export Coupons</a>
+								<a style="color: #fff !important" class="btn btn-success btn-lg text-capitalize" href="{{ route('export.codes') }}">Export Coupons</a>
 							</div>
 						</div>
 					</div>
