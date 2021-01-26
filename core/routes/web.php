@@ -114,7 +114,7 @@ Route::get('/activate', 'userController@homelogin')->name('homelogin');
 
 Route::post('/user/wallet/bank_deposit', [userController::class, 'bank_deposit'])->middleware('auth');
 // Deposit Controller
-Route::post('/user/wallet/coupon_deposit', 'DepositController@validate')->middleware('auth')->name('coupon.deposit');
+Route::post('/user/wallet/deposit', [DepositController::class, 'validate'])->middleware('auth')->name('coupon.deposit');
 Route::post('/user/send/fund', 'userController@user_send_fund')->middleware('auth');
 Route::post('/user/update/pwd', 'userController@reset_pwd');
 Route::post('/user/upload/profile_pic', 'userController@uploadProfilePic')->middleware('auth');
