@@ -6,6 +6,7 @@
             height: 300px;
             border: 2px dashed #2196f3;
             position: relative;
+            overflow: hidden;
         }
 
         .drop-zone__input {
@@ -19,7 +20,7 @@
         .drop-zone__copy::before {
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 15%;
             
             content: attr(data-text);
             display: grid;
@@ -51,7 +52,7 @@
                                 <input type="file" name="myFile" id="myFile" class="drop-zone__input">
                                 <div data-text="Drop file or click to upload" class="drop-zone__copy"></div>
                             </div>
-                            <input type="submit" value="Send File" class="btn btn-info">
+                            <input type="submit" value="Send File" class="my-4 btn btn-info">
                         </form>
                     </div>
                 </div>
