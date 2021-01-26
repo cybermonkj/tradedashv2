@@ -11,7 +11,7 @@
 							<h1 class="text-uppercase display-5">Coupon Codes</h1>
 						</div>
 
-						<div class="shadow card">
+						<div class="p-4 shadow card">
 							@include('admin.components.table')
 						</div>
 					</div>
