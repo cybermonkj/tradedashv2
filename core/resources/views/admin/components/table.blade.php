@@ -71,11 +71,6 @@
                 "header"
                 "content"
             ;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
         }
 
         .table__row--header {
@@ -83,7 +78,7 @@
         }
 
         .table__row--header th {
-            justify-content: space-between;
+            justify-content: space-evenly;
 
             width: 100%;
             height: 4rem;
