@@ -17,6 +17,17 @@
       'Stripe' => 'Cartalyst\\Stripe\\Laravel\\Facades\\Stripe',
     ),
   ),
+  'emotality/tawk-laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Emotality\\TawkTo\\TawkToServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'TawkTo' => 'Emotality\\TawkTo\\TawkTo',
+    ),
+  ),
   'fideloper/proxy' => 
   array (
     'providers' => 
@@ -40,6 +51,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'maatwebsite/excel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Excel' => 'Maatwebsite\\Excel\\Facades\\Excel',
     ),
   ),
   'nesbot/carbon' => 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\CouponController;
 
 
 /*
@@ -213,17 +214,10 @@ Route::get('/admin/manage/deposits', function () {
 	}
    
 });
-
-Route::get('/admin/manage/coupons', function () {
-	if (Session::has('adm')) 
-	{
-		return view('admin.coupon_code');
-	} 
-	else 
-	{
-		return redirect('/back-end');
-	}
-});
+// Admin Coupon Handlers
+Route::get('/admin/manage/coupons', 'CouponController@index')->name('manage.coupons');
+Route::get('/admin/manage/import/codes', 'CouponController@import')->name('import.codes');
+Route::post('/admin/manage/upload/codes', 'CouponController@importCouponFile')->name('upload.codes');
 
 Route::get('/admin/manage/withdrawals', function () {
 	if(Session::has('adm'))

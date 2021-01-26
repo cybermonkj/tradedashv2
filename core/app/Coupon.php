@@ -11,7 +11,6 @@ class Coupon extends Model
 
     protected $fillable = [
         'coupon_code',
-        'price_tag',
         'is_used'
     ];
 

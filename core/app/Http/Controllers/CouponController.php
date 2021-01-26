@@ -8,6 +8,10 @@ use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\CouponsImport;
+use App\Exports\CouponsExport;
+
 
 class CouponController extends Controller
 {
@@ -15,35 +19,32 @@ class CouponController extends Controller
 
     public function index()
     {
-        // $coupons = Coupon::all();
-		
 		if (Session::has('adm'))
 		{
-			 return view('admin.coupons');
+			$coupons = Coupon::all();
+			return view('admin.coupon_code', [
+				'coupons' => $coupons,
+			]);
 		} else {
 			return redirect('/back-end');
 		}
         
     }
-	
-	public function validate(Request $request, User $user, Coupon $coupon)
-	{
-		// Retrieve the currently authenticated 
-		$user = Auth::user();
-		
-		// Get the user id
-		$id = Auth::id();
-		
-		if (Auth::check())
-		{
-			return view('user.get_id_validate', [
-				'id' => $id,
-			]);
-		} else {
-			$response = "You are not logged at the moment";
-			return $response;
-		}
-	}
 
+	public function import()
+    {
+        return view('admin.upload');
+    }
+
+	public function importCouponFile(Request $request)
+    {
+        Excel::import(new CouponsImport, $request->file('file')->store('temp'));
+        return back()->with('success', 'Coupon codes uploaded successfully!');
+    }
+
+	public function exportCouponFile()
+    {
+        return Excel::download(new CouponsExport, 'coupons-list.xlsx');
+    }
     
 }
