@@ -19,7 +19,7 @@ class DepositController extends Controller
         return view('user.components.deposit_modal');
     }
 
-    public function validate()
+    public function validateDeposit()
     {
         $user = Auth::user();
         if (Auth::check()) {
