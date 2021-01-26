@@ -11,12 +11,16 @@
         .drop-zone__input {
             width: 100%;
             height: 100%;
-            border: 1px solid red; */
+            border: 1px solid red;
             opacity: 0;
         }
 
 
-        .drop-zone__copy::before {
+        .drop-zone__copy {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
             content: attr(data-text);
             display: grid;
             place-content: center;
