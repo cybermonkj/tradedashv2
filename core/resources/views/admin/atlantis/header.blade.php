@@ -27,8 +27,7 @@
 	<link rel="stylesheet" href="/atlantis/style.css">
 	
 	<!--	File Uploader	-->
-	<link rel="stylesheet" href="/css/basic.min.css">
-	<link rel="stylesheet" href="/css/dropzone.min.css">
+	<link rel="stylesheet" href="/css/dropzone.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/atlantis/css/demo.css">
@@ -39,8 +38,8 @@
 	<script src="/atlantis/js/core/bootstrap.min.js"></script>
 
 	<!--	File Uploader	-->
-	<script src="/js/dropzone.min.js" type="text/javascript"></script>
-	<script src="/js/dropzone-amd-module.min.js" type="text/javascript"></script>
+	<script src="/js/dropzone.js" type="text/javascript"></script>
+	{{-- <script src="/js/dropzone-amd-module.min.js" type="text/javascript"></script> --}}
 	
 	
 

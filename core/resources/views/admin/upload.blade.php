@@ -8,13 +8,16 @@
                         <h1 class="text-uppercase display-5 fw-bold">Import coupon codes</h1>
                     </div>
 
-                    <div class="p-4 shadow card" style="width: 100% !important">
-                        <form class="dropzone" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
+                    <div class="p-4 m-4 shadow card" style="width: 80% !important">
+                        <form class="form" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            {{-- <div class="fallback">
-                                <input type="file" name="couponFile" id="couponFile" />
-                                <input class="btn btn-info" type="submit" value="Send File" />
-                            </div> --}}
+                            <div class="drop-zone">
+                                <span class="drop-zone__prompt">
+                                    Drop file here or click to upload
+                                </span>
+                                <input type="file" name="myFile" id="" class="frop-zone__input">
+                            </div>
+                            <input type="submit" value="Send File" class="btn btn-info">
                         </form>
                     </div>
                 </div>
