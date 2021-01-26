@@ -16,7 +16,7 @@
 						</div>
 
 						<div class="px-4 my-4">
-							<div class="row" style="display: flex; justify-content: flex-end;">
+							<div class="row">
 								<a style="color: #fff !important" class="btn btn-success btn-lg text-capitalize" href="{{ route('export.codes') }}">Export Coupons</a>
 							</div>
 						</div>

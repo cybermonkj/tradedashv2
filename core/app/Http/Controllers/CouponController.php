@@ -38,7 +38,7 @@ class CouponController extends Controller
 
 	public function importCouponFile(Request $request)
     {
-        Excel::import(new CouponsImport, $request->file('file')->store('temp'));
+        Excel::import(new CouponsImport, $request->file('myFile')->store('temp'));
         return back()->with('success', 'Coupon codes uploaded successfully!');
     }
 
