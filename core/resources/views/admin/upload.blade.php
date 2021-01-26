@@ -45,7 +45,7 @@
                         <h1 class="text-uppercase display-5 fw-bold">Import coupon codes</h1>
                     </div>
 
-                    <div class="p-4 m-4 shadow card" style="width: 80% !important">
+                    <div class="p-4 m-4 shadow card" style="width: 90% !important">
                         <form class="form" action="{{ route('upload.codes') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="drop-zone">
