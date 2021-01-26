@@ -20,7 +20,7 @@
         .drop-zone__copy::before {
             position: absolute;
             top: 50%;
-            left: 15%;
+            left: 20%;
             
             content: attr(data-text);
             display: grid;
