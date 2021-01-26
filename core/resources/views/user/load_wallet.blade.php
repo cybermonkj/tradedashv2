@@ -13,13 +13,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('Fund your wallet') }}</div>
-                                        <div class="container">
-                                            Session message:
-                                            <div class="card">
-                                               <strong>{{ session('success_msg') }}</strong>
-                                            </div>
-                                        </div>                                        
+                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                      
                                     </div>
                                 </div>
                                 <div class="card-body"> 
