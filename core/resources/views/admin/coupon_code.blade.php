@@ -10,6 +10,10 @@
 						<div class="col-12 col-sm-12">
 							<h1 class="text-uppercase display-5">Coupon Codes</h1>
 						</div>
+
+						<div class="shadow card">
+							@include('admin.components.table')
+						</div>
 					</div>
 				</div>
 			</div>
