@@ -68,7 +68,7 @@ class DepositController extends Controller
                                     $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
-                                    $depositHist->pop = null;
+                                    $depositHist->pop = "";
     
                                     // Save to DB
                                     $depositHist->save();
@@ -147,7 +147,7 @@ class DepositController extends Controller
                                     $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
-                                    $depositHist->pop = null;
+                                    $depositHist->pop = "";
     
                                     // Save to DB
                                     $depositHist->save();
