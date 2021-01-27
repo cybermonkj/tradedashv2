@@ -126,8 +126,9 @@ class DepositController extends Controller
                                         // End approval logic
                                     }
                                 } catch (Exception $e) {
-                                    session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    session::put('msgType', "err");
+                                    return back()->with('err_msg', "Deposit code note saved");
+                                    // session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    // session::put('msgType', "err");
                                 }
                             }  
                             else {
@@ -208,28 +209,28 @@ class DepositController extends Controller
                                     }
                                     // End of approval logic
                                 } catch (Exception $e) {
-                                    // return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                    session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    session::put('msgType', "err");
+                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                    // session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    // session::put('msgType', "err");
                                 }
                             }
-                            // return back()->with('success', 'Coupon status updated');
-                            session::put('status', ("Coupon status updated".$e->getMessage()));
-                            session::put('msgType', "suc");
+                            return back()->with('success', 'Coupon status updated');
+                            // session::put('status', ("Coupon status updated".$e->getMessage()));
+                            // session::put('msgType', "suc");
                         } catch (Exception $e) {
-                            // return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
-                            session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
-                            session::put('msgType', "err");
+                            return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
+                            // session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
+                            // session::put('msgType', "err");
                         }
                     } else {
-                        // return back()->with('err_msg', 'Coupon code has already been used!');
-                        session::put('status', "Deposit code has already been used! ");
-                        session::put('msgType', "err");
+                        return back()->with('err_msg', 'Coupon code has already been used!');
+                        // session::put('status', "Deposit code has already been used! ");
+                        // session::put('msgType', "err");
                     }
                 } else {
-                    // return back()->with('mssg', 'The coupon code you entered is invalid');
-                    session::put('status', "Invalid deposit code ");
-                    session::put('msgType', "err");
+                    return back()->with('mssg', 'The coupon code you entered is invalid');
+                    // session::put('status', "Invalid deposit code ");
+                    // session::put('msgType', "err");
                 }
             }
         } else {
