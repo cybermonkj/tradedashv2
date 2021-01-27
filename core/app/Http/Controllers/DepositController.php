@@ -65,7 +65,7 @@ class DepositController extends Controller
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
-                                    $depositHist->status = $coupon->is_used;
+                                    $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
@@ -142,7 +142,7 @@ class DepositController extends Controller
                                     $depositHist->bank = "Bank";
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
-                                    $depositHist->status = $coupon->is_used;
+                                    $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
