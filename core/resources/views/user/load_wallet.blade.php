@@ -27,11 +27,12 @@
                     <div class="row">
                         <div class="col-md-12">
 
-                            {{-- <div class="container">
+                            <div class="container">
                                 <span class="fw-bold">Session Message:</span>
                                 <strong>SUCCESS: {{ session('success') }}</strong>
                                 <strong>ERROR: {{ session('err_msg') }}</strong>
-                            </div> --}}
+                            </div>
+                            
 
                             <div class="card">
                                 <div class="card-header">
