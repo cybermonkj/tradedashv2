@@ -100,6 +100,7 @@
 
 
 <div class="table__container">
+    
     <table class="table__main">
         <thead class="table__header">
             <tr class="table__row--header">
@@ -117,12 +118,12 @@
                 <tr class="table__row--content">
                     <td class="table__data fw-normal">{{ $coupon->id }}</td>
                     <td class="table__data fw-normal">{{ $coupon->coupon_code }}</td>
-                    @if ($coupon->is_used == true)
+                    {{-- @if ($coupon->is_used == true)
                         <span>Used</span>
-                    @endif
-                    @if($coupon->is_used == false)
+                    @endif --}}
+                    {{-- @if($coupon->is_used == false)
                         <span>Not Used</span>
-                    @endif
+                    @endif --}}
                     <td class="table__data fw-normal">Sold</td>
                     <td class="table__data fw-normal">{{ $coupon->created_at }}</td>
                     <td class="table__data fw-normal">{{ $coupon->updated_at }}</td>
