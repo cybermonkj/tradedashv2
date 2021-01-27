@@ -45,6 +45,7 @@ class DepositController extends Controller
                             ->update(['is_used' => true]);
 
                             // Validate and execute 
+
                             
 
                             // Check if Bank Records Exists
@@ -71,6 +72,59 @@ class DepositController extends Controller
     
                                     // Save to DB
                                     $depositHist->save();
+                                    $saved = $depositHist->save();
+
+                                    if (!$saved) {
+                                        session::put('status', "Deposit fail");
+                                        session::put('msgType', "err");
+                                    } 
+                                    else
+                                    {
+                                        
+                                        try {
+                                            $usr = deposits::find($id);         
+                                            if($usr->status == 1)
+                                            {
+                                            return back()->with([
+                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_type' => 'err'
+                                            ]);
+                                            }
+                                            
+                                            $dep_user = User::find($usr->user_id); 
+                                            $amt = $usr->amount;  
+                                            
+                                            if($usr->on_apr == 0)
+                                            {
+                                                $dep_user->wallet += $amt;
+                                                $dep_user->save();
+                                            }
+                                            $usr->status = 1;
+                                            $usr->on_apr = 1;
+                                            $usr->save();
+                                            
+                                            // $adm = Session::get('adm'); 
+                                            $act = new adminLog;
+                                            $act->admin = "Automatically Approved";
+                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
+                                            $act->save();
+
+                                            return back()->with([
+                                            'toast_msg' => 'Deposit approved successfully!',
+                                            'toast_type' => 'suc'
+                                            ]);
+                                                            
+                                        }
+                                        catch(\Exception $e)
+                                        {
+                                            return back()->with([
+                                            'toast_msg' => "Deposit not successful!",
+                                            'toast_type' => 'err'
+                                            ]);
+                                            return back();
+                                        }
+                                        // End approval logic
+                                    }
                                 } catch (Exception $e) {
                                     session::put('status', ("Deposit not successful".$e->getMessage()));
                                     session::put('msgType', "err");
@@ -95,6 +149,62 @@ class DepositController extends Controller
     
                                     // Save to DB
                                     $depositHist->save();
+
+                                     // Save to DB
+                                     $depositHist->save();
+                                     $saved = $depositHist->save();
+ 
+                                     if (!$saved) {
+                                         session::put('status', "Deposit fail");
+                                         session::put('msgType', "err");
+                                     } 
+                                     else
+                                     {
+                                         
+                                        try {
+                                            $usr = deposits::find($id);         
+                                            if($usr->status == 1)
+                                            {
+                                            return back()->with([
+                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_type' => 'err'
+                                            ]);
+                                            }
+                                            
+                                            $dep_user = User::find($usr->user_id); 
+                                            $amt = $usr->amount;  
+                                            
+                                            if($usr->on_apr == 0)
+                                            {
+                                                $dep_user->wallet += $amt;
+                                                $dep_user->save();
+                                            }
+                                            $usr->status = 1;
+                                            $usr->on_apr = 1;
+                                            $usr->save();
+                                            
+                                            // $adm = Session::get('adm'); 
+                                            $act = new adminLog;
+                                            $act->admin = "Automatically Approved";
+                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
+                                            $act->save();
+
+                                            return back()->with([
+                                            'toast_msg' => 'Deposit approved successfully!',
+                                            'toast_type' => 'suc'
+                                            ]);             
+                                         }
+                                         catch(\Exception $e)
+                                         {
+                                             return back()->with([
+                                             'toast_msg' => "Deposit not successful!",
+                                             'toast_type' => 'err'
+                                             ]);
+                                             return back();
+                                         }
+                                         // End approval logic
+                                    }
+                                    // End of approval logic
                                 } catch (Exception $e) {
                                     // return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
                                     session::put('status', ("Deposit not successful".$e->getMessage()));
