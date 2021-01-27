@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title><?php echo e($settings->site_title); ?> <!-- <?php echo e($settings->site_descr); ?> --></title>
+	<title><?php echo e($settings->site_title); ?>  <?php echo e($settings->site_descr); ?> </title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon"  href="/favicon.ico" type="image/x-icon"/>
 	
@@ -25,6 +25,9 @@
 	<link rel="stylesheet" href="/atlantis/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/atlantis/css/atlantis.min.css">
 	<link rel="stylesheet" href="/atlantis/style.css">
+	
+	<!--	File Uploader	-->
+	<link rel="stylesheet" href="/css/dropzone.css">
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/atlantis/css/demo.css">
@@ -33,6 +36,12 @@
 	<script src="/atlantis/js/core/jquery.3.2.1.min.js"></script>
 	<script src="/atlantis/js/core/popper.min.js"></script>
 	<script src="/atlantis/js/core/bootstrap.min.js"></script>
+
+	<!--	File Uploader	-->
+	<script src="/js/dropzone.js" type="text/javascript"></script>
+	
+	
+	
 
 	<!-- jQuery UI -->
 	<script src="/atlantis/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -86,7 +95,7 @@
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" style="background-color: <?php echo e($settings->header_color); ?>">
-				<button class="navbar-toggler sidenav-toggler ml-auto " type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="ml-auto navbar-toggler sidenav-toggler " type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					&nbsp;&nbsp;&nbsp;
 					<span class="navbar-toggler-icon">
 						<i class="icon-menu"></i>
@@ -168,7 +177,7 @@
 												<span class="fa fa-file"></span>&nbsp; Withdrawal Requests
 											</a>
 										<?php endif; ?>
-
+										
 										<a class="dropdown-item" href="/admin/manage/packages">
 											<span class="fa fa-briefcase"></span>&nbsp; Packages Manager
 										</a>
@@ -285,6 +294,20 @@
 					    	<a href="/admin/manage/packages">
 								<i class="fa fa-briefcase"></i>
 								<p>Manage Packages </p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+					    	<a href="/admin/manage/coupons">
+								<i class="fas fa-credit-card"></i>
+								<p>Manage Coupons </p>
+							</a>
+						</li>
+						
+						<li class="nav-item">
+					    	<a href="/admin/manage/import/codes">
+								<i class="fas fa-file-import"></i>
+								<p>Import Coupon File </p>
 							</a>
 						</li>
 						
