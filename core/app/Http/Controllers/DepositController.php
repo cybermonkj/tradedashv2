@@ -23,6 +23,18 @@ class DepositController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+	
+  public function load_data(){
+    $today_dep = deposits::where('created_at','like','%'.date('Y-m-d').'%')->orderby('id', 'desc')->get();
+
+    return $this->data_files;
+  }
+  public function index()
+  {        
+      //return view('user.');
+  }
+	
+	
     public function sendRoute()
     {
         return view('user.components.deposit_modal');
@@ -196,7 +208,7 @@ class DepositController extends Controller
                                     $depositHist->account_no = "";
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = "Bank";
-                                    $depositHist->transaction_type = null;
+                                    $depositHist->transaction_type = coupon;
                                     $depositHist->url = "";
                                     $depositHist->status = true;
                                     $depositHist->on_apr = true;
