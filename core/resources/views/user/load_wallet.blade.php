@@ -372,7 +372,7 @@
                     <div class="container">                        
                         <form action="{{ route('coupon.deposit') }}" method="post">
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group" style="display: none !important">
                               <div class="input-group">
                                 <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
