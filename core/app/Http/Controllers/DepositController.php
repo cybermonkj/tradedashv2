@@ -30,7 +30,7 @@ class DepositController extends Controller
         // $inputCode = $request->input('deposit_code');
 
         if (Auth::check()) {
-            if($request->input('amount') < env('MIN_DEPOSIT')) {
+            if($request->input('amount') < env('MIN_DEPOSIT') && $request->input('amount') > env('MAX_DEPOSIT')) {
                 return back()->with('err_msg', 'Amount less than 30$');
             } else {
                 $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
@@ -51,7 +51,6 @@ class DepositController extends Controller
                             if(!empty($bank))
                             {
                                 try {
-                                    $st = site_settings::find(1);
                                     $depositHist = new deposits;
                                     $depositHist->user_id = Auth::id();
                                     $depositHist->deposit_id = ($Auth::id().'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
@@ -59,7 +58,7 @@ class DepositController extends Controller
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = $bank->Account_name;
                                     $depositHist->acct_no = $bank->Account_number;
-                                    $depositHist->currency = $st->currency;
+                                    $depositHist->currency = '$';
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
@@ -82,7 +81,7 @@ class DepositController extends Controller
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = "Account Name";
                                     $depositHist->acct_no = "Account Number";
-                                    $depositHist->currency = $st->currency;
+                                    $depositHist->currency = '$';
                                     $depositHist->bank = "Bank";
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
