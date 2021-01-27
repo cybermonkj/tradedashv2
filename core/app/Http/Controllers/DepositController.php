@@ -50,53 +50,52 @@ class DepositController extends Controller
 
                             if(!empty($bank))
                             {
-                                try {
-                                    $depositHist = new deposits;
-                                    $depositHist->user_id = $user->id;
-                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
-                                    $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
-                                    $depositHist->acct_name = $bank->Account_name;
-                                    $depositHist->acct_no = $bank->Account_number;
-                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
-                                    $depositHist->bank = $bank->Bank_Name;
-                                    $depositHist->transaction_type = null;
-                                    $depositHist->url = null;
-                                    $depositHist->status = $coupon->is_used;
-                                    $depositHist->on_apr = 0;
-                                    $depositHist->ipn = 0;
-                                    $depositHist->pop = null;
+                                // try {
+                                //     $depositHist = new deposits;
+                                //     $depositHist->user_id = $user->id;
+                                //     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
+                                //     $depositHist->usn = ($user->firstname .' '. $user->lastname);
+                                //     $depositHist->amount = $request->input('amount');
+                                //     $depositHist->acct_name = $bank->Account_name;
+                                //     $depositHist->acct_no = $bank->Account_number;
+                                //     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
+                                //     $depositHist->bank = $bank->Bank_Name;
+                                //     $depositHist->transaction_type = null;
+                                //     $depositHist->url = null;
+                                //     $depositHist->status = $coupon->is_used;
+                                //     $depositHist->on_apr = 0;
+                                //     $depositHist->ipn = 0;
+                                //     $depositHist->pop = null;
     
-                                    // Save to DB
-                                    $depositHist->save();
-                                } catch (Exception $e) {
-                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                }
+                                //     // Save to DB
+                                //     $depositHist->save();
+                                // } catch (Exception $e) {
+                                //     return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                // }
                             }  else {
-                                try {
-                                    $depositHist = new deposits;
-                                    $depositHist->user_id = $user->id;
-                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
-                                    $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
-                                    $depositHist->acct_name = "Account Name";
-                                    $depositHist->acct_no = "Account Number";
-                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
-                                    $depositHist->bank = "Bank";
-                                    $depositHist->transaction_type = null;
-                                    $depositHist->url = null;
-                                    $depositHist->status = $coupon->is_used;
-                                    $depositHist->on_apr = 0;
-                                    $depositHist->ipn = 0;
-                                    $depositHist->pop = null;
+                                // try {
+                                //     $depositHist = new deposits;
+                                //     $depositHist->user_id = $user->id;
+                                //     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
+                                //     $depositHist->usn = ($user->firstname .' '. $user->lastname);
+                                //     $depositHist->amount = $request->input('amount');
+                                //     $depositHist->acct_name = "Account Name";
+                                //     $depositHist->acct_no = "Account Number";
+                                //     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
+                                //     $depositHist->bank = "Bank";
+                                //     $depositHist->transaction_type = null;
+                                //     $depositHist->url = null;
+                                //     $depositHist->status = $coupon->is_used;
+                                //     $depositHist->on_apr = 0;
+                                //     $depositHist->ipn = 0;
+                                //     $depositHist->pop = null;
     
-                                    // Save to DB
-                                    $depositHist->save();
-                                } catch (Exception $e) {
-                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                }
+                                //     // Save to DB
+                                //     $depositHist->save();
+                                // } catch (Exception $e) {
+                                //     return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                // }
                             }
-
                             
                             return back()->with('success', 'Coupon status updated');
                         } catch (Exception $e) {
@@ -108,7 +107,7 @@ class DepositController extends Controller
                     
                     
                 } else {
-                    return back()->with('err_msg', 'The coupon code you entered is invalid');
+                    return back()->with('', 'The coupon code you entered is invalid');
                 }
             }
         } else {
