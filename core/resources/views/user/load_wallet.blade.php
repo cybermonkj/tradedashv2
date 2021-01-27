@@ -8,7 +8,7 @@
                 <div class="page-inner mt--5">
                     @include('user.atlantis.overview')
                     <div id="prnt"></div>
-                    {{-- <div class="toast-container">
+                    <div class="toast-container">
                         <div class="text-white border-0 toast d-flex align-items-center bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-body">
                             {{ session('success') }}
@@ -22,22 +22,19 @@
                             </div>
                             <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
                         </div>
-                    </div> --}}
+                    </div>
                       
                     <div class="row">
                         <div class="col-md-12">
-
-                            <div class="container">
+                            {{-- <div class="container">
                                 <span class="fw-bold">Session Message:</span>
                                 <strong>SUCCESS: {{ session('success') }}</strong>
                                 <strong>ERROR: {{ session('err_msg') }}</strong>
-                            </div>
-                            
-
+                            </div> --}}
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                        
+                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                      
                                     </div>
                                 </div>
                                 <div class="card-body"> 
@@ -385,51 +382,39 @@
                   <div class="col-md-4">&emps;</div>
                   <div class="col-md-4 popmsg-mobile card" align="Center">        
                     <div class="mt-2">
-                      <h3><b>{{ __('Deposit Details') }}</b></h3>                              
+                      <h3><b>{{ __('Deposit Details') }}</b></h3>                             
                       <hr>
                     </div>
-                    <div class="">                        
-                        <form action="/user/wallet/bank_deposit" method="post">
+                    <div class="container">                        
+                        <form action="{{ route('coupon.deposit') }}" method="post">
                             @csrf
-                            <div class="form-group" align="left">                       
-                                <input type="hidden" class="form-control" name="_token" value="{{csrf_token()}}">
-                            </div>
-                            
                             <div class="form-group" style="display: none !important">
                               <div class="input-group">
-                                <div class="input-group-prepend " >
+                                <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amount" value="30" required placeholder="Amount" >
                               </div>
-                            </div> 
+                            </div>
                             
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
+                                <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
-							
-
-                            <div class="form-group">
-                              <div class="input-group" >                   
+                            
+                            <div class="container">
+                                <div class="form-group">
+                                    <input style="text-transform: capitalize" type="submit" value="Validate" class="btn btn-info">
+                                    <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
-                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <br>
-                                <button class="collb btn btn-info">{{ __('Submit') }}</button>
-                                <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
-                                </span>
-                                <br>
                             </div>
                         </form>
                     </div>  
+                    
                     <!-- close btn -->
                     <script type="text/javascript">
                       $('#bank_deposit_cont_dets_close').click( function(){

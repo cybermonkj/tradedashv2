@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 use DotenvEditor;
 
@@ -43,71 +44,191 @@ class DepositController extends Controller
                             ->where('id', $coupon->id)
                             ->update(['is_used' => true]);
 
-                            // Validate and execute deposit
+                            // Validate and execute 
+
+                            
 
                             // Check if Bank Records Exists
                             $bank=  DB::table('bank')->where('user_id', Auth::id())->first();
 
                             if(!empty($bank))
                             {
-                                // try {
-                                //     $depositHist = new deposits;
-                                //     $depositHist->user_id = $user->id;
-                                //     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
-                                //     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                //     $depositHist->amount = $request->input('amount');
-                                //     $depositHist->acct_name = $bank->Account_name;
-                                //     $depositHist->acct_no = $bank->Account_number;
-                                //     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
-                                //     $depositHist->bank = $bank->Bank_Name;
-                                //     $depositHist->transaction_type = null;
-                                //     $depositHist->url = null;
-                                //     $depositHist->status = $coupon->is_used;
-                                //     $depositHist->on_apr = 0;
-                                //     $depositHist->ipn = 0;
-                                //     $depositHist->pop = null;
+                                try {
+                                    $depositHist - DB::table('desposits');
+                                    $depositHist->user_id = $user->id;
+                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
+                                    $depositHist->usn = ($user->firstname .' '. $user->lastname);
+                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->acct_name = $bank->Account_name;
+                                    $depositHist->acct_no = $bank->Account_number;
+                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
+                                    $depositHist->bank = $bank->Bank_Name;
+                                    $depositHist->transaction_type = null;
+                                    $depositHist->url = null;
+                                    $depositHist->status = true;
+                                    $depositHist->on_apr = 1;
+                                    $depositHist->ipn = 0;
+                                    $depositHist->pop = null;
     
-                                //     // Save to DB
-                                //     $depositHist->save();
-                                // } catch (Exception $e) {
-                                //     return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                // }
+                                    // Save to DB
+                                    $depositHist->save();
+                                    $saved = $depositHist->save();
+
+                                    if (!$saved) {
+                                        session::put('status', "Deposit fail");
+                                        session::put('msgType', "err");
+                                    } 
+                                    else
+                                    {
+                                        
+                                        try {
+                                            $usr = deposits::find($id);         
+                                            if($usr->status == 1)
+                                            {
+                                            return back()->with([
+                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_type' => 'err'
+                                            ]);
+                                            }
+                                            
+                                            $dep_user = User::find($usr->user_id); 
+                                            $amt = $usr->amount;  
+                                            
+                                            if($usr->on_apr == 0)
+                                            {
+                                                $dep_user->wallet += $amt;
+                                                $dep_user->save();
+                                            }
+                                            $usr->status = 1;
+                                            $usr->on_apr = 1;
+                                            $usr->save();
+                                            
+                                            // $adm = Session::get('adm'); 
+                                            $act = new adminLog;
+                                            $act->admin = "Automatically Approved";
+                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
+                                            $act->save();
+
+                                            return back()->with([
+                                            'toast_msg' => 'Deposit approved successfully!',
+                                            'toast_type' => 'suc'
+                                            ]);
+                                                            
+                                        }
+                                        catch(\Exception $e)
+                                        {
+                                            return back()->with([
+                                            'toast_msg' => "Deposit not successful!",
+                                            'toast_type' => 'err'
+                                            ]);
+                                            return back();
+                                        }
+                                        // End approval logic
+                                    }
+                                } catch (Exception $e) {
+                                    session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    session::put('msgType', "err");
+                                }
                             }  else {
-                                // try {
-                                //     $depositHist = new deposits;
-                                //     $depositHist->user_id = $user->id;
-                                //     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
-                                //     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                //     $depositHist->amount = $request->input('amount');
-                                //     $depositHist->acct_name = "Account Name";
-                                //     $depositHist->acct_no = "Account Number";
-                                //     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
-                                //     $depositHist->bank = "Bank";
-                                //     $depositHist->transaction_type = null;
-                                //     $depositHist->url = null;
-                                //     $depositHist->status = $coupon->is_used;
-                                //     $depositHist->on_apr = 0;
-                                //     $depositHist->ipn = 0;
-                                //     $depositHist->pop = null;
+                                try {
+                                    $depositHist - DB::table('desposits');
+                                    $depositHist->user_id = $user->id;
+                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. 'null');
+                                    $depositHist->usn = ($user->firstname .' '. $user->lastname);
+                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->acct_name = "Account Name";
+                                    $depositHist->acct_no = "Account Number";
+                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
+                                    $depositHist->bank = "Bank";
+                                    $depositHist->transaction_type = null;
+                                    $depositHist->url = null;
+                                    $depositHist->status = true;
+                                    $depositHist->on_apr = 1;
+                                    $depositHist->ipn = 0;
+                                    $depositHist->pop = null;
     
-                                //     // Save to DB
-                                //     $depositHist->save();
-                                // } catch (Exception $e) {
-                                //     return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                // }
+                                    // Save to DB
+                                    $depositHist->save();
+
+                                     // Save to DB
+                                     $depositHist->save();
+                                     $saved = $depositHist->save();
+ 
+                                     if (!$saved) {
+                                         session::put('status', "Deposit fail");
+                                         session::put('msgType', "err");
+                                     } 
+                                     else
+                                     {
+                                         
+                                        try {
+                                            $usr = deposits::find($id);         
+                                            if($usr->status == 1)
+                                            {
+                                            return back()->with([
+                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_type' => 'err'
+                                            ]);
+                                            }
+                                            
+                                            $dep_user = User::find($usr->user_id); 
+                                            $amt = $usr->amount;  
+                                            
+                                            if($usr->on_apr == 0)
+                                            {
+                                                $dep_user->wallet += $amt;
+                                                $dep_user->save();
+                                            }
+                                            $usr->status = 1;
+                                            $usr->on_apr = 1;
+                                            $usr->save();
+                                         
+                                            
+                                            // $adm = Session::get('adm'); 
+                                            $act = new adminLog;
+                                            $act->admin = "Automatically Approved";
+                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
+                                            $act->save();
+
+                                            return back()->with([
+                                            'toast_msg' => 'Deposit approved successfully!',
+                                            'toast_type' => 'suc'
+                                            ]);             
+                                         }
+                                         catch(\Exception $e)
+                                         {
+                                             return back()->with([
+                                             'toast_msg' => "Deposit not successful!",
+                                             'toast_type' => 'err'
+                                             ]);
+                                             return back();
+                                         }
+                                         // End approval logic
+                                    }
+                                    // End of approval logic
+                                } catch (Exception $e) {
+                                    // return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                    session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    session::put('msgType', "err");
+                                }
                             }
-                            
-                            return back()->with('success', 'Coupon status updated');
+                            // return back()->with('success', 'Coupon status updated');
+                            session::put('status', ("Coupon status updated".$e->getMessage()));
+                            session::put('msgType', "suc");
                         } catch (Exception $e) {
-                            return back()->with('err_msg', ('The deposit you enterred is not found! '.$e->getMessage()));
+                            // return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
+                            session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
+                            session::put('msgType', "err");
                         }
                     } else {
-                        return back()->with('err_msg', 'Coupon code has already been used!');
+                        // return back()->with('err_msg', 'Coupon code has already been used!');
+                        session::put('status', ("Deposit code has already been used! ".$e->getMessage()));
+                        session::put('msgType', "err");
                     }
-                    
-                    
                 } else {
-                    return back()->with('', 'The coupon code you entered is invalid');
+                    // return back()->with('mssg', 'The coupon code you entered is invalid');
+                    session::put('status', ("Invalid deposit code ".$e->getMessage()));
+                    session::put('msgType', "err");
                 }
             }
         } else {
