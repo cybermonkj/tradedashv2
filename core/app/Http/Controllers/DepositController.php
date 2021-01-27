@@ -52,7 +52,7 @@ class DepositController extends Controller
                             if(!empty($bank))
                             {
                                 try {
-                                    $depositHist = new deposits;
+                                    $depositHist - DB::table('desposits');
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
@@ -75,7 +75,7 @@ class DepositController extends Controller
                                 }
                             }  else {
                                 try {
-                                    $depositHist = new deposits;
+                                    $depositHist - DB::table('desposits');
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. 'null');
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
