@@ -58,7 +58,7 @@ class DepositController extends Controller
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = $bank->Account_name;
                                     $depositHist->acct_no = $bank->Account_number;
-                                    $depositHist->currency = '$';
+                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
@@ -73,7 +73,6 @@ class DepositController extends Controller
                                 }
                             }  else {
                                 try {
-                                    $st = site_settings::find(1);
                                     $depositHist = new deposits;
                                     $depositHist->user_id = Auth::id();
                                     $depositHist->deposit_id = ($Auth::id().'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
@@ -81,7 +80,7 @@ class DepositController extends Controller
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = "Account Name";
                                     $depositHist->acct_no = "Account Number";
-                                    $depositHist->currency = '$';
+                                    $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = "Bank";
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
