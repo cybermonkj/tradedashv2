@@ -1710,57 +1710,57 @@ class userController extends Controller
 
   }
 
-  public function bank_deposit(Request $req){
-    $user = Auth::User();
-    if(!empty($user))
-    {
-      if($req->input('amt') < env('MIN_DEPOSIT'))
-      {
-        return back()->With(['toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 'toast_type' => 'err']);
-      }
-      try{
-        $st = site_settings::find(1);
-        $paymt = new deposits;
-        $paymt->user_id = $user->id;
-        $paymt->usn = $user->username;
-        $paymt->amount = $req->input('amt');
-        $paymt->currency = $st->currency;
-        $paymt->account_name = $req->input('account_name');
-        $paymt->account_no = $req->input('account_no');
-        $paymt->bank = "Bank";
-        $paymt->url =  "";
-        $paymt->status = 0;
-        $paymt->on_apr = 0;
-        $paymt->pop = "";
+  // public function bank_deposit(Request $req){
+  //   $user = Auth::User();
+  //   if(!empty($user))
+  //   {
+  //     if($req->input('amt') < env('MIN_DEPOSIT'))
+  //     {
+  //       return back()->With(['toast_msg' => 'Amount must be greater or equal to '.env('MIN_DEPOSIT').' '.$this->st->currency, 'toast_type' => 'err']);
+  //     }
+  //     try{
+  //       $st = site_settings::find(1);
+  //       $paymt = new deposits;
+  //       $paymt->user_id = $user->id;
+  //       $paymt->usn = $user->username;
+  //       $paymt->amount = $req->input('amt');
+  //       $paymt->currency = $st->currency;
+  //       $paymt->account_name = $req->input('account_name');
+  //       $paymt->account_no = $req->input('account_no');
+  //       $paymt->bank = "Bank";
+  //       $paymt->url =  "";
+  //       $paymt->status = 0;
+  //       $paymt->on_apr = 0;
+  //       $paymt->pop = "";
 
-        $paymt->save();
+  //       $paymt->save();
 
-        $maildata = ['email' => $user->email, 'username' => $user->username];
+  //       $maildata = ['email' => $user->email, 'username' => $user->username];
 
-        Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-            $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-            $msg->to($maildata['email']);
-            $msg->subject('User Deposit Notification');
-        });
+  //       Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+  //           $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+  //           $msg->to($maildata['email']);
+  //           $msg->subject('User Deposit Notification');
+  //       });
 
-        Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-            $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-            $msg->to(env('SUPPORT_EMAIL'));
-            $msg->subject('User Deposit Notification');
-        });
+  //       Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+  //           $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+  //           $msg->to(env('SUPPORT_EMAIL'));
+  //           $msg->subject('User Deposit Notification');
+  //       });
 
-        return back()->With(['toast_msg' => 'Deposit saved! Please also submit details of deposit transaction to moderators to speed up funding your wallet via '.env('BANK_DEPOSIT_EMAIL'), 'toast_type' => 'suc']);
-      }
-      catch(\Exception $e)
-      {
-        return back()->With(['toast_msg' => 'Error saving your record. Please try again', 'toast_type' => 'err']);
-      }
-    }
-    else
-    {
-      return redirect('/login');
-    }
-  }
+  //       return back()->With(['toast_msg' => 'Deposit saved! Please also submit details of deposit transaction to moderators to speed up funding your wallet via '.env('BANK_DEPOSIT_EMAIL'), 'toast_type' => 'suc']);
+  //     }
+  //     catch(\Exception $e)
+  //     {
+  //       return back()->With(['toast_msg' => 'Error saving your record. Please try again', 'toast_type' => 'err']);
+  //     }
+  //   }
+  //   else
+  //   {
+  //     return redirect('/login');
+  //   }
+  // }
 
   public function view_tickets()
   {
