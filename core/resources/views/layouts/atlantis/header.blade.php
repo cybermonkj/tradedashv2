@@ -256,12 +256,21 @@
 								<p>Trader/ICO (Beta)</p>
 							</a>							
 						</li>
-												<li class="nav-item">
+						<li class="nav-item">
 							<a href="https://tradepander.com/buy-tradepander-deposit-code">
 								<i class="fas fa-shopping-bag"></i>
 								<p>Buy Deposit Code</p>
 							</a>							
 						</li>
+						
+						
+						<li class="nav-item">
+							<a href="https://tradepander.com/how-money-exchange-works">
+								<i class="fas fa-shekel-sign"></i>
+								<p>Money Exchange (Beta)</p>
+							</a>							
+						</li>
+						
 						<li class="nav-item">
 							<a href="{{route('ticket.index')}}">
 								<i class="fas fa-headset"></i>

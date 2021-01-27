@@ -2229,7 +2229,7 @@ class userController extends Controller
           });
 
           return redirect()->back()->with([
-            'toast_msg' => 'File Uplaoded successfully. Tradepander will verify your documents shortly.',
+            'toast_msg' => 'File Uplaoded successfully. Admin will verify your documents shortly.',
             'toast_type' => 'suc'
           ]);
         }
