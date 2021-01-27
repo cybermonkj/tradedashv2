@@ -150,6 +150,20 @@ class DepositController extends Controller
                                                             ->increment('wallet', $request->input('amount'));
 
                                             if ($is_update) {
+                                                // Send email
+                                                $maildata = ['email' => $user->email, 'username' => $user->username];
+                                                Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                                                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                                                    $msg->to($maildata['email']);
+                                                    $msg->subject('User Deposit Notification');
+                                                });
+
+                                                Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                                                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                                                    $msg->to(env('SUPPORT_EMAIL'));
+                                                    $msg->subject('User Deposit Notification');
+                                                });
+                                                
                                                 return back()->with([
                                                     'toast_msg' => 'Deposit approved successfully!',
                                                     'toast_type' => 'suc'
