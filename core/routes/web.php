@@ -78,7 +78,7 @@ Route::get('/{username}/wallet', function() {
 	return view('user.load_wallet');
 })->middleware('auth')->name('wallet');
 
-Route::get('/{username}/wallet_test', [DepositController::class, 'sendRoute'])->middleware('auth');
+// Route::get('/{username}/wallet_test', [DepositController::class, 'sendRoute'])->middleware('auth');
 
 Route::get('/{username}/send_money', function () {
     return view('user.send_money');

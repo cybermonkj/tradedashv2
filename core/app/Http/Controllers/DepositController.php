@@ -108,7 +108,7 @@ class DepositController extends Controller
                     
                     
                 } else {
-                    return back()->with('mssg', 'The coupon code you entered is invalid');
+                    return back()->with('err_msg', 'The coupon code you entered is invalid');
                 }
             }
         } else {
