@@ -6,6 +6,7 @@ use App\User;
 use App\deposits;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -163,7 +164,7 @@ class DepositController extends Controller
                                                     $msg->to(env('SUPPORT_EMAIL'));
                                                     $msg->subject('User Deposit Notification');
                                                 });
-                                                
+
                                                 return back()->with([
                                                     'toast_msg' => 'Deposit approved successfully!',
                                                     'toast_type' => 'suc'
