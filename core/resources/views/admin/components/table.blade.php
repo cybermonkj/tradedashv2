@@ -16,9 +16,6 @@
         grid-template-areas: 
             "header content"
         ;
-
-        display: flex;
-        justify-content: space-between;
     }
     .table__header {
         
@@ -67,7 +64,7 @@
         margin-bottom: 2px;
     }
 
-    @media only screen and (max-width: 420px) {
+    @media only screen and (min-width: 768px) {
         .table__main {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
