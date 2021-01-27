@@ -1452,8 +1452,8 @@ class userController extends Controller
       }
       catch(\Exception $e)
       {
-          Session::put('err_send', "Error sending fund to another user!");
-          Session::put('status', 'Error sending fund to another user!');      
+          Session::put('err_send', "Error sending funds to another user!");
+          Session::put('status', 'Error sending funds to another user!');      
           Session::put('msgType', "err");
           return back();
       }
@@ -1529,7 +1529,7 @@ class userController extends Controller
     }
   }
 
-  // coded added 01/06/2020 ////////////////////////////////////////////////
+  
 
   public function pay_with_btc(Request $req){    
     $user = Auth::User();
@@ -1549,7 +1549,7 @@ class userController extends Controller
 
     try
     {
-      $url = 'https://demo.mcode.me/coinpayment/confirm/a';          
+      $url = 'https://dash.tradepander.com/coinpayment/confirm/a';          
       $ch = curl_init($url);          
       $data = array(
         'key' => $req['key'],

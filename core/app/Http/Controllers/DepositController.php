@@ -82,7 +82,8 @@ class DepositController extends Controller
                                     {
                                         
                                         try {
-                                            $usr = deposits::find(Auth::id());         
+											
+                                            $usr = DB::table('deposits')->where('user_id', Auth::id())->first();      
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
@@ -91,10 +92,10 @@ class DepositController extends Controller
                                             ]);
                                             }
                                             
-                                            $dep_user = User::find($usr->user_id); 
-                                            $amt = $usr->amount;  
+                                            $dep_user = $usr;
+                                            $amt = $request->input('amount');  
                                             
-                                            if($usr->on_apr == 1)
+                                            if($usr->on_apr == true)
                                             {
                                                 $dep_user->wallet += $amt;
                                                 $dep_user->save();
@@ -164,7 +165,7 @@ class DepositController extends Controller
                                      {
                                          
                                         try {
-                                            $usr = deposits::find(Auth::id());         
+                                            $usr = deposits::find($id);         
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
