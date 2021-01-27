@@ -76,7 +76,7 @@ class DepositController extends Controller
                                 try {
                                     $depositHist = new deposits;
                                     $depositHist->user_id = $user->id;
-                                    $depositHist->deposit_id = ($user->id .'_'.$coupon->id .'_'. $bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
+                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = "Account Name";
