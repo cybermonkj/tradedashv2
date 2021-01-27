@@ -100,9 +100,9 @@ class DepositController extends Controller
                                                 $dep_user->wallet += $amt;
                                                 $dep_user->save();
                                             }
-                                            $usr->status = 1;
-                                            $usr->on_apr = 1;
-                                            $usr->save();
+                                            // $usr->status = 1;
+                                            // $usr->on_apr = 1;
+                                            // $usr->save();
                                             
                                             // $adm = Session::get('adm'); 
                                             $act = new adminLog;
@@ -164,8 +164,9 @@ class DepositController extends Controller
                                      else
                                      {
                                          
-                                        try {
-                                            $usr = deposits::find($id);         
+                                       try {
+											
+                                            $usr = DB::table('deposits')->where('user_id', Auth::id())->first();      
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
@@ -174,18 +175,17 @@ class DepositController extends Controller
                                             ]);
                                             }
                                             
-                                            $dep_user = User::find($usr->user_id); 
-                                            $amt = $usr->amount;  
+                                            $dep_user = $usr;
+                                            $amt = $request->input('amount');  
                                             
-                                            if($usr->on_apr == 1)
+                                            if($usr->on_apr == true)
                                             {
                                                 $dep_user->wallet += $amt;
                                                 $dep_user->save();
                                             }
-                                            $usr->status = 1;
-                                            $usr->on_apr = 1;
-                                            $usr->save();
-                                         
+                                            // $usr->status = 1;
+                                            // $usr->on_apr = 1;
+                                            // $usr->save();
                                             
                                             // $adm = Session::get('adm'); 
                                             $act = new adminLog;
@@ -196,16 +196,17 @@ class DepositController extends Controller
                                             return back()->with([
                                             'toast_msg' => 'Deposit approved successfully!',
                                             'toast_type' => 'suc'
-                                            ]);             
-                                         }
-                                         catch(\Exception $e)
-                                         {
-                                             return back()->with([
-                                             'toast_msg' => "Deposit not successful!",
-                                             'toast_type' => 'err'
-                                             ]);
-                                             return back();
-                                         }
+                                            ]);
+                                                            
+                                        }
+                                        catch(\Exception $e)
+                                        {
+                                            return back()->with([
+                                            'toast_msg' => "Deposit not successful!",
+                                            'toast_type' => 'err'
+                                            ]);
+                                            return back();
+                                        }
                                          // End approval logic
                                     }
                                     // End of approval logic
