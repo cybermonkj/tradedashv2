@@ -52,8 +52,8 @@ class DepositController extends Controller
                             {
                                 try {
                                     $depositHist = new deposits;
-                                    $depositHist->user_id = Auth::id();
-                                    $depositHist->deposit_id = ($Auth::id().'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
+                                    $depositHist->user_id = $user->id;
+                                    $depositHist->deposit_id = ($user->id.'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = $bank->Account_name;
@@ -75,8 +75,8 @@ class DepositController extends Controller
                             }  else {
                                 try {
                                     $depositHist = new deposits;
-                                    $depositHist->user_id = Auth::id();
-                                    $depositHist->deposit_id = ($Auth::id().'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
+                                    $depositHist->user_id = $user->id;
+                                    $depositHist->deposit_id = ($$user->id.'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = "Account Name";
