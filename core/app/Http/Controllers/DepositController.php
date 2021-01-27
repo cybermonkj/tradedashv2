@@ -129,7 +129,8 @@ class DepositController extends Controller
                                     session::put('status', ("Deposit not successful".$e->getMessage()));
                                     session::put('msgType', "err");
                                 }
-                            }  else {
+                            }  
+                            else {
                                 try {
                                     $depositHist - DB::table('desposits');
                                     $depositHist->user_id = $user->id;
@@ -222,12 +223,12 @@ class DepositController extends Controller
                         }
                     } else {
                         // return back()->with('err_msg', 'Coupon code has already been used!');
-                        session::put('status', ("Deposit code has already been used! ".$e->getMessage()));
+                        session::put('status', "Deposit code has already been used! ");
                         session::put('msgType', "err");
                     }
                 } else {
                     // return back()->with('mssg', 'The coupon code you entered is invalid');
-                    session::put('status', ("Invalid deposit code ".$e->getMessage()));
+                    session::put('status', "Invalid deposit code ");
                     session::put('msgType', "err");
                 }
             }
