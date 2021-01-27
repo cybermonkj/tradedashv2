@@ -64,7 +64,7 @@ class DepositController extends Controller
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->transaction_type = null;
-                                    $depositHist->url = null;
+                                    $depositHist->url = "";
                                     $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
@@ -143,7 +143,7 @@ class DepositController extends Controller
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = "Bank";
                                     $depositHist->transaction_type = null;
-                                    $depositHist->url = null;
+                                    $depositHist->url = "";
                                     $depositHist->status = true;
                                     $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
