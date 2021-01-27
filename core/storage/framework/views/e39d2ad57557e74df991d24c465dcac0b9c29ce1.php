@@ -23,7 +23,7 @@
                                         <table id="basic-datatables" class=" display  table table-striped table-hover" >
                                             <thead>
                                                 <tr> 
-                                                    <th><?php echo e(__('Ticket ID')); ?></th>
+                                                    <th><?php echo e(__('Ticket No.')); ?></th>
                                                     <th><?php echo e(__('User ID')); ?></th> 
                                                     <th><?php echo e(__('Title')); ?></th>
                                                     <th><?php echo e(__('status')); ?></th>

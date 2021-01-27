@@ -149,7 +149,7 @@
 										<a class="dropdown-item" href="/<?php echo e($user->username); ?>/withdrawal"><span class="fa fa-download"></span>&nbsp; Withdrawal</a>
 										<a class="dropdown-item" href="/<?php echo e($user->username); ?>/investments"><span class="fa fa-wallet"></span>&nbsp; Investments</a>
 										<a class="dropdown-item" href="/<?php echo e($user->username); ?>/send_money"><span class="fa fa-paper-plane"></span>&nbsp; Transfer</a>
-										<a class="dropdown-item" href="/#"><span class="fa fa-money"></span>&nbsp; Trader/ICO</a>
+										<a class="dropdown-item" href="/#"><i class="fab fa-affiliatetheme"></i>>&nbsp; Trader/ICO</a>
 										<a class="dropdown-item" href="/<?php echo e($user->username); ?>/downlines"><span class="fa fa-users"></span>&nbsp; Downlines</a>
 										<a class="dropdown-item" href="<?php echo e(route('ticket.index')); ?>">
 											<span class="fab fa-teamspeak"></span>&nbsp; Get Support
@@ -254,13 +254,13 @@
 						</li>
 						<li class="nav-item">
 							<a href="#">
-								<i class="fa fa-money"></i>
-								<p>Trader/ICO (Coming Soon)</p>
+								<i class="fab fa-affiliatetheme"></i>
+								<p>Trader/ICO (Beta)</p>
 							</a>							
 						</li>
 												<li class="nav-item">
 							<a href="https://tradepander.com/buy-tradepander-deposit-code">
-								<i class="fa fa-money"></i>
+								<i class="fas fa-shopping-bag"></i>
 								<p>Buy Deposit Code</p>
 							</a>							
 						</li>

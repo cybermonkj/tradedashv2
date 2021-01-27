@@ -3,7 +3,7 @@
 		<div class="card full-height">
 			<div class="card-body">
 				<div class="card-title">Statistics Summary</div>
-				<div class="card-category">Statistics of the system</div>
+				<div class="card-category">Tradepander Statistics</div>
 				<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 					<div class="px-2 pb-2 pb-md-0 text-center">
 						<div id="circles-1"></div>

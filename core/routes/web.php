@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\DepositController;
 
 
 /*
@@ -72,16 +74,11 @@ Route::get('/register/{usn}', function ($username) {
     return redirect('/register');
 });
 
-
-// User Coupon validation
-Route::post('/deposit/validate', [CouponController::class, 'validate'])->middleware('auth')->name('deposit.validate');
-
-// Test validate routes
-Route::get('{username}/yourid', [CouponController::class, 'validate']);
-
-Route::get('/{username}/wallet', function () {
-    return view('user.load_wallet');
+Route::get('/{username}/wallet', function() {
+	return view('user.load_wallet');
 })->middleware('auth')->name('wallet');
+
+Route::get('/{username}/wallet_test', [DepositController::class, 'sendRoute'])->middleware('auth');
 
 Route::get('/{username}/send_money', function () {
     return view('user.send_money');
@@ -117,7 +114,9 @@ Route::get('/user/remove/bankaccount/{id}', 'userController@deleteBankAccount')-
 Route::get('/user/home/login', 'userController@home_login')->name('home_login');
 Route::get('/activate', 'userController@homelogin')->name('homelogin');
 
-Route::post('/user/wallet/bank_deposit', 'userController@bank_deposit')->middleware('auth');
+Route::post('/user/wallet/bank_deposit', [userController::class, 'bank_deposit'])->middleware('auth');
+// Deposit Controller
+Route::post('/user/wallet/deposit', [DepositController::class, 'validateDeposit'])->middleware('auth')->name('coupon.deposit');
 Route::post('/user/send/fund', 'userController@user_send_fund')->middleware('auth');
 Route::post('/user/update/pwd', 'userController@reset_pwd');
 Route::post('/user/upload/profile_pic', 'userController@uploadProfilePic')->middleware('auth');
@@ -212,6 +211,12 @@ Route::get('/admin/manage/deposits', function () {
 	}
    
 });
+// Admin Coupon Handlers
+Route::get('/admin/manage/coupons', 'CouponController@index')->name('manage.coupons');
+Route::get('/admin/manage/import/codes', 'CouponController@import')->name('import.codes');
+Route::get('/admin/manage/export/codes', 'CouponController@exportCouponFile')->name('export.codes');
+Route::post('/admin/manage/upload/codes', 'CouponController@importCouponFile')->name('upload.codes');
+
 
 Route::get('/admin/manage/withdrawals', function () {
 	if(Session::has('adm'))
