@@ -116,19 +116,26 @@
         </thead>
 
         <tbody class="table__body">
-            <tr class="table__row--content">
-                <td class="table__data fw-normal">1</td>
-                <td class="table__data fw-normal">7Ur83Gy4</td>
-                <td class="table__data fw-normal">Sold</td>
-                <td class="table__data fw-normal">Date</td>
-                <td class="table__data fw-normal">Date</td>
-                <td class="table__data fw-normal">
-                    <div class="gap-2 d-grid">
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                        <button type="button" class="btn btn-primary btn-sm">Update</button>
-                    </div>
-                </td>
-            </tr>
+            @foreach($coupons as $coupon)
+                <tr class="table__row--content">
+                    <td class="table__data fw-normal">{{ $coupon->id }}</td>
+                    <td class="table__data fw-normal">{{ $coupon->coupon_code }}</td>
+                    @if ($coupon->is_used == true)
+                        <span>Sold</span>
+                    @else
+                        <span>Not Sold</span>
+                    @endif
+                    <td class="table__data fw-normal">Sold</td>
+                    <td class="table__data fw-normal">{{ $coupon->created_at }}</td>
+                    <td class="table__data fw-normal">{{ $coupon->updated_at }}</td>
+                    <td class="table__data fw-normal">
+                        <div class="gap-2 d-grid">
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="button" class="btn btn-primary btn-sm">Update</button>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
