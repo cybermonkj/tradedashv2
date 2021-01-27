@@ -66,7 +66,7 @@ class DepositController extends Controller
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
-                                    $depositHist->on_apr = 0;
+                                    $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
     
@@ -143,7 +143,7 @@ class DepositController extends Controller
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
-                                    $depositHist->on_apr = 0;
+                                    $depositHist->on_apr = 1;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
     
@@ -182,6 +182,7 @@ class DepositController extends Controller
                                             $usr->status = 1;
                                             $usr->on_apr = 1;
                                             $usr->save();
+                                         
                                             
                                             // $adm = Session::get('adm'); 
                                             $act = new adminLog;
