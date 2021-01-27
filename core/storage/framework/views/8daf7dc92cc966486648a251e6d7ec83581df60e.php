@@ -10,16 +10,15 @@
                     <div id="prnt"></div>
                     <div class="row">
                         <div class="col-md-12">
+                            <div class="container">
+                                <span class="fw-bold">Session Message:</span>
+                                <strong>SUCCESS: <?php echo e(session('success')); ?></strong>
+                                <strong>ERROR: <?php echo e(session('err_msg')); ?></strong>
+                            </div>
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title"><?php echo e(__('Fund your wallet')); ?></div>
-                                        <div class="container">
-                                            Session message:
-                                            <div class="card">
-                                               <strong><?php echo e(session('mssg')); ?></strong>
-                                            </div>
-                                        </div>                                        
+                                        <div class="card-title"><?php echo e(__('Fund your wallet')); ?></div>                                      
                                     </div>
                                 </div>
                                 <div class="card-body"> 
@@ -395,12 +394,13 @@
                     </div>
                     <div class="container">                        
                         <form action="<?php echo e(route('coupon.deposit')); ?>" method="post">
-                            <div class="form-group">
+                            <?php echo csrf_field(); ?>
+                            <div class="form-group" style="display: none !important">
                               <div class="input-group">
                                 <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg"><?php echo e($settings->currency); ?></span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amount" value="30" required placeholder="Amount" >
                               </div>
                             </div>
                             
@@ -415,7 +415,7 @@
                             
                             <div class="container">
                                 <div class="form-group">
-                                    <input style="text-transform: capitalize" type="submit" value="submit" class="btn btn-info">
+                                    <input style="text-transform: capitalize" type="submit" value="Validate" class="btn btn-info">
                                     <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger"><?php echo e(__('Cancel')); ?></a>
                                 </div>
                             </div>
