@@ -129,10 +129,10 @@
                     <td class="table__data fw-normal">{{ $coupon->created_at }}</td>
                     <td class="table__data fw-normal">{{ $coupon->updated_at }}</td>
                     <td class="table__data fw-normal">
-                        <div class="gap-2 d-grid">
+                        {{-- <div class="gap-2 d-grid">
                             <button type="button" class="btn btn-danger btn-sm">Delete</button>
                             <button type="button" class="btn btn-primary btn-sm">Update</button>
-                        </div>
+                        </div> --}}
                     </td>
                 </tr>
             @endforeach
