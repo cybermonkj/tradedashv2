@@ -6,6 +6,7 @@ use App\User;
 use App\deposits;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Session;
@@ -32,7 +33,10 @@ class DepositController extends Controller
 
         if (Auth::check()) {
             if($request->input('amount') < env('MIN_DEPOSIT')) {
-                return back()->with('err_msg', 'Amount less than 30$');
+                return back()->with([
+                    'toast_msg' => 'Amount less than 30$',
+                    'toast_type' => 'err'
+                ]);
             } else {
                 $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
                 if(!empty($coupon)) {
@@ -75,60 +79,37 @@ class DepositController extends Controller
                                     $saved = $depositHist->save();
 
                                     if (!$saved) {
-                                        session::put('status', "Deposit fail");
-                                        session::put('msgType', "err");
+                                        return back()->with([
+                                            'toast_msg' => 'Deposit fail',
+                                            'toast_type' => 'err'
+                                        ]);
                                     } 
                                     else
                                     {
-                                        
                                         try {
-                                            $usr = deposits::find($id);       
-                                            if($usr->status == 1)
-                                            {
+                                            $is_update = DB::table('users')
+                                                            ->where('id', Auth::id())
+                                                            ->increment('wallet', $request->input('amount'));
+
+                                            if ($is_update) {
+                                                return back()->with([
+                                                    'toast_msg' => 'Deposit approved successfully!',
+                                                    'toast_type' => 'suc'
+                                                ]);
+                                            }
+                                        } catch (\Exception $e) {
                                             return back()->with([
-                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_msg' => "Deposit not successful!",
                                                 'toast_type' => 'err'
                                             ]);
-                                            }
-                                            
-                                            $dep_user = User::find($usr->user_id); 
-                                            $amt = $request->input('amount');  
-                                            
-                                            if($usr->on_apr == true)
-                                            {
-                                                $dep_user->wallet += $amt;
-                                                $dep_user->save();
-                                            }
-                                            $usr->status = 1;
-                                            $usr->on_apr = 1;
-                                            $usr->save();
-                                            
-                                            // $adm = Session::get('adm'); 
-                                            $act = new adminLog;
-                                            $act->admin = "Automatically Approved";
-                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
-                                            $act->save();
-
-                                            return back()->with([
-                                            'toast_msg' => 'Deposit approved successfully!',
-                                            'toast_type' => 'suc'
-                                            ]);
-                                                            
-                                        }
-                                        catch(\Exception $e)
-                                        {
-                                            return back()->with([
-                                            'toast_msg' => "Deposit not successful!",
-                                            'toast_type' => 'err'
-                                            ]);
-                                            return back();
                                         }
                                         // End approval logic
                                     }
                                 } catch (Exception $e) {
-                                    return back()->with('err_msg', "Deposit code note saved");
-                                    // session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    // session::put('msgType', "err");
+                                    return back()->with([
+                                        'toast_msg' => 'Deposit code note saved',
+                                        'toast_type' => 'err'
+                                    ]);
                                 }
                             }  
                             else {
@@ -157,84 +138,80 @@ class DepositController extends Controller
                                      $saved = $depositHist->save();
  
                                      if (!$saved) {
-                                         session::put('status', "Deposit fail");
-                                         session::put('msgType', "err");
+                                        return back()->with([
+                                            'toast_msg' => 'Deposit fail',
+                                            'toast_type' => 'err'
+                                        ]);
                                      } 
                                      else
                                      {
-                                         
                                         try {
-                                            $usr = deposits::find($id);         
-                                            if($usr->status == 1)
-                                            {
+                                            $is_update = DB::table('users')
+                                                            ->where('id', Auth::id())
+                                                            ->increment('wallet', $request->input('amount'));
+
+                                            if ($is_update) {
+                                                // Send email
+                                                $maildata = ['email' => $user->email, 'username' => $user->username];
+                                                Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                                                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                                                    $msg->to($maildata['email']);
+                                                    $msg->subject('User Deposit Notification');
+                                                });
+
+                                                Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                                                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                                                    $msg->to(env('SUPPORT_EMAIL'));
+                                                    $msg->subject('User Deposit Notification');
+                                                });
+
+                                                return back()->with([
+                                                    'toast_msg' => 'Deposit approved successfully!',
+                                                    'toast_type' => 'suc'
+                                                ]);
+                                            }
+                                        } catch (\Exception $e) {
                                             return back()->with([
-                                                'toast_msg' => 'Deposit already approved!',
+                                                'toast_msg' => "Deposit not successful!",
                                                 'toast_type' => 'err'
                                             ]);
-                                            }
-                                            
-                                            $dep_user = User::find($usr->user_id); 
-                                            $amt = $usr->amount;  
-                                            
-                                            if($usr->on_apr == 1)
-                                            {
-                                                $dep_user->wallet += $amt;
-                                                $dep_user->save();
-                                            }
-                                            $usr->status = 1;
-                                            $usr->on_apr = 1;
-                                            $usr->save();
-                                         
-                                            
-                                            // $adm = Session::get('adm'); 
-                                            $act = new adminLog;
-                                            $act->admin = "Automatically Approved";
-                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
-                                            $act->save();
-
-                                            return back()->with([
-                                            'toast_msg' => 'Deposit approved successfully!',
-                                            'toast_type' => 'suc'
-                                            ]);             
-                                         }
-                                         catch(\Exception $e)
-                                         {
-                                             return back()->with([
-                                             'toast_msg' => "Deposit not successful!",
-                                             'toast_type' => 'err'
-                                             ]);
-                                             return back();
-                                         }
-                                         // End approval logic
+                                        }
                                     }
-                                    // End of approval logic
                                 } catch (\Exception $e) {
-                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                    // session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    // session::put('msgType', "err");
+                                    return back()->with([
+                                        'toast_msg' => 'Deposit history not saved!',
+                                        'toast_type' => 'err'
+                                    ]);
                                 }
                             }
-                            return back()->with('success', 'Coupon status updated');
-                            // session::put('status', ("Coupon status updated".$e->getMessage()));
-                            // session::put('msgType', "suc");
+                            return back()->with([
+                                'toast_msg' => 'Deposit Verified',
+                                'toast_type' => 'suc'
+                            ]);
                         } catch (Exception $e) {
-                            return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
-                            // session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
-                            // session::put('msgType', "err");
+                            return back()->with([
+                                'toast_msg' => 'The deposit code you enterred is not found!',
+                                'toast_type' => 'err'
+                            ]);
                         }
                     } else {
-                        return back()->with('err_msg', 'Coupon code has already been used!');
-                        // session::put('status', "Deposit code has already been used! ");
-                        // session::put('msgType', "err");
+                        return back()->with([
+                            'toast_msg' => 'Deposit code has already been used!',
+                            'toast_type' => 'err'
+                        ]);
                     }
                 } else {
-                    return back()->with('mssg', 'The coupon code you entered is invalid');
-                    // session::put('status', "Invalid deposit code ");
-                    // session::put('msgType', "err");
+                    return back()->with([
+                        'toast_msg' => 'Invalid deposit code',
+                        'toast_type' => 'err'
+                    ]);
                 }
             }
         } else {
-            return redirect('/login')->back()->with('err_msg', "You are not logged in at the moment!");
+            return redirect('/login')->back()->with([
+                'toast_msg' => 'You are not logged in',
+                'toast_type' => 'err'
+            ]);
         }
     }
 
