@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Session;
 use App\adminLog;
+use App\banks;
+use App\activities;
+use App\msg;
 
 use DotenvEditor;
 
@@ -84,7 +87,7 @@ class DepositController extends Controller
                                         
                                         try {
 											
-                                            $usr = DB::table('deposits')->where('user_id', Auth::id())->first();      
+                                            $usr = deposits::where('user_id', Auth::id())->first();     
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
@@ -93,13 +96,14 @@ class DepositController extends Controller
                                             ]);
                                             }
                                             
-                                            $dep_user = $usr;
+                                            // $dep_user = $usr;
                                             $amt = $request->input('amount');  
                                             
                                             if($usr->on_apr == true)
                                             {
-                                                $dep_user->wallet += $amt;
-                                                $dep_user->save();
+												$dep_usr = user::findOrFail($usr->user_id);
+                                                $edp_usr->wallet += $amt;
+                                                $dep_usr->save();
                                             }
                                             // $usr->status = 1;
                                             // $usr->on_apr = 1;
