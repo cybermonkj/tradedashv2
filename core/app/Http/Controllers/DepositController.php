@@ -59,8 +59,8 @@ class DepositController extends Controller
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
-                                    $depositHist->acctount_name = $bank->Account_name;
-                                    $depositHist->acctount_no = $bank->Account_number;
+                                    $depositHist->account_name = $bank->Account_name;
+                                    $depositHist->account_no = $bank->Account_number;
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->transaction_type = null;
