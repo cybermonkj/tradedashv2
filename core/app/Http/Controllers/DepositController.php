@@ -30,7 +30,7 @@ class DepositController extends Controller
         // $inputCode = $request->input('deposit_code');
 
         if (Auth::check()) {
-            if($request->input('amount') < env('MIN_DEPOSIT') && $request->input('amount') > env('MAX_DEPOSIT')) {
+            if($request->input('amount') < env('MIN_DEPOSIT')) {
                 return back()->with('err_msg', 'Amount less than 30$');
             } else {
                 $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
@@ -53,7 +53,7 @@ class DepositController extends Controller
                                 try {
                                     $depositHist = new deposits;
                                     $depositHist->user_id = $user->id;
-                                    $depositHist->deposit_id = ($user->id.'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
+                                    $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = $bank->Account_name;
@@ -76,7 +76,7 @@ class DepositController extends Controller
                                 try {
                                     $depositHist = new deposits;
                                     $depositHist->user_id = $user->id;
-                                    $depositHist->deposit_id = ($$user->id.'_'.$coupon->id.'_'.$bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
+                                    $depositHist->deposit_id = ($user->id .'_'.$coupon->id .'_'. $bank->id); //User ID _ Coupon ID _ Bank ID for relational reasons
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
                                     $depositHist->amount = $request->input('amount');
                                     $depositHist->acct_name = "Account Name";
