@@ -83,9 +83,9 @@ class DepositController extends Controller
                                         try {
                                             // $curr_usr = User::findOrFail(Auth::id());
                                             // $curr_usr->update($request->wallet += $request->input('amount'));
-                                            DB::table('users')
-                                                ->where('id', Auth::id())
-                                                ->increment('wallet', $request->input('amount'));
+                                            // DB::table('users')
+                                            //     ->where('id', Auth::id())
+                                            //     ->increment('wallet', $request->input('amount'));
 
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
@@ -232,9 +232,9 @@ class DepositController extends Controller
                                      {
                                         try {
                                             // $curr_usr = User::findOrFail(Auth::id());
-                                            DB::table('users')
-                                                ->where('id', Auth::id())
-                                                ->increment('wallet', $request->input('amount'));
+                                            // DB::table('users')
+                                            //     ->where('id', Auth::id())
+                                            //     ->increment('wallet', $request->input('amount'));
 
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
