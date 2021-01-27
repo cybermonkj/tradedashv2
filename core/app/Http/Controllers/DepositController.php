@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 use DotenvEditor;
 
@@ -71,7 +72,8 @@ class DepositController extends Controller
                                     // Save to DB
                                     $depositHist->save();
                                 } catch (Exception $e) {
-                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                    session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    session::put('msgType', "err");
                                 }
                             }  else {
                                 try {
@@ -94,22 +96,28 @@ class DepositController extends Controller
                                     // Save to DB
                                     $depositHist->save();
                                 } catch (Exception $e) {
-                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                    // return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
+                                    session::put('status', ("Deposit not successful".$e->getMessage()));
+                                    session::put('msgType', "err");
                                 }
                             }
-
-                            
-                            return back()->with('success', 'Coupon status updated');
+                            // return back()->with('success', 'Coupon status updated');
+                            session::put('status', ("Coupon status updated".$e->getMessage()));
+                            session::put('msgType', "suc");
                         } catch (Exception $e) {
-                            return back()->with('err_msg', ('The deposit you enterred is not found! '.$e->getMessage()));
+                            // return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
+                            session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
+                            session::put('msgType', "err");
                         }
                     } else {
-                        return back()->with('err_msg', 'Coupon code has already been used!');
+                        // return back()->with('err_msg', 'Coupon code has already been used!');
+                        session::put('status', ("Deposit code has already been used! ".$e->getMessage()));
+                        session::put('msgType', "err");
                     }
-                    
-                    
                 } else {
-                    return back()->with('mssg', 'The coupon code you entered is invalid');
+                    // return back()->with('mssg', 'The coupon code you entered is invalid');
+                    session::put('status', ("Invalid deposit code ".$e->getMessage()));
+                    session::put('msgType', "err");
                 }
             }
         } else {
