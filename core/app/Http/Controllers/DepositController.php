@@ -66,7 +66,7 @@ class DepositController extends Controller
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = "";
                                     $depositHist->status = true;
-                                    $depositHist->on_apr = 1;
+                                    $depositHist->on_apr = true;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = "";
     
@@ -82,7 +82,7 @@ class DepositController extends Controller
                                     {
                                         
                                         try {
-                                            $usr = deposits::find($id);         
+                                            $usr = deposits::find(Auth::id());         
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
@@ -145,7 +145,7 @@ class DepositController extends Controller
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = "";
                                     $depositHist->status = true;
-                                    $depositHist->on_apr = 1;
+                                    $depositHist->on_apr = true;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = "";
     
@@ -164,7 +164,7 @@ class DepositController extends Controller
                                      {
                                          
                                         try {
-                                            $usr = deposits::find($id);         
+                                            $usr = deposits::find(Auth::id());         
                                             if($usr->status == 1)
                                             {
                                             return back()->with([
