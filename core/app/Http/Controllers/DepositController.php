@@ -94,7 +94,7 @@ class DepositController extends Controller
                                             $dep_user = User::find($usr->user_id); 
                                             $amt = $usr->amount;  
                                             
-                                            if($usr->on_apr == 0)
+                                            if($usr->on_apr == 1)
                                             {
                                                 $dep_user->wallet += $amt;
                                                 $dep_user->save();
@@ -176,7 +176,7 @@ class DepositController extends Controller
                                             $dep_user = User::find($usr->user_id); 
                                             $amt = $usr->amount;  
                                             
-                                            if($usr->on_apr == 0)
+                                            if($usr->on_apr == 1)
                                             {
                                                 $dep_user->wallet += $amt;
                                                 $dep_user->save();
@@ -208,7 +208,7 @@ class DepositController extends Controller
                                          // End approval logic
                                     }
                                     // End of approval logic
-                                } catch (Exception $e) {
+                                } catch (\Exception $e) {
                                     return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
                                     // session::put('status', ("Deposit not successful".$e->getMessage()));
                                     // session::put('msgType', "err");
