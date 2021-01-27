@@ -43,8 +43,7 @@ class DepositController extends Controller
                             ->where('id', $coupon->id)
                             ->update(['is_used' => true]);
 
-                            // Validate and execute 
-                            
+                            // Validate and execute deposit
 
                             // Check if Bank Records Exists
                             $bank=  DB::table('bank')->where('user_id', Auth::id())->first();
