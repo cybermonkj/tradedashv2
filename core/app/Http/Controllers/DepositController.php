@@ -60,6 +60,7 @@ class DepositController extends Controller
                                     $depositHist->acct_no = $bank->Account_number;
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = $bank->Bank_Name;
+                                    $depositHist->transaction_type = null;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
                                     $depositHist->on_apr = 0;
@@ -82,6 +83,7 @@ class DepositController extends Controller
                                     $depositHist->acct_no = "Account Number";
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
                                     $depositHist->bank = "Bank";
+                                    $depositHist->transaction_type = null;
                                     $depositHist->url = null;
                                     $depositHist->status = $coupon->is_used;
                                     $depositHist->on_apr = 0;
