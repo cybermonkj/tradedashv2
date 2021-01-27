@@ -656,13 +656,13 @@ class userController extends Controller
             $act->user_id = $user->id;
             $act->save();
 
-            Session::put('status', "Investment Successful");
+            Session::put('status', "Investment Successfully activated");
             Session::put('msgType', "suc");
             return back() ;
           }
           else
           {
-            Session::put('status', "Invalid amount! Try again.");
+            Session::put('status', "Invalid amount! Try something else.");
             Session::put('msgType', "err");
             return back();
           }            
