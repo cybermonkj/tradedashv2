@@ -8,21 +8,6 @@
                 <div class="page-inner mt--5">
                     @include('user.atlantis.overview')
                     <div id="prnt"></div>
-                    <div class="toast-container">
-                        <div class="text-white border-0 toast d-flex align-items-center bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-body">
-                            {{ session('success') }}
-                            </div>
-                            <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-
-                        <div class="text-white border-0 toast d-flex align-items-center bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-body">
-                            {{ session('err_msg') }}
-                            </div>
-                            <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                    </div>
                       
                     <div class="row">
                         <div class="col-md-12">
