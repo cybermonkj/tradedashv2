@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Session;
 
 use DotenvEditor;
 
@@ -32,9 +31,8 @@ class DepositController extends Controller
 
         if (Auth::check()) {
             if($request->input('amount') < env('MIN_DEPOSIT')) {
-                return back()->with('err_msg', 'Amount must greater than '. env('MIN_DEPOSIT') ."and less than". env('MAX_DEPOSIT'));
-            } 
-            else {
+                return back()->with('err_msg', 'Amount less than 30$');
+            } else {
                 $coupon = DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->first();
                 if(!empty($coupon)) {
                     // Check used status of coupon
@@ -45,12 +43,16 @@ class DepositController extends Controller
                             ->where('id', $coupon->id)
                             ->update(['is_used' => true]);
 
+                            // Validate and execute 
+                            
+
                             // Check if Bank Records Exists
                             $bank=  DB::table('bank')->where('user_id', Auth::id())->first();
 
-                            if(!empty($bank)) {
+                            if(!empty($bank))
+                            {
                                 try {
-                                    $depositHist - DB::table('desposits');
+                                    $depositHist = new deposits;
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
@@ -61,23 +63,19 @@ class DepositController extends Controller
                                     $depositHist->bank = $bank->Bank_Name;
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
-                                    $depositHist->status = 1;
-                                    $depositHist->on_apr = 1;
+                                    $depositHist->status = $coupon->is_used;
+                                    $depositHist->on_apr = 0;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
     
                                     // Save to DB
                                     $depositHist->save();
-                                    $saved = $depositHist->save();
-
-                                } catch (\Exception $e) {
-                                    session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    session::put('msgType', "err");
+                                } catch (Exception $e) {
+                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
                                 }
-                            }  
-                            else {
+                            }  else {
                                 try {
-                                    $depositHist - DB::table('desposits');
+                                    $depositHist = new deposits;
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. 'null');
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
@@ -88,39 +86,30 @@ class DepositController extends Controller
                                     $depositHist->bank = "Bank";
                                     $depositHist->transaction_type = null;
                                     $depositHist->url = null;
-                                    $depositHist->status = 1;
-                                    $depositHist->on_apr = 1;
+                                    $depositHist->status = $coupon->is_used;
+                                    $depositHist->on_apr = 0;
                                     $depositHist->ipn = 0;
                                     $depositHist->pop = null;
     
                                     // Save to DB
                                     $depositHist->save();
-
-                                     // Save to DB
-                                    //  $depositHist->save();
-                                } catch (\Exception $e) {
-                                    // return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
-                                    session::put('status', ("Deposit not successful".$e->getMessage()));
-                                    session::put('msgType', "err");
+                                } catch (Exception $e) {
+                                    return back()->with('err_msg', ('Deposit history not saved! '.$e->getMessage()));
                                 }
                             }
-                            // return back()->with('success', 'Coupon status updated');
-                            session::put('status', ("Coupon status updated".$e->getMessage()));
-                            session::put('msgType', "suc");
-                        } catch (\Exception $e) {
-                            // return back()->with('err_msg', ('The deposit code you enterred is not found! '.$e->getMessage()));
-                            session::put('status', ("The deposit code you enterred is not found! ".$e->getMessage()));
-                            session::put('msgType', "err");
+
+                            
+                            return back()->with('success', 'Coupon status updated');
+                        } catch (Exception $e) {
+                            return back()->with('err_msg', ('The deposit you enterred is not found! '.$e->getMessage()));
                         }
                     } else {
-                        // return back()->with('err_msg', 'Coupon code has already been used!');
-                        session::put('status', "Deposit code has already been used!");
-                        session::put('msgType', "err");
+                        return back()->with('err_msg', 'Coupon code has already been used!');
                     }
+                    
+                    
                 } else {
-                    // return back()->with('mssg', 'The coupon code you entered is invalid');
-                    session::put('status', "Invalid deposit code");
-                    session::put('msgType', "err");
+                    return back()->with('mssg', 'The coupon code you entered is invalid');
                 }
             }
         } else {
