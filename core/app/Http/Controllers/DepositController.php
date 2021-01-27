@@ -76,61 +76,109 @@ class DepositController extends Controller
     
                                     // Save to DB
                                     $depositHist->save();
-                                    $saved = $depositHist->save();
+                                    $saved = $depositHist->save(); 
+									
+									try
+									  {
+										$usr = deposits::find($id);         
+										if($usr->status == 1)
+										{
+										  return back()->with([
+											'toast_msg' => 'Deposit already approved!',
+											'toast_type' => 'err'
+										  ]);
+										}
 
-                                    if (!$saved) {
-                                        session::put('status', "Deposit fail");
-                                        session::put('msgType', "err");
-                                    } 
-                                    else
-                                    {
+										$dep_user = User::find($usr->user_id); 
+										$amt = $usr->amount;  
+
+										if($usr->on_apr == 1)
+										{
+											$dep_user->wallet += $amt;
+											$dep_user->save();
+										}
+										$usr->status = 1;
+										$usr->on_apr = 1;
+										$usr->save();
+
+										// $adm = Session::get('adm'); 
+										$act = new adminLog;
+										// $act->admin = $adm->email;
+										$act->action = "System Automatically Approved user deposit. Deposit id: ".$id;
+										$act->save();
+
+										return back()->with([
+										  'toast_msg' => 'Deposit approved successfully!',
+										  'toast_type' => 'suc'
+										]);
+
+									  }
+									  catch(\Exception $e)
+									  {
+										return back()->with([
+										  'toast_msg' => "Error updating record! Try again",
+										  'toast_type' => 'err'
+										]);
+										return back();
+									  }    
+
+									}
+
+								  }
+
+                                    // if (!$saved) {
+                                    //     session::put('status', "Deposit fail");
+                                    //     session::put('msgType', "err");
+                                    // } 
+                                    // else
+                                    // {
                                         
-                                        try {
+												// try {
 											
-                                            $usr = deposits::where('user_id', Auth::id())->first();     
-                                            if($usr->status == 1)
-                                            {
-                                            return back()->with([
-                                                'toast_msg' => 'Deposit already approved!',
-                                                'toast_type' => 'err'
-                                            ]);
-                                            }
+												// $usr = deposits::where('user_id', Auth::id())->first();     
+												// if($usr->status == 1)
+												// {
+												// return back()->with([
+												// 'toast_msg' => 'Deposit already approved!',
+												// 'toast_type' => 'err'
+												// ]);
+												// }
                                             
-                                            // $dep_user = $usr;
-                                            $amt = $request->input('amount');  
+												// // $dep_user = $usr;
+												// $amt = $request->input('amount');  
                                             
-                                            if($usr->on_apr == true)
-                                            {
-												$dep_usr = user::findOrFail($usr->user_id);
-                                                $edp_usr->wallet += $amt;
-                                                $dep_usr->save();
-                                            }
-                                            // $usr->status = 1;
-                                            // $usr->on_apr = 1;
-                                            // $usr->save();
+												// if($usr->on_apr == true)
+												// {
+												// $dep_usr = user::findOrFail($usr->user_id);
+												// $edp_usr->wallet += $amt;
+												// $dep_usr->save();
+												// }
+												// // $usr->status = 1;
+												// // $usr->on_apr = 1;
+												// // $usr->save();
                                             
-                                            // $adm = Session::get('adm'); 
-                                            $act = new adminLog;
-                                            $act->admin = "Automatically Approved";
-                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
-                                            $act->save();
+												// // $adm = Session::get('adm'); 
+												// $act = new adminLog;
+												// $act->admin = "Automatically Approved";
+												// $act->action = "System Approved user deposit. Deposit id: ".$id;
+												// $act->save();
 
-                                            return back()->with([
-                                            'toast_msg' => 'Deposit approved successfully!',
-                                            'toast_type' => 'suc'
-                                            ]);
+												// return back()->with([
+												// 'toast_msg' => 'Deposit approved successfully!',
+												// 'toast_type' => 'suc'
+												// ]);
                                                             
-                                        }
-                                        catch(\Exception $e)
-                                        {
-                                            return back()->with([
-                                            'toast_msg' => "Deposit not successful!",
-                                            'toast_type' => 'err'
-                                            ]);
-                                            return back();
-                                        }
-                                        // End approval logic
-                                    }
+												// }
+												// catch(\Exception $e)
+												// {
+												// return back()->with([
+												// 'toast_msg' => "Deposit not successful!",
+												// 'toast_type' => 'err'
+												// ]);
+												// return back();
+												// }
+												// // End approval logic
+												// }
                                 } catch (Exception $e) {
                                     return back()->with('err_msg', "Deposit code note saved");
                                     // session::put('status', ("Deposit not successful".$e->getMessage()));
@@ -169,49 +217,49 @@ class DepositController extends Controller
                                      else
                                      {
                                          
-                                       try {
+                                       // try {
 											
-                                            $usr = DB::table('deposits')->where('user_id', Auth::id())->first();      
-                                            if($usr->status == 1)
-                                            {
-                                            return back()->with([
-                                                'toast_msg' => 'Deposit already approved!',
-                                                'toast_type' => 'err'
-                                            ]);
-                                            }
+                                       //      $usr = DB::table('deposits')->where('user_id', Auth::id())->first();      
+                                       //      if($usr->status == 1)
+                                       //      {
+                                       //      return back()->with([
+                                       //          'toast_msg' => 'Deposit already approved!',
+                                       //          'toast_type' => 'err'
+                                       //      ]);
+                                       //      }
                                             
-                                            $dep_user = $usr;
-                                            $amt = $request->input('amount');  
+                                       //      $dep_user = $usr;
+                                       //      $amt = $request->input('amount');  
                                             
-                                            if($usr->on_apr == true)
-                                            {
-                                                $dep_user->wallet += $amt;
-                                                $dep_user->save();
-                                            }
-                                            // $usr->status = 1;
-                                            // $usr->on_apr = 1;
-                                            // $usr->save();
+                                       //      if($usr->on_apr == true)
+                                       //      {
+                                       //          $dep_user->wallet += $amt;
+                                       //          $dep_user->save();
+                                       //      }
+                                       //      // $usr->status = 1;
+                                       //      // $usr->on_apr = 1;
+                                       //      // $usr->save();
                                             
-                                            // $adm = Session::get('adm'); 
-                                            $act = new adminLog;
-                                            $act->admin = "Automatically Approved";
-                                            $act->action = "System Approved user deposit. Deposit id: ".$id;
-                                            $act->save();
+                                       //      // $adm = Session::get('adm'); 
+                                       //      $act = new adminLog;
+                                       //      $act->admin = "Automatically Approved";
+                                       //      $act->action = "System Approved user deposit. Deposit id: ".$id;
+                                       //      $act->save();
 
-                                            return back()->with([
-                                            'toast_msg' => 'Deposit approved successfully!',
-                                            'toast_type' => 'suc'
-                                            ]);
+                                       //      return back()->with([
+                                       //      'toast_msg' => 'Deposit approved successfully!',
+                                       //      'toast_type' => 'suc'
+                                       //      ]);
                                                             
-                                        }
-                                        catch(\Exception $e)
-                                        {
-                                            return back()->with([
-                                            'toast_msg' => "Deposit not successful!",
-                                            'toast_type' => 'err'
-                                            ]);
-                                            return back();
-                                        }
+                                       //  }
+                                       //  catch(\Exception $e)
+                                       //  {
+                                       //      return back()->with([
+                                       //      'toast_msg' => "Deposit not successful!",
+                                       //      'toast_type' => 'err'
+                                       //      ]);
+                                       //      return back();
+                                       //  }
                                          // End approval logic
                                     }
                                     // End of approval logic
