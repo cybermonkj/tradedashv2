@@ -389,10 +389,12 @@
                     </div>
                     <div class="">                        
                         <form action="/user/wallet/bank_deposit" method="post">
+                            @csrf
                             <div class="form-group" align="left">                       
                                 <input type="hidden" class="form-control" name="_token" value="{{csrf_token()}}">
                             </div>
-                            <div class="form-group">
+                            
+                            <div class="form-group" style="display: none !important">
                               <div class="input-group">
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
@@ -400,6 +402,7 @@
                                 <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
                               </div>
                             </div> 
+                            
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
