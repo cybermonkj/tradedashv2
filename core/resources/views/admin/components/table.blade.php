@@ -118,9 +118,10 @@
                     <td class="table__data fw-normal">{{ $coupon->id }}</td>
                     <td class="table__data fw-normal">{{ $coupon->coupon_code }}</td>
                     @if ($coupon->is_used == true)
-                        <span>Sold</span>
-                    @else
-                        <span>Not Sold</span>
+                        <span>Used</span>
+                    @endif
+                    @if($coupon->is_used == false)
+                        <span>Not Used</span>
                     @endif
                     <td class="table__data fw-normal">Sold</td>
                     <td class="table__data fw-normal">{{ $coupon->created_at }}</td>
