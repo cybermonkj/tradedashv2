@@ -81,11 +81,17 @@ class DepositController extends Controller
                                     else
                                     {
                                         try {
-                                            $curr_usr = User::findOrFail(Auth::id());
-                                            $curr_usr->update($request->wallet += $request->input('amount'));
+                                            // $curr_usr = User::findOrFail(Auth::id());
+                                            // $curr_usr->update($request->wallet += $request->input('amount'));
+                                            DB::table('users')
+                                                ->where('id', Auth::id())
+                                                ->increment('wallet', $request->input('amount'));
 
-                                            $curr_usr->save();
-                                            if ($curr_usr->save()) {
+                                            $is_update = DB::table('users')
+                                                            ->where('id', Auth::id())
+                                                            ->increment('wallet', $request->input('amount'));
+
+                                            if ($is_update) {
                                                 return back()->with([
                                                     'toast_msg' => 'Deposit approved successfully!',
                                                     'toast_type' => 'suc'
@@ -225,11 +231,16 @@ class DepositController extends Controller
                                      else
                                      {
                                         try {
-                                            $curr_usr = User::findOrFail(Auth::id());
-                                            $curr_usr->update($request->wallet += $request->input('amount'));
+                                            // $curr_usr = User::findOrFail(Auth::id());
+                                            DB::table('users')
+                                                ->where('id', Auth::id())
+                                                ->increment('wallet', $request->input('amount'));
 
-                                            $curr_usr->save();
-                                            if ($curr_usr->save()) {
+                                            $is_update = DB::table('users')
+                                                            ->where('id', Auth::id())
+                                                            ->increment('wallet', $request->input('amount'));
+
+                                            if ($is_update) {
                                                 return back()->with([
                                                     'toast_msg' => 'Deposit approved successfully!',
                                                     'toast_type' => 'suc'
