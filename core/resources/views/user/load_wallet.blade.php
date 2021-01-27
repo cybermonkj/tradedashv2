@@ -8,12 +8,33 @@
                 <div class="page-inner mt--5">
                     @include('user.atlantis.overview')
                     <div id="prnt"></div>
+                    <div class="toast-container">
+                        <div class="text-white border-0 toast d-flex align-items-center bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-body">
+                            {{ session('success') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+
+                        <div class="text-white border-0 toast d-flex align-items-center bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-body">
+                            {{ session('err_msg') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white ms-auto me-2" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                      
                     <div class="row">
                         <div class="col-md-12">
+                            {{-- <div class="container">
+                                <span class="fw-bold">Session Message:</span>
+                                <strong>SUCCESS: {{ session('success') }}</strong>
+                                <strong>ERROR: {{ session('err_msg') }}</strong>
+                            </div> --}}
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">
-                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                        
+                                        <div class="card-title">{{ __('Fund your wallet') }}</div>                                      
                                     </div>
                                 </div>
                                 <div class="card-body"> 
@@ -35,7 +56,7 @@
                                             @if($settings->deposit == 1)      
                                                 <div id="pay_cont" class="row">
                                                     @if(env('SWITCH_PAYPAL') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                        
+                                                    <div class="mt-5 col-lg-6">                                                        
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-paypal fa-4x text-info"></i> <br>
@@ -50,7 +71,7 @@
                                                     </div>
                                                     @endif
                                                     @if(env('SWITCH_STRIPE') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                                                  
+                                                    <div class="mt-5 col-lg-6">                                                                                                  
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-cc-stripe fa-4x text-info"></i> <br>
@@ -69,7 +90,7 @@
                                                     @endif
 
                                                     @if(env('PM_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/pm.png" height="50px"></img> <br>
@@ -89,7 +110,7 @@
 
                                                    
                                                     @if(env('PAYEER_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="/img/payeer.png" height="50px"></img> <br>
@@ -108,7 +129,7 @@
                                                     @endif
 
                                                     @if(env('SWITCH_BTC') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -127,7 +148,7 @@
                                                     @endif
 
                                                     @if(env('COINBASE_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-bitcoin fa-4x text-info"></i> <br>
@@ -146,7 +167,7 @@
                                                     @endif
 
                                                     @if(env('SWITCH_ETH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="fab fa-ethereum fa-4x text-info"></i> <br>
@@ -165,7 +186,7 @@
                                                     @endif
 
                                                     @if(env('PAYSTACK_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                   
+                                                    <div class="mt-5 col-lg-6">                                                                   
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <img src="https://website-v3-assets.s3.amazonaws.com/assets/img/hero/Paystack-mark-white-twitter.png" height="50px"></img> <br>
@@ -184,7 +205,7 @@
                                                     @endif
 
                                                     @if(env('BANK_DEPOSIT_SWITCH') == 1)
-                                                    <div class="col-lg-6 mt-5">                                                                    
+                                                    <div class="mt-5 col-lg-6">                                                                    
                                                         <div class="payment_method" align="center">
                                                             <p>
                                                                 <i class="far fa-building fa-4x text-info"></i> <br>
@@ -199,7 +220,7 @@
                                                                 </a>
                                                             </div> 
                                                             <div id="bank_dets" align="" class="cont_display_none">
-                                                                <div class="row mt-5 border border-primary rounded">              
+                                                                <div class="mt-5 border rounded row border-primary">              
                                                                     <div class="col-sm-12">
                                                                         <h3 class="color_blue_b">
                                                                             <i class="fas fa-money-check-alt color_blue_9"></i> {{env('ACCOUNT_NAME')}}
@@ -260,13 +281,13 @@
                                 <div class="card-header">
                                     <div class="card-title">{{ __('Deposit History') }}</div>
                                 </div>
-                                <div class="card-body pb-0">
+                                <div class="pb-0 card-body">
                                     <?php
                                         $deps = App\deposits::where('user_id', $user->id)->orderby('id', 'desc')->paginate(10);
                                     ?>                                                   
                                                 
                                     <div class="table-responsive">
-                                        <table class="display table table-striped table-hover" >
+                                        <table class="table display table-striped table-hover" >
                                         <thead>
                                             <tr>  
                                                 <th>{{ __('Amount') }}</th>        
@@ -361,48 +382,39 @@
                   <div class="col-md-4">&emps;</div>
                   <div class="col-md-4 popmsg-mobile card" align="Center">        
                     <div class="mt-2">
-                      <h3><b>{{ __('Deposit Details') }}</b></h3>                              
+                      <h3><b>{{ __('Deposit Details') }}</b></h3>                             
                       <hr>
                     </div>
-                    <div class="">                        
-                        <form action="/user/wallet/bank_deposit" method="post">
-                            <div class="form-group" align="left">                       
-                                <input type="hidden" class="form-control" name="_token" value="{{csrf_token()}}">
-                            </div>
-                            <div class="form-group">
+                    <div class="container">                        
+                        <form action="{{ route('coupon.deposit') }}" method="post">
+                            @csrf
+                            <div class="form-group" style="display: none !important">
                               <div class="input-group">
-                                <div class="input-group-prepend " >
+                                <div class="input-group-prepend ">
                                   <span class="input-group-text span_bg">{{$settings->currency}}</span>
                                 </div>                        
-                                <input type="number" class="form-control" name="amt" value="30" required placeholder="Amount" >
+                                <input type="number" class="form-control" name="amount" value="30" required placeholder="Amount" >
                               </div>
-                            </div> 
+                            </div>
+                            
                             <div class="form-group">
                               <div class="input-group" >                   
                                 <div class="input-group-prepend " >
                                   <span class="input-group-text span_bg"><i class="fa fa-user" ></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="account_name"  required placeholder="Deposit Code" >
+                                <input type="text" class="form-control" name="deposit_code"  required placeholder="Deposit Code" >
                               </div>
                             </div>
-							
-
-                            <div class="form-group">
-                              <div class="input-group" >                   
+                            
+                            <div class="container">
+                                <div class="form-group">
+                                    <input style="text-transform: capitalize" type="submit" value="Validate" class="btn btn-info">
+                                    <a style="color: #fff" id="bank_deposit_cont_dets_close" class="collcc btn btn-danger">{{ __('Cancel') }}</a>
                                 </div>
-                                <input type="hidden" class="form-control" name="bank_name"  value="Deposit Code (Voucher)" >
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <br>
-                                <button class="collb btn btn-info">{{ __('Submit') }}</button>
-                                <span style="">            
-                                  <a id="bank_deposit_cont_dets_close" href="javascript:void(0)" class="collcc btn btn-danger">{{ __('Cancel') }}</a>        
-                                </span>
-                                <br>
                             </div>
                         </form>
                     </div>  
+                    
                     <!-- close btn -->
                     <script type="text/javascript">
                       $('#bank_deposit_cont_dets_close').click( function(){

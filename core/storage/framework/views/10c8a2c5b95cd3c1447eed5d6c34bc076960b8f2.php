@@ -13,6 +13,12 @@
 						<div class="p-4 shadow card" style="width: 100% !important">
 							<?php echo $__env->make('admin.components.table', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 						</div>
+
+						<div class="px-4 my-4">
+							<div class="row">
+								<a style="color: #fff !important" class="btn btn-success btn-lg text-capitalize" href="<?php echo e(route('export.codes')); ?>">Export Coupons</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -29,8 +29,9 @@
     .table__row--header th {
         grid-area: header;
         height: 4rem;
-        width: 16.67%;
-        width: calc(100% / 6);
+        width: 150px;
+        /* width: calc(100% / 6); */
+        /* border: 1px solid red; */
 
         display: flex;
         align-items: center;
@@ -59,11 +60,11 @@
         width: 100%;
     }
 
-    .table__data {
-        
+    .table__data .d-grid button {
+        margin-bottom: 2px;
     }
 
-    @media  screen and (min-width: 768px) {
+    @media  only screen and (min-width: 768px) {
         .table__main {
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
@@ -99,6 +100,7 @@
 
 
 <div class="table__container">
+    
     <table class="table__main">
         <thead class="table__header">
             <tr class="table__row--header">
@@ -106,25 +108,28 @@
                 <th class="fw-bold">Coupon Code</th>
                 <th class="fw-bold">Status</th>
                 <th class="fw-bold">Date Created</th>
-                <th class="fw-bold">Date Updated</th>
-                <th class="fw-bold">Actions</th>
+                <th class="fw-bold">Date Used</th>
+                
             </tr>
         </thead>
 
         <tbody class="table__body">
-            <tr class="table__row--content">
-                <td class="table__data fw-normal">1</td>
-                <td class="table__data fw-normal">7Ur83Gy4</td>
-                <td class="table__data fw-normal">Sold</td>
-                <td class="table__data fw-normal">Date</td>
-                <td class="table__data fw-normal">Date</td>
-                <td class="table__data fw-normal">
-                    <div class="gap-2 d-grid">
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                        <button type="button" class="btn btn-primary btn-sm">Update</button>
-                    </div>
-                </td>
-            </tr>
+            <?php $__currentLoopData = $coupons; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $coupon): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <tr class="table__row--content">
+                    <td class="table__data fw-normal"><?php echo e($coupon->id); ?></td>
+                    <td class="table__data fw-normal"><?php echo e($coupon->coupon_code); ?></td>
+                    <td class="table__data fw-normal">
+                        <?php if($coupon->is_used == true): ?>
+                            <span>Used</span>
+                        <?php endif; ?>
+                        <?php if($coupon->is_used == false): ?>
+                            <span>Not Used</span>
+                        <?php endif; ?>
+                    </td>
+                    <td class="table__data fw-normal"><?php echo e($coupon->created_at); ?></td>
+                    <td class="table__data fw-normal"><?php echo e($coupon->updated_at); ?></td>
+                </tr>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </tbody>
     </table>
 </div><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/admin/components/table.blade.php ENDPATH**/ ?>
