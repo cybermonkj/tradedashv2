@@ -58,7 +58,7 @@ class DepositController extends Controller
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->amount = $coupon->price_tag;
                                     $depositHist->account_name = $bank->Account_name;
                                     $depositHist->account_no = $bank->Account_number;
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
@@ -114,7 +114,7 @@ class DepositController extends Controller
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. 'no_bank');
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->amount = $coupon->price_tag;
                                     $depositHist->account_name = "";
                                     $depositHist->account_no = "";
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
