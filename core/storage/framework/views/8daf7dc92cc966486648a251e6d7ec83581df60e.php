@@ -8,13 +8,10 @@
                 <div class="page-inner mt--5">
                     <?php echo $__env->make('user.atlantis.overview', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                     <div id="prnt"></div>
+                      
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="container">
-                                <span class="fw-bold">Session Message:</span>
-                                <strong>SUCCESS: <?php echo e(session('success')); ?></strong>
-                                <strong>ERROR: <?php echo e(session('err_msg')); ?></strong>
-                            </div>
+                            
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-head-row">

@@ -92,7 +92,7 @@
                                         <hr>                               
                                         <p><?php echo $m->message; ?></p>
                                     <?php else: ?>
-                                    	<div class="alert alert-info"><?php echo e(__('Select a notification')); ?></div>
+                                    	<div class="alert alert-info"><?php echo e(__('Select a notification to view it')); ?></div>
 									<?php endif; ?>
 
 								</div>
