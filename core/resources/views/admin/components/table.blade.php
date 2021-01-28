@@ -4,6 +4,7 @@
             {{-- <th scope="col">#</th> --}}
             <th scope="col">ID Number</th>
             <th scope="col">Coupon Code</th>
+            <th scope="col">Price</th>
             <th scope="col">Status</th>
             <th scope="col">Date Created</th>
             <th scope="col">Date Updated</th>
@@ -15,6 +16,7 @@
             <tr>
                 <td>{{ $coupon->id }}</td>
                 <td>{{ $coupon->coupon_code }}</td>
+                <td>{{ $coupon->price_tag }}</td>
                 <td>
                     @if ($coupon->is_used == true)
                         <span>Used</span>
