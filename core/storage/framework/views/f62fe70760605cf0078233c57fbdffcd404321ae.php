@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="row align-items-start">
                     <div class="p-4">
-                        <h1 class="text-uppercase display-5 fw-bold">Import coupon codes</h1>
+                        <h1 class="text-capitalize display-6 fw-bold">Import Deposit codes</h1>
                     </div>
 
                     <div class="p-4 m-4 shadow card" style="width: 100% !important">
