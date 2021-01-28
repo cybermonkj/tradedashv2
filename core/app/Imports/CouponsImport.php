@@ -18,6 +18,7 @@ class CouponsImport implements ToModel, WithChunkReading, WithHeadingRow
     {
         return new Coupon([
             'coupon_code'    => $row['coupon_code'],
+            'price_tag'    => $row['price_tag'],
             'is_used'    => $row['status'],
         ]);
     }

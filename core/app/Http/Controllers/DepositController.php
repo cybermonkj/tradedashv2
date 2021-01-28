@@ -48,10 +48,6 @@ class DepositController extends Controller
                             ->where('id', $coupon->id)
                             ->update(['is_used' => true]);
 
-                            // Validate and execute 
-
-                            
-
                             // Check if Bank Records Exists
                             $bank=  DB::table('bank')->where('user_id', Auth::id())->first();
 
@@ -89,7 +85,7 @@ class DepositController extends Controller
                                         try {
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
-                                                            ->increment('wallet', $request->input('amount'));
+                                                            ->increment('wallet', DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->value('price_tag'));
 
                                             if ($is_update) {
                                                 return back()->with([
@@ -148,7 +144,7 @@ class DepositController extends Controller
                                         try {
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
-                                                            ->increment('wallet', $request->input('amount'));
+                                                            ->increment('wallet', DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->value('price_tag'));
 
                                             if ($is_update) {
                                                 // Send email
