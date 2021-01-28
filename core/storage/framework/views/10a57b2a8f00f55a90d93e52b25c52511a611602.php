@@ -26,27 +26,27 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label for="min"><?php echo e(__('Min Investment Value')); ?></label>
+                                                <label for="min"><?php echo e(__('Min Investment Price')); ?></label>
                                                 <input id="min" type="number" class="regTxtBox" name="min" value="" required autocomplete="min" autofocus placeholder="Minimum investment value">
                                             </div>
                                              <div class="col-sm-6">
-                                                <label for="max" class=""><?php echo e(__('Max Investment Value')); ?></label>
+                                                <label for="max" class=""><?php echo e(__('Max Investment Price')); ?></label>
                                                 <input id="max" type="number" class="regTxtBox" name="max" value="" required autocomplete="max" autofocus placeholder="Maximum Investment Value">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-12">
-                                                <label for="daily_interest"><?php echo e(__('Package Interest (%)')); ?></label>
+                                                <label for="daily_interest"><?php echo e(__('Package Interest (100+Package) (%)')); ?></label>
                                                 <input id="daily_interest" step="0.1" type="number" class="regTxtBox" name="interest" value="" required autocomplete="daily_interest" autofocus placeholder="Percentage interest for the whole period of investment">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label for="period"><?php echo e(__('Total Period of Investment(Days)')); ?></label>
+                                                <label for="period"><?php echo e(__('Maturity (Days)')); ?></label>
                                                 <input id="period" step="1" type="number" class="regTxtBox" name="period" value="" required autocomplete="period" autofocus placeholder="Period of Investment (Days)">
                                             </div>
                                              <div class="col-sm-6">
-                                                <label for="interval" class=""><?php echo e(__('Withdrawal Interval (Days)')); ?></label>
+                                                <label for="interval" class=""><?php echo e(__('Withdrawable in (Days)')); ?></label>
                                                 <input id="interval" type="number" class="regTxtBox" name="interval" value="" required autocomplete="interval" autofocus placeholder="Withdrawal interval (Days)">
                                             </div>
                                         </div>

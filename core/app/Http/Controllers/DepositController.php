@@ -48,10 +48,6 @@ class DepositController extends Controller
                             ->where('id', $coupon->id)
                             ->update(['is_used' => true]);
 
-                            // Validate and execute 
-
-                            
-
                             // Check if Bank Records Exists
                             $bank=  DB::table('bank')->where('user_id', Auth::id())->first();
 
@@ -62,7 +58,7 @@ class DepositController extends Controller
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. $bank->id);
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->amount = $coupon->price_tag;
                                     $depositHist->account_name = $bank->Account_name;
                                     $depositHist->account_no = $bank->Account_number;
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
@@ -89,7 +85,7 @@ class DepositController extends Controller
                                         try {
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
-                                                            ->increment('wallet', $request->input('amount'));
+                                                            ->increment('wallet', DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->value('price_tag'));
 
                                             if ($is_update) {
                                                 return back()->with([
@@ -118,7 +114,7 @@ class DepositController extends Controller
                                     $depositHist->user_id = $user->id;
                                     $depositHist->deposit_id = ($user->id .'_'. $coupon->id .'_'. 'no_bank');
                                     $depositHist->usn = ($user->firstname .' '. $user->lastname);
-                                    $depositHist->amount = $request->input('amount');
+                                    $depositHist->amount = $coupon->price_tag;
                                     $depositHist->account_name = "";
                                     $depositHist->account_no = "";
                                     $depositHist->currency = DB::table('settings')->where('id', 1)->value('currency');
@@ -148,7 +144,7 @@ class DepositController extends Controller
                                         try {
                                             $is_update = DB::table('users')
                                                             ->where('id', Auth::id())
-                                                            ->increment('wallet', $request->input('amount'));
+                                                            ->increment('wallet', DB::table('coupons')->where('coupon_code', $request->input('deposit_code'))->value('price_tag'));
 
                                             if ($is_update) {
                                                 // Send email
