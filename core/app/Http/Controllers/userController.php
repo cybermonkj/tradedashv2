@@ -112,14 +112,14 @@ class userController extends Controller
         else
         {
           $act = new activities;
-          $act->action = "User logged in to account";
+          $act->action = "User logged in to Tradepander";
           $act->user_id = $user->id;
           $act->save(); 
           return redirect('/'.$user->username.'/dashboard');
         }          
       }          
       return redirect()->route('login')->with([
-        'toast_msg' => 'User credentials not correct!',
+        'toast_msg' => 'Credentials not correct!',
         'toast_type' => 'err'
       ]);        
     }
@@ -296,7 +296,7 @@ class userController extends Controller
           {
             if($req->input('newpwd') == $req->input('oldpwd'))
             {                                 
-                Session::put('status', "You cannot use same old password! Please use a different password for your security.");
+                Session::put('status', "You cannot use same old Tradepander password! Please use a different password for your security.");
                 Session::put('msgType', "err");
                 return back();
             }
@@ -482,7 +482,7 @@ class userController extends Controller
       if($this->st->investment != 1 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Investment is currently under maintenance! You will be notified when it is available.');
+        Session::put('status', 'Investment system is currently under maintenance! You will be notified when it is available.');
         return back();
       }
 
@@ -496,7 +496,7 @@ class userController extends Controller
       if($user->status == 'pending' || $user->status == 0 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Account not activated! Please check your email for activation email or contact support.');
+        Session::put('status', 'Your account is not activated! Please check your email for activation email or contact support.');
         return redirect('/login');
       }
 
@@ -845,7 +845,7 @@ class userController extends Controller
       if($this->st->withdrawal != 1 )
       {
         Session::put('msgType', "err");              
-        Session::put('status', 'Withdrawal disabled! Please contact support.');
+        Session::put('status', 'Withdrawal is disabled! Please contact support.');
         return back();
       }
 
@@ -1558,7 +1558,7 @@ class userController extends Controller
 
     try
     {
-      $url = 'https://v2.tradepander.com/coinpayment/confirm/a';          
+      $url = 'https://dash.tradepander.com/coinpayment/confirm/a';          
       $ch = curl_init($url);          
       $data = array(
         'key' => $req['key'],
@@ -1883,7 +1883,7 @@ class userController extends Controller
       {
         ticket::where('id', $id)->update(['status' => 0]);
         return back()->with([
-          'toast_msg' => 'Ticket resolved successfully!',
+          'toast_msg' => 'Support Ticket resolved successfully!',
           'toast_type' => 'suc'
         ]);
       } 
@@ -2264,7 +2264,7 @@ class userController extends Controller
     return view('user.enter_otp');
   }
 
-  // coded added 11/08/2020 ////////////////////////////////////////////////
+
 
   public function pay_with_coinbase_btc(){    
     $user = Auth::User();
@@ -2390,7 +2390,7 @@ class userController extends Controller
           else
           {
             return back()->With([
-              'toast_msg' => 'Deposit record not found coin has already been confirmed!', 
+              'toast_msg' => 'Deposit record not found but coin has already been confirmed!', 
               'toast_type' => 'err'
             ]);
           }
