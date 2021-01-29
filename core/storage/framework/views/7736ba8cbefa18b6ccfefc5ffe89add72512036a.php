@@ -4,6 +4,7 @@
             
             <th scope="col">ID Number</th>
             <th scope="col">Coupon Code</th>
+            <th scope="col">Price</th>
             <th scope="col">Status</th>
             <th scope="col">Date Created</th>
             <th scope="col">Date Updated</th>
@@ -15,6 +16,7 @@
             <tr>
                 <td><?php echo e($coupon->id); ?></td>
                 <td><?php echo e($coupon->coupon_code); ?></td>
+                <td><?php echo e($coupon->price_tag); ?></td>
                 <td>
                     <?php if($coupon->is_used == true): ?>
                         <span>Used</span>
