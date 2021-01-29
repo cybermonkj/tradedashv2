@@ -1025,7 +1025,7 @@ class userController extends Controller
           $wd->save();
 
           $act = new activities;
-          $act->action = "User requested withdrawal from referral bonus to bank";
+          $act->action = "User requested withdrawal from referral bonus";
           $act->user_id = $user->id;
           $act->save();
           
@@ -1043,7 +1043,7 @@ class userController extends Controller
               $msg->subject('User Withdrawal Notification');
           });
          
-          Session::put('status', 'Referral Withdrawal Successful, Please Allow up to 4 Business Days for Payment Processing');
+          Session::put('status', 'Referral Withdrawal Successful, Please Allow up to 4 Business Days for Payment Processing - Referrals only');
           Session::put('msgType', "suc");
           return back();
 
