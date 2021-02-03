@@ -39,7 +39,7 @@ class CouponController extends Controller
 	public function importCouponFile(Request $request)
     {
 		$request->validate([
-			'coupon_code'     => 'required|unique:coupons|min:8|max:8',
+			'coupon_code' => 'required|unique:coupons|min:8|max:9',
 		]); 
 
 		if ($request->file('myFile') == null) {
