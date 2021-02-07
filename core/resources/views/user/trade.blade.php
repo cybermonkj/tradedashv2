@@ -4,7 +4,7 @@
             
 <div class="main-panel">
     <div class="content">
-        @php($breadcome = 'What we are currently Trading (Live)')
+        @php($breadcome = 'Trade (Live)')
         @include('user.atlantis.main_bar')
         <div class="page-inner mt--5">
             @include('user.atlantis.overview')
@@ -14,6 +14,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
+                                <div class="card-title">{{ __('Our Trade') }}</div>                                       
+                            </div>
+                        </div>
+                        <div class="card-body ">  
                                 {{-- <style type="text/css">
                                     /* .toast {display: none;}
                                    */
@@ -82,6 +86,7 @@
   </div>
   <!-- TradingView Widget END -->
 
+</div>
 
 
 
