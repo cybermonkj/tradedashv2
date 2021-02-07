@@ -251,9 +251,9 @@
 							</a>							
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="/{{$user->username}}/trade">
 								<i class="fab fa-affiliatetheme"></i>
-								<p>Trader/ICO (Beta)</p>
+								<p>Trader (Beta)</p>
 							</a>							
 						</li>
 						<li class="nav-item">
