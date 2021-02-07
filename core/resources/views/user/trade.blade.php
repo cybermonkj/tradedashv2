@@ -175,7 +175,7 @@
                                                 </script>
                                             </div> 
                                         </div>
-                                            <div  class="col-xs-6" margin-right: "20px" >
+                                            <div  class="col-xs-6" >
                                                 <!-- TradingView Widget BEGIN -->
                                                     <div class="tradingview-widget-container">
                                                         <div class="tradingview-widget-container__widget"></div>
