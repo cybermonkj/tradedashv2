@@ -119,7 +119,7 @@
                                 ]
                                 ],
                                 "chartOnly": false,
-                                "width": auto,
+                                "width": 100%,
                                 "height": 400,
                                 "locale": "en",
                                 "colorTheme": "light",
