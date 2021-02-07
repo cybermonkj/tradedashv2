@@ -89,6 +89,13 @@
       'Google2FA' => 'PragmaRX\\Google2FALaravel\\Facade',
     ),
   ),
+  'sven/artisan-view' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Sven\\ArtisanView\\ServiceProvider',
+    ),
+  ),
   'unicodeveloper/laravel-paystack' => 
   array (
     'providers' => 
