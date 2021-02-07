@@ -137,6 +137,25 @@
                             <!-- TradingView Widget END -->
 
 
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-head-row">
+                                <div class="card-title">{{ __('Other Watches') }}</div>                                       
+                                </div>
+                            </div>
+                        <div class="card-body "> 
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-6">
@@ -154,45 +173,165 @@
                                                 "locale": "en"
                                             }
                                                 </script>
-                                            </div>
-                                                        <!-- TradingView Widget END -->
-                    
-                            </div>
-                            <div margin="20" class="col-xs-6">
+                                            </div> 
+                                        </div>
+                                            <div  class="col-xs-6" margin-right: "20px" >
                                                 <!-- TradingView Widget BEGIN -->
-                                            <div class="tradingview-widget-container">
-                                                <div class="tradingview-widget-container__widget"></div>
-                                                <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">TSLA Fundamental Data</span></a> by TradingView</div>
-                                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
-                                                {
-                                                "symbol": "NASDAQ:TSLA",
-                                                "colorTheme": "light",
-                                                "isTransparent": false,
-                                                "largeChartUrl": "",
-                                                "displayMode": "adaptive",
-                                                "width": 480,
-                                                "height": 830,
-                                                "locale": "en"
-                                            }
-                                                </script>
+                                                    <div class="tradingview-widget-container">
+                                                        <div class="tradingview-widget-container__widget"></div>
+                                                        <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">Financial Markets</span></a> by TradingView</div>
+                                                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                                                        {
+                                                        "colorTheme": "light",
+                                                        "dateRange": "12M",
+                                                        "showChart": true,
+                                                        "locale": "en",
+                                                        "largeChartUrl": "",
+                                                        "isTransparent": false,
+                                                        "showSymbolLogo": true,
+                                                        "width": "400",
+                                                        "height": "660",
+                                                        "plotLineColorGrowing": "rgba(0, 0, 255, 1)",
+                                                        "plotLineColorFalling": "rgba(73, 133, 231, 1)",
+                                                        "gridLineColor": "rgba(240, 243, 250, 1)",
+                                                        "scaleFontColor": "rgba(120, 123, 134, 1)",
+                                                        "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+                                                        "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+                                                        "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+                                                        "tabs": [
+                                                        {
+                                                            "title": "Indices",
+                                                            "symbols": [
+                                                            {
+                                                                "s": "FOREXCOM:SPXUSD",
+                                                                "d": "S&P 500"
+                                                            },
+                                                            {
+                                                                "s": "FOREXCOM:NSXUSD",
+                                                                "d": "Nasdaq 100"
+                                                            },
+                                                            {
+                                                                "s": "FOREXCOM:DJI",
+                                                                "d": "Dow 30"
+                                                            },
+                                                            {
+                                                                "s": "INDEX:NKY",
+                                                                "d": "Nikkei 225"
+                                                            },
+                                                            {
+                                                                "s": "INDEX:DEU30",
+                                                                "d": "DAX Index"
+                                                            },
+                                                            {
+                                                                "s": "FOREXCOM:UKXGBP",
+                                                                "d": "FTSE 100"
+                                                            }
+                                                            ],
+                                                            "originalTitle": "Indices"
+                                                        },
+                                                        {
+                                                            "title": "Commodities",
+                                                            "symbols": [
+                                                            {
+                                                                "s": "CME_MINI:ES1!",
+                                                                "d": "S&P 500"
+                                                            },
+                                                            {
+                                                                "s": "CME:6E1!",
+                                                                "d": "Euro"
+                                                            },
+                                                            {
+                                                                "s": "COMEX:GC1!",
+                                                                "d": "Gold"
+                                                            },
+                                                            {
+                                                                "s": "NYMEX:CL1!",
+                                                                "d": "Crude Oil"
+                                                            },
+                                                            {
+                                                                "s": "NYMEX:NG1!",
+                                                                "d": "Natural Gas"
+                                                            },
+                                                            {
+                                                                "s": "CBOT:ZC1!",
+                                                                "d": "Corn"
+                                                            }
+                                                            ],
+                                                            "originalTitle": "Commodities"
+                                                        },
+                                                        {
+                                                            "title": "Bonds",
+                                                            "symbols": [
+                                                            {
+                                                                "s": "CME:GE1!",
+                                                                "d": "Eurodollar"
+                                                            },
+                                                            {
+                                                                "s": "CBOT:ZB1!",
+                                                                "d": "T-Bond"
+                                                            },
+                                                            {
+                                                                "s": "CBOT:UB1!",
+                                                                "d": "Ultra T-Bond"
+                                                            },
+                                                            {
+                                                                "s": "EUREX:FGBL1!",
+                                                                "d": "Euro Bund"
+                                                            },
+                                                            {
+                                                                "s": "EUREX:FBTP1!",
+                                                                "d": "Euro BTP"
+                                                            },
+                                                            {
+                                                                "s": "EUREX:FGBM1!",
+                                                                "d": "Euro BOBL"
+                                                            }
+                                                            ],
+                                                            "originalTitle": "Bonds"
+                                                        },
+                                                        {
+                                                            "title": "Forex",
+                                                            "symbols": [
+                                                            {
+                                                                "s": "FX:EURUSD"
+                                                            },
+                                                            {
+                                                                "s": "FX:GBPUSD"
+                                                            },
+                                                            {
+                                                                "s": "FX:AUDUSD"
+                                                            },
+                                                            {
+                                                                "s": "FX:USDCAD"
+                                                            },
+                                                            {
+                                                                "s": "USD/FX_IDC:USDNGN",
+                                                                "d": "USD/NGN"
+                                                            },
+                                                            {
+                                                                "s": "BTC/FX_IDC:NGNEUR",
+                                                                "d": "NGN/EUR"
+                                                            }
+                                                            ],
+                                                            "originalTitle": "Forex"
+                                                        }
+                                                        ]
+                                                    }
+                                                        </script>
+                                                    </div>
+                                                    <!-- TradingView Widget END -->
                                             </div>
-                                            <!-- TradingView Widget END -->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-
-
-
-                    
-                    </div>
 
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
                                 <div class="card-title">{{ __('Other Watches') }}</div>                                       
+                                </div>
                             </div>
-                        </div>
                         <div class="card-body "> 
 
 
@@ -200,9 +339,8 @@
                     </div>
                 </div>
             </div>
-</div>
-
-
+        </div>
+    </div>
 
 
 @endSection
