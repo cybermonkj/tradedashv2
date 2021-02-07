@@ -71,6 +71,72 @@
                     <!-- end of chart -->
 
 
+
+                                                <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                                <div id="tradingview_86b2f"></div>
+                                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AAPL/" rel="noopener" target="_blank"><span class="blue-text">Apple</span></a> by TradingView</div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                                <script type="text/javascript">
+                                new TradingView.MediumWidget(
+                                {
+                                "symbols": [
+                                [
+                                    "Apple",
+                                    "AAPL"
+                                ],
+                                [
+                                    "Google",
+                                    "GOOGL"
+                                ],
+                                [
+                                    "Microsoft",
+                                    "MSFT"
+                                ],
+                                [
+                                    "Tesla",
+                                    "NASDAQ:TSLA|12M"
+                                ],
+                                [
+                                    "BTC/USD",
+                                    "BITBAY:BTCUSD|ALL"
+                                ],
+                                [
+                                    "ETH/USD",
+                                    "BITFINEX:ETHUSD/ |12M"
+                                ],
+                                [
+                                    "USD/NAIRA",
+                                    "FX_IDC:USDNGN|ALL"
+                                ],
+                                [
+                                    "JUMIA",
+                                    "NYSE:JMIA|12M"
+                                ],
+                                [
+                                    "Dangote Cement",
+                                    "NSENG:DANGCEM|ALL"
+                                ]
+                                ],
+                                "chartOnly": false,
+                                "width": 1000,
+                                "height": 400,
+                                "locale": "en",
+                                "colorTheme": "light",
+                                "gridLineColor": "#F0F3FA",
+                                "trendLineColor": "rgba(0, 0, 255, 1)",
+                                "fontColor": "#787B86",
+                                "underLineColor": "rgba(73, 133, 231, 1)",
+                                "isTransparent": false,
+                                "autosize": false,
+                                "container_id": "tradingview_86b2f"
+                            }
+                                );
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+
+
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-6">
