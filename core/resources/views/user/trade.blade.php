@@ -14,10 +14,10 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">{{ __('Our Trade') }}</div>                                       
+                                <div class="card-title">{{ __('This Weeks Trade') }}</div>                                       
                             </div>
                         </div>
-                        <div class="card-body ">  
+                        <div class="card-body">  
                                 {{-- <style type="text/css">
                                     /* .toast {display: none;}
                                    */
@@ -68,27 +68,74 @@
 
  --}}
 
-<!-- end of chart -->
+                    <!-- end of chart -->
 
 
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">TSLA Profile</span></a></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
-    {
-    "symbol": "NASDAQ:TSLA",
-    "width": "480",
-    "height": "650",
-    "colorTheme": "light",
-    "isTransparent": false,
-    "locale": "en"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-  
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                                    <!-- TradingView Widget BEGIN -->
+                                            <div class="tradingview-widget-container">
+                                                <div class="tradingview-widget-container__widget"></div>
+                                                <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">TSLA Profile</span></a></div>
+                                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+                                                {
+                                                "symbol": "NASDAQ:TSLA",
+                                                "width": "480",
+                                                "height": "650",
+                                                "colorTheme": "light",
+                                                "isTransparent": false,
+                                                "locale": "en"
+                                            }
+                                                </script>
+                                            </div>
+                                                        <!-- TradingView Widget END -->
+                    
+                            </div>
+                            <div class="col-xs-6">
+                                                <!-- TradingView Widget BEGIN -->
+                                            <div class="tradingview-widget-container">
+                                                <div class="tradingview-widget-container__widget"></div>
+                                                <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">TSLA Fundamental Data</span></a> by TradingView</div>
+                                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                                                {
+                                                "symbol": "NASDAQ:TSLA",
+                                                "colorTheme": "light",
+                                                "isTransparent": false,
+                                                "largeChartUrl": "",
+                                                "displayMode": "adaptive",
+                                                "width": 480,
+                                                "height": 830,
+                                                "locale": "en"
+                                            }
+                                                </script>
+                                            </div>
+                                            <!-- TradingView Widget END -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-head-row">
+                                <div class="card-title">{{ __('Other Watches') }}</div>                                       
+                            </div>
+                        </div>
+                        <div class="card-body "> 
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>
+
 
 
 
