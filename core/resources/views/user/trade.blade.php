@@ -92,7 +92,7 @@
                                                         <!-- TradingView Widget END -->
                     
                             </div>
-                            <div class="col-xs-6">
+                            <div margin="20" class="col-xs-6">
                                                 <!-- TradingView Widget BEGIN -->
                                             <div class="tradingview-widget-container">
                                                 <div class="tradingview-widget-container__widget"></div>
