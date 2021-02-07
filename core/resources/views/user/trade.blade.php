@@ -36,7 +36,7 @@
  
 <!-- MT5 Trader start -->
 
-                                <div class="mobileHide" style="margin-left:20" width="80%" scrolling="no">
+                                <div class="mobileHide" style="margin-left:20" width="60%" scrolling="no">
                                         <iframe src="https://trade.mql5.com/trade" name="Trader" title="Stock/Forex Trader" frameborder="0" style="display: block; border: none; height: 76vh; width: 80vw;"></iframe>
                                             </div>
                                         </div>
