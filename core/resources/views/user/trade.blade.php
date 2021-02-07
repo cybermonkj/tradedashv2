@@ -151,7 +151,7 @@
                                                 <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
                                                 {
                                                 "symbol": "NASDAQ:TSLA",
-                                                "width": "480",
+                                                "width": "100%",
                                                 "height": "650",
                                                 "colorTheme": "light",
                                                 "isTransparent": false,
@@ -174,7 +174,7 @@
                                                         "largeChartUrl": "",
                                                         "isTransparent": false,
                                                         "showSymbolLogo": true,
-                                                        "width": "400",
+                                                        "width": "auto",
                                                         "height": "660",
                                                         "plotLineColorGrowing": "rgba(0, 0, 255, 1)",
                                                         "plotLineColorFalling": "rgba(73, 133, 231, 1)",
