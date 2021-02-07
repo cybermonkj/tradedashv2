@@ -75,7 +75,7 @@
                                                 <!-- TradingView Widget BEGIN -->
                             <div class="tradingview-widget-container">
                                 <div id="tradingview_86b2f"></div>
-                                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AAPL/" rel="noopener" target="_blank"><span class="blue-text">Apple</span></a> by TradingView</div>
+                                <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text"></span></a> Updates in Real time</div>
                                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                                 <script type="text/javascript">
                                 new TradingView.MediumWidget(
@@ -138,22 +138,7 @@
 
 
 
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-head-row">
-                                <div class="card-title">{{ __('Other Watches') }}</div>                                       
-                                </div>
-                            </div>
-                        <div class="card-body "> 
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+ 
 
 
                     <div class="container">
