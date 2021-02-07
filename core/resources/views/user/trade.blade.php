@@ -15,8 +15,8 @@
                         <div class="card-header">
                             <div class="card-head-row">
                                 <style type="text/css">
-                                    .toast {display: none;}
-                                  
+                                    /* .toast {display: none;}
+                                   */
                                     /* Smartphone Portrait and Landscape */
                                     @media only screen
                                       and (min-device-width : 320px)
