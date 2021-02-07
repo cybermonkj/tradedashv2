@@ -69,15 +69,17 @@
  --}}
 
 <!-- end of chart -->
+
+
 <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
     <div class="tradingview-widget-container__widget"></div>
-    <div class="tradingview-widget-copyright"><a href="#/" rel="noopener" target="_blank"><span class="blue-text">TSLA Profile</span></a> Featured Trade: Tesla</div>
+    <div class="tradingview-widget-copyright"><a href="#" rel="noopener" target="_blank"><span class="blue-text">TSLA Profile</span></a></div>
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
     {
     "symbol": "NASDAQ:TSLA",
-    "width": "100%",
-    "height": "100%",
+    "width": "480",
+    "height": "650",
     "colorTheme": "light",
     "isTransparent": false,
     "locale": "en"
@@ -85,7 +87,7 @@
     </script>
   </div>
   <!-- TradingView Widget END -->
-
+  
 </div>
 
 
