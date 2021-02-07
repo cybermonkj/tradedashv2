@@ -4,7 +4,7 @@
             
 <div class="main-panel">
     <div class="content">
-        @php($breadcome = 'Live Trader (Beta)')
+        @php($breadcome = 'What we are currently Trading (Live)')
         @include('user.atlantis.main_bar')
         <div class="page-inner mt--5">
             @include('user.atlantis.overview')
@@ -14,7 +14,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <style type="text/css">
+                                {{-- <style type="text/css">
                                     /* .toast {display: none;}
                                    */
                                     /* Smartphone Portrait and Landscape */
@@ -50,7 +50,7 @@
 
                         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
-                            <img src="..." class="rounded mr-2" alt="...">
+                            <img src="logo.svg" class="rounded mr-2" alt="...">
                             <strong class="mr-auto">Disabled on Mobile</strong>
                             <small>1 mins ago</small>
                             <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
@@ -62,10 +62,25 @@
                             </div>
                         </div>
 
-
+ --}}
 
 <!-- end of chart -->
-
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <div class="tradingview-widget-copyright"><a href="#/" rel="noopener" target="_blank"><span class="blue-text">TSLA Profile</span></a> Featured Trade: Tesla</div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-profile.js" async>
+    {
+    "symbol": "NASDAQ:TSLA",
+    "width": "100%",
+    "height": "100%",
+    "colorTheme": "light",
+    "isTransparent": false,
+    "locale": "en"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
 
 
 
