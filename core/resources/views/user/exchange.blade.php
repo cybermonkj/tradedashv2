@@ -7,11 +7,11 @@
     <div class="content">
         @php($breadcome = 'Trade (Live)')
         @include('user.atlantis.main_bar')
-        <div class="page-inner mt--5">
+        {{-- <div class="page-inner mt--5">
             @include('user.atlantis.overview')
             <div id="prnt"></div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12"> --}}
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
