@@ -21,7 +21,7 @@
                         {{-- <div class="card-body">   --}}
 
 <div class="mobileHide" style="margin-left:20" width="100%" scrolling="yes">
-    <iframe src="https://dash.tradepander.com/exchange/" name="Trader" title="Exchanger" frameborder="0" style="display: block; border: none; height: auto; width: auto;"></iframe>
+    <iframe src="https://dash.tradepander.com/exchange/" name="exhange" title="Exchanger" frameborder="0" style="display: block; border: none; height: auto; width: auto;"></iframe>
         </div>
     </div>
 </div> 
