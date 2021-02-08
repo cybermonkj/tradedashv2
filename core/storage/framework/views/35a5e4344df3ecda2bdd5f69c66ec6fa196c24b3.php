@@ -225,7 +225,7 @@
 						<li class="nav-item">
 							<a href="/<?php echo e($user->username); ?>/investments">
 								<i class="fab fa-accusoft"></i>
-								<p>Investments</p>
+								<p>My investments</p>
 							</a>							
 						</li>
 						<li class="nav-item">
@@ -253,9 +253,9 @@
 							</a>							
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="/<?php echo e($user->username); ?>/trade">
 								<i class="fab fa-affiliatetheme"></i>
-								<p>Trader/ICO (Beta)</p>
+								<p>Trader (Beta)</p>
 							</a>							
 						</li>
 						<li class="nav-item">
