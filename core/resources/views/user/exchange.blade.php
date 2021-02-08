@@ -19,8 +19,25 @@
                             </div>
                         </div> --}}
                                 <div class="card-body">  
-                                        <div class="mobileHide" style="margin-left:20" width="60%" scrolling="no">
-                                            <iframe src="https://dash.tradepander.com/exchange/" name="Exchange" title="Exchange" frameborder="0" style="display: block; border: none; height: 76vh; width: 80vw;"></iframe>
+                                        <div class="mobileHide" width="100%" scrolling="no">
+                                            <iframe 
+                                            src="https://dash.tradepander.com/exchange/" 
+                                            name="Exchange" 
+                                            title="Exchange" 
+                                            frameborder="0" 
+                                            style="display: block; border: none; height: 76vh; width: 80vw;" 
+                                            allowpaymentrequest= "true"
+                                            scrolling="no"
+                                            width="100%"
+                                            height="100%"
+                                            loading="eager"
+                                            allowfullscreen="true"
+
+
+                                            >
+                                            
+                                        </iframe>
+                                            
                                                 </div>
                                             </div>
                                         </div> 
