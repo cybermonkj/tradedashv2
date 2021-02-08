@@ -223,7 +223,7 @@
 						<li class="nav-item">
 							<a href="/{{$user->username}}/investments">
 								<i class="fab fa-accusoft"></i>
-								<p>Investments</p>
+								<p>My investments</p>
 							</a>							
 						</li>
 						<li class="nav-item">
