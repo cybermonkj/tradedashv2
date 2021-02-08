@@ -5,7 +5,7 @@
 
 <div class="main-panel">
     <div class="content">
-        @php($breadcome = 'Trade (Live)')
+        @php($breadcome = 'Exchange (Live)')
         @include('user.atlantis.main_bar')
         {{-- <div class="page-inner mt--5">
             @include('user.atlantis.overview')
@@ -20,11 +20,11 @@
                         </div>
                         {{-- <div class="card-body">   --}}
 
-<div class="mobileHide" style="margin-left:20" width="100%" scrolling="yes">
-    <iframe src="https://dash.tradepander.com/exchange/" name="exhange" title="Exchanger" frameborder="0" style="display: block; border: none; height: auto; width: auto;"></iframe>
-        </div>
-    </div>
-</div> 
+                                                <div class="mobileHide" style="margin-left:20" width="100%" scrolling="yes">
+                                                    <iframe src="https://dash.tradepander.com/exchange/" name="exhange" title="Exchanger" frameborder="0" style="display: block; border: none; height: auto; width: auto;"></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div> 
 
                                             </div>
                                         </div>
