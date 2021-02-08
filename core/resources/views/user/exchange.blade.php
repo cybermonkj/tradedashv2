@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="card-head-row">
-                                <div class="card-title">{{ __('This Weeks Trade') }}</div>                                       
+                                <div class="card-title">{{ __('Crypto Exhange wallet') }}</div>                                       
                             </div>
                         </div>
                                 <div class="card-body">  
