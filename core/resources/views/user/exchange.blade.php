@@ -63,8 +63,7 @@
 
 <div class="iframe-container">
     <iframe 
-    width="1425" 
-    height="559"  
+    width="100%"  
     name="Exchange" 
     title="Exchange" 
     frameborder="0"
