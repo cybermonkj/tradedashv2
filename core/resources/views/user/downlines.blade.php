@@ -81,8 +81,8 @@
                                                                     <td>{{substr($ref_d->created_at,0,10)}}</td>                     
                                                                 </tr>
                                                                  @php($rsum += $activity->amount)
-                                                            {{--@endforeach
-                                                        @else
+                                                        @endforeach
+                                                        {{--@else
                                                             <tr>                                                    
                                                                 <td colspan="4">Referral Data does not exist</td>                     
                                                             </tr> 
