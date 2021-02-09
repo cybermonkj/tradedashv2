@@ -10,13 +10,14 @@
                 .iframe-container {
                 position: relative;
                 overflow: hidden;
-                padding-top: 56.25%;
+                padding-top: 66.25%;
                 }
                 .iframe-container iframe {
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
+                height: 1000;
                 border: 0;
                 }
              ::-webkit-scrollbar {
