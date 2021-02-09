@@ -14,10 +14,8 @@
                 }
                 .iframe-container iframe {
                 position: absolute;
-                top: 0;
-                left: 0;
+                overflow:hidden;
                 width: 100%;
-                height: 1000;
                 border: 0;
                 }
              ::-webkit-scrollbar {
@@ -74,7 +72,8 @@
 
 <div class="iframe-container">
     <iframe 
-    width="100%"  
+    width="100%" 
+    height="100%" 
     name="Exchange" 
     title="Exchange" 
     frameborder="0"
