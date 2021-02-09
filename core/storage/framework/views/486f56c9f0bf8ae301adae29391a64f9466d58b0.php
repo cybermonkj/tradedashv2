@@ -137,7 +137,18 @@
                         
                     </div>
 
-                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="card-title"> Other Packages you can Invest in</div>
+                                </div>
+                                <div class="card-body pb-0">
+                                    <?php echo $__env->make('user.inc.packages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                    
                     
