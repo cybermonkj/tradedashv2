@@ -15,10 +15,10 @@
                                     <div class="card-head-row">
                                         <div class="card-title">                                            
                                             {{ __('Your Referral link:') }}
-                                            <a href="/register/{{$user->username}}" class="text-danger" id="reflnk" >
-                                                <small>{{env('APP_URL').__('/register/').$user->username}}</small>
+                                           
                                                 <div class="card-body pb-5">
                                                     <a href="/register/{{$user->username}}" class="text-danger" id="reflnk" >
+                                                        <small>{{env('APP_URL').__('/register/').$user->username}}</small>
                                                     </div>
                                                     
                                             </a>                                            
