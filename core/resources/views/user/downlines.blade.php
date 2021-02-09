@@ -88,7 +88,7 @@
                                                             </tr>
                                                         @endif
                                                     </tbody>
-                                                    <tfoot>
+                                                    {{-- <tfoot>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
                                                            <th>{{ __('Name') }}</th> 
@@ -97,7 +97,7 @@
                                                             <th>{{ __('Investment') }}</th> 
                                                             <th>{{ __('Date Registered') }}</th>   
                                                         </tr>
-                                                    </tfoot>
+                                                    </tfoot> --}}
                                                 </table>
                                                 <br><br>
                                             </div>
