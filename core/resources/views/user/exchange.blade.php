@@ -57,7 +57,9 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				...
+				... some help text
+                Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+
 
                 
 			</div>
