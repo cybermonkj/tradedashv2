@@ -14,9 +14,15 @@
                                 <div class="card-header">
                                     <div class="card-head-row">
                                         <div class="card-title">                                            
-                                            {{ __('Referral link:') }}
+                                            {{ __('Your Referral link:') }}
                                             <a href="/register/{{$user->username}}" class="text-danger" id="reflnk" >
                                                 <small>{{env('APP_URL').__('/register/').$user->username}}</small>
+                                                <div class="alert alert-primary" role="alert">
+                                                    Note: Refferals only apply if user subscirbes to a referall plan
+                                                    </div>
+                                                <div class="alert alert-default" role="alert">
+                                                    Referalls are checked automatically against fraud by our security systems. Any form of Abuse woul breach our terms of use. 
+                                                    </div>
                                             </a>                                            
                                         </div>                                       
                                     </div>
