@@ -1033,7 +1033,7 @@ class userController extends Controller
           Mail::send('mail.wd_notification', ['md' => $maildata], function($msg) use ($maildata){
               $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
               $msg->to($maildata['email']);
-              $msg->subject('User Withdrawal Notification');
+              $msg->subject('Withdrawal Notification');
           });
 
           $maildata = ['email' => $user->email, 'username' => $user->username];
@@ -1451,7 +1451,7 @@ class userController extends Controller
           $rc->save();
           
           $act = new activities;
-          $act->action = "User send fund of ".$user->currency.intval($req->input('s_amt'))." to ".trim($req->input('usn'));
+          $act->action = "User sent ".$user->currency.intval($req->input('s_amt'))." to ".trim($req->input('usn'));
           $act->user_id = $user->id;
           $act->save();
           
@@ -1638,7 +1638,7 @@ class userController extends Controller
       $cost = (FLOAT) $req->input('amount');
       $currency_base = 'USD';
       $currency_received = $req['coin'];
-      $extra_details = "Maxprofit";
+      $extra_details = "Tradepander";
 
       $transaction = \Coinpayments::createTransactionSimple($cost, $currency_base, $currency_received, $extra_details);
       $transaction = json_decode($transaction);
@@ -1712,7 +1712,7 @@ class userController extends Controller
     catch (IpnIncompleteException $e)
     {
       return back()->With([
-        'toast_msg' => 'Deposit rejected or not valid', 
+        'toast_msg' => 'Deposit rejected or invalid', 
         'toast_type' => 'err'
       ]);  
     }
@@ -1818,7 +1818,7 @@ class userController extends Controller
         Mail::send('mail.user_tickect_msg', ['md' => $maildata], function($msg) use ($maildata){
             $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
             $msg->to(env('SUPPORT_EMAIL'));
-            $msg->subject('Ticket Message');
+            $msg->subject('Support Message');
         });
 
         // $tickets = ticket::find($user->id);
@@ -2020,17 +2020,17 @@ class userController extends Controller
 
     $maildata = ['email' => $user->email, 'username' => $user->username];
 
-    Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-        $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-        $msg->to($maildata['email']);
-        $msg->subject('User Deposit Notification');
-    });
+    // Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+    //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+    //     $msg->to($maildata['email']);
+    //     $msg->subject('User Deposit Notification');
+    // });
 
-    Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-        $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-        $msg->to(env('SUPPORT_EMAIL'));
-        $msg->subject('User Deposit Notification');
-    });
+    // Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+    //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+    //     $msg->to(env('SUPPORT_EMAIL'));
+    //     $msg->subject('User Deposit Notification');
+    // });
     
     return redirect()->route('pm.index')->with([
       'toast_msg' => 'Deposit successful!',
@@ -2181,12 +2181,12 @@ class userController extends Controller
 
           $kyc->save();
 
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to(env('SUPPORT_EMAIL'));
-              $msg->subject('Know Your Customer');
-          });
+          // $maildata = ['email' => $user->email, 'username' => $user->username];
+          // Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
+          //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          //     $msg->to(env('SUPPORT_EMAIL'));
+          //     $msg->subject('Know Your Customer');
+          // });
 
           return redirect()->back()->with([
             'toast_msg' => 'File Uplaoded successfully. Tradepander will verify your documents shortly.',
@@ -2221,12 +2221,12 @@ class userController extends Controller
           $kyc->address_proof = $user->username."_utility_doc.jpg";
 
           $kyc->save();
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to(env('SUPPORT_EMAIL'));
-              $msg->subject('Know Your Customer');
-          });
+          // $maildata = ['email' => $user->email, 'username' => $user->username];
+          // Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
+          //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          //     $msg->to(env('SUPPORT_EMAIL'));
+          //     $msg->subject('Know Your Customer');
+          // });
 
           return redirect()->back()->with([
             'toast_msg' => 'File Uplaoded successfully. Admin will verify your documents shortly.',
