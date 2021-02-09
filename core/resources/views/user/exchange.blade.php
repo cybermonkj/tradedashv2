@@ -35,9 +35,7 @@
                             </div>
                         </div> --}}
                         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-	How it Works
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -63,6 +61,15 @@
 
                                 {{-- <div class="card-body">   --}}
                                         <div>
+
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                                How it Works
+                                            </button>
+
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                                Crypto to Fiat
+                                            </button>
+
                                             <iframe 
                                             src="https://dash.tradepander.com/exchange/" 
                                             name="Exchange" 
