@@ -68,11 +68,11 @@
                                             name="Exchange" 
                                             title="Exchange" 
                                              frameborder="0" 
-                                            style="display: block; border: none; height: 100%; width: 100%" 
+                                            style="display: block; border: none;  width: 100%" 
                                             {{--allowpaymentrequest= "true" --}}
                                             scrolling="yes"
                                             width="100%"
-                                            {{--height="100%" --}}
+                                            height="1000"
                                             loading="eager"
                                             allowfullscreen="true"
                                             >
