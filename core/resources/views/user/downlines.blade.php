@@ -83,9 +83,9 @@
                                                                 @php($rsum += $activity->amount)
                                                             @endforeach
                                                         @else
-                                                            <tr>                                                    
+                                                            {{-- <tr>                                                    
                                                                 <td colspan="4">Referral Data does not exist</td>                     
-                                                            </tr>
+                                                            </tr> --}}
                                                         @endif
                                                     </tbody>
                                                     {{-- <tfoot>
