@@ -126,6 +126,7 @@
 										<h1>{{$settings->currency.' '. $total_wd}}</h1>
 									</div>
 								</div>
+								
 								<div class="card-body pb-0">									
 									<div class="pull-in">
 										<canvas id="wd_stats"></canvas>
@@ -136,7 +137,7 @@
 								<div class="card-body pb-0">
 									<div class="px-2 pb-2 pb-md-0 text-center">
 										<div id="circles-logs"></div>
-										<h6 class="fw-bold mt-3 mb-0">{{ __('My Total Actions') }}</h6>
+										<h6 class="fw-bold mt-3 mb-0">{{ __('Action History') }}</h6>
 										<br>
 									</div>									
 								</div>

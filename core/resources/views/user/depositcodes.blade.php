@@ -156,7 +156,32 @@ If the vendor you contacted is not responsive, kindly check others on the list
                     <a href="https://wa.link/5kmsdz" class="btn btn-primary">Contact</a>
                 </div>
             </div>
-
+            <div class="mapcontainer">
+                <div id="map-example" class="vmap" style="height: 450px"></div>
+            </div>
+          <script>  $('#map-example').vectorMap(
+                {
+                    map: 'world_en',
+                    backgroundColor: 'transparent',
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    color: '#e4e4e4',
+                    enableZoom: true,
+                    hoverColor: '#35cd3a',
+                    hoverOpacity: null,
+                    normalizeFunction: 'linear',
+                    scaleColors: ['#b6d6ff', '#005ace'],
+                    selectedColor: '#35cd3a',
+                    selectedRegions: ['ID', 'RU', 'US', 'AU', 'NG', 'GH', 'SA'],
+                    showTooltip: true,
+                    onRegionClick: function(element, code, region)
+                    {
+                        return false;
+                    },
+                    onResize: function (element, width, height) {
+                    console.log('Map Size: ' +  width + 'x' +  height);
+                },
+            }); </script>
 </div>
 
 
