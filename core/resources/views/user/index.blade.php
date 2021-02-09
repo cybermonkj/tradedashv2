@@ -8,7 +8,10 @@
 				<div class="page-inner mt--5">
 
 					@include('user.atlantis.overview')
-	
+					<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to investments are subscribe to a plan ">How to invest</a>
+					$('.popover-dismiss').popover({
+						trigger: 'focus'
+					})
 										<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
