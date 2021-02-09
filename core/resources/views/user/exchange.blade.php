@@ -9,7 +9,6 @@
         <style>
                 .iframe-container {
                 position: relative;
-                overflow: hidden;
                 padding-top: 66.25%;
                 }
                 .iframe-container iframe {
