@@ -5,6 +5,22 @@
 
 <div class="main-panel">
     <div class="content">
+
+        <style>
+                .iframe-container {
+                position: relative;
+                overflow: hidden;
+                padding-top: 56.25%;
+                }
+                .iframe-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+                }
+        </style>
         {{-- @php($breadcome = 'Crypto Exhange wallet ()')
         @include('user.atlantis.main_bar')
         {{-- <div class="page-inner mt--5">
@@ -18,8 +34,40 @@
                                 <div class="card-title">{{ __('Crypto Exhange wallet') }}</div>                                       
                             </div>
                         </div> --}}
-                                <div class="card-body">  
-                                        <div class="mobileHide" width="100%" scrolling="no">
+                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+	How it Works
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLongTitle">Welcome to Tradepander Crypto wallet & Exchange</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				...
+
+                
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				{{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="iframe-container">
+    <iframe width="1425" height="559" src="https://dash.tradepander.com/exchange/"></iframe>
+  </div>
+
+                                {{-- <div class="card-body">   --}}
+                                        {{-- <div class="mobileHide" width="100%" scrolling="no">
                                             <iframe 
                                             src="https://dash.tradepander.com/exchange/" 
                                             name="Exchange" 
@@ -27,7 +75,7 @@
                                             frameborder="0" 
                                             style="display: block; border: none; height: 76vh; width: 80vw;" 
                                             allowpaymentrequest= "true"
-                                            scrolling="no"
+                                            scrolling="yes"
                                             width="100%"
                                             height="100%"
                                             loading="eager"
@@ -37,7 +85,7 @@
                                             
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>  --}}
 
                                             </div>
                                         </div>

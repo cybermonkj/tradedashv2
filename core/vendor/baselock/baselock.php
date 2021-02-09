@@ -919,7 +919,7 @@ class userController extends Controller
           });
 
           $wd_fee = env("WD_FEE")*100;
-          Session::put('status', 'Wallet Withdrawal Successful! Note: Withdrawal attracts a '.$wd_fee.'% processing fee');
+          Session::put('status', 'Wallet Withdrawal Successful! Note: Withdrawal attracts a '.$wd_fee.'% processing fee and is checked against fraud');
           Session::put('msgType', "suc");
           return back();
         }

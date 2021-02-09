@@ -137,18 +137,18 @@
                         
                     </div>
 
-                    {{-- <div class="row">
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <div class="card-title"> Other Available Packages</div>
+                                    <div class="card-title"> Other Packages you can Invest in</div>
                                 </div>
                                 <div class="card-body pb-0">
                                     @include('user.inc.packages')
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
 
                    
                     

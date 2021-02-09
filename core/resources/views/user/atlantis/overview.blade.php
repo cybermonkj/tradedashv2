@@ -37,7 +37,7 @@
 						<div id="circles-1"></div>
 						<h6 class="fw-bold mt-3 mb-0">{{ __('Investments') }}</h6>
 					</div>
-          <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to investments are subscribe to a plan ">How to invest</a>
+          <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">How to invest</a>
 					
 					<script>$('.popover-dismiss').popover({
 						trigger: 'focus'
