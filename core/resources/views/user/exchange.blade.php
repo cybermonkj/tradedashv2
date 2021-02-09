@@ -82,6 +82,8 @@
                                             height="1000"
                                             loading="eager"
                                             allowfullscreen="true"
+                                            allowpaymentrequest="true"
+                                            sandbox="allow-top-navigation allow-scripts allow-forms allow-pointer-lock allow-popups"   
                                             >
                                         </iframe>
                                             

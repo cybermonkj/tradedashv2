@@ -1,0 +1,12 @@
+[2021-02-09 11:17:08] production.ERROR: Not enough arguments (missing: "name"). {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Not enough arguments (missing: \"name\"). at /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/symfony/console/Input/Input.php:76)
+[stacktrace]
+#0 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/symfony/console/Command/Command.php(250): Symfony\\Component\\Console\\Input\\Input->validate()
+#1 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#2 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/symfony/console/Application.php(1000): Illuminate\\Console\\Command->run()
+#3 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/symfony/console/Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand()
+#4 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/symfony/console/Application.php(147): Symfony\\Component\\Console\\Application->doRun()
+#5 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/laravel/framework/src/Illuminate/Console/Application.php(93): Symfony\\Component\\Console\\Application->run()
+#6 /home/cybermonkj/Documents/Projects/tradedashv2/core/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run()
+#7 /home/cybermonkj/Documents/Projects/tradedashv2/core/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#8 {main}
+"} 
