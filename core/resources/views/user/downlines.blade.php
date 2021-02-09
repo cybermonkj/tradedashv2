@@ -48,12 +48,13 @@
                                                     <thead>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                            <th>{{ __('Name') }}</th>
+                                                            {{-- <th>{{ __('Name') }}</th> --}}
                                                             <th>{{ __('Username') }}</th>
+                                                            <th>{{ __('Level') }}</th>
 															<th>{{ __('Amount Earned') }}</th>
                                                             <th>{{ __('Investment') }}</th>
                                                             <th>{{ __('Date Registered') }}</th>
-                                                            <th>{{ __('Level') }}</th>
+                                                            
                                                               
                                                         </tr>
                                                     </thead>
@@ -65,9 +66,9 @@
                                                                     $ref_d = App\User::find($activity->user_id);                
                                                                 ?>
                                                                 <tr>                                                            
-                                                                    <td>
+                                                                    {{-- <td>
                                                                         {{$ref_d->firstname}} {{$ref_d->lastname}}
-                                                                    </td>
+                                                                    </td> --}}
                                                                     <td>{{$ref_d->username}}</td>
                                                                     <td>{{$activity->level}}</td>
                                                                     <td>{{ env('CURRENCY').' '.$activity->amount}}</td>
@@ -83,17 +84,17 @@
                                                             @endforeach
                                                         @else
                                                             <tr>                                                    
-                                                                <td colspan="4">No data to Display</td>                     
+                                                                <td colspan="4">Referral Data does not exist</td>                     
                                                             </tr>
                                                         @endif
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                           <!-- <th>{{ __('Name') }}</th> -->
+                                                           <th>{{ __('Name') }}</th> 
                                                             <th>{{ __('Username') }}</th>
                                                             <th>{{ __('Amount Earned') }}</th>
-                                                           <!-- <th>{{ __('Investment') }}</th> -->
+                                                            <th>{{ __('Investment') }}</th> 
                                                             <th>{{ __('Date Registered') }}</th>   
                                                         </tr>
                                                     </tfoot>
