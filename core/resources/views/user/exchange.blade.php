@@ -19,6 +19,14 @@
                 width: 100%;
                 border: 0;
                 }
+             ::-webkit-scrollbar {
+                width: 0px;  /* Remove scrollbar space */
+                background: transparent;  /* Optional: just make scrollbar invisible */
+            }
+            /* Optional: show position indicator in red */
+            ::-webkit-scrollbar-thumb {
+                background: #FF0000;
+}
         </style>
         {{-- @php($breadcome = 'Crypto Exhange wallet ()')
         @include('user.atlantis.main_bar')
