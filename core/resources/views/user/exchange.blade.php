@@ -63,7 +63,16 @@
 </div>
 
 <div class="iframe-container">
-    <iframe width="1425" height="559" src="https://dash.tradepander.com/exchange/"></iframe>
+    <iframe 
+    width="1425" 
+    height="559"  
+    name="Exchange" 
+    title="Exchange" 
+    frameborder="0"
+    scrolling="yes"
+    loading="eager"
+    allowfullscreen="true"
+    src="https://dash.tradepander.com/exchange/"></iframe>
   </div>
 
                                 {{-- <div class="card-body">   --}}
@@ -75,7 +84,7 @@
                                             frameborder="0" 
                                             style="display: block; border: none; height: 76vh; width: 80vw;" 
                                             allowpaymentrequest= "true"
-                                            scrolling="yes"
+                                            
                                             width="100%"
                                             height="100%"
                                             loading="eager"
