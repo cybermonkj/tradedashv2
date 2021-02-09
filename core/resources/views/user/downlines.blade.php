@@ -34,6 +34,12 @@
                                     <div class="card-title">{{ __('My Downlines') }}</div>
                                 </div>
                                 <div class="card-body pb-5">
+                                    <div class="alert alert-primary" role="alert">
+                                        Note: Refferals only apply if user subscirbes to a referall plan
+                                        </div>
+                                    <div class="alert alert-default" role="alert">
+                                        Referalls are checked automatically against fraud by our security systems. Any form of Abuse woul breach our terms of use. 
+                                        </div>
                                     <?php
                                         $ref_levels = App\ref_set::all();
                                         $rsum = 0;
@@ -43,12 +49,7 @@
                                                 $activities = App\ref::where('username', $user->username)->where('level', $ref_level->id)->orderby('id', 'asc')->get();
                                                 // $rsum += $activities
                                             ?>
-                                            <div class="alert alert-primary" role="alert">
-                                                Note: Refferals only apply if user subscirbes to a referall plan
-                                                </div>
-                                            <div class="alert alert-default" role="alert">
-                                                Referalls are checked automatically against fraud by our security systems. Any form of Abuse woul breach our terms of use. 
-                                                </div>
+                                            
                                             <div class="table-responsive mt-5">                                        
                                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                                     <thead>
