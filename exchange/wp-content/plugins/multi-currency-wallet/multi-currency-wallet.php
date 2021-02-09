@@ -1,18 +1,5 @@
 <?php
-/**
- * Plugin Name: Multi Currency Wallet
- * Plugin URI: https://plugins.wordpress.org/multi-currency-wallet
- * Description: Simplest Multi-currency wallet for WordPress.
- * Version: 1.1.1
- * Requires at least: 5.4
- * Requires PHP: 5.6
- * Author: Noxonsu
- * Author URI: https://profiles.wordpress.org/noxonsu
- * Text Domain: multi-currency-wallet
- * Domain Path: /lang
- * License: GNU General Public License version 3.0
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- */
+
 
 /* If this file is called directly, abort. */
 defined( 'ABSPATH' ) || die( 'Soarele luceste!' );
