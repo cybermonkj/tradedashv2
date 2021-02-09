@@ -6,7 +6,7 @@
 <div class="main-panel">
     <div class="content">
 
-        <style>
+        {{-- <style>
                 .iframe-container {
                 position: relative;
                 overflow: hidden;
@@ -20,7 +20,7 @@
                 height: 100%;
                 border: 0;
                 }
-        </style>
+        </style> --}}
         {{-- @php($breadcome = 'Crypto Exhange wallet ()')
         @include('user.atlantis.main_bar')
         {{-- <div class="page-inner mt--5">
