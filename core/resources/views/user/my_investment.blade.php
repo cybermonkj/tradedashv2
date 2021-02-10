@@ -144,6 +144,7 @@
                                     <div class="card-title"> Other Packages you can Invest in</div>
                                 </div>
                                 <div class="card-body pb-0">
+                                    
                                     @include('user.inc.packages')
                                 </div>
                             </div>

@@ -311,13 +311,21 @@
                                 </div>
                             </div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-head-row">
-                                <div class="card-title">{{ __('Other Watches') }}</div>                                       
+
+
+                            <div class="card text-center">
+                                <div class="card-header">
+                                    Want a full experience
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Trade watcher</h5>
+                                    <p class="card-text">Trade watcher is still on beta and Might be 10-15 mins late, and you might experience scattered appearances on Mobile.</p>
+                                    <a href="#" class="btn btn-primary">Acknowledge</a>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    2 days ago
                                 </div>
                             </div>
-                        <div class="card-body "> 
 
 
 {{-- 

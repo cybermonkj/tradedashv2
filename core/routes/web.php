@@ -55,6 +55,10 @@ Route::get('/{username}/exchange', function () {
     return view('user.exchange');
 })->middleware('auth');
 
+Route::get('/{username}/buy-code', function () {
+    return view('user.depositcodes');
+})->middleware('auth');
+
 Route::get('/{username}/trade', function () {
     return view('user.trade');
 })->middleware('auth');
