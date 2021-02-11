@@ -227,7 +227,7 @@ msgstr ""
 
 #: includes/enqueue_scripts/wp_enqueue_scripts.php:138
 msgid ""
-"Please wait while the application is loading,\\n it may take one minute..."
+"Please wait while crypto/exchange is loading,\\n it may take one minute..."
 msgstr ""
 
 #: includes/functions.php:156
@@ -247,7 +247,7 @@ msgid "Multi Currency Wallet Pro"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://swaponline.io"
+msgid "https://swaponline123.io"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -259,5 +259,5 @@ msgid "NoxonThemes"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://themeforest.net/user/noxonthemes"
+msgid "https://themeforest.net/user/noxontheme123s"
 msgstr ""

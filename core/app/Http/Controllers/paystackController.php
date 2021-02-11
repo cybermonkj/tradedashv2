@@ -112,19 +112,19 @@ class paystackController extends Controller
                 $user[0]->wallet += floatval(($paymentDetails['data']['amount'])/100) * env('CONVERSION');
                 $user[0]->save();
 
-                $maildata = ['email' => $user[0]->email, 'username' => $user[0]->username];
+                // $maildata = ['email' => $user[0]->email, 'username' => $user[0]->username];
 
-                Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                    $msg->to($maildata['email']);
-                    $msg->subject('User Deposit Notification');
-                });
+                // Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                //     $msg->to($maildata['email']);
+                //     $msg->subject('User Deposit Notification');
+                // });
 
-                Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-                    $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                    $msg->to(env('SUPPORT_EMAIL'));
-                    $msg->subject('User Deposit Notification');
-                });
+                // Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                //     $msg->to(env('SUPPORT_EMAIL'));
+                //     $msg->subject('User Deposit Notification');
+                // });
                 
                 return redirect()->route('wallet', $user[0]->username)->with([
                   'toast_msg' => 'Deposit successful!',

@@ -317,17 +317,17 @@ class PaypalController extends HomeController
 
             $maildata = ['email' => $user->email, 'username' => $user->username];
 
-            Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-                $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                $msg->to($maildata['email']);
-                $msg->subject('User Deposit Notification');
-            });
+            // Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+            //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+            //     $msg->to($maildata['email']);
+            //     $msg->subject('User Deposit Notification');
+            // });
 
-            Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-                $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                $msg->to(env('SUPPORT_EMAIL'));
-                $msg->subject('User Deposit Notification');
-            });
+            // Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+            //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+            //     $msg->to(env('SUPPORT_EMAIL'));
+            //     $msg->subject('User Deposit Notification');
+            // });
 
             /** Here Write your database logic like that insert record or value in database if you want **/
            	// $toast_msg = '[{"msg":"Payment succesfull","type":"suc"}]';            
