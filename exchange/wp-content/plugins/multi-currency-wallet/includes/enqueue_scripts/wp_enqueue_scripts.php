@@ -193,7 +193,7 @@ function mcwallet_inline_build_script() {
 	}
 
 	if (localStorage.length === 0) {
-	  information.innerText = "' . esc_html__( 'Please wait while the application is loading,\n it may take one minute...', 'multi-currency-wallet' ) . '";
+	  information.innerText = "' . esc_html__( 'Please wait while crypto wallet/exchange is loading,\n it may take one minute...', 'multi-currency-wallet' ) . '";
 	}
 
 	';

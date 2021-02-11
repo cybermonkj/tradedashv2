@@ -36,15 +36,15 @@ do_action( 'mcwallet_before_template' );
 			</div>
       <div class="mb-4 show-on-fail-ls d-none" id="onFailLocalStorageMessage">
         <span>Not every function works In this window, please open new tab.
-          If the error will repeat please contact admin
+          If the error persists please contact admin
           <br />
-          <a href="https://t.me/sashanoxon">
-            https://t.me/sashanoxon
+          <a href="mailto:support@tradepander.com">
+            support@tradepander.com
           </a>
         </span>
         <button class="btn btn-primary btc-open-in-new-tab">
           <a href="https://wallet.wpmix.net" id="onFailLocalStorageLink" target="_blank">
-            Open App in new tab
+            Open wallet in new tab
           </a>
         </button>
       </div>
