@@ -51,6 +51,18 @@ Route::get('/{username}/profile', function () {
 })->middleware('auth');
 
 
+Route::get('/{username}/exchange', function () {
+    return view('user.exchange');
+})->middleware('auth');
+
+Route::get('/{username}/buycode', function () {
+    return view('user.depositcodes');
+})->middleware('auth');
+
+Route::get('/{username}/trade', function () {
+    return view('user.trade');
+})->middleware('auth');
+
 Route::get('/logout', function () {
 	Auth::logout();
     Session::flush();

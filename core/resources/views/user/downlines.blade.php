@@ -14,9 +14,13 @@
                                 <div class="card-header">
                                     <div class="card-head-row">
                                         <div class="card-title">                                            
-                                            {{ __('Referral link:') }}
-                                            <a href="/register/{{$user->username}}" class="text-danger" id="reflnk" >
-                                                <small>{{env('APP_URL').__('/register/').$user->username}}</small>
+                                            {{ __('Your Referral link:') }}
+                                           
+                                                <div class="card-body pb-5">
+                                                    <a href="/register/{{$user->username}}" class="text-danger" id="reflnk" >
+                                                        <small>{{env('APP_URL').__('/register/').$user->username}}</small>
+                                                    </div>
+                                                    
                                             </a>                                            
                                         </div>                                       
                                     </div>
@@ -33,6 +37,12 @@
                                     <div class="card-title">{{ __('My Downlines') }}</div>
                                 </div>
                                 <div class="card-body pb-5">
+                                    <div class="alert alert-primary" role="alert">
+                                        Note: Referrals only apply if the referred user subscirbes to an Investment plan
+                                        </div>
+                                    <div class="alert alert-default" role="alert">
+                                       Every referral is checked automatically against fraud by our security systems. Any form of Abuse would breach our terms of use. 
+                                        </div>
                                     <?php
                                         $ref_levels = App\ref_set::all();
                                         $rsum = 0;
@@ -48,12 +58,13 @@
                                                     <thead>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                            <th>{{ __('Name') }}</th>
+                                                            {{-- <th>{{ __('Name') }}</th> --}}
                                                             <th>{{ __('Username') }}</th>
+                                                            <th>{{ __('Level') }}</th>
 															<th>{{ __('Amount Earned') }}</th>
                                                             <th>{{ __('Investment') }}</th>
                                                             <th>{{ __('Date Registered') }}</th>
-                                                            <th>{{ __('Level') }}</th>
+                                                            
                                                               
                                                         </tr>
                                                     </thead>
@@ -65,9 +76,9 @@
                                                                     $ref_d = App\User::find($activity->user_id);                
                                                                 ?>
                                                                 <tr>                                                            
-                                                                    <td>
+                                                                    {{-- <td>
                                                                         {{$ref_d->firstname}} {{$ref_d->lastname}}
-                                                                    </td>
+                                                                    </td> --}}
                                                                     <td>{{$ref_d->username}}</td>
                                                                     <td>{{$activity->level}}</td>
                                                                     <td>{{ env('CURRENCY').' '.$activity->amount}}</td>
@@ -79,24 +90,24 @@
                                                                     </td>                                                            
                                                                     <td>{{substr($ref_d->created_at,0,10)}}</td>                     
                                                                 </tr>
-                                                                @php($rsum += $activity->amount)
+                                                                 @php($rsum += $activity->amount)
                                                             @endforeach
                                                         @else
                                                             <tr>                                                    
-                                                                <td colspan="4">No data to Display</td>                     
-                                                            </tr>
+                                                                {{-- <td colspan="4">Referral Data does not exist</td>                      --}}
+                                                            </tr> 
                                                         @endif
                                                     </tbody>
-                                                    <tfoot>
+                                                    {{-- <tfoot>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                           <!-- <th>{{ __('Name') }}</th> -->
+                                                           <th>{{ __('Name') }}</th> 
                                                             <th>{{ __('Username') }}</th>
                                                             <th>{{ __('Amount Earned') }}</th>
-                                                           <!-- <th>{{ __('Investment') }}</th> -->
+                                                            <th>{{ __('Investment') }}</th> 
                                                             <th>{{ __('Date Registered') }}</th>   
                                                         </tr>
-                                                    </tfoot>
+                                                    </tfoot> --}}
                                                 </table>
                                                 <br><br>
                                             </div>

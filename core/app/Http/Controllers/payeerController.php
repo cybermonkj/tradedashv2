@@ -114,11 +114,11 @@ class payeerController extends Controller
 
                     $maildata = ['email' => $user[0]->email, 'username' => $user[0]->username];
 
-                    Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-                        $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                        $msg->to($maildata['email']);
-                        $msg->subject('User Deposit Notification');
-                    });
+                    // Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+                    //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+                    //     $msg->to($maildata['email']);
+                    //     $msg->subject('User Deposit Notification');
+                    // });
 
                     Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
                         $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));

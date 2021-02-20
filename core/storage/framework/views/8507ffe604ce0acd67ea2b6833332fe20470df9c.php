@@ -17,10 +17,10 @@
         	<p>
         	   Hi, <b><?php echo e($md['username']); ?></b> your withdrawal request on <?php echo e(env('APP_URL')); ?> has been created successfully.
         	   <br>
-        	   Kindly attend to this withdrawal request.
+        	   Kindly wait while your withdrawal is bieng Processed by the System. Depending on what method you used withdrawal time may vary. Bank transactions shall be resolved within 24hours on bussines days.
         	</p>
         	<p>
-        		<i class="fa fa-certificate"><?php echo e($st->site_title); ?> Investment.
+        		<i class="fa fa-certificate"><?php echo e($st->site_title); ?> .
         	</p>
         </div>
     </div>

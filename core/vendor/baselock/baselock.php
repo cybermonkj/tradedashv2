@@ -644,12 +644,12 @@ class userController extends Controller
                 $msg->subject('User Investment');
             });
 
-            $maildata = ['email' => $user->email, 'username' => $user->username];
-            Mail::send('mail.admin_inv_notification', ['md' => $maildata], function($msg) use ($maildata){
-                $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-                $msg->to(env('SUPPORT_EMAIL'));
-                $msg->subject('User Investment');
-            });
+            // $maildata = ['email' => $user->email, 'username' => $user->username];
+            // Mail::send('mail.admin_inv_notification', ['md' => $maildata], function($msg) use ($maildata){
+            //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+            //     $msg->to(env('SUPPORT_EMAIL'));
+            //     $msg->subject('User Investment');
+            // });
 
             $act = new activities;
             $act->action = "User Invested ".$capital." in ".$pack->package_name." package";
@@ -752,7 +752,7 @@ class userController extends Controller
           if($req->input('amt') != $withdrawable)
           {
             return back()->with([
-              'toast_msg' => 'Invalid amount!',
+              'toast_msg' => 'Invalid amount! Please contact support for help',
               'toast_type' => 'err'
             ]);
           }
@@ -762,7 +762,7 @@ class userController extends Controller
           if($amt <= 0)
           {
             return back()->with([
-              'toast_msg' => 'Invalid amount/Package Expired!',
+              'toast_msg' => 'Invalid amount/Package Expired! Please contact support',
               'toast_type' => 'err'
             ]);
           }
@@ -815,7 +815,7 @@ class userController extends Controller
         }
         catch(\Exception $e)
         {
-          Session::put('status', 'Error submitting your withdrawal');
+          Session::put('status', 'Check your current balance');
           Session::put('msgType', "err");
           return back();
         }
@@ -919,7 +919,7 @@ class userController extends Controller
           });
 
           $wd_fee = env("WD_FEE")*100;
-          Session::put('status', 'Wallet Withdrawal Successful! Note: Withdrawal attracts a '.$wd_fee.'% processing fee');
+          Session::put('status', 'Wallet Withdrawal Successful! Note: Withdrawal attracts a '.$wd_fee.'% processing fee and is checked against fraud');
           Session::put('msgType', "suc");
           return back();
         }
@@ -1933,7 +1933,7 @@ class userController extends Controller
         Mail::send('mail.user_tickect_msg', ['md' => $maildata], function($msg) use ($maildata){
             $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
             $msg->to(env('SUPPORT_EMAIL'));
-            $msg->subject('Ticket Message');
+            $msg->subject('Support Ticket Message');
         });
         
         return json_encode([
@@ -2008,19 +2008,19 @@ class userController extends Controller
     $user->wallet += floatval($req['PAYMENT_AMOUNT'] * env('CONVERSION'));
     $user->save();
 
-    $maildata = ['email' => $user->email, 'username' => $user->username];
+    // $maildata = ['email' => $user->email, 'username' => $user->username];
 
-    Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-        $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-        $msg->to($maildata['email']);
-        $msg->subject('User Deposit Notification');
-    });
+    // Mail::send('mail.user_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+    //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+    //     $msg->to($maildata['email']);
+    //     $msg->subject('User Deposit Notification');
+    // });
 
-    Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
-        $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-        $msg->to(env('SUPPORT_EMAIL'));
-        $msg->subject('User Deposit Notification');
-    });
+    // Mail::send('mail.admin_deposit_notification', ['md' => $maildata], function($msg) use ($maildata){
+    //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+    //     $msg->to(env('SUPPORT_EMAIL'));
+    //     $msg->subject('User Deposit Notification');
+    // });
     
     return redirect()->route('pm.index')->with([
       'toast_msg' => 'Deposit successful!',
@@ -2171,12 +2171,12 @@ class userController extends Controller
 
           $kyc->save();
 
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to(env('SUPPORT_EMAIL'));
-              $msg->subject('Know Your Customer');
-          });
+          // $maildata = ['email' => $user->email, 'username' => $user->username];
+          // Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
+          //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          //     $msg->to(env('SUPPORT_EMAIL'));
+          //     $msg->subject('Know Your Customer');
+          // });
 
           return redirect()->back()->with([
             'toast_msg' => 'KYC Document Uplaoded successfully. Admin will verify your documents shortly.',
@@ -2211,12 +2211,12 @@ class userController extends Controller
           $kyc->address_proof = $user->username."_utility_doc.jpg";
 
           $kyc->save();
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to(env('SUPPORT_EMAIL'));
-              $msg->subject('Know Your Customer');
-          });
+          // $maildata = ['email' => $user->email, 'username' => $user->username];
+          // Mail::send('mail.admin_kyc_not', ['md' => $maildata], function($msg) use ($maildata){
+          //     $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          //     $msg->to(env('SUPPORT_EMAIL'));
+          //     $msg->subject('Know Your Customer');
+          // });
 
           return redirect()->back()->with([
             'toast_msg' => 'File Uplaoded successfully. System will verify your documents shortly.',

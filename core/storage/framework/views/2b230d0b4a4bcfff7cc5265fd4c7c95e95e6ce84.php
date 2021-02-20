@@ -8,11 +8,11 @@
 				<div class="page-inner mt--5">
 
 					<?php echo $__env->make('user.atlantis.overview', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-	
+
 										<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://" rel="noopener" target="_blank"><span class="blue-text">Our Traders are currently watching</span></a></div>
+  <div class="tradingview-widget-copyright"><a href="https://dash.tradepander.com/{username}/trade" rel="noopener" target="_blank"><span class="blue-text">Our Traders are currently watching</span></a></div>
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
   {
   "symbols": [
@@ -84,14 +84,7 @@
 <!-- TradingView Widget END -->
 					
 					
-				<!-- MT5 Trader start -->
-            <!--  <div class="col p-4" style="margin-left:-30px">
-                <iframe src="https://trade.mql5.com/trade" name="WebTrader" title="Stock/Forex Trader" frameborder="0" style="display: block; border: none; height: 76vh; width: 80vw;"></iframe>
-                        </div> 
-                    
-                    </div>
-                </div>-->
-                <!-- end of chart -->
+
 					
 					
 					
@@ -133,6 +126,7 @@
 										<h1><?php echo e($settings->currency.' '. $total_wd); ?></h1>
 									</div>
 								</div>
+								
 								<div class="card-body pb-0">									
 									<div class="pull-in">
 										<canvas id="wd_stats"></canvas>
@@ -143,7 +137,7 @@
 								<div class="card-body pb-0">
 									<div class="px-2 pb-2 pb-md-0 text-center">
 										<div id="circles-logs"></div>
-										<h6 class="fw-bold mt-3 mb-0"><?php echo e(__('My Total Actions')); ?></h6>
+										<h6 class="fw-bold mt-3 mb-0"><?php echo e(__('Action History')); ?></h6>
 										<br>
 									</div>									
 								</div>

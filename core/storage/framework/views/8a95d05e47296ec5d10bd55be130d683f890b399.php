@@ -14,10 +14,14 @@
                                 <div class="card-header">
                                     <div class="card-head-row">
                                         <div class="card-title">                                            
-                                            <?php echo e(__('Referral link:')); ?>
+                                            <?php echo e(__('Your Referral link:')); ?>
 
-                                            <a href="/register/<?php echo e($user->username); ?>" class="text-danger" id="reflnk" >
-                                                <small><?php echo e(env('APP_URL').__('/register/').$user->username); ?></small>
+                                           
+                                                <div class="card-body pb-5">
+                                                    <a href="/register/<?php echo e($user->username); ?>" class="text-danger" id="reflnk" >
+                                                        <small><?php echo e(env('APP_URL').__('/register/').$user->username); ?></small>
+                                                    </div>
+                                                    
                                             </a>                                            
                                         </div>                                       
                                     </div>
@@ -34,6 +38,12 @@
                                     <div class="card-title"><?php echo e(__('My Downlines')); ?></div>
                                 </div>
                                 <div class="card-body pb-5">
+                                    <div class="alert alert-primary" role="alert">
+                                        Note: Referrals only apply if the referred user subscirbes to an Investment plan
+                                        </div>
+                                    <div class="alert alert-default" role="alert">
+                                       Every referral is checked automatically against fraud by our security systems. Any form of Abuse would breach our terms of use. 
+                                        </div>
                                     <?php
                                         $ref_levels = App\ref_set::all();
                                         $rsum = 0;
@@ -49,12 +59,13 @@
                                                     <thead>
                                                         <tr>
                                                             <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                            <th><?php echo e(__('Name')); ?></th>
+                                                            
                                                             <th><?php echo e(__('Username')); ?></th>
+                                                            <th><?php echo e(__('Level')); ?></th>
 															<th><?php echo e(__('Amount Earned')); ?></th>
                                                             <th><?php echo e(__('Investment')); ?></th>
                                                             <th><?php echo e(__('Date Registered')); ?></th>
-                                                            <th><?php echo e(__('Level')); ?></th>
+                                                            
                                                               
                                                         </tr>
                                                     </thead>
@@ -66,10 +77,7 @@
                                                                     $ref_d = App\User::find($activity->user_id);                
                                                                 ?>
                                                                 <tr>                                                            
-                                                                    <td>
-                                                                        <?php echo e($ref_d->firstname); ?> <?php echo e($ref_d->lastname); ?>
-
-                                                                    </td>
+                                                                    
                                                                     <td><?php echo e($ref_d->username); ?></td>
                                                                     <td><?php echo e($activity->level); ?></td>
                                                                     <td><?php echo e(env('CURRENCY').' '.$activity->amount); ?></td>
@@ -81,24 +89,15 @@
                                                                     </td>                                                            
                                                                     <td><?php echo e(substr($ref_d->created_at,0,10)); ?></td>                     
                                                                 </tr>
-                                                                <?php ($rsum += $activity->amount); ?>
+                                                                 <?php ($rsum += $activity->amount); ?>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         <?php else: ?>
                                                             <tr>                                                    
-                                                                <td colspan="4">No data to Display</td>                     
-                                                            </tr>
+                                                                
+                                                            </tr> 
                                                         <?php endif; ?>
                                                     </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <!-- <th data-field="state" data-checkbox="true"></th> -->
-                                                           <!-- <th><?php echo e(__('Name')); ?></th> -->
-                                                            <th><?php echo e(__('Username')); ?></th>
-                                                            <th><?php echo e(__('Amount Earned')); ?></th>
-                                                           <!-- <th><?php echo e(__('Investment')); ?></th> -->
-                                                            <th><?php echo e(__('Date Registered')); ?></th>   
-                                                        </tr>
-                                                    </tfoot>
+                                                    
                                                 </table>
                                                 <br><br>
                                             </div>
