@@ -824,7 +824,7 @@ class userController extends Controller
         }
         catch(\Exception $e)
         {
-          Session::put('status', 'Error submitting your withdrawal');
+          Session::put('status', 'Check your current balance');
           Session::put('msgType', "err");
           return back();
         }
