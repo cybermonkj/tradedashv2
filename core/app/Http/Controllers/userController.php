@@ -768,13 +768,13 @@ class userController extends Controller
           
           $amt = $withdrawable;
 
-          if($amt <= 0)
-          {
-            return back()->with([
-              'toast_msg' => 'Invalid amount/Package Expired!',
-              'toast_type' => 'err'
-            ]);
-          }
+          // if($amt <= 0)
+          // {
+          //   return back()->with([
+          //     'toast_msg' => 'Invalid amount/Package Expired! Please contact support',
+          //     'toast_type' => 'err'
+          //   ]);
+          // }
 
           if($ended == 'yes')
           {
