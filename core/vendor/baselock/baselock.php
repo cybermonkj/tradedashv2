@@ -749,23 +749,23 @@ class userController extends Controller
               $ended = "no";
           }
 
-          // if($req->input('amt') != $withdrawable)
-          // {
-          //   return back()->with([
-          //     'toast_msg' => 'Invalid amount! Please contact support for help',
-          //     'toast_type' => 'err'
-          //   ]);
-          // }
+          if($req->input('amt') != $withdrawable)
+          {
+            return back()->with([
+              'toast_msg' => 'Invalid amount! Please contact support for help',
+              'toast_type' => 'err'
+            ]);
+          }
           
-          // $amt = $withdrawable;
+          $amt = $withdrawable;
 
-          // if($amt <= 0)
-          // {
-          //   return back()->with([
-          //     'toast_msg' => 'Invalid amount/Package Expired! Please contact support',
-          //     'toast_type' => 'err'
-          //   ]);
-          // }
+          if($amt <= 0)
+          {
+            return back()->with([
+              'toast_msg' => 'Invalid amount/Package Expired! Please contact support',
+              'toast_type' => 'err'
+            ]);
+          }
 
           if($ended == 'yes')
           {
