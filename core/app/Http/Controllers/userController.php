@@ -758,15 +758,15 @@ class userController extends Controller
               $ended = "no";
           }
 
-          if($req->input('amt') != $withdrawable)
-          {
-            return back()->with([
-              'toast_msg' => 'Invalid amount!',
-              'toast_type' => 'err'
-            ]);
-          }
+          // if($req->input('amt') != $withdrawable)
+          // {
+          //   return back()->with([
+          //     'toast_msg' => 'Invalid amount!',
+          //     'toast_type' => 'err'
+          //   ]);
+          // }
           
-          $amt = $withdrawable;
+          // $amt = $withdrawable;
 
           // if($amt <= 0)
           // {
