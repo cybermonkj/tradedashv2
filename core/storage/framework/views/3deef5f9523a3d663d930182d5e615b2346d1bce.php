@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="card-body ">  
                                     <div class="table-responsive web-table">
-                                        <table class="display table table-hover" >
+                                        <table class="table display table-hover" >
                                             <thead>
                                                 <tr>
                                                     <th><?php echo e(__('Package')); ?></th>
@@ -86,7 +86,7 @@
                                         <div class="text-right col-md-12"><?php echo e($actInv->links()); ?></div>
                                     </div>
 
-                                    <div class="mobile_table container messages-scrollbar" >
+                                    <div class="container mobile_table messages-scrollbar" >
                                                     
                                         <?php if(count($actInv) > 0 ): ?>
                                             <?php $__currentLoopData = $actInv; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $in): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -123,7 +123,9 @@
 
                                                 ?>
                                                  
-                                                <?php echo $__env->make('user.inc.mob_inv', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>                                
+                                                <?php echo $__env->make('user.inc.
+                                                
+                                                ', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>                                
                                                 
                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         <?php else: ?>
@@ -143,7 +145,7 @@
                                 <div class="card-header">
                                     <div class="card-title"> Available Packages</div>
                                 </div>
-                                <div class="card-body pb-0">
+                                <div class="pb-0 card-body">
                                     <?php echo $__env->make('user.inc.packages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
                             </div>
