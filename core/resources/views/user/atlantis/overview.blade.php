@@ -51,6 +51,11 @@
     height: 4rem;
     background: #dc3545;
     box-shadow: 0 5px 10px rgba(30, 30, 30, 0.18);
+    transition: all 0.8s ease-out;
+  }
+
+  .floating-btn:hover {
+    transform: scale(1.05);
   }
 
   .floating-btn i {
