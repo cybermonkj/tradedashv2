@@ -36,29 +36,23 @@
     bottom: 20%;
     right: 10%;
 
+    display: flex;
+
     overflow: hidden;
     border-radius: 50% !important;
     z-index: 100;
   }
 
-  .img-media {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
+  .floating-btn i {
+    color: #fff;
+    font-size: 2rem;
   }
 
-  .img-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
 </style>
 <div class="overview-wrapper">
 
   <button class="floating-btn btn btn-danger btn-lg">
-      <div class="img-media">
-        <img src="/request.png" alt="icon">
-      </div>
+    <i class="fas fa-question"></i>
   </button>
   <div class="row mt--2">
     <div class="col-md-6">
