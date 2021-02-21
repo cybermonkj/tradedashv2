@@ -47,12 +47,13 @@
     z-index: 100;
 
     /* padding: 1rem; */
-    width: 4rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
     background: #dc3545;
     box-shadow: 0 5px 10px rgba(30, 30, 30, 0.18);
     transition: all 0.4s ease-in-out;
     text-decoration: none;
+    cursor: pointer;
   }
 
   .floating-btn:hover {
@@ -61,7 +62,19 @@
 
   .floating-btn i {
     color: #fff;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .floating-btn {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .floating-btn i {
+    color: #fff;
     font-size: 2rem;
+  }
   }
 
 </style>
@@ -85,11 +98,7 @@
               <div id="circles-1"></div>
               <h6 class="mt-3 mb-0 fw-bold">{{ __('Investments') }}</h6>
             </div>
-            {{-- <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">How to invest</a>
-            
-            <script>$('.popover-dismiss').popover({
-              trigger: 'focus'
-            }) </script> --}}
+
             <div class="px-2 pb-2 text-center pb-md-0">
               <div id="circles-2"></div>
               <h6 class="mt-3 mb-0 fw-bold">{{ __('Withdrawals') }}</h6>
