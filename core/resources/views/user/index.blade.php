@@ -1,17 +1,31 @@
 <style>
-	#card-tools {
+	.tool-list {
 		display: flex;
 		align-items: center;
-	
+		padding: 1rem 0
 	}
-	#card-tools btn {
+
+	.tool-list__item {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		
+		padding: .1rem;
+		border-radius: 5px;
+		background: #fff;
+		box-shadow: 0 4px 8px rgba(#000, #000, #000, 0.2);
 	}
 
-	#card-tools:not(:last-child) {
+	.tool-list__item:not(:last-child) {
 		margin-right: 1rem;
+	}
+
+	.tool-list__item i {
+		color: #100ba3 !important; 
+	}
+
+	.tool-list__item:hover {
+		background: #F5F5F5;
 	}
 </style>
 
@@ -183,11 +197,17 @@
 									<div class="card-header">
 										<div class="card-head-row card-tools-still-right">
 											<h4 class="card-title">{{ __('User Activities') }}</h4>
-											<div class="card-tools" id="card-tools">
+											{{-- <div class="card-tools" id="card-tools">
 												<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
 												<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
 												<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
-											</div>
+											</div> --}}
+
+											<ul class="tool-list">
+												<button class="tool-list__item"><i class="fa-2x fa fa-angle-down"></i></button>
+												<button class="tool-list__item"><i class="fa-2x fa fa-sync-alt"></i></button>
+												<button class="tool-list__item"><i class="fa-2x fa fa-times"></i></button>
+											</ul>
 										</div>
 										<p class="card-category">{{ __('All actions by you on tradepander.') }}</p>
 									</div>
