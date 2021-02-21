@@ -60,13 +60,13 @@
                                                 <span>Days</span>
                                             </div>
                     
-                                            <strong></strong>
+                                            <strong>{{ $inv->period }}</strong>
                                         </li>
                                     </ul>
                                 </div>
                     
                                 <div class="card__footer">
-                                    <button class="btn">
+                                    <button id="{{$inv->id}}" class="btn" onclick="confirm_inv('{{$inv->id}}', '{{$inv->package_name}}', '{{$inv->period}}', '{{$inv->daily_interest}}', '{{$inv->min}}', '{{$inv->max}}', '{{$user->wallet}}')">
                                         <span>invest</span>
                                         <svg class="btn__icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd">
                                         </path></svg>
@@ -74,9 +74,9 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!--    End of new card-->
                         
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="panel card pack-container" style="" align="center">
                                 <div class="panel-head" style="">
                                     <h3 class="txt_transform">{{$inv->package_name}} {{ __('Package') }}</h3>
@@ -131,7 +131,7 @@
                                 </div>
     
                             </div>
-                        </div>
+                        </div> --}}
                                                                           
                     @endforeach
                 @endif
