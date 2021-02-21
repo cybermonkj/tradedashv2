@@ -40,6 +40,8 @@
 
     overflow: hidden;
     border-radius: 50% !important;
+    border: none;
+    outline: none;
     z-index: 100;
 
     padding: 1rem;
