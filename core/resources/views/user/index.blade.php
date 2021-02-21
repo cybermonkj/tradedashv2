@@ -10,7 +10,7 @@
 		align-items: center;
 	}
 
-	#card-tools btn:not(:last-child) {
+	#card-tools:not(:last-child) {
 		margin-right: 1rem;
 	}
 </style>
