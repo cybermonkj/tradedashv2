@@ -51,7 +51,8 @@
     height: 4rem;
     background: #dc3545;
     box-shadow: 0 5px 10px rgba(30, 30, 30, 0.18);
-    transition: all 0.8s ease-out;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
   }
 
   .floating-btn:hover {
@@ -66,9 +67,13 @@
 </style>
 <div class="overview-wrapper">
 
-  <button tabindex="0" data-toggle="popover" data-trigger="focus" title="What to do next" class="floating-btn" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">
+  <a tabindex="0" data-toggle="popover" data-trigger="focus" title="What to do next" class="floating-btn" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">
     <i class="fas fa-question"></i>
-  </button>
+  </a>
+
+  <script>$('.popover-dismiss').popover({
+    trigger: 'focus'
+  }) </script>
   <div class="row mt--2">
     <div class="col-md-6">
       <div class="card full-height">
@@ -80,11 +85,11 @@
               <div id="circles-1"></div>
               <h6 class="mt-3 mb-0 fw-bold">{{ __('Investments') }}</h6>
             </div>
-            <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">How to invest</a>
+            {{-- <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="What to do next" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">How to invest</a>
             
             <script>$('.popover-dismiss').popover({
               trigger: 'focus'
-            }) </script>
+            }) </script> --}}
             <div class="px-2 pb-2 text-center pb-md-0">
               <div id="circles-2"></div>
               <h6 class="mt-3 mb-0 fw-bold">{{ __('Withdrawals') }}</h6>
