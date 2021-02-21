@@ -23,7 +23,11 @@
                                             <div class="card-custom__subtitle"><div>$</div><div name="price">{{ $inv->min }}</div><span>/month</span></div>
                                         </div>
                                     </div>
-                                    <div class="tag">popular</div>
+                                    @if($inv->package_name == "rush")
+                                        <div class="tag">popular</div>
+                                    @else
+                                        <div class="tag">package</div>
+                                    @endif
                                 </div>
                     
                                 <div class="divider"></div>
