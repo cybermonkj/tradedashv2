@@ -93,7 +93,7 @@
 
 					
 					<div id="prnt"></div>
-					<div class="row" style="padding: 1rem">
+					<div class="row" style="padding: 1.5rem">
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
@@ -146,7 +146,7 @@
 					</div>
 					
 					<!--	Container	-->
-					<div class="custom-wrapper" style="padding: 1rem">
+					<div class="custom-wrapper" style="padding: 1.5rem">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
