@@ -4,15 +4,14 @@
 		align-items: center;
 	
 	}
-
-	##card-tools:not(:last-child) {
-		margin-right: 1rem;
-	}
-
 	#card-tools btn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	#card-tools btn:not(:last-child) {
+		margin-right: 1rem;
 	}
 </style>
 
