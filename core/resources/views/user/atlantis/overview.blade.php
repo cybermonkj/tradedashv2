@@ -37,6 +37,8 @@
     right: 5%;
 
     display: flex;
+    justify-content: center;
+    align-items: center;
 
     overflow: hidden;
     border-radius: 50% !important;
