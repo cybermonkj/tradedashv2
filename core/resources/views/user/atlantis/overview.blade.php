@@ -32,8 +32,8 @@
   }
   
   .floating-btn {
-    position: absolute;
-    bottom: 20px;
+    position: fixed;
+    bottom: 10%;
     right: 5%;
 
     display: flex;
@@ -44,9 +44,9 @@
     outline: none;
     z-index: 100;
 
-    padding: 1rem;
-    width: 3rem;
-    height: 3rem;
+    /* padding: 1rem; */
+    width: 4rem;
+    height: 4rem;
     background: #dc3545;
     box-shadow: 0 5px 10px rgba(30, 30, 30, 0.18);
   }
