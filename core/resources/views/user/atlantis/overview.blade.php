@@ -66,7 +66,7 @@
 </style>
 <div class="overview-wrapper">
 
-  <button class="floating-btn">
+  <button tabindex="0" data-toggle="popover" data-trigger="focus" title="What to do next" class="floating-btn" data-content="Next thing to do after Depositing using any of our methods provided is to head over to My investments are subscribe to a plan ">
     <i class="fas fa-question"></i>
   </button>
   <div class="row mt--2">
