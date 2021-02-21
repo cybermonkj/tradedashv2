@@ -1,4 +1,4 @@
-<div class="sparkline8-graph dashone-comment  dashtwo-messages">
+<div class="sparkline8-graph dashone-comment dashtwo-messages">
     <div class="comment-phara">
         <div class="row comment-adminpr">
             <?php                
@@ -7,7 +7,7 @@
             @if($user->phone != '')
                 @if(isset($invs) && count($invs) > 0)
                     @foreach($invs as $inv)
-                        <div class="col-sm-4">
+                        {{-- <div class="col-sm-4">
                             <div class="panel card pack-container" style="" align="center">
                                 <div class="panel-head" style="">
                                     <h3 class="txt_transform">{{$inv->package_name}} {{ __('Package') }}</h3>
@@ -62,7 +62,7 @@
                                 </div>
     
                             </div>
-                        </div>
+                        </div> --}}
                                                                           
                     @endforeach
                 @endif

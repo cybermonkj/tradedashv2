@@ -18,12 +18,8 @@
             @if(isset($invs) && count($invs) > 0)
                 @foreach($invs as $inv)
 
-                    @php
-                        echo($inv);
-                    @endphp
-
-                    {{-- <div class="col-sm-4">
-                        {{-- <div class="panel card pack-container" style="" align="center">
+                    <div class="col-sm-4">
+                        <div class="panel card pack-container" style="" align="center">
                             <div class="panel-head" style="padding:15px; background-color: #069; border-bottom: 1px solid #CCC;">
                                 <h3 class="txt_transform">{{$inv->package_name}} Package</h3>
                             </div>
@@ -60,8 +56,8 @@
                                     <br><br>
                             </div>
 
-                        </div> --}}
-                    </div> --}}
+                        </div>
+                    </div>
                                                                       
                 @endforeach
             @else
