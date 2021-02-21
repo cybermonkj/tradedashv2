@@ -12,7 +12,7 @@
                 @if(isset($invs) && count($invs) > 0)
                     @foreach($invs as $inv)
 
-                        <div class="col col-sm-12 col-md-6 col-lg-3">
+                        <div class="col col-sm-12 col-md-6 col-lg-4">
                             <div class="card">
                                 <div class="card__header">
                                     <div class="section">
