@@ -17,9 +17,9 @@
 		justify-content: center;
 		align-items: center;
 		
-		padding: .4rem;
-		width: 1.5rem;
-		height: 1.6rem;;
+		padding: .5rem;
+		width: 1.6rem;
+		height: 1.8rem;;
 		border: none;
 		outline: none;
 		border-radius: 6px;
