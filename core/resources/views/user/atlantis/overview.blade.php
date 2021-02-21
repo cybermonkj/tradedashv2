@@ -33,8 +33,12 @@
   
   .floating-btn {
     position: absolute;
+    bottom: 20%;
+    right: 10%;
+
     overflow: hidden;
     border-radius: 50% !important;
+    z-index: 100;
   }
 
   .img-media {
@@ -53,7 +57,7 @@
 
   <button class="floating-btn btn btn-danger btn-lg">
       <div class="img-media">
-        <img src="/img/request.png" alt="icon">
+        <img src="/request.png" alt="icon">
       </div>
   </button>
   <div class="row mt--2">
