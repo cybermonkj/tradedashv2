@@ -18,11 +18,11 @@
 		align-items: center;
 		
 		padding: .4rem;
-		width: 1.1rem;
-		height: 1.2rem;;
+		width: 1.5rem;
+		height: 1.6rem;;
 		border: none;
 		outline: none;
-		border-radius: 8px;
+		border-radius: 6px;
 		background: #fff;
 		box-shadow: 0 4px 8px rgba(10, 10, 10, 0.2);
 	}
@@ -33,7 +33,7 @@
 
 	.tool-list__item i {
 		color: #100ba3 !important; 
-		font-size: 10px !important;
+		font-size: 1rem !important;
 	}
 
 	.tool-list__item:hover {
