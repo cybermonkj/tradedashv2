@@ -47,8 +47,8 @@
     z-index: 100;
 
     /* padding: 1rem; */
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: #dc3545;
     box-shadow: 0 5px 10px rgba(30, 30, 30, 0.18);
     transition: all 0.4s ease-in-out;
@@ -62,7 +62,7 @@
 
   .floating-btn i {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   @media (min-width: 768px) {
