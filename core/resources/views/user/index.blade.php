@@ -93,7 +93,7 @@
 
 					
 					<div id="prnt"></div>
-					<div class="row">
+					<div class="row" style="padding: 1rem">
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
