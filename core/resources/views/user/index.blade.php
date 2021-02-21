@@ -39,6 +39,20 @@
 	.tool-list__item:hover {
 		background: #F5F5F5;
 	}
+
+	#card__packages {
+		padding: 0 !important;
+		margin: 0 !important;
+		background: transparent !important;	
+	}
+
+	@media (min-width: 768px) {
+		#card__packages {
+		padding: 1rem;
+		margin: 0 !important;
+		background: #fff;	
+	}
+	}
 </style>
 
 @include('user.inc.fetch')
@@ -192,7 +206,7 @@
 					<div class="custom-wrapper" style="padding: 2rem">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card">
+								<div class="card" id="card__packages">
 									<div class="card-header">
 										<div class="card-title">{{ __('Available Packages') }} </div>
 									</div>
