@@ -87,7 +87,7 @@
   <script>$('.popover-dismiss').popover({
     trigger: 'focus'
   }) </script>
-  <div class="row mt--2">
+  <div class="row mt--2" style="background: #fff !important">
     <div class="col-md-6">
       <div class="card full-height">
         <div class="card-body">
