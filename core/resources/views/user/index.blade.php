@@ -1,3 +1,21 @@
+<style>
+	#card-tools {
+		display: flex;
+		align-items: center;
+	
+	}
+
+	##card-tools:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	#card-tools btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+</style>
+
 @include('user.inc.fetch')
 @extends('layouts.atlantis.layout')
 @Section('content')
@@ -93,7 +111,7 @@
 
 					
 					<div id="prnt"></div>
-					<div class="row" style="padding: 1.5rem">
+					<div class="row" style="padding: 2rem">
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
@@ -146,7 +164,7 @@
 					</div>
 					
 					<!--	Container	-->
-					<div class="custom-wrapper" style="padding: 1.5rem">
+					<div class="custom-wrapper" style="padding: 2rem">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
@@ -166,7 +184,7 @@
 									<div class="card-header">
 										<div class="card-head-row card-tools-still-right">
 											<h4 class="card-title">{{ __('User Activities') }}</h4>
-											<div class="card-tools">
+											<div class="card-tools" id="card-tools">
 												<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
 												<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
 												<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
