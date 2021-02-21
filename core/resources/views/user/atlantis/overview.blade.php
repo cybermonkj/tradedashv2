@@ -41,6 +41,9 @@
     overflow: hidden;
     border-radius: 50% !important;
     z-index: 100;
+
+    padding: 1rem;
+    background: #dc3545;
   }
 
   .floating-btn i {
@@ -51,7 +54,7 @@
 </style>
 <div class="overview-wrapper">
 
-  <button class="floating-btn btn btn-danger btn-lg">
+  <button class="floating-btn">
     <i class="fas fa-question"></i>
   </button>
   <div class="row mt--2">
