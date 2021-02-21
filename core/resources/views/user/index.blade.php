@@ -146,7 +146,7 @@
 					</div>
 					
 					<!--	Container	-->
-					<div class="custom-wrapper">
+					<div class="custom-wrapper" style="padding: 1rem">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="card">
