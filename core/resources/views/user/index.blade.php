@@ -17,7 +17,9 @@
 		justify-content: center;
 		align-items: center;
 		
-		padding: 1rem;
+		padding: .4rem;
+		width: 1.1rem;
+		height: 1.2rem;;
 		border: none;
 		outline: none;
 		border-radius: 8px;
@@ -31,7 +33,7 @@
 
 	.tool-list__item i {
 		color: #100ba3 !important; 
-		font-size: 24px !important;
+		font-size: 10px !important;
 	}
 
 	.tool-list__item:hover {
