@@ -17,7 +17,7 @@
 		justify-content: center;
 		align-items: center;
 		
-		padding: .1rem;
+		padding: 1rem;
 		border: none;
 		outline: none;
 		border-radius: 8px;
@@ -31,6 +31,7 @@
 
 	.tool-list__item i {
 		color: #100ba3 !important; 
+		font-size: 24px !important;
 	}
 
 	.tool-list__item:hover {
@@ -213,9 +214,9 @@
 											</div> --}}
 
 											<ul class="tool-list">
-												<button class="tool-list__item"><i class="fa-lg fa fa-angle-down"></i></button>
-												<button class="tool-list__item"><i class="fa-lg fa fa-sync-alt"></i></button>
-												<button class="tool-list__item"><i class="fa-lg fa fa-times"></i></button>
+												<button class="tool-list__item"><i class="fa fa-angle-down"></i></button>
+												<button class="tool-list__item"><i class="fa fa-sync-alt"></i></button>
+												<button class="tool-list__item"><i class="fa fa-times"></i></button>
 											</ul>
 										</div>
 										<p class="card-category">{{ __('All actions by you on tradepander.') }}</p>
