@@ -33,7 +33,7 @@
   
   .floating-btn {
     position: absolute;
-    bottom: 5%;
+    bottom: 1%;
     right: 5%;
 
     display: flex;
