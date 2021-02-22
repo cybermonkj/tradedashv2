@@ -1,3 +1,60 @@
+<style>
+	#card__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		flex-direction: row;
+	}
+	.tool-list {
+		display: flex;
+		align-items: center;
+		padding: 1rem 0
+	}
+
+	.tool-list__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		padding: .5rem;
+		width: 1.6rem;
+		height: 1.8rem;;
+		border: none;
+		outline: none;
+		border-radius: 6px;
+		background: #fff;
+		box-shadow: 0 4px 8px rgba(10, 10, 10, 0.2);
+	}
+
+	.tool-list__item:not(:last-child) {
+		margin-right: 1rem;
+	}
+
+	.tool-list__item i {
+		color: #100ba3 !important; 
+		font-size: 1rem !important;
+	}
+
+	.tool-list__item:hover {
+		background: #F5F5F5;
+	}
+
+	#card__packages {
+		padding: 0 !important;
+		margin: 0 !important;
+		background: transparent !important;	
+	}
+
+	@media (min-width: 768px) {
+		#card__packages {
+		padding: 1rem;
+		margin: 0 !important;
+		background: #fff;	
+	}
+	}
+</style>
+
 <?php echo $__env->make('user.inc.fetch', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -93,7 +150,7 @@
 
 					
 					<div id="prnt"></div>
-					<div class="row">
+					<div class="row" style="padding: 2rem">
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
@@ -127,91 +184,95 @@
 									</div>
 								</div>
 								
-								<div class="card-body pb-0">									
+								<div class="pb-0 card-body">									
 									<div class="pull-in">
 										<canvas id="wd_stats"></canvas>
 									</div>
 								</div>
 							</div>
 							<div class="card">
-								<div class="card-body pb-0">
-									<div class="px-2 pb-2 pb-md-0 text-center">
+								<div class="pb-0 card-body">
+									<div class="px-2 pb-2 text-center pb-md-0">
 										<div id="circles-logs"></div>
-										<h6 class="fw-bold mt-3 mb-0"><?php echo e(__('Action History')); ?></h6>
+										<h6 class="mt-3 mb-0 fw-bold"><?php echo e(__('Action History')); ?></h6>
 										<br>
 									</div>									
 								</div>
 							</div>
 						</div>
 					</div>
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-title"><?php echo e(__('Available Packages')); ?> </div>
-								</div>
-								<div class="card-body pb-0">
-									<?php echo $__env->make('user.inc.packages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+					
+					<!--	Container	-->
+					<div class="custom-wrapper" style="padding: 2rem">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="card" id="card__packages">
+									<div class="card-header">
+										<div class="card-title"><?php echo e(__('Available Packages')); ?> </div>
+									</div>
+									<div class="pb-0 card-body">
+										<?php echo $__env->make('user.inc.packages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row row-card-no-pd">
-						<div class="col-md-12">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-head-row card-tools-still-right">
-										<h4 class="card-title"><?php echo e(__('User Activities')); ?></h4>
-										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
+						<div class="row row-card-no-pd">
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-header">
+										<div class="card-head-row card-tools-still-right" id="card__header">
+											<h4 class="card-title"><?php echo e(__('User Activities')); ?></h4>
+											
+
+											<ul class="tool-list">
+												<button class="tool-list__item"><i class="fa fa-angle-down"></i></button>
+												<button class="tool-list__item"><i class="fa fa-sync-alt"></i></button>
+												<button class="tool-list__item"><i class="fa fa-times"></i></button>
+											</ul>
 										</div>
+										<p class="card-category"><?php echo e(__('All actions by you on tradepander.')); ?></p>
 									</div>
-									<p class="card-category"><?php echo e(__('All actions by you on tradepander.')); ?></p>
-								</div>
-								<div class="card-body">
-									<div class="row">
-										<div class="col-md-12">
-											<div class="card">												
-												<div class="card-body">
-													<div class="table-responsive">
-														<table id="basic-datatables" class="display table table-striped 
-														table-hover" >
-															<thead>
-																<tr>
-																	<th><?php echo e(__('Actions')); ?></th>
-																	<th><?php echo e(__('Date')); ?></th>
-																</tr>
-															</thead>
-															<tfoot>
-																<tr>
-																	<th><?php echo e(__('Actions')); ?></th>
-																	<th><?php echo e(__('Date')); ?></th>
-																</tr>
-															</tfoot>
-															<tbody>																
-																<?php $__currentLoopData = $logs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $log): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+									<div class="card-body">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="card">												
+													<div class="card-body">
+														<div class="table-responsive">
+															<table id="basic-datatables" class="table display table-striped table-hover" >
+																<thead>
 																	<tr>
-																		<td>
-																			<?php echo e($log->action); ?>
-
-																		</td>
-																		<td><?php echo e($log->created_at); ?></td>
+																		<th><?php echo e(__('Actions')); ?></th>
+																		<th><?php echo e(__('Date')); ?></th>
 																	</tr>
-																<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>																
-															</tbody>
-														</table>														
+																</thead>
+																<tfoot>
+																	<tr>
+																		<th><?php echo e(__('Actions')); ?></th>
+																		<th><?php echo e(__('Date')); ?></th>
+																	</tr>
+																</tfoot>
+																<tbody>																
+																	<?php $__currentLoopData = $logs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $log): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+																		<tr>
+																			<td>
+																				<?php echo e($log->action); ?>
+
+																			</td>
+																			<td><?php echo e($log->created_at); ?></td>
+																		</tr>
+																	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>																
+																</tbody>
+															</table>														
+														</div>
+														
 													</div>
-													
 												</div>
 											</div>
+											
 										</div>
-										
-									</div>
 
+									</div>
 								</div>
 							</div>
 						</div>
