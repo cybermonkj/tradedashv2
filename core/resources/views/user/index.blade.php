@@ -53,6 +53,10 @@
 			margin: 0 !important;
 			background: #fff;	
 		}
+
+		.custom-wrapper {
+			padding: 2rem !important;
+		}
 	}
 </style>
 
