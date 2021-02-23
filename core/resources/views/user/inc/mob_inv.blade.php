@@ -87,16 +87,16 @@
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
               {{ _("Ending") }}
-              <span class="badge bg-primary rounded-pill lh-1">2</span>
+              <span class="lh-1">{{$in->end_date}}</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
               {{ _("Days Spent") }}
-              <span class="badge bg-primary rounded-pill">1</span>
+              <span cla>{{$totalDays}}</span>
             </li>
 
             <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
                 {{ _("Status") }}
-                <span class="badge bg-green rounded-pill"></span>
+                <span class="">{{$in->status}}</span>
               </li>
           </ul>
     </div>
