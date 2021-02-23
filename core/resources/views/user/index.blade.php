@@ -44,14 +44,15 @@
 		padding: 0 !important;
 		margin: 0 !important;
 		background: transparent !important;	
+		box-shadow: 0 0 0 rgba(10, 10, 10, 0.2) !important;
 	}
 
 	@media (min-width: 768px) {
 		#card__packages {
-		padding: 1rem;
-		margin: 0 !important;
-		background: #fff;	
-	}
+			padding: 1rem;
+			margin: 0 !important;
+			background: #fff;	
+		}
 	}
 </style>
 
@@ -203,10 +204,10 @@
 					</div>
 					
 					<!--	Container	-->
-					<div class="custom-wrapper" style="padding: 2rem">
+					<div class="custom-wrapper">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="card" id="card__packages">
+								<div class="p-0 card" id="card__packages">
 									<div class="card-header">
 										<div class="card-title">{{ __('Available Packages') }} </div>
 									</div>
