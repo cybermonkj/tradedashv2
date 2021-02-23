@@ -102,7 +102,7 @@
     </div>
 
     <div class="card-footer" align="center">
-        <div class="mx-auto d-grid col-6">
+          <div class="d-grid">
             <a title="Withdraw" href="javascript:void(0)" class="btn btn-primary" onclick="wd('pack', '{{$in->id}}', '{{$ern}}', '{{$withdrawable}}', '{{$Edays}}', '{{$ended}}')">
                 {{$settings->currency}} {{$ern}}
             </a>
