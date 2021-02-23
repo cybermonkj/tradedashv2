@@ -19,21 +19,27 @@
                                     <div class="section">
                                         @if($inv->package_name == "Rush")
                                             <div class="media--rush"></div>
+                                        @endif
                                             
-                                        @elseif($inv->package_name == "Gold")
+                                        @if($inv->package_name == "Gold")
                                             <div class="media--gold"></div>
+                                        @endif
                                         
-                                        {{-- @elseif($inv->package_name == "family")
+                                        
+                                        @if($inv->package_name == "family")
                                             <div class="media media--brown"></div>
+                                        @endif
 
-                                        @elseif($inv->package_name == "premium")
+                                        @if($inv->package_name == "premium")
                                             <div class="media media--grey"></div>
+                                        @endif
 
-                                        @elseif($inv->package_name == "master")
+                                        @if($inv->package_name == "master")
                                             <div class="media media--master"></div>
+                                        @endif
                                             
-                                        @else
-                                            <div class="media"></div> --}}
+                                        @if($inv->package_name <> "Rush" && $inv->package_name <> "Gold" && $inv->package_name <> "Family" && $inv->package_name <> "premium" && $inv->package_name <> "Master")
+                                            <div class="media"></div>
                                         @endif
                                         <div class="group">
                                             <div class="card-custom__title">{{ $inv->package_name }}</div>
