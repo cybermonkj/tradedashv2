@@ -217,7 +217,7 @@
 							</div>
 						</div>
 
-						<div class="row row-card-no-pd">
+						<div class="mt-2 row row-card-no-pd">
 							<div class="col-md-12">
 								<div class="card">
 									<div class="card-header">
