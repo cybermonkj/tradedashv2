@@ -74,29 +74,29 @@
 </div> --}}
 
 <div class="shadow card">
-    <div class="card-header">
+    <div class="card-header fw-bold h2">
         Gold <span>Package</span>
-        <em>$</em><div class="card-title">30</div>
+        <em>$</em><div class="card-title fw-bolderh">30</div>
     </div>
 
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
                 {{ _("Return") }}
-              <span class="badge bg-primary rounded-pill">14</span>
+              <span class="badge bg-primary rounded-pill lh-1">14</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
               {{ _("Ending") }}
-              <span class="badge bg-primary rounded-pill">2</span>
+              <span class="badge bg-primary rounded-pill lh-1">2</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
               {{ _("Days Spent") }}
               <span class="badge bg-primary rounded-pill">1</span>
             </li>
 
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
                 {{ _("Status") }}
-                <span class="badge bg-primary rounded-pill">1</span>
+                <span class="badge bg-green rounded-pill"></span>
               </li>
           </ul>
     </div>
