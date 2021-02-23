@@ -83,7 +83,7 @@
         <ul class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
                 {{ _("Return") }}
-              <span class="badge bg-primary rounded-pill lh-1">14</span>
+              <span class="lh-1">{{($settings->currency)}} {{$in->i_return}}</span>
             </li>
             <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
               {{ _("Ending") }}
