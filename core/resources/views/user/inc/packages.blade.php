@@ -38,7 +38,7 @@
                                             <div class="media--master"></div>
                                         @endif
                                             
-                                        @if($inv->package_name <> "Rush" && $inv->package_name <> "Gold" && $inv->package_name <> "Family" && $inv->package_name <> "premium" && $inv->package_name <> "Master")
+                                        @if($inv->package_name <> "Rush" && $inv->package_name <> "Gold" && $inv->package_name <> "Family" && $inv->package_name <> "Premium" && $inv->package_name <> "Master")
                                             <div class="media"></div>
                                         @endif
                                         <div class="group">
