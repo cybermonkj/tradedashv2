@@ -2,18 +2,12 @@
 	.custom-flex {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: center !important;
 	}
 	#actions {
 		/* border: 2px solid red; */
 		display: flex;
 		align-items: center;
-	}
-
-	@media (min-width: 768px) {
-		#actions {
-			
-		}
 	}
 </style>
 
