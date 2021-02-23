@@ -27,15 +27,15 @@
                                         
                                         
                                         @if($inv->package_name == "Family")
-                                            <div class="media media--brown"></div>
+                                            <div class="media--brown"></div>
                                         @endif
 
                                         @if($inv->package_name == "Premium")
-                                            <div class="media media--grey"></div>
+                                            <div class="media--grey"></div>
                                         @endif
 
                                         @if($inv->package_name == "Master")
-                                            <div class="media media--master"></div>
+                                            <div class="media--master"></div>
                                         @endif
                                             
                                         @if($inv->package_name <> "Rush" && $inv->package_name <> "Gold" && $inv->package_name <> "Family" && $inv->package_name <> "premium" && $inv->package_name <> "Master")
