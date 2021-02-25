@@ -1,74 +1,49 @@
-                
-<div class="alert alert-info inv_alert_cont" >
-    <div class="row inv_alert_top_row">
-        <div class="col-xs-12 pad_top_5" align="center" >
-            <h4 class="u_case"><?php echo e(__('')); ?>Package: <?php echo e($in->package); ?></h4>
-           
-        </div>
-    </div> 
-    <div class="row color_blue_9">
-        <div class="col-xs-6">
-            <?php echo e(__('Capital:')); ?>
 
-        </div>
-        <div class="col-xs-6">
-            <?php echo e(($settings->currency)); ?> <?php echo e($in->capital); ?>
-
-        </div>
-    </div> 
-    <div class="row" style="">
-        <div class="col-xs-6">
-            <?php echo e(__('Return:')); ?>
-
-        </div>
-        <div class="col-xs-6">
-            <?php echo e(($settings->currency)); ?> <?php echo e($in->i_return); ?>
-
-        </div>
-    </div>  
     
-    <div class="row" style="">
-        <div class="col-xs-6">
-            <?php echo e(__('Ending:')); ?>
-
-        </div>
-        <div class="col-xs-6">
-            <?php echo e($in->end_date); ?>
-
-        </div>
-    </div>
-    <div class="row" style="">
-        <div class="col-xs-6">
-            <?php echo e(__('Days spent:')); ?>
-
-        </div>
-        <div class="col-xs-6">
-            <?php echo e($totalDays); ?>
-
-        </div>
-    </div>
     
-    <div class="row" style="">
-        <div class="col-xs-6">
-            <?php echo e(__('Status:')); ?>
+    
+    
 
-        </div>
-        <div class="col-xs-6">
-            <?php echo e($in->status); ?>
+<div class="shadow card">
+    <div class="card-header fw-bold h2">
+        Gold <span>Package</span>
+        <em>$</em><div class="card-title fw-bolderh">30</div>
+    </div>
 
-        </div>
-    </div> 
-    <div class="row" style="" align="center">
-        <br>
-        <div class="col-xs-12" align="center">
-            <a title="Withdraw" href="javascript:void(0)" class="btn btn-info" onclick="wd('pack', '<?php echo e($in->id); ?>', '<?php echo e($ern); ?>', '<?php echo e($withdrawable); ?>', '<?php echo e($Edays); ?>', '<?php echo e($ended); ?>')">
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
+                <?php echo e(_("Return")); ?>
+
+              <span class="lh-1"><?php echo e(($settings->currency)); ?> <?php echo e($in->i_return); ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
+              <?php echo e(_("Ending")); ?>
+
+              <span class="lh-1"><?php echo e($in->end_date); ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
+              <?php echo e(_("Days Spent")); ?>
+
+              <span cla><?php echo e($totalDays); ?></span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between align-items-center lh-1">
+                <?php echo e(_("Status")); ?>
+
+                <span class=""><?php echo e($in->status); ?></span>
+              </li>
+          </ul>
+    </div>
+
+    <div class="card-footer" align="center">
+          <div class="d-grid">
+            <a title="Withdraw" href="javascript:void(0)" class="btn btn-primary" onclick="wd('pack', '<?php echo e($in->id); ?>', '<?php echo e($ern); ?>', '<?php echo e($withdrawable); ?>', '<?php echo e($Edays); ?>', '<?php echo e($ended); ?>')">
                 <?php echo e($settings->currency); ?> <?php echo e($ern); ?>
 
             </a>
-        </div>
-        <?php echo e(__('Click to withdraw')); ?>
-
-    </div>                                                                     
+          </div>
+    </div>
 </div>
         
 <?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/user/inc/mob_inv.blade.php ENDPATH**/ ?>
