@@ -75,8 +75,8 @@
 
 <div class="shadow card">
     <div class="card-header fw-bold h2">
-        Gold <span>Package</span>
-        <em>$</em><div class="card-title fw-bolderh">30</div>
+        {{ $in->package }} <span>{{ _("Package") }}</span><br/>
+        <em>{{($settings->currency)}}</em><div class="card-title fw-bolderh">{{ $in->capital }}</div>
     </div>
 
     <div class="card-body">
