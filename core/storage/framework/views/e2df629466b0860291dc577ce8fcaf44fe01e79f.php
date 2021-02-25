@@ -6,8 +6,8 @@
 
 <div class="shadow card">
     <div class="card-header fw-bold h2">
-        Gold <span>Package</span>
-        <em>$</em><div class="card-title fw-bolderh">30</div>
+        <?php echo e($in->package); ?> <span><?php echo e(_("Package")); ?></span><br/>
+        <em><?php echo e(($settings->currency)); ?></em><span class="card-title fw-bolderh"><?php echo e($in->capital); ?></span>
     </div>
 
     <div class="card-body">
