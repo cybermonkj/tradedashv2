@@ -22,6 +22,7 @@ class Create_Zip_Archive_Task extends Task {
 	 */
 	public function perform() {
 		$download_url = $this->create_zip();
+
 		if ( is_wp_error( $download_url ) ) {
 			return $download_url;
 		} else {
@@ -38,8 +39,21 @@ class Create_Zip_Archive_Task extends Task {
 	 * @return string|WP_Error $temporary_zip The path to the archive zip file.
 	 */
 	public function create_zip() {
-		$archive_dir = $this->options->get_archive_dir();
+		$temp_dir = $this->options->get( 'temp_files_dir' );
 
+		// check if temp directory is empty, if not delete old zip files.
+		$temp_dir_empty = ! ( new \FilesystemIterator( $temp_dir ) )->valid();
+
+		if ( ! $temp_dir_empty ) {
+			foreach ( new \DirectoryIterator( $temp_dir ) as $file ) {
+				if ( ! $file->isDir() ) {
+					unlink( $file->getPathname() );
+				}
+			}
+		}
+
+		// Now we are creating a new zip file.
+		$archive_dir  = $this->options->get_archive_dir();
 		$zip_filename = untrailingslashit( $archive_dir ) . '.zip';
 		$zip_archive  = new \PclZip( $zip_filename );
 
@@ -58,9 +72,7 @@ class Create_Zip_Archive_Task extends Task {
 			return new \WP_Error( 'create_zip_failed', __( 'Unable to create ZIP archive', 'simply-static' ) );
 		}
 
-		$download_url = get_admin_url( null, 'admin.php' ) . '?' . Plugin::SLUG . '_zip_download=' . basename( $zip_filename );
-
+		$download_url = Util::abs_path_to_url( $zip_archive->zipname );
 		return $download_url;
 	}
-
 }

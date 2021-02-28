@@ -221,6 +221,12 @@
 							</a>							
 						</li>
 
+						<li class="nav-item">
+							<a href="https://dash.tradepander.com/exchange/">
+								<i class="fas fa-wallet"></i>
+								<p> Crypto Wallet</p>
+							</a>							
+						</li>
 
 						<li class="nav-item">
 							<a href="/<?php echo e($user->username); ?>/investments">
@@ -267,12 +273,29 @@
 						
 						
 						<li class="nav-item">
-							<a href="https://tradepander.com/how-money-exchange-works">
+							<a href="https://dash.tradepander.com/exchange/#/exchange/btc-to-usdt">
 								<i class="fas fa-shekel-sign"></i>
-								<p>Money Exchange (Beta)</p>
+								<p>Crypto Exchange (Atomic Swap)</p>
 							</a>							
 						</li>
 						
+
+
+						<li class="nav-item">
+							<a href="#">
+								<i class="fas fa-people-arrows"></i>
+								<p> Money Exchange (Coming soon)</p>
+							</a>							
+						</li>
+
+
+						<li class="nav-item">
+							<a href="#">
+								<i class="fas fa-people-arrows"></i>
+								<p> Gift Card Exchange (Coming soon)</p>
+							</a>							
+						</li>
+
 						<li class="nav-item">
 							<a href="<?php echo e(route('ticket.index')); ?>">
 								<i class="fas fa-headset"></i>

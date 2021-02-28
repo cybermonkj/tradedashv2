@@ -4,9 +4,9 @@
 Plugin Name: Cryptocurrency Product for WooCommerce
 Plugin URI: https://wordpress.org/plugins/cryptocurrency-product-for-woocommerce
 Description: Cryptocurrency Product for WooCommerce enables customers to buy Ether or any ERC20 or ERC223 token on your WooCommerce store for fiat, bitcoin or any other currency supported by WooCommerce.
-Version: 3.8.1
+Version: 3.8.4
 WC requires at least: 3.0.0
-WC tested up to: 4.6.2
+WC tested up to: 5.0.0
 Author: ethereumicoio
 Author URI: https://ethereumico.io
 License: GPLv2 or later
@@ -2614,12 +2614,20 @@ if ( PHP_INT_SIZE != 8 ) {
                                     if ( empty($minimumValue) || 0 == $minimumValue ) {
                                         $minimumValue = CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_woocommerce_quantity_input_min( 0.01, $_product );
                                     }
-                                    $rate = CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_get_product_rate_for_1_store_currency( $product_id );
-                                    //            $product_quantity = $product['qty'];
-                                    $product_quantity = $product['total'] * $rate;
-                                    CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_log( "CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_process_order({$product_id}): rate = {$rate}, total: " . $product['total'] . ', total_tax: ' . $product['total_tax'] . ', product_quantity=' . $product_quantity );
+                                    $minimumStep = apply_filters( 'woocommerce_quantity_input_step', 0.01, $_product );
+                                    if ( empty($minimumStep) || 0 == floatval( $minimumStep ) ) {
+                                        $minimumStep = CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_woocommerce_quantity_input_step( 0.01, $_product );
+                                    }
+                                    $product_quantity = null;
                                     
-                                    if ( floatval( $product_quantity ) < floatval( $minimumValue ) ) {
+                                    if ( is_null( $product_quantity ) ) {
+                                        $product_quantity = $product['qty'];
+                                        CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_log( "CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_process_order({$product_id}): total: " . $product['total'] . ', total_tax: ' . $product['total_tax'] . ', product_quantity=' . $product_quantity );
+                                    }
+                                    
+                                    // add 10% of the $minimumStep to workaround price fluctuations
+                                    
+                                    if ( floatval( $product_quantity ) + 0.1 * abs( floatval( $minimumStep ) ) < floatval( $minimumValue ) ) {
                                         // Place the order to failed.
                                         $res = $order->update_status( 'failed', sprintf( __( 'Product quantity %1$s less then the minimum allowed: %2$s.', 'cryptocurrency-product-for-woocommerce' ), $product_quantity, $minimumValue ) );
                                         if ( !$res ) {
@@ -2998,7 +3006,7 @@ if ( PHP_INT_SIZE != 8 ) {
                                     'cryptocurrency-product-for-woocommerce',
                                     $CRYPTOCURRENCY_PRODUCT_FOR_WOOCOMMERCE_plugin_url_path . "/cryptocurrency-product-for-woocommerce{$min}.js",
                                     array( 'jquery', 'web3' ),
-                                    '3.8.1'
+                                    '3.8.4'
                                 );
                             }
                             

@@ -2,8 +2,8 @@
 Contributors: ethereumicoio, freemius
 Tags: woocommerce, ethereum, erc20, erc721, bitcoin, token, crypto, cryptocurrency, blockchain, dash
 Requires at least: 4.7
-Tested up to: 5.5.3
-Stable tag: 3.8.1
+Tested up to: 5.6.1
+Stable tag: 3.8.4
 Donate link: https://etherscan.io/address/0x476Bb28Bc6D0e9De04dB5E19912C392F9a76535d
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -175,6 +175,19 @@ Languages this plugin is available now:
 Feel free to translate this plugin to your language.
 
 == Changelog ==
+
+= 3.8.4 =
+
+* Add 10% of the $minimumStep to workaround price fluctuations. (Errors like "Product quantity 0.99937095862906 less then the minimum allowed: 1.")
+
+= 3.8.3 =
+
+* Allow order quantity edit for fixed price products
+
+= 3.8.2 =
+
+* Exchanges currency dictionaries updated
+* Try the reverted currency route conversion for cryptocompare.com if the direct one does not exists
 
 = 3.8.1 =
 

@@ -14,7 +14,7 @@ class Plugin {
 	 * Plugin version
 	 * @var string
 	 */
-	const VERSION = '2.1.0';
+	const VERSION = '2.1.3';
 
 	/**
 	 * The slug of the plugin; used in actions, filters, i18n, table names, etc.
@@ -80,8 +80,6 @@ class Plugin {
 			self::$instance = new self();
 			self::$instance->includes();
 
-			// Check for pending file download
-			add_action( 'plugins_loaded', array( self::$instance, 'download_file' ) );
 			// Load the text domain for i18n
 			add_action( 'plugins_loaded', array( self::$instance, 'load_textdomain' ) );
 			// Enqueue admin styles
@@ -95,6 +93,9 @@ class Plugin {
 			add_action( 'wp_ajax_static_archive_action', array( self::$instance, 'static_archive_action' ) );
 			add_action( 'wp_ajax_render_export_log', array( self::$instance, 'render_export_log' ) );
 			add_action( 'wp_ajax_render_activity_log', array( self::$instance, 'render_activity_log' ) );
+
+			// Instead of using ajax, activate export log file and run with cron.
+			add_action( 'simply_static_site_export_cron', array( self::$instance, 'run_static_export_with_cron' ) );
 
 			// Filters
 			add_filter( 'admin_footer_text', array( self::$instance, 'filter_admin_footer_text' ), 15 );
@@ -231,10 +232,20 @@ class Plugin {
 	}
 
 	/**
+	 * Handle archive job with cron.
+	 *
+	 * @return void
+	 */
+	public function run_static_export_with_cron() {
+		$this->archive_creation_job->start();
+	}
+
+
+	/**
 	 * Handle requests for creating a static archive and send a response via ajax
 	 * @return void
 	 */
-	function static_archive_action() {
+	public function static_archive_action() {
 		check_ajax_referer( 'simply-static_generate' );
 		if ( ! current_user_can( 'edit_posts' ) ) {
 			die( __( 'Not permitted', 'simply-static' ) );
@@ -245,7 +256,9 @@ class Plugin {
 		if ( $action === 'start' ) {
 			Util::delete_debug_log();
 			Util::debug_log( "Received request to start generating a static archive" );
-			$this->archive_creation_job->start();
+			if ( ! wp_next_scheduled( 'simply_static_site_export_cron' ) ) {
+				wp_schedule_single_event( time(), 'simply_static_site_export_cron' );
+			}
 		} else if ( $action === 'cancel' ) {
 			Util::debug_log( "Received request to cancel static archive generation" );
 			$this->archive_creation_job->cancel();
@@ -258,7 +271,7 @@ class Plugin {
 	 * Render json+html for response to static archive creation
 	 * @return void
 	 */
-	function send_json_response_for_static_archive( $action ) {
+	public function send_json_response_for_static_archive( $action ) {
 		$done = $this->archive_creation_job->is_job_done();
 		$current_task = $this->archive_creation_job->get_current_task();
 
@@ -458,20 +471,29 @@ class Plugin {
 			$this->options->set( 'http_basic_auth_digest', $http_basic_auth_digest );
 		}
 
-		// Save settings
-		$this->options
-			->set( 'destination_scheme', $destination_scheme )
-			->set( 'destination_host', $destination_host )
-			->set( 'temp_files_dir', Util::trailingslashit_unless_blank( $this->fetch_post_value( 'temp_files_dir' ) ) )
-			->set( 'additional_urls', $this->fetch_post_value( 'additional_urls' ) )
-			->set( 'additional_files', $this->fetch_post_value( 'additional_files' ) )
-			->set( 'urls_to_exclude', $urls_to_exclude )
-			->set( 'delivery_method', $this->fetch_post_value( 'delivery_method' ) )
-			->set( 'local_dir', Util::trailingslashit_unless_blank( $this->fetch_post_value( 'local_dir' ) ) )
-			->set( 'delete_temp_files', $this->fetch_post_value( 'delete_temp_files' ) )
-			->set( 'destination_url_type', $destination_url_type )
-			->set( 'relative_path', $relative_path )
-			->save();
+		// Save settings.
+		$options = apply_filters(
+			'simply_static_options',
+			array(
+				'destination_scheme'   => $destination_scheme,
+				'destination_host'     => $destination_host,
+				'temp_files_dir'       => Util::trailingslashit_unless_blank( $this->fetch_post_value( 'temp_files_dir' ) ),
+				'additional_urls'      => $this->fetch_post_value( 'additional_urls' ),
+				'additional_files'     => $this->fetch_post_value( 'additional_files' ),
+				'urls_to_exclude'      => $urls_to_exclude,
+				'delivery_method'      => $this->fetch_post_value( 'delivery_method' ),
+				'local_dir'            => Util::trailingslashit_unless_blank( $this->fetch_post_value( 'local_dir' ) ),
+				'delete_temp_files'    => $this->fetch_post_value( 'delete_temp_files' ),
+				'destination_url_type' => $destination_url_type,
+				'relative_path'        => $relative_path,
+			)
+		);
+
+		foreach ( $options as $key => $value ) {
+			$this->options->set( $key, $value );
+		}
+
+		$this->options->save();
 
 		$message = __( 'Your changes have been saved.', 'simply-static' );
 		$this->view->add_flash( 'updated', $message );
@@ -707,14 +729,14 @@ class Plugin {
 	 * Set wp_mail to send out html emails
 	 * @return string
 	 */
-	function filter_wp_mail_content_type() {
+	public function filter_wp_mail_content_type() {
 	    return 'text/html';
 	}
 
 	/**
 	 * Set HTTP Basic Auth for wp-background-processing
 	 */
-	function wpbp_http_request_args( $r, $url ) {
+	public function wpbp_http_request_args( $r, $url ) {
 		$digest = self::$instance->options->get( 'http_basic_auth_digest' );
 		if ( $digest ) {
 			$r['headers']['Authorization'] = 'Basic ' . $digest;
@@ -772,40 +794,6 @@ class Plugin {
 		array_push( $task_list, 'wrapup' );
 
 		return $task_list;
-	}
-
-	/**
-	 * Check for a pending file download; prompt user to download file
-	 * @return null
-	 */
-	public function download_file() {
-		$file_name = isset( $_GET[ self::SLUG . '_zip_download' ] ) ? $_GET[ self::SLUG . '_zip_download' ] : null;
-		if ( $file_name ) {
-			if ( ! current_user_can( 'edit_posts' ) ) {
-				die( __( 'Not permitted', 'simply-static' ) );
-			}
-
-			// Don't allow path traversal
-			if ( strpos( $file_name, '../' ) !== false ) {
-				exit( 'Invalid Request' );
-			}
-
-			// File must exist
-			$file_path = path_join( self::$instance->options->get( 'temp_files_dir' ), $file_name );
-			if ( ! file_exists( $file_path ) ) {
-				exit( 'Files does not exist' );
-			}
-
-			// Send file
-			header( 'Content-Description: File Transfer' );
-			header( 'Content-Disposition: attachment; filename=' . $file_name );
-			header( 'Content-Type: application/zip, application/octet-stream; charset=' . get_option( 'blog_charset' ), true );
-			header( 'Content-Length: ' . filesize( $file_path ) );
-			header( 'Pragma: no-cache' );
-			header( 'Expires: 0' );
-			readfile( $file_path );
-			exit();
-		}
 	}
 
 	/**

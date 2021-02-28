@@ -50,18 +50,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/Bit-Wasp/bitcoin-php.git",
-            "reference": "b53ce778a30f6dd996f8fa748ed43b2fce3ccb7b"
+            "reference": "670063be60655500a327d5d470d6eba0d77c6941"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Bit-Wasp/bitcoin-php/zipball/b53ce778a30f6dd996f8fa748ed43b2fce3ccb7b",
-            "reference": "b53ce778a30f6dd996f8fa748ed43b2fce3ccb7b",
+            "url": "https://api.github.com/repos/Bit-Wasp/bitcoin-php/zipball/670063be60655500a327d5d470d6eba0d77c6941",
+            "reference": "670063be60655500a327d5d470d6eba0d77c6941",
             "shasum": ""
         },
         "require": {
             "bitwasp/bech32": "^0.0.1",
             "bitwasp/buffertools": "^0.5.0",
-            "composer/semver": "^1.4.0",
+            "composer/semver": "^1.4.0|^3.2.0",
             "lastguest/murmurhash": "v2.0.0",
             "mdanter/ecc": "^0.5.0",
             "php-64bit": ">=7.0",
@@ -79,7 +79,7 @@
             "ext-bitcoinconsensus": "The bitcoinconsensus library for safest possible script verification",
             "ext-secp256k1": "The secp256k1 library for fast and safe elliptic curve operations"
         },
-        "time": "2020-03-03T15:59:38+00:00",
+        "time": "2021-01-16T21:13:16+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -152,30 +152,31 @@
     },
     {
         "name": "composer/semver",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "dev-main",
+        "version_normalized": "dev-main",
         "source": {
             "type": "git",
             "url": "https://github.com/composer/semver.git",
-            "reference": "2667cf1143d1c79a81a2c65d9f7a87a9c549c259"
+            "reference": "dd61cb4efbd0cff1700b217faf24ce596af4fc4e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/composer/semver/zipball/2667cf1143d1c79a81a2c65d9f7a87a9c549c259",
-            "reference": "2667cf1143d1c79a81a2c65d9f7a87a9c549c259",
+            "url": "https://api.github.com/repos/composer/semver/zipball/dd61cb4efbd0cff1700b217faf24ce596af4fc4e",
+            "reference": "dd61cb4efbd0cff1700b217faf24ce596af4fc4e",
             "shasum": ""
         },
         "require": {
-            "php": "^5.3.2 || ^7.0"
+            "php": "^5.3.2 || ^7.0 || ^8.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "^4.5 || ^5.0.5"
+            "phpstan/phpstan": "^0.12.54",
+            "symfony/phpunit-bridge": "^4.2 || ^5"
         },
-        "time": "2019-12-02T13:30:57+00:00",
+        "time": "2020-12-10T07:55:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.x-dev"
+                "dev-main": "3.x-dev"
             }
         },
         "installation-source": "source",
@@ -211,6 +212,20 @@
             "semver",
             "validation",
             "versioning"
+        ],
+        "funding": [
+            {
+                "url": "https://packagist.com",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/composer",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                "type": "tidelift"
+            }
         ]
     },
     {
@@ -288,23 +303,23 @@
     },
     {
         "name": "freemius/wordpress-sdk",
-        "version": "2.4.1",
-        "version_normalized": "2.4.1.0",
+        "version": "2.4.2",
+        "version_normalized": "2.4.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Freemius/wordpress-sdk.git",
-            "reference": "4f60bf8a5d0635954fb911ffd52a21bc06aa7561"
+            "reference": "84a9be4717effd7697a217e0d931f48ae0d2ecc6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Freemius/wordpress-sdk/zipball/4f60bf8a5d0635954fb911ffd52a21bc06aa7561",
-            "reference": "4f60bf8a5d0635954fb911ffd52a21bc06aa7561",
+            "url": "https://api.github.com/repos/Freemius/wordpress-sdk/zipball/84a9be4717effd7697a217e0d931f48ae0d2ecc6",
+            "reference": "84a9be4717effd7697a217e0d931f48ae0d2ecc6",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2"
         },
-        "time": "2020-10-16T08:50:13+00:00",
+        "time": "2021-02-08T16:47:44+00:00",
         "type": "library",
         "installation-source": "source",
         "notification-url": "https://packagist.org/downloads/",
@@ -474,12 +489,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/guzzle/psr7.git",
-            "reference": "25f7f893f0b52b7b14e244a16679d72b1f0088de"
+            "reference": "f47ece9e6e8ce74e3be04bef47f46061dc18c095"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/guzzle/psr7/zipball/25f7f893f0b52b7b14e244a16679d72b1f0088de",
-            "reference": "25f7f893f0b52b7b14e244a16679d72b1f0088de",
+            "url": "https://api.github.com/repos/guzzle/psr7/zipball/f47ece9e6e8ce74e3be04bef47f46061dc18c095",
+            "reference": "f47ece9e6e8ce74e3be04bef47f46061dc18c095",
             "shasum": ""
         },
         "require": {
@@ -497,7 +512,7 @@
         "suggest": {
             "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
         },
-        "time": "2020-10-22T07:42:05+00:00",
+        "time": "2020-12-08T11:45:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -591,8 +606,8 @@
     },
     {
         "name": "mdanter/ecc",
-        "version": "v0.5.2",
-        "version_normalized": "0.5.2.0",
+        "version": "0.5.x-dev",
+        "version_normalized": "0.5.9999999.9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/phpecc/phpecc.git",
@@ -616,7 +631,7 @@
         },
         "time": "2018-12-03T18:17:01+00:00",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Mdanter\\Ecc\\": "src/"
@@ -665,30 +680,30 @@
     },
     {
         "name": "olegabr/ethereum-tx",
-        "version": "0.3.3",
-        "version_normalized": "0.3.3.0",
+        "version": "0.4.1",
+        "version_normalized": "0.4.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/olegabr/ethereum-tx.git",
-            "reference": "abfe7d90ecd17dc02a45608fc5531c61d52d03d9"
+            "reference": "dab343c57c71392e983bb1d03ddc1fb9a309ed26"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/olegabr/ethereum-tx/zipball/abfe7d90ecd17dc02a45608fc5531c61d52d03d9",
-            "reference": "abfe7d90ecd17dc02a45608fc5531c61d52d03d9",
+            "url": "https://api.github.com/repos/olegabr/ethereum-tx/zipball/dab343c57c71392e983bb1d03ddc1fb9a309ed26",
+            "reference": "dab343c57c71392e983bb1d03ddc1fb9a309ed26",
             "shasum": ""
         },
         "require": {
             "olegabr/ethereum-util": "~0.1",
             "olegabr/keccak": "~1",
-            "olegabr/rlp": "~0.2",
+            "olegabr/rlp": "^0.3.2",
             "php": ">=5.6",
-            "simplito/elliptic-php": "1.0.3"
+            "simplito/elliptic-php": "~1.0.6"
         },
         "require-dev": {
             "phpunit/phpunit": "5.7.27|^6.1"
         },
-        "time": "2018-06-18T11:11:06+00:00",
+        "time": "2020-12-25T06:17:07+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -716,33 +731,33 @@
         ],
         "description": "Ethereum transaction library in PHP.",
         "support": {
-            "source": "https://github.com/olegabr/ethereum-tx/tree/0.3.3"
+            "source": "https://github.com/olegabr/ethereum-tx/tree/0.4.1"
         }
     },
     {
         "name": "olegabr/ethereum-util",
-        "version": "0.1.1",
-        "version_normalized": "0.1.1.0",
+        "version": "0.1.2",
+        "version_normalized": "0.1.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/olegabr/ethereum-util.git",
-            "reference": "24e939bd76be572b6b174c9bef22b53066dd8dfd"
+            "reference": "9231d5c38d259f615938462975ac7f1e32124f4b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/olegabr/ethereum-util/zipball/24e939bd76be572b6b174c9bef22b53066dd8dfd",
-            "reference": "24e939bd76be572b6b174c9bef22b53066dd8dfd",
+            "url": "https://api.github.com/repos/olegabr/ethereum-util/zipball/9231d5c38d259f615938462975ac7f1e32124f4b",
+            "reference": "9231d5c38d259f615938462975ac7f1e32124f4b",
             "shasum": ""
         },
         "require": {
             "olegabr/keccak": "~1",
             "php": ">=5.6",
-            "simplito/elliptic-php": "1.0.3"
+            "simplito/elliptic-php": "~1.0.6"
         },
         "require-dev": {
             "phpunit/phpunit": "5.7.27|^6.1"
         },
-        "time": "2018-06-14T16:52:23+00:00",
+        "time": "2020-12-25T05:53:03+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -770,33 +785,33 @@
         ],
         "description": "A collection of utility functions for Ethereum written in PHP.",
         "support": {
-            "source": "https://github.com/olegabr/ethereum-util/tree/0.1.1"
+            "source": "https://github.com/olegabr/ethereum-util/tree/0.1.2"
         }
     },
     {
         "name": "olegabr/keccak",
-        "version": "1.0.4",
-        "version_normalized": "1.0.4.0",
+        "version": "1.0.5",
+        "version_normalized": "1.0.5.0",
         "source": {
             "type": "git",
             "url": "https://github.com/olegabr/php-keccak.git",
-            "reference": "280978604726639f933326f3be6aaa2eb491398f"
+            "reference": "9976691c929f6117f4ab48682a4abb528d7f740e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/olegabr/php-keccak/zipball/280978604726639f933326f3be6aaa2eb491398f",
-            "reference": "280978604726639f933326f3be6aaa2eb491398f",
+            "url": "https://api.github.com/repos/olegabr/php-keccak/zipball/9976691c929f6117f4ab48682a4abb528d7f740e",
+            "reference": "9976691c929f6117f4ab48682a4abb528d7f740e",
             "shasum": ""
         },
         "require": {
-            "ext-mbstring": "*",
-            "php": ">=5.6"
+            "php": ">=5.6",
+            "symfony/polyfill-mbstring": "~1.19.0"
         },
         "require-dev": {
             "php": ">=5.6",
             "phpunit/phpunit": "5.7.27|6.5"
         },
-        "time": "2018-06-14T11:57:17+00:00",
+        "time": "2020-12-20T21:38:57+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -825,32 +840,33 @@
         "description": "Pure PHP implementation of Keccak with PHP 5.6+ support",
         "keywords": [
             "keccak",
-            "sha-3"
+            "sha-3",
+            "sha3-256"
         ],
         "support": {
-            "source": "https://github.com/olegabr/php-keccak/tree/1.0.4"
+            "source": "https://github.com/olegabr/php-keccak/tree/1.0.5"
         }
     },
     {
         "name": "olegabr/rlp",
-        "version": "0.2.3",
-        "version_normalized": "0.2.3.0",
+        "version": "0.3.2",
+        "version_normalized": "0.3.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/olegabr/rlp.git",
-            "reference": "88c769d835f3dad61411b9a3b4f519cb26e1a507"
+            "reference": "c320a50be455d72e83263b397f67db1d46e03575"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/olegabr/rlp/zipball/88c769d835f3dad61411b9a3b4f519cb26e1a507",
-            "reference": "88c769d835f3dad61411b9a3b4f519cb26e1a507",
+            "url": "https://api.github.com/repos/olegabr/rlp/zipball/c320a50be455d72e83263b397f67db1d46e03575",
+            "reference": "c320a50be455d72e83263b397f67db1d46e03575",
             "shasum": ""
         },
         "require-dev": {
             "php": ">=5.6",
             "phpunit/phpunit": "5.7.27|6.5"
         },
-        "time": "2018-06-14T17:09:28+00:00",
+        "time": "2020-12-25T06:08:14+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -878,7 +894,7 @@
         ],
         "description": "Recursive Length Prefix Encoding in PHP.",
         "support": {
-            "source": "https://github.com/olegabr/rlp/tree/master"
+            "source": "https://github.com/olegabr/rlp/tree/0.3.2"
         }
     },
     {
@@ -944,12 +960,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/phpseclib/phpseclib.git",
-            "reference": "42b84143e7e8f9f622d447f0585ba76e68e479cf"
+            "reference": "72264ff91807eb7e6d25887a52a2670966b21ed8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/42b84143e7e8f9f622d447f0585ba76e68e479cf",
-            "reference": "42b84143e7e8f9f622d447f0585ba76e68e479cf",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/72264ff91807eb7e6d25887a52a2670966b21ed8",
+            "reference": "72264ff91807eb7e6d25887a52a2670966b21ed8",
             "shasum": ""
         },
         "require": {
@@ -957,7 +973,7 @@
         },
         "require-dev": {
             "phing/phing": "~2.7",
-            "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
+            "phpunit/phpunit": "^4.8.35|^5.7|^6.0|^9.4",
             "squizlabs/php_codesniffer": "~2.0"
         },
         "suggest": {
@@ -966,7 +982,7 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
             "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
         },
-        "time": "2020-11-03T01:54:25+00:00",
+        "time": "2021-02-04T02:00:56+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -1263,17 +1279,17 @@
     },
     {
         "name": "simplito/elliptic-php",
-        "version": "1.0.3",
-        "version_normalized": "1.0.3.0",
+        "version": "1.0.7",
+        "version_normalized": "1.0.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/simplito/elliptic-php.git",
-            "reference": "cab829d270dfd6acdff8383d862ed02a12d1f9dd"
+            "reference": "a2612c8289270bd00086d1c070efc3fca9d7abce"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/simplito/elliptic-php/zipball/cab829d270dfd6acdff8383d862ed02a12d1f9dd",
-            "reference": "cab829d270dfd6acdff8383d862ed02a12d1f9dd",
+            "url": "https://api.github.com/repos/simplito/elliptic-php/zipball/a2612c8289270bd00086d1c070efc3fca9d7abce",
+            "reference": "a2612c8289270bd00086d1c070efc3fca9d7abce",
             "shasum": ""
         },
         "require": {
@@ -1284,7 +1300,7 @@
             "phpbench/phpbench": "@dev",
             "phpunit/phpunit": "*"
         },
-        "time": "2018-04-12T11:17:52+00:00",
+        "time": "2021-01-12T11:40:37+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1330,12 +1346,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-intl-idn.git",
-            "reference": "4c489fd2bc812f64494645354e0fb68d355ce3c7"
+            "reference": "2d63434d922daf7da8dd863e7907e67ee3031483"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/4c489fd2bc812f64494645354e0fb68d355ce3c7",
-            "reference": "4c489fd2bc812f64494645354e0fb68d355ce3c7",
+            "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/2d63434d922daf7da8dd863e7907e67ee3031483",
+            "reference": "2d63434d922daf7da8dd863e7907e67ee3031483",
             "shasum": ""
         },
         "require": {
@@ -1346,11 +1362,11 @@
         "suggest": {
             "ext-intl": "For best performance"
         },
-        "time": "2020-10-26T13:35:45+00:00",
+        "time": "2021-01-22T09:19:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.21-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",
@@ -1416,12 +1432,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-            "reference": "69609f9f06790591b4b13a45ee117e7bab6395aa"
+            "reference": "43a0283138253ed1d48d352ab6d0bdb3f809f248"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/69609f9f06790591b4b13a45ee117e7bab6395aa",
-            "reference": "69609f9f06790591b4b13a45ee117e7bab6395aa",
+            "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/43a0283138253ed1d48d352ab6d0bdb3f809f248",
+            "reference": "43a0283138253ed1d48d352ab6d0bdb3f809f248",
             "shasum": ""
         },
         "require": {
@@ -1430,11 +1446,11 @@
         "suggest": {
             "ext-intl": "For best performance"
         },
-        "time": "2020-10-26T13:35:45+00:00",
+        "time": "2021-01-22T09:19:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.21-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",
@@ -1493,28 +1509,107 @@
         ]
     },
     {
+        "name": "symfony/polyfill-mbstring",
+        "version": "v1.19.0",
+        "version_normalized": "1.19.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-mbstring.git",
+            "reference": "b5f7b932ee6fa802fc792eabd77c4c88084517ce"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b5f7b932ee6fa802fc792eabd77c4c88084517ce",
+            "reference": "b5f7b932ee6fa802fc792eabd77c4c88084517ce",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-mbstring": "For best performance"
+        },
+        "time": "2020-10-23T09:01:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-main": "1.19-dev"
+            },
+            "thanks": {
+                "name": "symfony/polyfill",
+                "url": "https://github.com/symfony/polyfill"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Mbstring\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nicolas Grekas",
+                "email": "p@tchwork.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for the Mbstring extension",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "mbstring",
+            "polyfill",
+            "portable",
+            "shim"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
         "name": "symfony/polyfill-php72",
         "version": "dev-main",
         "version_normalized": "dev-main",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/polyfill-php72.git",
-            "reference": "4a4465f57b476085b62e74087f74ae2e753ff633"
+            "reference": "cc6e6f9b39fe8075b3dabfbaf5b5f645ae1340c9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/4a4465f57b476085b62e74087f74ae2e753ff633",
-            "reference": "4a4465f57b476085b62e74087f74ae2e753ff633",
+            "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/cc6e6f9b39fe8075b3dabfbaf5b5f645ae1340c9",
+            "reference": "cc6e6f9b39fe8075b3dabfbaf5b5f645ae1340c9",
             "shasum": ""
         },
         "require": {
             "php": ">=7.1"
         },
-        "time": "2020-10-26T13:35:45+00:00",
+        "time": "2021-01-07T16:49:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-main": "1.21-dev"
+                "dev-main": "1.22-dev"
             },
             "thanks": {
                 "name": "symfony/polyfill",
@@ -1574,20 +1669,20 @@
         "source": {
             "type": "git",
             "url": "https://github.com/woocommerce/action-scheduler.git",
-            "reference": "c899c34a06a987c5143218672c6c9e544c73fed4"
+            "reference": "a3a69918d005d7c4a9200130b96c6e6080423170"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/c899c34a06a987c5143218672c6c9e544c73fed4",
-            "reference": "c899c34a06a987c5143218672c6c9e544c73fed4",
+            "url": "https://api.github.com/repos/woocommerce/action-scheduler/zipball/a3a69918d005d7c4a9200130b96c6e6080423170",
+            "reference": "a3a69918d005d7c4a9200130b96c6e6080423170",
             "shasum": ""
         },
         "require-dev": {
-            "phpunit/phpunit": "^5.6",
+            "phpunit/phpunit": "^7.5",
             "woocommerce/woocommerce-sniffs": "0.0.8",
             "wp-cli/wp-cli": "~1.5.1"
         },
-        "time": "2020-09-16T16:31:30+00:00",
+        "time": "2020-12-09T16:10:22+00:00",
         "type": "wordpress-plugin",
         "extra": {
             "scripts-description": {
