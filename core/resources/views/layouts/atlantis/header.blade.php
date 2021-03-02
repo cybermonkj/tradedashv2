@@ -281,7 +281,7 @@
 
 						<li class="nav-item">
 							<a href="#">
-								<i class="fas fa-people-arrows"></i>
+								<i class="fas fa-dollar-sign"></i>
 								<p> Money Exchange</p>
 							</a>							
 						</li>
@@ -289,7 +289,7 @@
 
 						<li class="nav-item">
 							<a href="#">
-								<i class="fas fa-people-arrows"></i>
+								<i class="fas fa-gift"></i>
 								<p> Gift Card Exchange</p>
 							</a>							
 						</li>
