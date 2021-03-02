@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `email`, `pwd`, `name`, `role`, `author`, `status`, `img`, `created_at`, `updated_at`) VALUES
-(000001, 'admin@maxprofit.me', '$2y$10$m6UPXIc6GY.OMVlW2WCUfOgt/5Ug9gVuOwYgBKjMnQN3OU6WtN.x6', 'SuperAdmin', 3, 0, 1, NULL, '2019-10-07 22:11:17', '2020-11-23 17:52:33');
+(000001, 'admin@tradepander.com', '$2y$10$m6UPXIc6GY.OMVlW2WCUfOgt/5Ug9gVuOwYgBKjMnQN3OU6WtN.x6', 'SuperAdmin', 3, 0, 1, NULL, '2019-10-07 22:11:17', '2020-11-23 17:52:33');
 
 -- --------------------------------------------------------
 
