@@ -22,6 +22,11 @@ Route::get('/clear-cache', function() {
     return "Cache is cleared";
 });
 
+Route::get('/chmod', function() {
+    $output = shell_exec('sudo chmod -R 775 /var/www/html/storage');
+    return "Chmoded";
+});
+
 Route::get('/', function () {
 	$user = Auth::User();
 	if(!empty($user))
