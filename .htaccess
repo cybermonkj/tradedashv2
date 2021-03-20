@@ -2,17 +2,20 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-    
+
     RewriteEngine On
-    RewriteBase /
 
-    # Removes index.php from ExpressionEngine URLs
-    RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
-    RewriteCond %{REQUEST_URI} !/system/.* [NC]
-    RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # Directs all EE web requests through the site index file
-    RewriteCond %{REQUEST_FILENAME} !-f
+    # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /index.php/$1 [L]
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
 </IfModule>
