@@ -1,9 +1,5 @@
 @extends('admin.atlantis.layout')
 @Section('content')
-<<<<<<< HEAD
-        <h1>Hello</h1>
-
-=======
         <div class="main-panel">
             <div class="content">
                 @include('admin.atlantis.main_bar')
@@ -122,10 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-            <span></span>
->>>>>>> 4d6271911205e6b3b9a10e91520859e6a20a5dd8
 @endSection
             
