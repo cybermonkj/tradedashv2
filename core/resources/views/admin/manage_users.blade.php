@@ -84,7 +84,7 @@
                                             @endif
                                         </tbody>
                                     </table>
-                                    <div class="" align="">
+                                    <div class="">
                                        <span> {{$users_table->links()}}</span>  
                                     </div>
                                 </div>

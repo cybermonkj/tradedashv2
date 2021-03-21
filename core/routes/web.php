@@ -171,7 +171,7 @@ Route::get('/admin/home', function () {
 // New test route
 Route::get('/admin/emergency/home', function () {
 	if (Session::has('adm')) {
-		return view('admin.emergency');
+		return view('admin.dashboard');
 	} else {
 		return redirect('/back-end');
 	}
