@@ -147,13 +147,13 @@
 						
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<div class="avatar-sm">
+								{{-- <div class="avatar-sm">
 									@if($adm->img == "")
 										<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" />
 									@else							
 										<img src="/img/profile/{{ $adm->img }}" alt="avatar" class="avatar-img rounded-circle" align="center" />
 									@endif	
-								</div>								
+								</div>								 --}}
 							</a>
 							<ul class="dropdown-menu dropdown-adm animated fadeIn">
 								<div class="dropdown-adm-scroll scrollbar-outer">
