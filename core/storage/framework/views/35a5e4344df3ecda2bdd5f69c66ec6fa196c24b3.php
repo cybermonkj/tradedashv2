@@ -275,7 +275,7 @@
 						<li class="nav-item">
 							<a href="https://dash.tradepander.com/exchange/#/exchange/btc-to-usdt">
 								<i class="fas fa-shekel-sign"></i>
-								<p>Crypto Exchange (Atomic Swap)</p>
+								<p>Crypto Exchange</p>
 							</a>							
 						</li>
 						
@@ -283,16 +283,16 @@
 
 						<li class="nav-item">
 							<a href="#">
-								<i class="fas fa-people-arrows"></i>
-								<p> Money Exchange (Coming soon)</p>
+								<i class="fas fa-dollar-sign"></i>
+								<p> Money Exchange</p>
 							</a>							
 						</li>
 
 
 						<li class="nav-item">
 							<a href="#">
-								<i class="fas fa-people-arrows"></i>
-								<p> Gift Card Exchange (Coming soon)</p>
+								<i class="fas fa-gift"></i>
+								<p> Gift Card Exchange</p>
 							</a>							
 						</li>
 
