@@ -77,6 +77,7 @@ class adminController extends Controller
       return $code[0]->phonecode;
   }
 
+    // remember
   public function adm_login(Request $req)
   {
     $adm = admin::where('email', $req->input('email'))->get();
@@ -97,7 +98,7 @@ class adminController extends Controller
         $act->action = "Logged in to the system";
         $act->save();    
 
-        return redirect()->route('adm_dash');
+        return redirect()->route('adm_emerg');
         // return 's';
       }
       else

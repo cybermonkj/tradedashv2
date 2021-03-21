@@ -168,6 +168,15 @@ Route::get('/admin/home', function () {
    
 })->name('adm_dash');
 
+// New test route
+Route::get('admin/emergency/home', function () {
+	if (Session::has('adm')) {
+		return view('admin.emergency');
+	} else {
+		return redirect('/back-end');
+	}
+})->name('adm_emerg');
+
 Route::get('/admin/manage/users', function () {
 	if(Session::has('adm'))
 	{
