@@ -320,6 +320,33 @@ Route::get('/admin/change/pwd', function () {
    
 });
 
+
+// NEW EMERGENCY DASHBOARD
+Route::get('/adm/entry', function() {
+	if(Session::has('adm')) {
+		return view(pages.login);
+	} else {
+		return redirect('/adm/entry');
+	}
+})->name("adm.login");
+
+Route::get('/adm/home', function() {
+	if(Session::has('adm')) {
+		return view(pages.adm_dash);
+	} else {
+		return redirect('/adm/entry');
+	}
+})->name("adm.home_emergent");
+
+Route::get('/adm/more/', function() {
+	if(Session::has('adm')) {
+		return view(pages.adm_dash);
+	} else {
+		return redirect('/adm-end');
+	}
+})->name("adm.more_details");
+
+
 Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
