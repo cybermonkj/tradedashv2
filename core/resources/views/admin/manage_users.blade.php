@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header card_header_bg_blue" >
+                            <div class="card-header card_header_bg_blue">
                                 <div class="card-head-row card-tools-still-right">
                                     <h4 class="card-title text-white" > {{ __('All Users') }} </h4>
                                     <div class="card-tools">
@@ -84,7 +84,7 @@
                                             @endif
                                         </tbody>
                                     </table>
-                                    <div class="" align="">
+                                    <div class="">
                                        <span> {{$users_table->links()}}</span>  
                                     </div>
                                 </div>

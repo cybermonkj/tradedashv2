@@ -118,9 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-
 @endSection
             

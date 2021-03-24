@@ -3540,6 +3540,7 @@
 #40 /home/v2.tradepander.com/public_html/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #41 {main}
 "} 
+<<<<<<< HEAD
 [2021-03-20 13:04:36] production.ERROR: A non well formed numeric value encountered (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) {"exception":"[object] (ErrorException(code: 0): A non well formed numeric value encountered (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) (View: /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/footer.blade.php) at /home/v2.tradepander.com/public_html/core/storage/framework/views/832adcc6fed89dc8034b3bd058b2aae685744ef9.php:337)
 [stacktrace]
 #0 /home/v2.tradepander.com/public_html/core/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException()
@@ -24713,4 +24714,56 @@ Stack trace:
 #47 /home/v2.tradepander.com/public_html/core/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(110): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
 #48 /home/v2.tradepander.com/public_html/index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle()
 #49 {main}
+=======
+[2021-03-20 21:14:56] production.ERROR: Command "key" is not defined.
+
+Did you mean one of these?
+    dotenv:delete-key
+    dotenv:get-keys
+    dotenv:set-key
+    key:generate {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"key\" is not defined.
+
+Did you mean one of these?
+    dotenv:delete-key
+    dotenv:get-keys
+    dotenv:set-key
+    key:generate at C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php:669)
+[stacktrace]
+#0 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('key')
+#1 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2021-03-20 21:44:03] production.ERROR: There are no commands defined in the "code" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"code\" namespace. at C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('code')
+#1 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('code:analyse')
+#2 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-03-20 21:44:40] production.ERROR: There are no commands defined in the "code" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"code\" namespace. at C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('code')
+#1 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('code:analyse')
+#2 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2021-03-20 21:45:52] production.ERROR: There are no commands defined in the "code" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"code\" namespace. at C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('code')
+#1 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('code:analyse')
+#2 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(93): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 C:\\Users\\alabs\\OneDrive\\Documents\\Laravel Projects\\tradedashv2\\core\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+>>>>>>> eb56848a9263e69e9fdab0d8680f5b0dfe79bb7f
 "} 
