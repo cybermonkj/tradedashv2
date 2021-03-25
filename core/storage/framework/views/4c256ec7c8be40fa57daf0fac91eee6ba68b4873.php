@@ -119,10 +119,8 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-
 <?php $__env->stopSection(); ?>
             
 <?php echo $__env->make('admin.atlantis.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/admin/dashboard.blade.php ENDPATH**/ ?>
