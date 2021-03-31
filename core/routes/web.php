@@ -331,18 +331,14 @@ Route::get('/adm/entry', function() {
 })->name("adm.login");
 
 Route::get('/adm/home', function() {
-	if(Session::has('adm')) {
-		return view(pages.adm_dash);
-	} else {
-		return redirect('/adm/entry');
-	}
+	return view(pages.adm_dash);
 })->name("adm.home_emergent");
 
 Route::get('/adm/more/', function() {
 	if(Session::has('adm')) {
 		return view(pages.adm_dash);
 	} else {
-		return redirect('/adm-end');
+		return redirect('/adm/entry');
 	}
 })->name("adm.more_details");
 
