@@ -198,7 +198,7 @@
                 $m_count = App\withdrawal::where('created_at', 'like','%'.$pt.'%')->get();
                 foreach ($m_count as $n) 
                 {
-                    $sum_cap += $n->amount;
+                    $sum_cap = intval($n->amount);
                 }
                 $mInvVal[$cnt] = $sum_cap;
                 $sum_cap = 0;
@@ -216,7 +216,7 @@
                 $m_count = App\withdrawal::where('created_at', 'like','%'.$pt.'%')->orderby('id', 'desc')->get();
                 foreach ($m_count as $n) 
                 {
-                    $sum_cap += $n->amount;
+                    $sum_cap = intval($n->amount);
                 }
                 $mDepval[$cnt] = $sum_cap;
                 $cnt += 1;
@@ -234,7 +234,7 @@
                 $m_count = App\withdrawal::where('created_at', 'like','%'.$pt.'%')->orderby('id', 'desc')->get();
                 foreach ($m_count as $n) 
                 {
-                    $sum_cap += $n->amount;
+                    $sum_cap = intval($n->amount);
                 }
                 $mWdVal[$cnt] = $sum_cap;
                 $cnt += 1;

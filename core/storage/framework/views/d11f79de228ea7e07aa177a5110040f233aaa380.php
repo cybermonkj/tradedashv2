@@ -50,7 +50,7 @@
  $wd = App\withdrawal::where('status', 'Approved')-> orderby('id', 'desc')->get();
  ?> 
   <?php $__currentLoopData = $wd; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $in): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
-    <?php ($wd_bal += $in->amount ); ?>       
+    <?php ($wd_bal += strtotime($in->amount) ); ?>       
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
 
 	<div class="col-md-6">
