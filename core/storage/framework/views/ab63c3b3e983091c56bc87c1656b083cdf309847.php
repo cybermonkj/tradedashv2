@@ -105,11 +105,11 @@
                     <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" style="height: 60px;; z-index: 1; border-radius:50%;" />
                 </a>
 				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
-				<!-- <div class="nav-toggle">
+				<div class="nav-toggle">
 					<button class="btn btn-toggle toggle-sidebar">
 						<i class="icon-menu"></i>
 					</button>
-				</div> -->
+				</div>
 			</div>
 			<!-- End Logo Header -->
 
@@ -147,7 +147,13 @@
 						
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								
+								<div class="avatar-sm">
+									<?php if($adm->img == ""): ?>
+										<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" />
+									<?php else: ?>							
+										<img src="/img/profile/<?php echo e($adm->img); ?>" alt="avatar" class="avatar-img rounded-circle" align="center" />
+									<?php endif; ?>	
+								</div>								
 							</a>
 							<ul class="dropdown-menu dropdown-adm animated fadeIn">
 								<div class="dropdown-adm-scroll scrollbar-outer">
@@ -156,9 +162,44 @@
 										<a class="dropdown-item" href="/admin/manage/users">
 											<span class="fa fa-users"></span> &nbsp;Manage Users
 										</a>
+										<?php ($role = Session::get('adm')); ?>
+                                        <?php if($role->role == 3): ?>
+											<a class="dropdown-item" href="/admin/manage/adminUsers">
+												<span class="fa fa-users"></span>&nbsp; Manage Admin Users
+											</a>
+											<a class="dropdown-item" href="/admin/manage/investments">
+												<span class="fa fa-paper-plane"></span>&nbsp; Manage Investments
+											</a>
+											<a class="dropdown-item" href="/admin/manage/deposits">
+												<span class="fas fa-donate"></span>&nbsp; User Deposits
+											</a>
+											<a class="dropdown-item" href="/admin/manage/withdrawals">
+												<span class="fa fa-file"></span>&nbsp; Withdrawal Requests
+											</a>
+										<?php endif; ?>
 										
+										<a class="dropdown-item" href="/admin/manage/packages">
+											<span class="fa fa-briefcase"></span>&nbsp; Packages Manager
+										</a>
+										<a class="dropdown-item" href="/admin/send/msg">
+											<span class="fa fa-bell"></span>&nbsp; Notification Manager
+										</a>
+										<a class="dropdown-item" href="/admin/change/pwd">
+											<span class="fa fa-key"></span>&nbsp; Change Password
+										</a>	
+										<a class="dropdown-item" href="<?php echo e(route('support.index')); ?>">
+											<span class="fab fa-teamspeak"></span>&nbsp; Ticker Center
+										</a>
 
-										
+										<?php ($role = Session::get('adm')); ?>
+                                        <?php if($role->role == 3): ?>		
+                                        	<a class="dropdown-item" href="/admin/viewlogs">
+												<span class="fa fa-list"></span>&nbsp; View User Activities
+											</a>
+											<a class="dropdown-item" href="/admin/view/settings">
+												<span class="fa fa-gears"></span>&nbsp; Settings
+											</a>
+										<?php endif; ?>								
 										
 										
 										<a class="dropdown-item" href="/logout"><span class="fa fa-arrow-right"></span> &nbsp;Logout</a>
@@ -180,10 +221,16 @@
 					<div class="user-plus" style="background-color: <?php echo e($settings->header_color); ?>">
 						<a data-toggle="collapse" href="/admin/home" aria-expanded="true">
 							<div class="">
-							
+							<?php if($adm->img == ""): ?>
+								<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" style="height: 50px; width: 50px; border-radius: 50%;" />
+							<?php else: ?>							
+								<img src="/img/profile/<?php echo e($adm->img); ?>" alt="avatar" class="avatar-img rounded-circle" align="center" />
+							<?php endif; ?>
 							</div>
 							<div class="info" align="center">							
-									
+									<span>
+										<?php echo e(ucfirst($adm->name)); ?>									
+									</span>
 								<div class="clearfix"></div>							
 							</div>
 						</a>
@@ -196,7 +243,52 @@
 							</a>
 						</li>
 						
-						
+						<?php ($role = Session::get('adm')); ?>
+                        <?php if($role->role == 3): ?>
+                        	<li class="nav-item">
+								<a data-toggle="collapse" href="#user_drp">
+									<i class="fa fa-users"></i>
+									<p> Manage Users</p>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="user_drp" >
+									<ul class="nav nav-collapse">
+										<li >
+				                        	<a href="/admin/manage/users">
+												<span class="sub-item"> Users </span>
+											</a>
+										</li>
+										
+										<li class="">
+											<a href="/admin/manage/adminUsers">
+												<span class="sub-item"> Admin </span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							
+							<li class="nav-item">
+						    	<a href="/admin/manage/investments">
+									<i class="fas fa-hand-holding-usd"></i>
+									<p> Manage Investments</p>
+								</a>
+							</li>
+							
+							<li class="nav-item">
+						    	<a href="/admin/manage/deposits">
+									<i class="fas fa-donate"></i>
+									<p> Users Deposits </p>
+								</a>
+							</li>
+							
+							<li class="nav-item">
+						    	<a href="/admin/manage/withdrawals">
+									<i class="fas fa-arrow-circle-down"></i>
+									<p> User Withdrawal </p>
+								</a>
+							</li>
+						<?php endif; ?>
 						
 						<li class="nav-item">
 					    	<a href="/admin/manage/packages">
@@ -241,7 +333,42 @@
 						</li>			
 
 												
-                        
+                        <?php if($role->role == 3): ?>
+							<li class="nav-item">
+								<a data-toggle="collapse" href="#base">
+									<i class="fas fa-wrench"></i>
+									<p>Settings</p>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="base">
+									<ul class="nav nav-collapse">
+										<li >
+				                        	<a href="/admin/viewlogs">
+												<span class="sub-item">View User Activities</span>
+											</a>
+										</li>
+										
+										<!--<li class="">
+											<a href="/admin/view/settings">
+												<span class="sub-item">Tradepander</span>
+											</a>
+										</li> -->
+										<li class="">
+											<a href="/admin/profile/settings">
+												<span class="sub-item">Profile</span>
+											</a>
+										</li> 
+
+										<li class="">
+											<a href="/admin/profile/kyc">
+												<span class="sub-item">KYC</span>
+											</a>
+										</li>
+
+									</ul>
+								</div>
+							</li>
+						<?php endif; ?>	
 
 						
 						<li class="nav-item">
