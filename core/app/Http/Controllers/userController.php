@@ -135,7 +135,7 @@ class userController extends Controller
   public function validate_coupon()
   {
     $user = Auth::user();
-    $input = Input::all();
+    $input = Input::all();amt
 
     return redirect()->back('mssg', $input);
   }
@@ -780,7 +780,10 @@ class userController extends Controller
           {
             if($pack->status != 'Expired')
             {
-                $user->wallet += $pack->capital;
+                // More action
+                // $user->wallet += $pack->capital;
+                // $newAmt = $amt - $pack->capital;
+                $usr->wallet += $amt;
                 $user->save();
             }
             $pack->last_wd = $pack->end_date;
@@ -805,11 +808,12 @@ class userController extends Controller
             $pack->last_wd = $actualDate;
           }
           
-          $pack->w_amt += $amt;            
+          $pack->w_amt += $amt;         
           $pack->save();
 
           $usr = User::find($user->id);
-          $usr->wallet += $amt;
+          
+          $usr->wallet += amt;
           $usr->save();
 
           $act = new activities;
