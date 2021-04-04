@@ -2,7 +2,7 @@
     .flex-section {
         display: flex !important;
         justify-content: space-between !important;
-        align-items: 
+        align-items: center;
 
     }
 </style>
@@ -16,8 +16,8 @@
 				@include('admin.atlantis.overview')
 				<div class="container mt-4">
                   
-                    <div class="p-3 mb-2 bg-light text-dark d-flex justify-content-between flex-row flex-sm-column">
-                        <p class="text-muted">Manually Update User Wallet</p>
+                    <div class="p-3 mb-2 bg-light text-dark flex-section justify-content-between flex-row flex-sm-column">
+                        <p class="text-muted text-justify" style="font-size: 1.4rem;">Manually Update User Wallet</p>
                         <button class="btn btn-success">Update</button>
                     </div>
                     
@@ -46,7 +46,7 @@
                                 <td>2020-03-21-15:21</td>
                                 <td>
                                     <form action="">
-                                        <button id="process" type="submit" class="btn btn-sm btn-warning">correct</button>
+                                        <button id="process" type="submit" class="btn btn-sm btn-warning">Correct</button>
                                     </form>
                                 </td>
                               </tr>
