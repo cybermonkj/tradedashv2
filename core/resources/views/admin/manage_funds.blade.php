@@ -2,13 +2,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <style>
-
+    .container__table {
+        margin-right: 20%;
+        margin-top: 20%;
+    }
 </style>
 
 @extends('admin.atlantis.layout')
 @Section('content')
-    <div class="card mt-4 p-4">
-        <div class="container">
+    <div class="container__table">
+        <div class="card p-4">
             <table class="table table-hover table-bordered mt-4">
                 <thead class="thead-light">
                   <tr>
