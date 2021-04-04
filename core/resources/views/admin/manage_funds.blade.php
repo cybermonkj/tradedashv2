@@ -26,7 +26,7 @@
                         <div>Working</div>
                     @endif
 
-                    @elseif (Session::has('msgTest'))
+                    @if (Session::has('msgTest'))
                         <div class="alert alert-info">{{ Session::get('msgTest') }}</div>
                         <div>Working</div>
                     @endif
