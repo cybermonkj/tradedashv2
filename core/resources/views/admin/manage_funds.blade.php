@@ -16,10 +16,62 @@
 				@include('admin.atlantis.overview')
 				<div class="container mt-4">
                   
-                    <div class="p-3 mb-2 bg-light text-dark flex-section justify-content-between flex-row flex-sm-column">
+                    <div class="p-3 mb-2 bg-light text-dark flex-section flex-sm-column">
                         <p class="text-muted text-justify" style="font-size: 1.4rem;">Manually Update User Wallet</p>
-                        <button class="btn btn-success">Update</button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#updateModal">Update</button>
                     </div>
+
+
+                    <!--    Modals Start   -->
+                        <div class="modal fade" id="correctModal" tabindex="-1" aria-labelledby="correctLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="correctlLabel">Correct Balance</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form action="" method="post">
+                                    <div class="modal-body">
+                                    ...
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+
+
+                        <!--    Second  -->
+
+                        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="updateLabel">Change Wallet Balance</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form action="" method="post">
+                                    <div class="modal-body">
+                                        ...
+                                      </div>
+
+                                      <div class="modal-footer">
+                                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Change</button>
+                                    </div>
+                                </form>
+                            </div>
+                          </div>
+
+                    <!--    Modals End  -->
                     
 					<div class="card p-4">
                         <table class="table table-hover table-bordered mt-4">
@@ -46,7 +98,7 @@
                                 <td>2020-03-21-15:21</td>
                                 <td>
                                     <form action="">
-                                        <button id="process" type="submit" class="btn btn-sm btn-warning">Correct</button>
+                                        <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
                                     </form>
                                 </td>
                               </tr>
@@ -57,4 +109,10 @@
 			</div>
 		</div>
 	</div>
+
+    <script>
+        document.querySelector('#correct').addEventListener('click', (e) => {
+            e.preventDefault();
+        });
+    </script>
 @endsection
