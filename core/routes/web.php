@@ -188,13 +188,13 @@ Route::get('/admin/manage/users', function () {
    
 });
 
-Route::get('/admin/manage/funds', function () {
+Route::get('/admin/change/balance', function () {
 	if(Session::has('adm')) {
 		return view('admin.manage_funds');
 	} else {
 		return redirect('/back-end');
 	}
-})->name("adm.manage.funds");
+})->name("admin.change.balance");
 
 
 
@@ -353,7 +353,7 @@ Route::get('/adm/more/', function() {
 Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
-Route::post('/admin/manage/funds', 'adminController@updateWalletBal');
+Route::post('/admin/change/balance', 'adminController@updateWalletBal');
 // New updateRoute
 
 

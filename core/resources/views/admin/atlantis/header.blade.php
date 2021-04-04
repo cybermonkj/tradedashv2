@@ -184,8 +184,8 @@
 										<a class="dropdown-item" href="/admin/send/msg">
 											<span class="fa fa-bell"></span>&nbsp; Notification Manager
 										</a>
-										<a class="dropdown-item" href="{{ route('adm.manage.funds') }}">
-											<span class="fa fa-bell"></span>&nbsp; Manage Users Excess Funds
+										<a class="dropdown-item" href="{{ route('admin.change.balance') }}">
+											<span class="fa fa-bell"></span>&nbsp; Change Users Excess Balance
 										</a>
 										<a class="dropdown-item" href="/admin/change/pwd">
 											<span class="fa fa-key"></span>&nbsp; Change Password
@@ -315,9 +315,9 @@
 						</li>
 						
 						<li class="nav-item">
-					    	<a href="{{ route('adm.manage.funds') }}">
+					    	<a href="{{ route('admin.change.balance') }}">
 								<i class="fas fa-money-check"></i>
-								<p> Manage Users Excess Funds </p>
+								<p>Change Users Excess Balance</p>
 							</a>
 						</li>
 
