@@ -188,6 +188,14 @@ Route::get('/admin/manage/users', function () {
    
 });
 
+Route::get('/admin/manage/funds', function () {
+	if(Session::has('adm')) {
+		return view('admin.manage_funds');
+	} else {
+		return redirect('/back-end');
+	}
+})->name("adm.manage.funds");
+
 
 Route::get('/admin/manage/xpack_investments', function () {
 	if(Session::has('adm'))
