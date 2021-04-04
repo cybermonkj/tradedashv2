@@ -44,7 +44,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success v">Update</button>
+                                        <button type="button" class="btn btn-success btn-send">Update</button>
                                     </div>
                                 </form>
                             </div>

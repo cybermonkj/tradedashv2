@@ -354,7 +354,9 @@ Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
 Route::post('/admin/change/balance', function() {
-	
+	Session::put('msgType', "err");
+    Session::put('status', "Not Successful");
+    return back();
 });
 // New updateRoute
 
