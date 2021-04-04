@@ -1,3 +1,12 @@
+<style>
+    .flex-section {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: 
+
+    }
+</style>
+
 @extends('admin.atlantis.layout')
 @Section('content')
 	<div class="main-panel">
@@ -6,6 +15,12 @@
 			<div class="page-inner mt--5">
 				@include('admin.atlantis.overview')
 				<div class="container mt-4">
+                  
+                    <div class="p-3 mb-2 bg-light text-dark d-flex justify-content-between flex-row flex-sm-column">
+                        <p class="text-muted">Manually Update User Wallet</p>
+                        <button class="btn btn-success">Update</button>
+                    </div>
+                    
 					<div class="card p-4">
                         <table class="table table-hover table-bordered mt-4">
                             <thead class="thead-light">
@@ -31,7 +46,7 @@
                                 <td>2020-03-21-15:21</td>
                                 <td>
                                     <form action="">
-                                        <button id="process" type="submit" class="btn btn-primary">Process</button>
+                                        <button id="process" type="submit" class="btn btn-sm btn-warning">correct</button>
                                     </form>
                                 </td>
                               </tr>
