@@ -121,9 +121,9 @@
                             </thead>
                             <tbody>
                                 @for ($i = 0; $i < count($bundle); $i++)
-                                    {{-- <tr>
+                                    <tr>
                                         <th scope="row">{{ $i+1 }}</th>
-                                        <td>{{ $bundle[$i].id }}</td>
+                                        {{-- <td>{{ $bundle[$i].id }}</td>
                                         <td>{{ $bundle[$i].firstname ." ". $bundle[i].lastname }}</td>
                                         <td>{{ $bundle[$i].username }}</td>
                                         <td>{{ $bundle[$i].wallet }}</td>
@@ -132,13 +132,13 @@
                                         <td>{{ $bundle[$i].package }}</td>
                                         <td>{{ $bundle[$i].status }}</td>
                                         <td>{{ $bundle[$i].date_invested }}</td>
-                                        <td>{{ $bundle[$i].end_date }}</td>
+                                        <td>{{ $bundle[$i].end_date }}</td> --}}
                                         <td>
                                             <form action="">
                                                 <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
                                             </form>
                                         </td>
-                                    </tr> --}}
+                                    </tr>
                                 @endfor
                             </tbody>
                         </table>
