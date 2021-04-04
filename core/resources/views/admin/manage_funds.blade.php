@@ -139,9 +139,9 @@
 	</div>
 
     <script>
-        // document.querySelector('.btn-send').addEventListener('click', (e) => {
-        //     e.preventDefault();
-        // });
+        document.querySelector('.btn-send').addEventListener('click', (e) => {
+            e.preventDefault();
+        });
 
         document.querySelector('.btn-send2').addEventListener('click', (e) => {
             e.preventDefault();

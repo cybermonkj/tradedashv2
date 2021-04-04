@@ -196,6 +196,11 @@ Route::get('/admin/change/balance', function () {
 	}
 })->name("admin.change.balance");
 
+Route::post('/admin/change/balance', function() {
+	Session::flash('msgTest', "I think it is working!");
+	return back();
+});
+
 
 
 Route::get('/admin/manage/xpack_investments', function () {
@@ -353,10 +358,7 @@ Route::get('/adm/more/', function() {
 Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
-Route::post('/admin/change/balance', function() {
-	Session::flash('msgTest', "I think it is working!");
-	return back();
-});
+
 // New updateRoute
 
 
