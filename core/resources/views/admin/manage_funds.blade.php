@@ -44,7 +44,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success btn-send">Update</button>
+                                        <button type="button" class="btn btn-success btn-send2">Update</button>
                                     </div>
                                 </form>
                             </div>
@@ -115,7 +115,7 @@
                                 <td>2020-03-21-15:21</td>
                                 <td>
                                     <form action="">
-                                        <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
+                                        <button id="correct" type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
                                     </form>
                                 </td>
                               </tr>
@@ -129,6 +129,10 @@
 
     <script>
         document.querySelector('.btn-send').addEventListener('click', (e) => {
+            e.preventDefault();
+        });
+
+        document.querySelector('.btn-send2').addEventListener('click', (e) => {
             e.preventDefault();
         });
     </script>
