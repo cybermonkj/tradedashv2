@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 // use Illuminate\Support\Facades\File; 
 
 use DotenvEditor;
@@ -117,7 +118,7 @@ class adminController extends Controller
 
   public function updateWalletBal(Request $request) {
 
-    if (Input::has('username') || Input::has('wallet')) {
+    // if (Input::has('username') || Input::has('wallet')) {
       $user = DB::table('users')->where('username', $request->input('username'))->first();
 
       $user->wallet = $request->input('wallet');
@@ -133,11 +134,11 @@ class adminController extends Controller
         Session::put('status', "Not Successful");
         return back();
       }
-    } else {
+    // } else {
       Session::put('msgType', "err");
       Session::put('status', "Fields are empty");
       return back();
-    }
+    // }
   }
 
   
