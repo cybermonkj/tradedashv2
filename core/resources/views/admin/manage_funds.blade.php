@@ -101,7 +101,7 @@
                         @endphp
                     </div> --}}
                     
-					<div class="card p-4" style="width: 100% !important;">
+					<div class="bg-white p-4" style="width: 100% !important;">
                         <table class="table table-hover table-bordered mt-4">
                             <thead class="thead-light">
                               <tr>
