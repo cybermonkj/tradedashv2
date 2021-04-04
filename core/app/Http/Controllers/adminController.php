@@ -127,7 +127,6 @@ class adminController extends Controller
       $result = DB::table('users')
         ->join('invest', 'users.id', '=', 'invest.user_id')
         ->where('users.wallet', '>', 'invest.i_return')
-        ->select('users.id', 'users.firstname', 'users.lastname', 'users.username', 'users.wallet', 'invest.status', 'invest.date_invested', 'invest.date_end', 'invest.package')
         ->get();
 
         // return view('admin.manage_funds');
