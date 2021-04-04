@@ -117,32 +117,31 @@ class adminController extends Controller
   }
 
   public function updateWalletBal(Request $request) {
+    if ($request->input('username') && $request->input('wallet')) {
+      $user = DB::table('users')->where('username', $request->input('username'))->first();
 
-    // if (Input::has('username') || Input::has('wallet')) {
-      // $user = DB::table('users')->where('username', $request->input('username'))->first();
+      $user->wallet = $request->input('wallet');
 
-      // $user->wallet = $request->input('wallet');
+      $user->save();
 
-      // $user->save();
+      if ($user->save()) {
+        // Session::put('msgType', "suc");
+        // Session::put('status', "Updated Successfully!!!");
+        Session::flash('message', "Updated Successfully!!!");
+        return redirect()->back();
+      } else {
+        // Session::put('msgType', "err");
+        // Session::put('status', "Not Successful");
+        Session::flash('message', "Not Successful");
+        return redirect()->back();
+      }
 
-      // if ($user->save()) {
-      //   Session::put('msgType', "suc");
-      //   Session::put('status', "Successful");
-      //   return back();
-      // } else {
-      //   Session::put('msgType', "err");
-      //   Session::put('status', "Not Successful");
-      //   return back();
-      // }
-    // } else {
+    } else {
       // Session::put('msgType', "err");
       // Session::put('status', "Fields are empty");
-      // return back();
-    // }
-    Session::flash('msgTest', ($request->input('username')));  
-  	return redirect()->back();
-
-
+      Session::flash('message', "Fields are empty");
+  	  return redirect()->back();
+    }
   }
 
   
