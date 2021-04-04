@@ -123,8 +123,8 @@
                                 @for ($i = 0; $i < count($bundle); $i++)
                                     <tr>
                                         <th scope="row">{{ $i+1 }}</th>
-                                        {{-- <td>{{ $bundle[$i].id }}</td>
-                                        <td>{{ $bundle[$i].firstname ." ". $bundle[i].lastname }}</td>
+                                        <td>{{ $bundle[$i]['id'] }}</td>
+                                        {{-- <td>{{ $bundle[$i].firstname ." ". $bundle[i].lastname }}</td>
                                         <td>{{ $bundle[$i].username }}</td>
                                         <td>{{ $bundle[$i].wallet }}</td>
                                         <td>{{ $bundle[$i].w_amt }}</td>
