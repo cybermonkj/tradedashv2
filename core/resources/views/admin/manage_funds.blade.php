@@ -21,6 +21,11 @@
                         <button class="btn btn-success" data-toggle="modal" data-target="#updateModal">Update</button>
                     </div>
 
+                    @if (Session::has('msgTest'))
+                        <div class="alert alert-info">{{ Session::get('msgTest') }}</div>
+                        <div>Working</div>
+                    @endif
+
 
                     <!--    Modals Start   -->
                         <div class="modal fade" id="correctModal" tabindex="-1" aria-labelledby="correctLabel" aria-hidden="true">
@@ -44,7 +49,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-success btn-send2">Update</button>
+                                        <button type="submit" class="btn btn-success btn-send2">Update</button>
                                     </div>
                                 </form>
                             </div>
@@ -81,7 +86,7 @@
 
                                       <div class="modal-footer">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                          <button type="button" class="btn btn-primary btn-send">Change</button>
+                                          <button type="submit" class="btn btn-primary btn-send">Change</button>
                                     </div>
                                 </form>
                             </div>
