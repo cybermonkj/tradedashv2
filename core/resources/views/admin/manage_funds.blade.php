@@ -95,12 +95,6 @@
 
                     <!--    Modals End  -->
                     
-                    {{-- <div class="card p-2">
-                        @php
-                            print_r($bundle);
-                        @endphp
-                    </div> --}}
-                    
 					<div>
                         <table class="bg-white table table-hover table-bordered mt-4">
                             <thead class="thead-light">
