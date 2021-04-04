@@ -780,7 +780,10 @@ class userController extends Controller
           {
             if($pack->status != 'Expired')
             {
-                $user->wallet += $pack->capital;
+                // More action
+                // $user->wallet += $pack->capital;
+                // $newAmt = $amt - $pack->capital;
+                $usr->wallet += $amt;
                 $user->save();
             }
             $pack->last_wd = $pack->end_date;
@@ -805,11 +808,12 @@ class userController extends Controller
             $pack->last_wd = $actualDate;
           }
           
-          $pack->w_amt += $amt;            
+          $pack->w_amt += $amt;         
           $pack->save();
 
           $usr = User::find($user->id);
-          $usr->wallet += $amt;
+          
+          $usr->wallet += amt;
           $usr->save();
 
           $act = new activities;
@@ -836,115 +840,202 @@ class userController extends Controller
       }
   }
 
+
+  // New Withdrawal function
+  public function user_wallet_wd(Request $request)
+  {
+    // to get the logged in user
+    $user = Auth::user();
+
+    if ($this->st->withdrawal != 1) {
+      Session::put('msgType', "err");
+      Session::put('status', 'Withdrawal is disabled! Please contact support.');
+      return back();
+    } else if ($user->status == 'Blocked' || $user->status == '2') {
+      Session::put('msgType', "err");              
+      Session::put('status', 'Account Blocked! Please contact support.');
+      return back();
+    } else if ($user->status == 'pending' || $user->status == 0) {
+      Session::put('msgType', "err");              
+      Session::put('status', 'Account not activated! Please contact support.');
+      return back();
+    } else if (intval($request->input('amt')) > intval($user->wallet) || intval($req->input('amt')) == 0) {
+      Session::put('msgType', "err");              
+      Session::put('status', 'Invalid withdrawal amount. Amount must be greater than zero(0) and not more than wallet balance');
+      return back();
+    } else if (intval($req->input('amt')) < env('MIN_WD')) {
+      Session::put('msgType', "err");              
+      Session::put('status', 'Invalid withdrawal amount. Amount must be greater than ' .env('MIN_WD'));
+      return back();
+    } else if (intval($req->input('amt')) > env('WD_LIMIT')) {
+      Session::put('msgType', "err");              
+      Session::put('status', env('WD_LIMIT').' Withdrawal limit exceeded!');
+      return back();
+    } else if (!empty(Auth::user())) {
+      try {
+        // $usr = User::find(Auth::id
+        $usr = User::find($user->id);
+        $usr->wallet -= intval($req->input('amt'));
+        $usr->save();
+
+        // Withdrawal
+        $wd = new withdrawal;
+        $wd->user_id = $user->id;
+        $wd->usn = $user->username;
+        $wd->package = 'wallet';
+        $wd->invest_id = $user->id;
+        $wd->amount = intval($req->input('amt'));
+        $wd->account = $req->input('bank');
+        $wd->w_date = date('Y-m-d');
+        $wd->currency = $user->currency;
+        $wd->charges = $charge = intval($req->input('amt'))*env('WD_FEE');
+        $wd->recieving = intval($req->input('amt'))-$charge;
+        $wd->save();
+
+        $act = new activities;
+        $act->action = $user->firstname ." ". $user->lastname ." has request to withdraw his funds!";
+        $act->user_id = $user->id;
+        $act->save();
+
+
+        $maildata = ['email' => $user->email, 'username' => $user->username];
+        Mail::send('mail.wd_notification', ['md' => $maildata], function($msg) use ($maildata){
+          $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          $msg->to($maildata['email']);
+          $msg->subject('Withdrawal Notification');
+        });
+
+        $maildata = ['email' => $user->email, 'username' => $user->username];
+        Mail::send('mail.admin_wd_notification', ['md' => $maildata], function($msg) use ($maildata){
+          $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+          $msg->to(env('SUPPORT_EMAIL'));
+          $msg->subject('Withdrawal Notification');
+        });
+
+        $wd_fee = env("WD_FEE")*100;
+        Session::put('msgType', "suc");
+        Session::put('status', 'Wallet Withdrawal request Successful! Note: Withdrawal attracts '.$wd_fee.'% processing fee and is checked against fraud') ;
+        return back();
+      } catch (\Exception $e) {
+        Session::put('msgType', "err");
+        Session::put('status', $e->getMessage());
+        return back();
+      }
+    } else {
+      return redirect('/');
+    }
+    
+  }
+
   
 
-  public function user_wallet_wd(Request $req)
-  {        
-      $user = Auth::User();
+  // public function user_wallet_wd(Request $req)
+  // {        
+  //     $user = Auth::User();
       
-      if($this->st->withdrawal != 1 )
-      {
-        Session::put('msgType', "err");              
-        Session::put('status', 'Withdrawal is disabled! Please contact support.');
-        return back();
-      }
+  //     if($this->st->withdrawal != 1 )
+  //     {
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', 'Withdrawal is disabled! Please contact support.');
+  //       return back();
+  //     }
 
-      if($user->status == 'Blocked' || $user->status == 2 )
-      {
-        Session::put('msgType', "err");              
-        Session::put('status', 'Account Blocked! Please contact support.');
-        return back();
-      }
+  //     else if($user->status == 'Blocked' || $user->status == 2 )
+  //     {
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', 'Account Blocked! Please contact support.');
+  //       return back();
+  //     }
 
-      if($user->status == 'pending' || $user->status == 0 )
-      {
-        Session::put('msgType', "err");              
-        Session::put('status', 'Account not activated! Please contact support.');
-        return back();
-      }
+  //     else if($user->status == 'pending' || $user->status == 0 )
+  //     {
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', 'Account not activated! Please contact support.');
+  //       return back();
+  //     }
 
-      if(intval($req->input('amt')) > intval($user->wallet) || intval($req->input('amt')) == 0 )
-      {
-        Session::put('msgType', "err");              
-        Session::put('status', 'Invalid withdrawal amount. Amount must be greater than zero(0) and not more than wallet balance');
-        return back();
-      }  
+  //     else if(intval($req->input('amt')) > intval($user->wallet) || intval($req->input('amt')) == 0 )
+  //     {
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', 'Invalid withdrawal amount. Amount must be greater than zero(0) and not more than wallet balance');
+  //       return back();
+  //     }  
       
-           if(intval($req->input('amt')) < env('MIN_WD'))
-      {
-        $wdmin = env('MIN_WD');
-        Session::put('msgType', "err");              
-        Session::put('status', 'Invalid withdrawal amount. Amount must be greater than ' .env('MIN_WD'));
-        return back();
-      }
+  //     else if(intval($req->input('amt')) < env('MIN_WD'))
+  //     {
+  //       $wdmin = env('MIN_WD');
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', 'Invalid withdrawal amount. Amount must be greater than ' .env('MIN_WD'));
+  //       return back();
+  //     }
 
-      if(intval($req->input('amt')) > env('WD_LIMIT'))
-      {
-        Session::put('msgType', "err");              
-        Session::put('status', env('WD_LIMIT').' Withdrawal limit exceeded!');
-        return back();
-      }
+  //     else if(intval($req->input('amt')) > env('WD_LIMIT'))
+  //     {
+  //       Session::put('msgType', "err");              
+  //       Session::put('status', env('WD_LIMIT').' Withdrawal limit exceeded!');
+  //       return back();
+  //     }
 
 
-      if(!empty($user))
-      {         
-        try
-        {  
+  //     if(!empty($user))
+  //     {         
+  //       try
+  //       {  
 
-          $usr = User::find($user->id);
-          $usr->wallet -= intval($req->input('amt'));
-          $usr->save();
+  //         $usr = User::find($user->id);
+  //         $usr->wallet -= intval($req->input('amt'));
+  //         $usr->save();
 
-          $wd = new withdrawal;
-          $wd->user_id = $user->id;
-          $wd->usn = $user->username;
-          $wd->package = 'wallet';
-          $wd->invest_id = $user->id;
-          $wd->amount = intval($req->input('amt'));
-          $wd->account = $req->input('bank');
-          $wd->w_date = date('Y-m-d');
-          $wd->currency = $user->currency;
-          $wd->charges = $charge = intval($req->input('amt'))*env('WD_FEE');
-          $wd->recieving = intval($req->input('amt'))-$charge;
-          $wd->save();
+  //         $wd = new withdrawal;
+  //         $wd->user_id = $user->id;
+  //         $wd->usn = $user->username;
+  //         $wd->package = 'wallet';
+  //         $wd->invest_id = $user->id;
+  //         $wd->amount = intval($req->input('amt'));
+  //         $wd->account = $req->input('bank');
+  //         $wd->w_date = date('Y-m-d');
+  //         $wd->currency = $user->currency;
+  //         $wd->charges = $charge = intval($req->input('amt'))*env('WD_FEE');
+  //         $wd->recieving = intval($req->input('amt'))-$charge;
+  //         $wd->save();
 
-          $act = new activities;
-          $act->action = "User requested withdrawal from wallet to bank ";
-          $act->user_id = $user->id;
-          $act->save();
+  //         $act = new activities;
+  //         $act->action = $user->firstname ." ". $user->lastname ." has request to withdraw his funds!";
+  //         $act->user_id = $user->id;
+  //         $act->save();
 
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.wd_notification', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to($maildata['email']);
-              $msg->subject('Withdrawal Notification');
-          });
+  //         $maildata = ['email' => $user->email, 'username' => $user->username];
+  //         Mail::send('mail.wd_notification', ['md' => $maildata], function($msg) use ($maildata){
+  //             $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+  //             $msg->to($maildata['email']);
+  //             $msg->subject('Withdrawal Notification');
+  //         });
 
-          $maildata = ['email' => $user->email, 'username' => $user->username];
-          Mail::send('mail.admin_wd_notification', ['md' => $maildata], function($msg) use ($maildata){
-              $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
-              $msg->to(env('SUPPORT_EMAIL'));
-              $msg->subject('Withdrawal Notification');
-          });
+  //         $maildata = ['email' => $user->email, 'username' => $user->username];
+  //         Mail::send('mail.admin_wd_notification', ['md' => $maildata], function($msg) use ($maildata){
+  //             $msg->from(env('MAIL_USERNAME'), env('APP_NAME'));
+  //             $msg->to(env('SUPPORT_EMAIL'));
+  //             $msg->subject('Withdrawal Notification');
+  //         });
 
-          $wd_fee = env("WD_FEE")*100;
-          Session::put('status', 'Wallet Withdrawal request Successful! Note: Withdrawal attracts '.$wd_fee.'% processing fee and is checked against fraud') ;
-          Session::put('msgType', "suc");
-          return back();
-        }
-        catch(\Exception $e)
-        {
-          Session::put('status', $e->getMessage());
-          Session::put('msgType', "err");
-          return back();
-        }
+  //         $wd_fee = env("WD_FEE")*100;
+  //         Session::put('status', 'Wallet Withdrawal request Successful! Note: Withdrawal attracts '.$wd_fee.'% processing fee and is checked against fraud') ;
+  //         Session::put('msgType', "suc");
+  //         return back();
+  //       }
+  //       catch(\Exception $e)
+  //       {
+  //         Session::put('status', $e->getMessage());
+  //         Session::put('msgType', "err");
+  //         return back();
+  //       }
           
-      }
-      else
-      {
-        return redirect('/');
-      }
-  }
+  //     }
+  //     else
+  //     {
+  //       return redirect('/');
+  //     }
+  // }
 
   
   public function user_ref_wd(Request $req)
