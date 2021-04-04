@@ -3,14 +3,14 @@
 </head>
 <style>
     .container__table {
-        margin-right: 40%;
-        padding-top: 10%;
+        margin-right: 200px;
+        margin-top: 100px;
     }
 </style>
 
 @extends('admin.atlantis.layout')
 @Section('content')
-    <div class="content container">
+    <div class="container">
         <div class="container__table">
             <div class="card mt-12 p-4">
                 <table class="table table-hover table-bordered">
@@ -31,7 +31,9 @@
                         <th scope="row">1</th>
                         <td>1</td>
                         <td>John Snow</td>
+                        <td>Snowx</td>
                         <td>$15</td>
+                        <td>regular</td>
                         <td>2020-03-21-15:21</td>
                         <td>
                             <form action="">
