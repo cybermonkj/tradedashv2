@@ -129,17 +129,17 @@ class adminController extends Controller
         ->where('users.wallet', '>', 'invest.i_return')
         ->get();
 
-        return view('admin.manage_funds');
+        // return view('admin.manage_funds');
 
-      //   if ($result) {
-      //     Session::put('msgType', "suc");
-      //     Session::put('status', "Data fetch successfully!");
-      //     return view('admin.manage_funds', ['bundle' => $result]);
-      //   } else {
-      //     Session::put('msgType', "err");
-      //     Session::put('status', "Error fectching data!");
-      //     return back();
-      //   }
+        if ($result) {
+          Session::put('msgType', "suc");
+          Session::put('status', "Data fetch successfully!");
+          return view('admin.manage_funds', ['bundle' => $result]);
+        } else {
+          Session::put('msgType', "err");
+          Session::put('status', "Error fectching data!");
+          return back();
+        }
     } else {
       return redirect('/back-end');
     }
