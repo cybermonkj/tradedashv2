@@ -135,7 +135,7 @@ class userController extends Controller
   public function validate_coupon()
   {
     $user = Auth::user();
-    $input = Input::all();amt
+    $input = Input::all();
 
     return redirect()->back('mssg', $input);
   }
