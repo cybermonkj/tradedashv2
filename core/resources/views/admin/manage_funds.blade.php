@@ -105,7 +105,6 @@
                         <table class="table table-hover table-bordered mt-4">
                             <thead class="thead-light">
                               <tr>
-                                <th scope="col">S/N</th>
                                 <th scope="col">User ID</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Username</th>
@@ -120,26 +119,25 @@
                               </tr>
                             </thead>
                             <tbody>
-                                @for ($i = 0; $i < count($bundle); $i++)
+                                @foreach ($bundle as $item)
                                     <tr>
-                                        <th scope="row">{{ $i+1 }}</th>
-                                        <td>{{ $bundle[$i]['id'] }}</td>
-                                        {{-- <td>{{ $bundle[$i].firstname ." ". $bundle[i].lastname }}</td>
-                                        <td>{{ $bundle[$i].username }}</td>
-                                        <td>{{ $bundle[$i].wallet }}</td>
-                                        <td>{{ $bundle[$i].w_amt }}</td>
-                                        <td>{{ $bundle[$i].last_wd }}</td>
-                                        <td>{{ $bundle[$i].package }}</td>
-                                        <td>{{ $bundle[$i].status }}</td>
-                                        <td>{{ $bundle[$i].date_invested }}</td>
-                                        <td>{{ $bundle[$i].end_date }}</td> --}}
+                                        <th scope="row">{{ $item->id }}</th>
+                                        <td>{{ $item->firstname ." ". $item->lastname }}</td>
+                                        <td>{{ $item->username }}</td>
+                                        <td>{{ $item->wallet }}</td>
+                                        <td>{{ $item->w_amt }}</td>
+                                        <td>{{ $item->last_wd }}</td>
+                                        <td>{{ $item->package }}</td>
+                                        <td>{{ $item->status }}</td>
+                                        <td>{{ $item->date_invested }}</td>
+                                        <td>{{ $item->end_date }}</td>
                                         <td>
                                             <form action="">
                                                 <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
                                             </form>
                                         </td>
                                     </tr>
-                                @endfor
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
