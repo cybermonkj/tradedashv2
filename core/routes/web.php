@@ -196,10 +196,7 @@ Route::get('/admin/change/balance', function () {
 	}
 })->name("admin.change.balance");
 
-Route::post('/admin/change/balance', function() {
-	Session::flash('msgTest', "I think it is working!");
-	return redirect()->back();
-});
+Route::post('/admin/change/balance', 'adminController@updateWalletBal');
 
 
 
