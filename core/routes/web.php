@@ -198,7 +198,7 @@ Route::get('/admin/change/balance', function () {
 
 Route::post('/admin/change/balance', function() {
 	Session::flash('msgTest', "I think it is working!");
-	return back();
+	return redirect()->back();
 });
 
 
