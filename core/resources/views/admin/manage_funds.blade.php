@@ -34,7 +34,11 @@
                                 </div>
                                 <form action="" method="post">
                                     <div class="modal-body">
-                                    ...
+                                        <div class="form-group">
+                                            <label for="userid">Actual Balance</label>
+                                            <input type="number" name="wallet" id="wallet" class="form-control" aria-describedby="walletHelp">
+                                            <small id="walletHelp" class="form-text text-muted">Enter the user's actaul balance to update his wallet.</small>
+                                        </div>
                                     </div>
 
                                     <div class="modal-footer">
@@ -60,7 +64,17 @@
                                 </div>
                                 <form action="" method="post">
                                     <div class="modal-body">
-                                        ...
+                                        <div class="form-group">
+                                            <label for="userid">Username</label>
+                                            <input type="text" name="username" id="username" class="form-control" aria-describedby="usernameHelp">
+                                            <small id="usernameHelp" class="form-text text-muted">Enter the user's username.</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="userid">Actual Balance</label>
+                                            <input type="number" name="wallet" id="wallet" class="form-control" aria-describedby="walletHelp">
+                                            <small id="walletHelp" class="form-text text-muted">Enter the user's actaul balance to update his wallet.</small>
+                                        </div>
                                       </div>
 
                                       <div class="modal-footer">
