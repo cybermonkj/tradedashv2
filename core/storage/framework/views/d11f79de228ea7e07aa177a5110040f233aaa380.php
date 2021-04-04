@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-
+	
   <?php $__currentLoopData = $inv; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $in): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>     
     <?php ($cap = $cap + intval($in->capital) ); ?>
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
@@ -50,7 +50,7 @@
  $wd = App\withdrawal::where('status', 'Approved')-> orderby('id', 'desc')->get();
  ?> 
   <?php $__currentLoopData = $wd; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $in): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>    
-    <?php ($wd_bal += $in->amount ); ?>       
+    <?php ($wd_bal += strtotime($in->amount) ); ?>       
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
 
 	<div class="col-md-6">
@@ -88,4 +88,5 @@
 			</div>
 		</div>
 	</div>
-</div><?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/overview.blade.php ENDPATH**/ ?>
+</div>
+<?php /**PATH /home/v2.tradepander.com/public_html/core/resources/views/admin/atlantis/overview.blade.php ENDPATH**/ ?>

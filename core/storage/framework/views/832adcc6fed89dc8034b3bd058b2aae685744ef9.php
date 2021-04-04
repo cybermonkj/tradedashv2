@@ -334,7 +334,7 @@
 				$m_count = App\withdrawal::where('created_at', 'like','%'.date('Y-m', strtotime($in->created_at)).'%')->orderby('id', 'asc')->get();
 				foreach ($m_count as $n) 
 				{
-					$sum_cap += $n->amount;
+					$sum_cap += intval($n->amount);
 				}
 				$inv_vals[$cnt] = $sum_cap;
 				$cnt += 1;

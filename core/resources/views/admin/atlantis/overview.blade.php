@@ -34,7 +34,7 @@
 			</div>
 		</div>
 	</div>
-
+	
   @foreach($inv as $in)     
     @php($cap = $cap + intval($in->capital) )
   @endforeach 

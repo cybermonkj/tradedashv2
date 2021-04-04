@@ -105,11 +105,11 @@
                     <img src="/img/<?php echo e($settings->site_logo); ?>" alt="<?php echo e($settings->site_title); ?>" style="height: 60px;; z-index: 1; border-radius:50%;" />
                 </a>
 				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
-				<!-- <div class="nav-toggle">
+				<div class="nav-toggle">
 					<button class="btn btn-toggle toggle-sidebar">
 						<i class="icon-menu"></i>
 					</button>
-				</div> -->
+				</div>
 			</div>
 			<!-- End Logo Header -->
 
@@ -189,7 +189,7 @@
 										</a>	
 										<a class="dropdown-item" href="<?php echo e(route('support.index')); ?>">
 											<span class="fab fa-teamspeak"></span>&nbsp; Ticker Center
-										</a>	
+										</a>
 
 										<?php ($role = Session::get('adm')); ?>
                                         <?php if($role->role == 3): ?>		
@@ -220,7 +220,7 @@
 				<div class="sidebar-content">
 					<div class="user-plus" style="background-color: <?php echo e($settings->header_color); ?>">
 						<a data-toggle="collapse" href="/admin/home" aria-expanded="true">
-							<div class="" align="center">
+							<div class="">
 							<?php if($adm->img == ""): ?>
 								<img src="/img/any.png" alt="avatar" class="avatar-img rounded-circle" align="center" style="height: 50px; width: 50px; border-radius: 50%;" />
 							<?php else: ?>							
