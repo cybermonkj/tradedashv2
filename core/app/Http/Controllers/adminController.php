@@ -139,7 +139,7 @@ class adminController extends Controller
       // Session::put('status', "Fields are empty");
       // return back();
     // }
-    Session::flash('msgTest', (Input::get('username') . Input::get('wallet')));  
+    Session::flash('msgTest', ($request->input('username')));  
   	return redirect()->back();
 
 
