@@ -197,6 +197,7 @@ Route::get('/admin/manage/funds', function () {
 })->name("adm.manage.funds");
 
 
+
 Route::get('/admin/manage/xpack_investments', function () {
 	if(Session::has('adm'))
 	{
@@ -228,9 +229,7 @@ Route::get('/admin/manage/investments', function () {
 	}
 	else
 	{
-		return redirect('/back-end');
-	}
-   
+		return redirect('/back-end');}
 });
 
 Route::get('/admin/manage/deposits', function () {
@@ -244,6 +243,7 @@ Route::get('/admin/manage/deposits', function () {
 	}
    
 });
+
 // Admin Coupon Handlers
 Route::get('/admin/manage/coupons', 'CouponController@index')->name('manage.coupons');
 Route::get('/admin/manage/import/codes', 'CouponController@import')->name('import.codes');
@@ -353,6 +353,9 @@ Route::get('/adm/more/', function() {
 Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
+Route::post('/admin/change/balance', 'adminController@updateWalletBal')->name("admin.change.balance");
+// New updateRoute
+
 
 Route::get('/admin/act_deact/pack/{id}', 'adminController@switch_pack');
 

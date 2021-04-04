@@ -115,6 +115,31 @@ class adminController extends Controller
     }
   }
 
+  public function updateWalletBal(Request $request) {
+
+    if (Input::has('username') || Input::has('wallet')) {
+      $user = DB::table('users')->where('username', $request->input('username'))->first();
+
+      $user->wallet = $request->input('wallet');
+
+      $user->save();
+
+      if ($user->save()) {
+        Session::put('msgType', "suc");
+        Session::put('status', "Successful");
+        return back();
+      } else {
+        Session::put('msgType', "err");
+        Session::put('status', "Not Successful");
+        return back();
+      }
+    } else {
+      Session::put('msgType', "err");
+      Session::put('status', "Fields are empty");
+      return back();
+    }
+  }
+
   
   public function getMonthlyIvCart()
   { 
