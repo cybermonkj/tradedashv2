@@ -116,6 +116,29 @@ class adminController extends Controller
     }
   }
 
+  public function fetchUsersWithExcessBal() 
+  {
+    if(Session::has('adm')) {
+      $result = DB::table('users as U')
+        ->join('invest as I', 'U.id', '=', 'I.user_id')
+        ->select('U.id', 'U.firstname', 'U.lastname', 'U.username', 'U.wallet', 'I.status', 'I.date_invested', 'I.date_end', 'I.package')
+        ->where('U.wallet', '>', 'I.i_return')
+        ->get();
+
+        if ($result) {
+          Session::put('msgType', "suc");
+          Session::put('status', "Data fetch successfully!");
+          return view('admin.manage_funds', ['bundle' => $result]);
+        } else {
+          Session::put('msgType', "err");
+          Session::put('status', "Error fectching data!");
+          return back();
+        }
+    } else {
+      return redirect('/back-end');
+    }
+  }
+
   public function updateWalletBal(Request $request) 
   {
     $result = DB::table('users')

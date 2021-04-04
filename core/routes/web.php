@@ -188,14 +188,7 @@ Route::get('/admin/manage/users', function () {
    
 });
 
-Route::get('/admin/change/balance', function () {
-	if(Session::has('adm')) {
-		return view('admin.manage_funds');
-	} else {
-		return redirect('/back-end');
-	}
-})->name("admin.change.balance");
-
+Route::get('/admin/change/balance', 'adminController@fetchUsersWithExcessBal')->name("admin.change.balance");
 Route::post('/admin/change/balance', 'adminController@updateWalletBal');
 
 
