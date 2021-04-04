@@ -96,9 +96,9 @@
                     <!--    Modals End  -->
                     
                     <div class="card p-2">
-                        {{-- @php
+                        @php
                             print_r($bundle);
-                        @endphp --}}
+                        @endphp
                     </div>
                     
 					<div class="card p-4">
