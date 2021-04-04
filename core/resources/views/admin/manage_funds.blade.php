@@ -101,8 +101,8 @@
                         @endphp
                     </div> --}}
                     
-					<div class="bg-white p-4" style="width: 100% !important; border-radius: 10px !important;">
-                        <table class="table table-hover table-bordered mt-4">
+					<div>
+                        <table class="bg-white table table-hover table-bordered mt-4">
                             <thead class="thead-light">
                               <tr>
                                 <th scope="col">User ID</th>
