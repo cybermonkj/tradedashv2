@@ -117,7 +117,10 @@ class adminController extends Controller
   }
 
   public function updateWalletBal(Request $request) 
-    $result = DB::table('users')->where('username', $request->input('username'))->update(['wallet' => $request->input('wallet')]);
+  {
+    $result = DB::table('users')
+      ->where('username', $request->input('username'))
+      ->update(['wallet' => $request->input('wallet')]);
 
     if ($result) {
       Session::flash('msgTest', "Successful!!!");
