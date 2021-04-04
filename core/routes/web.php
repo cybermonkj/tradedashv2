@@ -355,7 +355,7 @@ Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
 Route::post('/admin/change/balance', function() {
 	Session::flash('msgTest', "I think it is working!");
-	return Redirect::back();
+	return back();
 });
 // New updateRoute
 

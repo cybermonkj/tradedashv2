@@ -21,10 +21,16 @@
                         <button class="btn btn-success" data-toggle="modal" data-target="#updateModal">Update</button>
                     </div>
 
-                    @if (Session::has('msgTest'))
+                    @if (!Session::has('msgTest'))
                         <div class="alert alert-info">{{ Session::get('msgTest') }}</div>
                         <div>Working</div>
                     @endif
+
+                    @elseif (Session::has('msgTest'))
+                        <div class="alert alert-info">{{ Session::get('msgTest') }}</div>
+                        <div>Working</div>
+                    @endif
+                    
 
 
                     <!--    Modals Start   -->
@@ -133,9 +139,9 @@
 	</div>
 
     <script>
-        document.querySelector('.btn-send').addEventListener('click', (e) => {
-            e.preventDefault();
-        });
+        // document.querySelector('.btn-send').addEventListener('click', (e) => {
+        //     e.preventDefault();
+        // });
 
         document.querySelector('.btn-send2').addEventListener('click', (e) => {
             e.preventDefault();
