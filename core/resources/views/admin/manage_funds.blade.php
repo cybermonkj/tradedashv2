@@ -62,8 +62,7 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form action="/admin/change/balance" method="post">
-                                    @csrf
+                                <form method="post" action="/admin/change/balance" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="modal-body">
                                         <div class="form-group">
