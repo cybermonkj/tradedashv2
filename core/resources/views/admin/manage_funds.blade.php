@@ -3,8 +3,8 @@
 </head>
 <style>
     .container__table {
-        margin-right: 200px;
-        margin-top: 100px;
+        margin-right: 400px;
+        padding-top: 100px;
     }
 </style>
 
