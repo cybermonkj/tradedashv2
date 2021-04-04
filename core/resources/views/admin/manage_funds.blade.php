@@ -70,6 +70,7 @@
                                 </form>
                             </div>
                           </div>
+                        </div>
 
                     <!--    Modals End  -->
                     
