@@ -33,6 +33,7 @@
                                     </button>
                                 </div>
                                 <form action="" method="post">
+                                    {{ csrf_field() }}
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <label for="userid">Actual Balance</label>
@@ -43,7 +44,7 @@
 
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Update</button>
+                                        <button type="button" class="btn btn-success v">Update</button>
                                     </div>
                                 </form>
                             </div>
@@ -80,7 +81,7 @@
 
                                       <div class="modal-footer">
                                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                          <button type="submit" class="btn btn-primary">Change</button>
+                                          <button type="button" class="btn btn-primary btn-send">Change</button>
                                     </div>
                                 </form>
                             </div>
@@ -127,7 +128,7 @@
 	</div>
 
     <script>
-        document.querySelector('#correct').addEventListener('click', (e) => {
+        document.querySelector('.btn-send').addEventListener('click', (e) => {
             e.preventDefault();
         });
     </script>
