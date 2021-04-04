@@ -194,7 +194,7 @@ Route::get('/admin/manage/funds', function () {
 	} else {
 		return redirect('/back-end');
 	}
-})->name("adm_manage_funds");
+})->name("adm.manage.funds");
 
 
 Route::get('/admin/manage/xpack_investments', function () {
