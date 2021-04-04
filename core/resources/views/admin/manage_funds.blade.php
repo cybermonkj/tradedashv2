@@ -120,7 +120,7 @@
                               </tr>
                             </thead>
                             <tbody>
-                                @for ($i = 0; $i < count($bundle); $i++)
+                                {{-- @for ($i = 0; $i < count($bundle); $i++)
                                     <tr>
                                         <th scope="row">{{ $i+1 }}</th>
                                         <td>{{ $bundle[$i].id }}</td>
@@ -139,7 +139,7 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @endfor
+                                @endfor --}}
                             </tbody>
                         </table>
                     </div>
