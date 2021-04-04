@@ -14,7 +14,7 @@
 			@include('admin.atlantis.main_bar')
 			<div class="page-inner mt--5">
 				@include('admin.atlantis.overview')
-				<div class="container mt-4">
+				<div class="container mt-4" style="overflow-x: auto !important;">
                   
                     <div class="p-3 mb-2 bg-light text-dark flex-section flex-sm-column">
                         <p class="text-muted text-justify" style="font-size: 1.4rem;">Manually Update User Wallet</p>
@@ -120,8 +120,8 @@
                               </tr>
                             </thead>
                             <tbody>
-                                {{-- @for ($i = 0; $i < count($bundle); $i++)
-                                    <tr>
+                                @for ($i = 0; $i < count($bundle); $i++)
+                                    {{-- <tr>
                                         <th scope="row">{{ $i+1 }}</th>
                                         <td>{{ $bundle[$i].id }}</td>
                                         <td>{{ $bundle[$i].firstname ." ". $bundle[i].lastname }}</td>
@@ -138,8 +138,8 @@
                                                 <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
                                             </form>
                                         </td>
-                                    </tr>
-                                @endfor --}}
+                                    </tr> --}}
+                                @endfor
                             </tbody>
                         </table>
                     </div>
