@@ -127,19 +127,19 @@ class adminController extends Controller
       if ($user->save()) {
         // Session::put('msgType', "suc");
         // Session::put('status', "Updated Successfully!!!");
-        Session::flash('message', "Updated Successfully!!!");
+        Session::flash('msgTest', "Updated Successfully!!!");
         return redirect()->back();
       } else {
         // Session::put('msgType', "err");
         // Session::put('status', "Not Successful");
-        Session::flash('message', "Not Successful");
+        Session::flash('msgTest', "Not Successful");
         return redirect()->back();
       }
 
     } else {
       // Session::put('msgType', "err");
       // Session::put('status', "Fields are empty");
-      Session::flash('message', "Fields are empty");
+      Session::flash('msgTest', "Fields are empty");
   	  return redirect()->back();
     }
   }
