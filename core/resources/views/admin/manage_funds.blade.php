@@ -3,7 +3,7 @@
 </head>
 <style>
     .container__table {
-        margin-right: 400px;
+        padding-right: 600px;
         padding-top: 100px;
     }
 </style>
