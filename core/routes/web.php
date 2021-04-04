@@ -353,7 +353,7 @@ Route::get('/adm/more/', function() {
 Route::get('/admin/delete/pack/{id}', 'adminController@adminDeletePack');
 Route::get('/admin/create/package', 'adminController@create_package');
 Route::post('/admin/create/package', 'adminController@create_package_post');
-Route::post('/admin/change/balance', 'adminController@updateWalletBal')->name("admin.change.balance");
+Route::post('/admin/change/balance', 'adminController@updateWalletBal');
 // New updateRoute
 
 

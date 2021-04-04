@@ -62,7 +62,9 @@
                                     <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                                <form action="{{ route("admin.change.balance") }}" method="post">
+                                <form action="/admin/change/balance" method="post">
+                                    @csrf
+                                    {{ csrf_field() }}
                                     <div class="modal-body">
                                         <div class="form-group">
                                             <label for="username">Username</label>
