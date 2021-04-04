@@ -110,26 +110,36 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Username</th>
                                 <th scope="col">Wallet</th>
+                                <th scope="col">Withdrawable Amt</th>
+                                <th scope="col">Last Withdrawable</th>
                                 <th scope="col">Packages</th>
-                                <th scope="col">Time Stamp</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Date Invested</th>
+                                <th scope="col">End Date</th>
                                 <th scope="col">action</th>
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <th scope="row">1</th>
-                                <td>1</td>
-                                <td>John Snow</td>
-                                <td>Snowx</td>
-                                <td>$15</td>
-                                <td>Rush</td>
-                                <td>2020-03-21-15:21</td>
-                                <td>
-                                    <form action="">
-                                        <button id="correct" type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
-                                    </form>
-                                </td>
-                              </tr>
+                                @for ($i = 0; $i < count($bundle); $i++)
+                                    <tr>
+                                        <th scope="row">{{ $i+1 }}</th>
+                                        <td>{{ $bundle[i].id }}</td>
+                                        <td>{{ $bundle[i].firstname ." ". $bundle[i].lastname }}</td>
+                                        <td>{{ $bundle[i].username }}</td>
+                                        <td>{{ $bundle[i].wallet }}</td>
+                                        <td>{{ $bundle[i].w_amt }}</td>
+                                        <td>{{ $bundle[i].last_wd }}</td>
+                                        <td>{{ $bundle[i].package }}</td>
+                                        <td>{{ $bundle[i].status }}</td>
+                                        <td>{{ $bundle[i].date_invested }}</td>
+                                        <td>{{ $bundle[i].end_date }}</td>
+                                        <td>
+                                            <form action="">
+                                                <button id="correct" type="submit" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#correctModal">Correct</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endfor
                             </tbody>
                         </table>
                     </div>
