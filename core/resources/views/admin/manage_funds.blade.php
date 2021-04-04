@@ -3,7 +3,8 @@
 </head>
 <style>
     .container__table {
-        margin-right: 20%;
+        margin-right: 40%;
+        padding-top: 10%;
     }
 </style>
 
@@ -11,7 +12,7 @@
 @Section('content')
     <div class="content container">
         <div class="container__table">
-            <div class="card m-12 p-4">
+            <div class="card mt-12 p-4">
                 <table class="table table-hover table-bordered">
                     <thead class="thead-light">
                     <tr>
