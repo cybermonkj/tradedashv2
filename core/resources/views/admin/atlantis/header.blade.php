@@ -313,10 +313,6 @@
 								<p>Import Coupon File </p>
 							</a>
 						</li>
-
-						<a class="dropdown-item" href="">
-							<span class="fa fa-bell"></span>&nbsp; Manage Users Excess Funds
-						</a>
 						
 						<li class="nav-item">
 					    	<a href="{{ route('adm.manage.funds') }}">
